@@ -1,0 +1,16 @@
+2025-08-06 10:02:47,100 - INFO - Démarrage du programme
+2025-08-06 10:02:47,100 - INFO - nettoyage du dossier 'out' : c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out
+2025-08-06 10:02:47,101 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\21_out.jpg
+2025-08-06 10:02:47,102 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\results.txt
+2025-08-06 10:02:47,102 - INFO - nettoyage du dossier 'in' : c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in
+2025-08-06 10:02:47,102 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\21_in.jpg
+2025-08-06 10:02:47,104 - INFO - nettoyage du dossier 'tmp' : c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp
+2025-08-06 10:02:47,104 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\21_in_CI_1_DS_0___05_08_2025___18_31_02.jpg
+2025-08-06 10:02:47,104 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\21_in_CI_2_DS_0___05_08_2025___18_31_03.jpg
+2025-08-06 10:02:47,105 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\21_in_CI_3_DS_0___05_08_2025___18_31_04.jpg
+2025-08-06 10:02:47,105 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\21_in_CI_3_DS_1___05_08_2025___18_31_05.jpg
+2025-08-06 10:02:47,105 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\21_in_CI_3_DS_2___05_08_2025___18_31_06.jpg
+2025-08-06 10:02:47,106 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\21_in_CI_3_DS_3___05_08_2025___18_31_07.jpg
+2025-08-06 10:02:47,106 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\21_in_CI_3_DS_4___05_08_2025___18_31_09.jpg
+2025-08-06 10:02:47,106 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\21_in___05_08_2025___18_31_01.jpg
+2025-08-06 10:02:47,107 - INFO - Génération du fichier de résultats c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\results.txt

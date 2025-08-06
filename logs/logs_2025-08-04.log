@@ -1,0 +1,17 @@
+2025-08-04 13:14:27,172 - INFO - Démarrage du programme
+2025-08-04 13:14:27,172 - INFO - nettoyage du dossier 'out' : c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out
+2025-08-04 13:14:27,173 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\1_out.jpg
+2025-08-04 13:14:27,173 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\results.txt
+2025-08-04 13:14:27,173 - INFO - nettoyage du dossier 'in' : c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in
+2025-08-04 13:14:27,176 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\1_in.jpg
+2025-08-04 13:14:27,178 - INFO - nettoyage du dossier 'tmp' : c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp
+2025-08-04 13:14:27,179 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\1_in_CI_1_DS_0___03_08_2025___13_30_09.jpg
+2025-08-04 13:14:27,181 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\1_in_CI_2_DS_0___03_08_2025___13_30_10.jpg
+2025-08-04 13:14:27,181 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\1_in_CI_3_DS_0___03_08_2025___13_30_11.jpg
+2025-08-04 13:14:27,182 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\1_in_CI_3_DS_1___03_08_2025___13_30_13.jpg
+2025-08-04 13:14:27,182 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\1_in_CI_3_DS_2___03_08_2025___13_30_14.jpg
+2025-08-04 13:14:27,183 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\1_in_CI_3_DS_3___03_08_2025___13_30_15.jpg
+2025-08-04 13:14:27,183 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\1_in_CI_3_DS_4___03_08_2025___13_30_16.jpg
+2025-08-04 13:14:27,184 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\1_in___03_08_2025___13_30_08.jpg
+2025-08-04 13:14:27,184 - INFO - Génération du fichier de résultats c:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\results.txt
+2025-08-04 13:14:38,127 - INFO - Chargement du projet 'C:/Users/nicol/Documents/ABEILLES/test.zip'
