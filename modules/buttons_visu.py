@@ -1,5 +1,5 @@
 import os 
-from kore.common import *
+from core.common import *
 
 def visu1(TAB):
     file_exists = 0

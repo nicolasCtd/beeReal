@@ -1,4 +1,4 @@
-from kore.common import *
+from core.common import *
 import logging
 # from modules.ci_and_ds_tools import POINT
 

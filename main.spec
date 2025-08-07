@@ -11,7 +11,7 @@ a = Analysis(
 		   ('tmp/', '.'),
 		   ('out/', '.'),
 		   ('logs/', 'logs'),
-		   ('kore/', '.')],
+		   ('core/', '.')],
     hiddenimports=['PIL'],
     hookspath=[],
     hooksconfig={},
