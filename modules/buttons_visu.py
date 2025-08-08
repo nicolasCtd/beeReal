@@ -5,7 +5,7 @@ def visu1(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "1_out" in file:
+        if file == "1_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -19,7 +19,7 @@ def visu2(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "2_out" in file:
+        if file == "2_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -34,7 +34,7 @@ def visu3(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "3_out" in file:
+        if file == "3_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -48,7 +48,7 @@ def visu4(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "4_out" in file:
+        if file == "4_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -62,7 +62,7 @@ def visu5(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "5_out" in file:
+        if file == "5_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -76,7 +76,7 @@ def visu6(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "6_out" in file:
+        if file == "6_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -90,7 +90,7 @@ def visu7(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "7_out" in file:
+        if file == "7_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -104,7 +104,7 @@ def visu8(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "8_out" in file:
+        if file == "8_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -118,7 +118,7 @@ def visu9(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "9_out" in file:
+        if file == "9_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -132,7 +132,7 @@ def visu10(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "10_out" in file:
+        if file == "10_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -146,7 +146,7 @@ def visu11(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "11_out" in file:
+        if file == "11_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -160,7 +160,7 @@ def visu12(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "12_out" in file:
+        if file == "12_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -174,7 +174,7 @@ def visu13(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "13_out" in file:
+        if file == "13_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -188,7 +188,7 @@ def visu14(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "14_out" in file:
+        if file == "14_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -202,7 +202,7 @@ def visu15(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "15_out" in file:
+        if file == "15_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -216,7 +216,7 @@ def visu16(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "16_out" in file:
+        if file == "16_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -230,7 +230,7 @@ def visu17(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "17_out" in file:
+        if file == "17_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -244,7 +244,7 @@ def visu18(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "18_out" in file:
+        if file == "18_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -258,7 +258,7 @@ def visu19(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "19_out" in file:
+        if file == "19_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -272,7 +272,7 @@ def visu20(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "20_out" in file:
+        if file == "20_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -286,7 +286,7 @@ def visu21(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "21_out" in file:
+        if file == "21_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -300,7 +300,7 @@ def visu22(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "22_out" in file:
+        if file == "22_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -314,7 +314,7 @@ def visu23(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "23_out" in file:
+        if file == "23_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -328,7 +328,7 @@ def visu24(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "24_out" in file:
+        if file == "24_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -342,7 +342,7 @@ def visu25(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "25_out" in file:
+        if file == "25_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -356,7 +356,7 @@ def visu26(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "26_out" in file:
+        if file == "26_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -370,7 +370,7 @@ def visu27(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "27_out" in file:
+        if file == "27_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -384,7 +384,7 @@ def visu28(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "28_out" in file:
+        if file == "28_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -398,7 +398,7 @@ def visu29(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "29_out" in file:
+        if file == "29_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -412,7 +412,7 @@ def visu30(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "30_out" in file:
+        if file == "30_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -426,7 +426,7 @@ def visu31(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "31_out" in file:
+        if file == "31_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -440,7 +440,7 @@ def visu32(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "32_out" in file:
+        if file == "32_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -454,7 +454,7 @@ def visu33(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "33_out" in file:
+        if file == "33_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -468,7 +468,7 @@ def visu34(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "34_out" in file:
+        if file == "34_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -482,7 +482,7 @@ def visu35(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "35_out" in file:
+        if file == "35_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -496,7 +496,7 @@ def visu36(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "36_out" in file:
+        if file == "36_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -510,7 +510,7 @@ def visu37(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "37_out" in file:
+        if file == "37_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -524,7 +524,7 @@ def visu38(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "38_out" in file:
+        if file == "38_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -538,7 +538,7 @@ def visu39(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "39_out" in file:
+        if file == "39_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -552,7 +552,7 @@ def visu40(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "40_out" in file:
+        if file == "40_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -566,7 +566,7 @@ def visu41(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "41_out" in file:
+        if file == "41_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -580,7 +580,7 @@ def visu42(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "42_out" in file:
+        if file == "42_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -594,7 +594,7 @@ def visu43(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "43_out" in file:
+        if file == "43_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -608,7 +608,7 @@ def visu44(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "44_out" in file:
+        if file == "44_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -622,7 +622,7 @@ def visu45(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "45_out" in file:
+        if file == "45_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -636,7 +636,7 @@ def visu46(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "46_out" in file:
+        if file == "46_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -650,7 +650,7 @@ def visu47(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "47_out" in file:
+        if file == "47_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -664,7 +664,7 @@ def visu48(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "48_out" in file:
+        if file == "48_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -678,7 +678,7 @@ def visu49(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "49_out" in file:
+        if file == "49_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -692,7 +692,7 @@ def visu50(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "50_out" in file:
+        if file == "50_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -706,7 +706,7 @@ def visu51(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "51_out" in file:
+        if file == "51_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -720,7 +720,7 @@ def visu52(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "52_out" in file:
+        if file == "52_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -734,7 +734,7 @@ def visu53(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "53_out" in file:
+        if file == "53_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -748,7 +748,7 @@ def visu54(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "54_out" in file:
+        if file == "54_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -762,7 +762,7 @@ def visu55(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "55_out" in file:
+        if file == "55_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -776,7 +776,7 @@ def visu56(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "56_out" in file:
+        if file == "56_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -790,7 +790,7 @@ def visu57(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "57_out" in file:
+        if file == "57_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -804,7 +804,7 @@ def visu58(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "58_out" in file:
+        if file == "58_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -818,7 +818,7 @@ def visu59(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "59_out" in file:
+        if file == "59_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -832,7 +832,7 @@ def visu60(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "60_out" in file:
+        if file == "60_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -846,7 +846,7 @@ def visu61(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "61_out" in file:
+        if file == "61_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -860,7 +860,7 @@ def visu62(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "62_out" in file:
+        if file == "62_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -874,7 +874,7 @@ def visu63(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "63_out" in file:
+        if file == "63_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -888,7 +888,7 @@ def visu64(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "64_out" in file:
+        if file == "64_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -902,7 +902,7 @@ def visu65(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "65_out" in file:
+        if file == "65_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -916,7 +916,7 @@ def visu66(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "66_out" in file:
+        if file == "66_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -930,7 +930,7 @@ def visu67(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "67_out" in file:
+        if file == "67_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -944,7 +944,7 @@ def visu68(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "68_out" in file:
+        if file == "68_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -958,7 +958,7 @@ def visu69(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "69_out" in file:
+        if file == "69_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -972,7 +972,7 @@ def visu70(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "70_out" in file:
+        if file == "70_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -986,7 +986,7 @@ def visu71(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "71_out" in file:
+        if file == "71_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1000,7 +1000,7 @@ def visu72(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "72_out" in file:
+        if file == "72_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1014,7 +1014,7 @@ def visu73(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "73_out" in file:
+        if file == "73_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1028,7 +1028,7 @@ def visu74(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "74_out" in file:
+        if file == "74_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1042,7 +1042,7 @@ def visu75(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "75_out" in file:
+        if file == "75_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1056,7 +1056,7 @@ def visu76(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "76_out" in file:
+        if file == "76_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1070,7 +1070,7 @@ def visu77(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "77_out" in file:
+        if file == "77_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1084,7 +1084,7 @@ def visu78(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "78_out" in file:
+        if file == "78_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1098,7 +1098,7 @@ def visu79(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "79_out" in file:
+        if file == "79_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1112,7 +1112,7 @@ def visu80(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "80_out" in file:
+        if file == "80_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1126,7 +1126,7 @@ def visu81(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "81_out" in file:
+        if file == "81_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1140,7 +1140,7 @@ def visu82(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "82_out" in file:
+        if file == "82_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1154,7 +1154,7 @@ def visu83(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "83_out" in file:
+        if file == "83_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1168,7 +1168,7 @@ def visu84(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "84_out" in file:
+        if file == "84_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1182,7 +1182,7 @@ def visu85(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "85_out" in file:
+        if file == "85_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1196,7 +1196,7 @@ def visu86(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "86_out" in file:
+        if file == "86_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1210,7 +1210,7 @@ def visu87(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "87_out" in file:
+        if file == "87_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1224,7 +1224,7 @@ def visu88(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "88_out" in file:
+        if file == "88_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1238,7 +1238,7 @@ def visu89(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "89_out" in file:
+        if file == "89_out.jpg":
             file_exists = True
             name = file
     if file_exists:
@@ -1252,7 +1252,7 @@ def visu90(TAB):
     file_exists = 0
     name = ""
     for file in os.listdir(TAB.out):
-        if "90_out" in file:
+        if file == "90_out.jpg":
             file_exists = True
             name = file
     if file_exists:

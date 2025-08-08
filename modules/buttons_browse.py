@@ -1274,13 +1274,87 @@ def browseFile85(TAB):
     save_image(TAB.fileName85, TAB.in_, 85)
 
     if TAB.fileName85 != "":
-        pixmap = QPixmap(TAB.fileName82)
+        pixmap = QPixmap(TAB.fileName85)
         pixmap = pixmap.scaled(TAB.width, TAB.height, Qt.KeepAspectRatio, Qt.FastTransformation)
         TAB.label_left[84].setPixmap(pixmap)
         TAB.grids[16].addWidget(TAB.label_left[84], 3, 3, 1, 1)
     else:
         pass
 
+def browseFile86(TAB):
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    TAB.fileName86, _ = QFileDialog.getOpenFileName(TAB, "Select File", "", "All Files (*)", options=options)
+
+    save_image(TAB.fileName86, TAB.in_, 86)
+
+    if TAB.fileName86 != "":
+        pixmap = QPixmap(TAB.fileName86)
+        pixmap = pixmap.scaled(TAB.width, TAB.height, Qt.KeepAspectRatio, Qt.FastTransformation)
+        TAB.label_left[85].setPixmap(pixmap)
+        TAB.grids[17].addWidget(TAB.label_left[85], 0, 3, 1, 1)
+    else:
+        pass
+
+def browseFile87(TAB):
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    TAB.fileName87, _ = QFileDialog.getOpenFileName(TAB, "Select File", "", "All Files (*)", options=options)
+
+    save_image(TAB.fileName87, TAB.in_, 87)
+
+    if TAB.fileName87 != "":
+        pixmap = QPixmap(TAB.fileName87)
+        pixmap = pixmap.scaled(TAB.width, TAB.height, Qt.KeepAspectRatio, Qt.FastTransformation)
+        TAB.label_left[86].setPixmap(pixmap)
+        TAB.grids[17].addWidget(TAB.label_left[86], 1, 3, 1, 1)
+    else:
+        pass
+
+def browseFile88(TAB):
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    TAB.fileName88, _ = QFileDialog.getOpenFileName(TAB, "Select File", "", "All Files (*)", options=options)
+
+    save_image(TAB.fileName88, TAB.in_, 88)
+
+    if TAB.fileName88 != "":
+        pixmap = QPixmap(TAB.fileName88)
+        pixmap = pixmap.scaled(TAB.width, TAB.height, Qt.KeepAspectRatio, Qt.FastTransformation)
+        TAB.label_left[87].setPixmap(pixmap)
+        TAB.grids[17].addWidget(TAB.label_left[87], 2, 3, 1, 1)
+    else:
+        pass
+
+def browseFile89(TAB):
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    TAB.fileName89, _ = QFileDialog.getOpenFileName(TAB, "Select File", "", "All Files (*)", options=options)
+
+    save_image(TAB.fileName89, TAB.in_, 89)
+
+    if TAB.fileName89 != "":
+        pixmap = QPixmap(TAB.fileName89)
+        pixmap = pixmap.scaled(TAB.width, TAB.height, Qt.KeepAspectRatio, Qt.FastTransformation)
+        TAB.label_left[88].setPixmap(pixmap)
+        TAB.grids[17].addWidget(TAB.label_left[88], 3, 3, 1, 1)
+    else:
+        pass
+
+def browseFile90(TAB):
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    TAB.fileName90, _ = QFileDialog.getOpenFileName(TAB, "Select File", "", "All Files (*)", options=options)
+
+    save_image(TAB.fileName90, TAB.in_, 90)
+
+    if TAB.fileName90 != "":
+        pixmap = QPixmap(TAB.fileName90)
+        pixmap = pixmap.scaled(TAB.width, TAB.height, Qt.KeepAspectRatio, Qt.FastTransformation)
+        TAB.label_left[89].setPixmap(pixmap)
+        TAB.grids[17].addWidget(TAB.label_left[89], 4, 3, 1, 1)
+    else:
+        pass
 
 ##############################################################################################################""
 ##############################################################################################################""

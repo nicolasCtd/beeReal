@@ -19,7 +19,7 @@ from PyQt5.QtWidgets import (
     QInputDialog,
     QMessageBox,
 )
-from PyQt5.QtGui import QPixmap, QCursor, QFont
+from PyQt5.QtGui import QPixmap, QCursor, QFont, QIcon
 from PyQt5 import QtCore, QtGui
 from functools import partial
 from PIL import Image, ImageDraw, ImageFont
@@ -34,7 +34,7 @@ import logging
 from datetime import date
 import glob
 
-from PyQt5.QtCore import QUrl
+from PyQt5.QtCore import QUrl, QSize
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 
 # Définir une fonction pour attraper toutes les exceptions non gérées
@@ -85,7 +85,8 @@ connections_edit = {1:editFile1, 2:editFile2, 3:editFile3, 4:editFile4, 5:editFi
                     66:editFile66, 67:editFile67, 68:editFile68, 69:editFile69, 70:editFile70,
                     71:editFile71, 72:editFile72, 73:editFile73, 74:editFile74, 75:editFile75,
                     76:editFile76, 77:editFile77, 78:editFile78, 79:editFile79, 80:editFile80,
-                    81:editFile81, 82:editFile82, 83:editFile83, 84:editFile84, 85:editFile85}
+                    81:editFile81, 82:editFile82, 83:editFile83, 84:editFile84, 85:editFile85,
+                    86:editFile86, 87:editFile87, 88:editFile88, 89:editFile89, 90:editFile90}
 
 connections_visu = {1:visu1, 2:visu2, 3:visu3, 4:visu4, 5:visu5,
                        6:visu6, 7:visu7, 8:visu8, 9:visu9, 10:visu10,
@@ -103,7 +104,8 @@ connections_visu = {1:visu1, 2:visu2, 3:visu3, 4:visu4, 5:visu5,
                        66:visu66, 67:visu67, 68:visu68, 69:visu69, 70:visu70,
                        71:visu71, 72:visu72, 73:visu73, 74:visu74, 75:visu75,
                        76:visu76, 77:visu77, 78:visu78, 79:visu79, 80:visu80,
-                       81:visu81, 82:visu82, 83:visu83, 84:visu84, 85:visu85}
+                       81:visu81, 82:visu82, 83:visu83, 84:visu84, 85:visu85,
+                       86:visu86, 87:visu87, 88:visu88, 89:visu89, 90:visu90}
 
 connections_load = {1:browseFile1, 2:browseFile2, 3:browseFile3, 4:browseFile4, 5:browseFile5,
                        6:browseFile6, 7:browseFile7, 8:browseFile8, 9:browseFile9, 10:browseFile10,
@@ -121,7 +123,8 @@ connections_load = {1:browseFile1, 2:browseFile2, 3:browseFile3, 4:browseFile4, 
                        66:browseFile66, 67:browseFile67, 68:browseFile68, 69:browseFile69, 70:browseFile70,
                        71:browseFile71, 72:browseFile72, 73:browseFile73, 74:browseFile74, 75:browseFile75,
                        76:browseFile76, 77:browseFile77, 78:browseFile78, 79:browseFile79, 80:browseFile80,
-                       81:browseFile81, 82:browseFile82, 83:browseFile83, 84:browseFile84, 85:browseFile85}
+                       81:browseFile81, 82:browseFile82, 83:browseFile83, 84:browseFile84, 85:browseFile85,
+                       86:browseFile86, 87:browseFile87, 88:browseFile88, 89:browseFile89, 90:browseFile90}
                        
 
 class FolderSelector(QWidget):
@@ -308,6 +311,7 @@ class Tab(QWidget):
         self.tab15 = QWidget()
         self.tab16 = QWidget()
         self.tab17 = QWidget()
+        self.tab18 = QWidget()
 
         mf = QFont("Times New Roman", 14)
 
@@ -329,6 +333,7 @@ class Tab(QWidget):
         self.tabs.addTab(self.tab15, "71-75")
         self.tabs.addTab(self.tab16, "76-80")
         self.tabs.addTab(self.tab17, "81-85")
+        self.tabs.addTab(self.tab18, "85-90")
 
         self.tabs.setFont(QFont('Chalkduster', 13))
         self.tabs.setCurrentIndex(1)
@@ -336,9 +341,10 @@ class Tab(QWidget):
         self.width = 413
         self.height = 307
 
-        nb_tabs = 17
+        nb_tabs = 18
 
         self.label_left = [QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
+                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
@@ -372,9 +378,11 @@ class Tab(QWidget):
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
+                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self)]
         
         self.label_results = [QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
+                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                              QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                              QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                              QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
@@ -544,27 +552,37 @@ class Tab(QWidget):
 
                 num_image = 5 * (num_tab - 1) + i + 1
 
-                darda = resource_path(f"media{os.sep}dardagnan.png")
+                darda = resource_path(f"media{os.sep}dardagnan2.png")
+                setBtn = QPushButton(f"{num_image}")
+                setBtn.setFixedWidth(60)
+                setBtn.setFixedHeight(60)
+                # setBtn.setGeometry(0, 0, 3*160, 3*90)
+                # A = QIcon(darda)
+                # # A.setContentsMargins(30, 0, 0, 0)
+                # setBtn.setIcon(A)
+                # setBtn.setIconSize(QSize(2*160, 3*90))
+
                 pixmap = QPixmap(darda)
                 label = QLabel()
                 label.setPixmap(pixmap)
-                self.grids[-1].addWidget(label, i, 0)
+                self.grids[-1].addWidget(setBtn, i, 0)
+                self.grids[-1].addWidget(label, i, 1)
 
                 im1 = resource_path(f"media{os.sep}im{num_image}.png")
                 pixmap = QPixmap(im1)
                 label_left = self.label_left[num_image-1]
                 label_left.setPixmap(pixmap)
-                self.grids[-1].addWidget(label_left, i, 2, 1, 1)
+                self.grids[-1].addWidget(label_left, i, 2+1, 1, 1)
 
                 pixmap = QPixmap(im1)
                 label_right = self.label_right[num_image-1]
                 label_right.setPixmap(pixmap)
-                self.grids[-1].addWidget(label_right, i, 4, 1, 1)
+                self.grids[-1].addWidget(label_right, i, 4+1, 1, 1)
 
                 label_results = self.label_results[num_image-1]
                 label_results.setText(f"<u>Abeille #{num_image}</u><br /> Ci :<br />Ds :<br />Classe :")
                 label_results.setContentsMargins(30, 0, 0, 0)
-                self.grids[-1].addWidget(label_results, i, 6, 1, 1)
+                self.grids[-1].addWidget(label_results, i, 6+1, 1, 1)
 
                 btn1 = QPushButton("Load")
                 btn1.resize(50, 150)
@@ -572,24 +590,34 @@ class Tab(QWidget):
                 
                 btn2 = QPushButton("Edit")
                 btn2.resize(50, 150)
+                btn2.move(0,100)
                 btn2.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
-                btn3 = QPushButton("Visualize")
-                btn3.resize(50, 150)
+                btn3 = QPushButton("Visu")
+                # btn3.resize(80, 80)
+                btn3.setFixedHeight(80)
+                btn3.setFixedWidth(80)
                 btn3.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
-                self.grids[-1].addWidget(btn1, i, 1)
-                self.grids[-1].addWidget(btn2, i, 3)
-                self.grids[-1].addWidget(btn3, i, 5)
+                self.grids[-1].addWidget(btn1, i, 1+1)
+                self.grids[-1].addWidget(btn2, i, 3+1)
+                self.grids[-1].addWidget(btn3, i, 5+1)
                 
                 btn1.clicked.connect(partial(connections_load[num_image], TAB=self))
                 btn2.clicked.connect(partial(connections_edit[num_image], TAB=self))
                 btn3.clicked.connect(partial(connections_visu[num_image], TAB=self))
 
+                darda = resource_path(f"media{os.sep}dardagnan2.png")
+                # setBtn = QPushButton(f"")
+                # A = QIcon(darda)
+                # # A.setContentsMargins(30, 0, 0, 0)
+                # setBtn.setIcon(A)
+                # setBtn.setIconSize(QSize(3*160, 3*90))
+
                 pixmap = QPixmap(darda)
                 darda = QLabel()
                 darda.setPixmap(pixmap)
-                self.grids[-1].addWidget(darda, i, 7)
+                self.grids[-1].addWidget(darda, i, 7+1)
 
         # Create main tab 
         self.tab0.layout = vl
@@ -665,6 +693,10 @@ class Tab(QWidget):
         # # Create 17th tab 
         self.tab17.layout = self.grids[16]
         self.tab17.setLayout(self.tab17.layout)
+
+        # # Create 18th tab 
+        self.tab18.layout = self.grids[17]
+        self.tab18.setLayout(self.tab18.layout)
 
         # Final step
         # #######

@@ -36,13 +36,13 @@ def resource_path(relative_path):
 class MESSAGE(QMainWindow):
     def __init__(self):
         super(MESSAGE, self).__init__()
-        self.error1 = "Veuillez d'abord charger une \nimage avant de l'éditer..."
+        self.error1 = "Veuillez d'abord charger \nune image..."
         self.error2 = "Veuillez d'abord éditer \nune image..."
 
     def message_erreur1(self):
         self.setWindowTitle(' ')
         layout = QVBoxLayout()
-        coconfort = resource_path(f"..{os.sep}images{os.sep}coconfort.png")
+        coconfort = resource_path(f"..{os.sep}media{os.sep}coconfort.png")
         pixmap = QPixmap(coconfort)
         label = QLabel()
         label.setPixmap(pixmap)
@@ -58,7 +58,7 @@ class MESSAGE(QMainWindow):
     def message_erreur2(self):
         self.setWindowTitle(' ')
         layout = QVBoxLayout()
-        coconfort = resource_path(f"..{os.sep}images{os.sep}coconfort.png")
+        coconfort = resource_path(f"..{os.sep}media{os.sep}coconfort.png")
         pixmap = QPixmap(coconfort)
         label = QLabel()
         label.setPixmap(pixmap)
