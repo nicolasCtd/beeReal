@@ -22,16 +22,26 @@ from PIL import Image, ImageDraw, ImageFont
 from modules.ci_and_ds_tools import *
 from modules.analyses import *
 from modules.utile import *
+from modules import globals
 import logging
+from datetime import datetime
+from PyQt5.QtWidgets import (
+    QLabel,
+    QMainWindow,
+    QPushButton,
+    QVBoxLayout,
+    QWidget,
+)
+
 
 def resource_path(relative_path):
     """Retourne le chemin absolu, même si l'app est empaquetée avec PyInstaller"""
     if getattr(sys, 'frozen', False):
         # PyInstaller utilise ce répertoire temporaire
-        return os.path.join(sys._MEIPASS, relative_path.replace(f"..{os.sep}", ""))
+        return os.path.join(sys._MEIPASS, "..", relative_path.replace(f"..{os.sep}", ""))
     else:
         # Script normal
-        return os.path.join(os.path.dirname(__file__), relative_path)
+        return os.path.join(os.path.dirname(__file__), "..", relative_path)
 
 class MESSAGE(QMainWindow):
     def __init__(self):
@@ -89,10 +99,9 @@ class MESSAGE(QMainWindow):
         self.show()
 
 class EDIT(QMainWindow):
-    def __init__(self, tab, num, title=' ', parent=None):
+    def __init__(self, tabs, num, title=' ', parent=None):
         super(EDIT, self).__init__(parent)
         self.setWindowTitle(title)
-        self.num = str(num)
         self.move(50, 100)
 
         self.w = QWidget()
@@ -115,39 +124,29 @@ class EDIT(QMainWindow):
         self.color_ci = [0, 255, 255]
         self.color_ds = [255, 255, 51]
 
-        self.LAB_RIGHT = tab.label_right
+        self.LAB_RIGHT = tabs.label_right
 
-        self.GRIDS = tab.grids
-        self.WIDTH = tab.width
-        self.HEIGHT = tab.height
-        self.NUM = tab.num
-        self.LAB_RES = tab.label_results
-        self.RES = tab.RES
+        self.GRIDS = tabs.grids
+        self.WIDTH = tabs.width
+        self.HEIGHT = tabs.height
+        self.NUM = num
+        self.LAB_RES = tabs.label_results
+        self.RES = tabs.RES
 
         self.ci_points = [POINT(), POINT(), POINT()]
         self.ds_points = [POINT(), POINT(), POINT(), POINT()]
 
-        self.path = tab.path + os.sep
-        self.TMP = tab.tmp + os.sep
-        self.IN_ = tab.in_ + os.sep
-        self.OUT = tab.out + os.sep
+        self.path = tabs.path + os.sep
+        self.TMP = tabs.tmp + os.sep
+        self.IN_ = tabs.in_ + os.sep
+        self.OUT = tabs.out + os.sep
 
-    def display(self, fileName):
+    def display(self, fileName, tabs):
         logging.info(f"Edition de l'image : {fileName}")
         self.name = get_file_name(fileName).replace(".jpg", "").replace("png", "")
         self.extension = "." + fileName.split(".")[-1]
 
-        # self.TMP = self.path + os.sep + "tmp" + os.sep + self.num + os.sep
-        # self.OUT = self.path + os.sep + "out" + os.sep
-        # self.IN_ = self.path + os.sep + "in" + os.sep
-
         self.last_name[self.ZOOM] = insertnow(self.name + self.extension)
-
-        # try:
-        #     os.makedirs(self.tmp)
-        #     logging.info(f"Création du répertoire : {self.TMP}")
-        # except:
-        #     pass
 
         try:
             shutil.copyfile(self.IN_ + fileName, self.TMP + self.last_name[self.ZOOM])
@@ -170,10 +169,10 @@ class EDIT(QMainWindow):
 
         self.label.setScaledContents(True)
 
-        self.set_dock()
+        self.set_dock(tabs)
         self.show()
     
-    def set_dock(self):
+    def set_dock(self, tabs):
         search = resource_path(f"search.png")
         self.btn_zoom_1 = QPushButton("  ZOOM IN ")
         self.btn_zoom_1.setIcon(QtGui.QIcon(search))
@@ -209,7 +208,7 @@ class EDIT(QMainWindow):
         self.btn_done.setIcon(QtGui.QIcon(done))
         self.btn_done.setFont(QFont('Times', 14))
         self.btn_done.setEnabled(self.switch_done)
-        self.btn_done.clicked.connect(self.validate_editing)
+        self.btn_done.clicked.connect(partial(self.validate_editing, tabs))
 
         self.layout.addWidget(self.btn_zoom_1)
         self.layout.addWidget(self.btn_zoom_2)
@@ -221,7 +220,7 @@ class EDIT(QMainWindow):
         self.dock.setFeatures(QDockWidget.DockWidgetMovable)
         self.dock.setWidget(self.w)
 
-    def validate_editing(self):
+    def validate_editing(self, tabs):
         file_wo_zoom, file_w_zoom = self.get_last_file(self.TMP)
         im = IMAGE()
         # img = resource_path(f"{self.TMP}{file_wo_zoom}")
@@ -261,6 +260,7 @@ class EDIT(QMainWindow):
         
         self.LAB_RIGHT[self.NUM-1].setPixmap(pixmap)
 
+        tabs.showMinimized()
         self.close()
 
         # write_line(f"{self.path}{os.sep}out{os.sep}results.txt", self.num, clean(self.ci_value), clean(self.ds_value))
@@ -276,6 +276,13 @@ class EDIT(QMainWindow):
 
         save_results_txt(self.OUT, self.RES)
 
+        globals.edited[self.NUM] = 1
+
+        #print(self.isMaximized)
+        # tabs.adjustSize()
+        # tabs.repaint()
+        #tabs.showMaximized()
+
         return 0
 
     def add_infos(self):
@@ -284,14 +291,14 @@ class EDIT(QMainWindow):
         # Create a drawing object
         draw = ImageDraw.Draw(img)
         # Define text attributes
-        num = self.num
+        num = self.NUM
         ci = int(self.ci_value*100)/100
         ds = int(self.ds_value*100)/100
         tt = ""
         if np.sign(ds) == 1:
             tt = "+"
         text = f"Abeille #{num}             Indice cubital : {ci}             Angle discoïdal : {tt}{ds}°"
-        font_path = resource_path(f"Paul.ttf")
+        font_path = os.sep.join([resource_path(''), "core", "Paul.ttf"])
         font = ImageFont.truetype(font_path, size=40)
         text_color = (255, 0, 0)  # Red color
 

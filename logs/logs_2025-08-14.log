@@ -1,0 +1,25 @@
+2025-08-14 08:53:50,433 - INFO - Démarrage du programme
+2025-08-14 08:53:50,433 - INFO - nettoyage du dossier 'out' : c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\out
+2025-08-14 08:53:50,438 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\out\1_out.jpg
+2025-08-14 08:53:50,438 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\out\results.txt
+2025-08-14 08:53:50,438 - INFO - nettoyage du dossier 'in' : c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\in
+2025-08-14 08:53:50,438 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\in\1_in.jpg
+2025-08-14 08:53:50,438 - INFO - nettoyage du dossier 'tmp' : c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp
+2025-08-14 08:53:50,438 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_CI_1_DS_0___13_08_2025___22_44_03.jpg
+2025-08-14 08:53:50,438 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_CI_2_DS_0___13_08_2025___22_44_05.jpg
+2025-08-14 08:53:50,438 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_CI_3_DS_0___13_08_2025___22_44_06.jpg
+2025-08-14 08:53:50,438 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_CI_3_DS_1___13_08_2025___22_44_09.jpg
+2025-08-14 08:53:50,438 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_CI_3_DS_2___13_08_2025___22_44_13.jpg
+2025-08-14 08:53:50,438 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_CI_3_DS_3___13_08_2025___22_44_14.jpg
+2025-08-14 08:53:50,438 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_CI_3_DS_4___13_08_2025___22_44_17.jpg
+2025-08-14 08:53:50,438 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_zoom_xmin1135xmax1935ymin173ymax465end_CI_1_DS_0___13_08_2025___22_44_03.jpg
+2025-08-14 08:53:50,438 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_zoom_xmin1135xmax1935ymin173ymax465end_CI_2_DS_0___13_08_2025___22_44_05.jpg
+2025-08-14 08:53:50,445 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_zoom_xmin1135xmax1935ymin173ymax465end_CI_3_DS_0___13_08_2025___22_44_06.jpg
+2025-08-14 08:53:50,445 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_zoom_xmin1135xmax1935ymin173ymax465end_CI_3_DS_1___13_08_2025___22_44_08.jpg
+2025-08-14 08:53:50,446 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_zoom_xmin1135xmax1935ymin173ymax465end___13_08_2025___22_44_00.jpg
+2025-08-14 08:53:50,446 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_zoom_xmin989xmax1789ymin0ymax288end_CI_3_DS_2___13_08_2025___22_44_12.jpg
+2025-08-14 08:53:50,446 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_zoom_xmin989xmax1789ymin0ymax288end_CI_3_DS_3___13_08_2025___22_44_14.jpg
+2025-08-14 08:53:50,448 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_zoom_xmin989xmax1789ymin0ymax288end_CI_3_DS_4___13_08_2025___22_44_17.jpg
+2025-08-14 08:53:50,448 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in_zoom_xmin989xmax1789ymin0ymax288end___13_08_2025___22_44_11.jpg
+2025-08-14 08:53:50,448 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\tmp\1_in___13_08_2025___22_43_58.jpg
+2025-08-14 08:53:50,448 - INFO - Génération du fichier de résultats c:\Users\nicol\Documents\ABEILLES\beeReal\core\..\\out\results.txt

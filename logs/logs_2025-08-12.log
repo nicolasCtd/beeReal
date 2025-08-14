@@ -1,0 +1,33 @@
+2025-08-12 16:22:01,537 - INFO - Démarrage du programme
+2025-08-12 16:22:01,538 - INFO - nettoyage du dossier 'out' : c:\Users\nicol\Documents\ABEILLES\beeReal\\out
+2025-08-12 16:22:01,538 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\\out\1_out.jpg
+2025-08-12 16:22:01,538 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\\out\results.txt
+2025-08-12 16:22:01,538 - INFO - nettoyage du dossier 'in' : c:\Users\nicol\Documents\ABEILLES\beeReal\\in
+2025-08-12 16:22:01,539 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\\in\1_in.jpg
+2025-08-12 16:22:01,539 - INFO - nettoyage du dossier 'tmp' : c:\Users\nicol\Documents\ABEILLES\beeReal\\tmp
+2025-08-12 16:22:01,539 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\\tmp\1_in_CI_1_DS_0___12_08_2025___16_20_03.jpg
+2025-08-12 16:22:01,540 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\\tmp\1_in_CI_2_DS_0___12_08_2025___16_20_04.jpg
+2025-08-12 16:22:01,540 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\\tmp\1_in_CI_3_DS_0___12_08_2025___16_20_04.jpg
+2025-08-12 16:22:01,540 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\\tmp\1_in_CI_3_DS_1___12_08_2025___16_20_05.jpg
+2025-08-12 16:22:01,541 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\\tmp\1_in_CI_3_DS_2___12_08_2025___16_20_06.jpg
+2025-08-12 16:22:01,541 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\\tmp\1_in_CI_3_DS_3___12_08_2025___16_20_07.jpg
+2025-08-12 16:22:01,542 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\\tmp\1_in_CI_3_DS_4___12_08_2025___16_20_08.jpg
+2025-08-12 16:22:01,542 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\\tmp\1_in___12_08_2025___16_20_01.jpg
+2025-08-12 16:22:01,542 - INFO - Génération du fichier de résultats c:\Users\nicol\Documents\ABEILLES\beeReal\\out\results.txt
+2025-08-12 16:22:20,638 - INFO - Image 1 : c:\Users\nicol\Documents\ABEILLES\beeReal\\in\1_in.jpg
+2025-08-12 16:22:21,689 - INFO - Edition de l'image : 1_in.jpg
+2025-08-12 16:22:21,691 - INFO - Copie du fichier : c:\Users\nicol\Documents\ABEILLES\beeReal\\in\1_in.jpg >> c:\Users\nicol\Documents\ABEILLES\beeReal\\tmp\1_in___12_08_2025___16_22_21.jpg
+2025-08-12 16:22:21,724 - INFO - Edition de l'image 1
+2025-08-12 16:22:21,724 - INFO - ----------------------
+2025-08-12 16:22:29,023 - INFO - Point Ci n°1 : (i,j)=(221, 430)
+2025-08-12 16:22:29,023 - INFO - Point Ci n°2 : (i,j)=(252, 638)
+2025-08-12 16:22:29,023 - INFO - Point Ci n°3 : (i,j)=(284, 1008)
+2025-08-12 16:22:29,023 - INFO - ----------------------
+2025-08-12 16:22:29,023 - INFO - Point Ds n°1 : (i,j)=(141, 398)
+2025-08-12 16:22:29,023 - INFO - Point Ds n°2 : (i,j)=(253, 505)
+2025-08-12 16:22:29,023 - INFO - Point Ds n°3 : (i,j)=(246, 883)
+2025-08-12 16:22:29,023 - INFO - Point Ds n°4 : (i,j)=(383, 570)
+2025-08-12 16:22:29,057 - INFO - Indice cubital Abeille #1) : 0.5662575412546437
+2025-08-12 16:22:29,057 - INFO - Shift discoidal Abeille #1) : 38.81138404°
+2025-08-12 16:22:29,071 - INFO - Image sauvegardée : c:\Users\nicol\Documents\ABEILLES\beeReal\\out\1_out.jpg
+2025-08-12 16:22:29,085 - INFO - Les infos ont été ajoutées sur l'image.

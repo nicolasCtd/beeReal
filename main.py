@@ -19,22 +19,21 @@ from PyQt5.QtWidgets import (
     QInputDialog,
     QMessageBox,
 )
-from PyQt5.QtGui import QPixmap, QCursor, QFont, QIcon
-from PyQt5 import QtCore, QtGui
+from PyQt5.QtGui import QPixmap, QFont
 from functools import partial
-from PIL import Image, ImageDraw, ImageFont
 from modules.buttons_edit import *
 from modules.buttons_visu import *
 from modules.buttons_browse import *
+from modules.buttons_onoff import *
 from modules.ci_and_ds_tools import *
 from modules.utile import *
 from modules.analyses import *
 import sys
 import logging
 from datetime import date
-import glob
+from modules import globals
 
-from PyQt5.QtCore import QUrl, QSize
+from PyQt5.QtCore import QUrl
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 
 # Définir une fonction pour attraper toutes les exceptions non gérées
@@ -49,25 +48,16 @@ def log_exception(exc_type, exc_value, exc_traceback):
 # Remplacer le hook d'exception
 # sys.excepthook = log_exception
 
-def resource_path(relative_path):
-    """Retourne le chemin absolu, même si l'app est empaquetée avec PyInstaller"""
-    if getattr(sys, 'frozen', False):
-        logging.warning(sys._MEIPASS)
-        # PyInstaller utilise ce répertoire temporaire
-        return os.path.join(sys._MEIPASS, relative_path)
-    else:
-        # Script normal
-        return os.path.join(os.path.dirname(__file__), relative_path)
-
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-config_path = resource_path('config.yml')
+config_path = resource_path('') + "config.yml"
 
 with open(config_path, 'r') as file:
     config = yaml.safe_load(file)
 
 classif = config['visu']
 seuil_min_abeilles = config['seuil_min_abeilles']
+
 
 connections_edit = {1:editFile1, 2:editFile2, 3:editFile3, 4:editFile4, 5:editFile5,
                     6:editFile6, 7:editFile7, 8:editFile8, 9:editFile9, 10:editFile10,
@@ -125,6 +115,25 @@ connections_load = {1:browseFile1, 2:browseFile2, 3:browseFile3, 4:browseFile4, 
                        76:browseFile76, 77:browseFile77, 78:browseFile78, 79:browseFile79, 80:browseFile80,
                        81:browseFile81, 82:browseFile82, 83:browseFile83, 84:browseFile84, 85:browseFile85,
                        86:browseFile86, 87:browseFile87, 88:browseFile88, 89:browseFile89, 90:browseFile90}
+        
+connections_ONOFF = {1:onoff1, 2:onoff2, 3:onoff3, 4:onoff4, 5:onoff5,
+                     6:onoff6, 7:onoff7, 8:onoff8, 9:onoff9, 10:onoff10,
+                     11:onoff11, 12:onoff12, 13:onoff13, 14:onoff14, 15:onoff15,
+                     16:onoff16, 17:onoff17, 18:onoff18, 19:onoff19, 20:onoff20,
+                     21:onoff21, 22:onoff22, 23:onoff23, 24:onoff24, 25:onoff25,
+                     26:onoff26, 27:onoff27, 28:onoff28, 29:onoff29, 30:onoff30,
+                     31:onoff31, 32:onoff32, 33:onoff33, 34:onoff34, 35:onoff35,
+                     36:onoff36, 37:onoff37, 38:onoff38, 39:onoff39, 40:onoff40,
+                     41:onoff41, 42:onoff42, 43:onoff43, 44:onoff44, 45:onoff45,
+                     46:onoff46, 47:onoff47, 48:onoff48, 49:onoff49, 50:onoff50,
+                     51:onoff51, 52:onoff52, 53:onoff53, 54:onoff54, 55:onoff55,
+                     56:onoff56, 57:onoff57, 58:onoff58, 59:onoff59, 60:onoff60,
+                     61:onoff61, 62:onoff62, 63:onoff63, 64:onoff64, 65:onoff65,
+                     66:onoff66, 67:onoff67, 68:onoff68, 69:onoff69, 70:onoff70,
+                     71:onoff71, 72:onoff72, 73:onoff73, 74:onoff74, 75:onoff75,
+                     76:onoff76, 77:onoff77, 78:onoff78, 79:onoff79, 80:onoff80,
+                     81:onoff82, 82:onoff82, 83:onoff83, 84:onoff84, 85:onoff85,
+                     86:onoff86, 87:onoff87, 88:onoff88, 89:onoff89, 90:onoff90}
                        
 
 class FolderSelector(QWidget):
@@ -244,7 +253,7 @@ class MainWindow(QMainWindow):
             f.write(line)
             f.close
 
-        self.tab_widget = Tab(self, self.path)
+        self.tab_widget = Tabs(self, self.path)
         self.setCentralWidget(self.tab_widget)
 
         self.showMaximized()
@@ -268,14 +277,9 @@ class MainWindow(QMainWindow):
             event.ignore()
 
 
-class Tab(QWidget): 
+class Tabs(QWidget): 
     def __init__(self, parent, path): 
         super(QWidget, self).__init__(parent)
-
-        # self.path = path
-        # self.in_ = path + os.sep + "in"
-        # self.out = path + os.sep + "out"
-        # self.tmp = path + os.sep + "tmp"
 
         self.out = resource_path("") + os.sep + "out"
         self.in_ = resource_path("") + os.sep + "in"
@@ -399,7 +403,15 @@ class Tab(QWidget):
                              QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                              QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                              QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self)]
-        
+
+        self.browse = {}
+        self.edit = {}
+        self.visu = {}
+        for i in range(1, 101):
+            self.browse[i] = 0
+            self.edit[i] = 0
+            self.visu[i] = 0
+
         self.label_analyses = [QLabel(self), QLabel(self)]
         self.label_analyses[0].setFixedWidth(900)
         self.label_analyses[0].setFixedHeight(850)
@@ -476,14 +488,6 @@ class Tab(QWidget):
         pixmap = QPixmap(empty2)
         image_empty2 = self.label_analyses[1]
         image_empty2.setPixmap(pixmap)
-        # image_empty2.setContentsMargins(0, -500, 0, 0)
-
-        # cd2 = resource_path(f"images{os.sep}carte_dardagnan2.png")
-        # cd2 = resource_path(f"images{os.sep}deco1.jpg")
-        # pixmap = QPixmap(cd2)
-        # deco0 = QLabel(cd2)
-        # deco0.setScaledContents(True)
-        # deco0.setPixmap(pixmap)
 
         L1, H1 = 300, 200
         L2, H2 = 300, 200
@@ -552,16 +556,13 @@ class Tab(QWidget):
 
                 num_image = 5 * (num_tab - 1) + i + 1
 
-                darda = resource_path(f"media{os.sep}dardagnan2.png")
                 setBtn = QPushButton(f"{num_image}")
                 setBtn.setFixedWidth(60)
                 setBtn.setFixedHeight(60)
-                # setBtn.setGeometry(0, 0, 3*160, 3*90)
-                # A = QIcon(darda)
-                # # A.setContentsMargins(30, 0, 0, 0)
-                # setBtn.setIcon(A)
-                # setBtn.setIconSize(QSize(2*160, 3*90))
+                setBtn.setStyleSheet("background-color: aquamarine")
+                setBtn.clicked.connect(partial(connections_ONOFF[num_image], TABs=self))
 
+                darda = resource_path(f"media{os.sep}dardagnan2.png")
                 pixmap = QPixmap(darda)
                 label = QLabel()
                 label.setPixmap(pixmap)
@@ -572,6 +573,7 @@ class Tab(QWidget):
                 pixmap = QPixmap(im1)
                 label_left = self.label_left[num_image-1]
                 label_left.setPixmap(pixmap)
+                label_left.name = f"im{num_image}"
                 self.grids[-1].addWidget(label_left, i, 2+1, 1, 1)
 
                 pixmap = QPixmap(im1)
@@ -603,16 +605,11 @@ class Tab(QWidget):
                 self.grids[-1].addWidget(btn2, i, 3+1)
                 self.grids[-1].addWidget(btn3, i, 5+1)
                 
-                btn1.clicked.connect(partial(connections_load[num_image], TAB=self))
-                btn2.clicked.connect(partial(connections_edit[num_image], TAB=self))
-                btn3.clicked.connect(partial(connections_visu[num_image], TAB=self))
+                btn1.clicked.connect(partial(connections_load[num_image], TABs=self))
+                btn2.clicked.connect(partial(connections_edit[num_image], TABs=self))
+                btn3.clicked.connect(partial(connections_visu[num_image], TABs=self))
 
                 darda = resource_path(f"media{os.sep}dardagnan2.png")
-                # setBtn = QPushButton(f"")
-                # A = QIcon(darda)
-                # # A.setContentsMargins(30, 0, 0, 0)
-                # setBtn.setIcon(A)
-                # setBtn.setIconSize(QSize(3*160, 3*90))
 
                 pixmap = QPixmap(darda)
                 darda = QLabel()
@@ -863,12 +860,13 @@ if __name__ == '__main__':
     screen = app.screens()[0]
     dpi = screen.physicalDotsPerInch()
 
-    player = QMediaPlayer()
-    url = QUrl.fromLocalFile(resource_path("") + "/media/future.mp3" )
-    logging.info(url)
-    player.setMedia(QMediaContent(url))
-    player.setVolume(100)
-    player.play()
+    if 0:
+        player = QMediaPlayer()
+        url = QUrl.fromLocalFile(resource_path("") + "/media/future.mp3" )
+        logging.info(url)
+        player.setMedia(QMediaContent(url))
+        player.setVolume(100)
+        player.play()
 
     window = MainWindow()
 
