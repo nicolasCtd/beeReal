@@ -52,7 +52,7 @@ class MESSAGE(QMainWindow):
     def message_erreur1(self):
         self.setWindowTitle(' ')
         layout = QVBoxLayout()
-        coconfort = resource_path(f"..{os.sep}media{os.sep}coconfort.png")
+        coconfort = os.sep.join([resource_path(""), "media", "coconfort.png"])
         pixmap = QPixmap(coconfort)
         label = QLabel()
         label.setPixmap(pixmap)
@@ -68,7 +68,7 @@ class MESSAGE(QMainWindow):
     def message_erreur2(self):
         self.setWindowTitle(' ')
         layout = QVBoxLayout()
-        coconfort = resource_path(f"..{os.sep}media{os.sep}coconfort.png")
+        coconfort = os.sep.join([resource_path(""), "media", "coconfort.png"])
         pixmap = QPixmap(coconfort)
         label = QLabel()
         label.setPixmap(pixmap)
@@ -173,13 +173,13 @@ class EDIT(QMainWindow):
         self.show()
     
     def set_dock(self, tabs):
-        search = resource_path(f"search.png")
+        search = os.sep.join([resource_path(''), "media", "search.png"])
         self.btn_zoom_1 = QPushButton("  ZOOM IN ")
         self.btn_zoom_1.setIcon(QtGui.QIcon(search))
         self.btn_zoom_1.setFont(QFont('Times', 14))
         self.btn_zoom_1.clicked.connect(partial(self.zoom_in, True))
 
-        fusee = resource_path(f"fusee.webp")
+        fusee = os.sep.join([resource_path(''), "media", "fusee.webp"])
         self.btn_zoom_2 = QPushButton("  ZOOM OUT")
         self.btn_zoom_2.setIcon(QtGui.QIcon(fusee))
         self.btn_zoom_2.setFont(QFont('Times', 14))
@@ -188,7 +188,7 @@ class EDIT(QMainWindow):
         self.btn_zoom_1.setEnabled(self.switch_button_zoom_in)
         self.btn_zoom_2.setEnabled(self.switch_button_zoom_out)
 
-        back = resource_path(f"back.png")
+        back = os.sep.join([resource_path(''), "media", "back.png"])
         self.btn_cancel = QPushButton("")
         self.btn_cancel.setIcon(QtGui.QIcon(back))
         self.btn_cancel.clicked.connect(self.cancel)
@@ -203,7 +203,7 @@ class EDIT(QMainWindow):
         self.btn_ds_points.setFont(QFont('Times', 13))
         self.btn_ds_points.clicked.connect(partial(self.set_ds_points, switch=self.switch_ds))
 
-        done = resource_path(f"done.jpg")
+        done = os.sep.join([resource_path(""), "media", "done.jpg"])
         self.btn_done = QPushButton("  Done")
         self.btn_done.setIcon(QtGui.QIcon(done))
         self.btn_done.setFont(QFont('Times', 14))
@@ -216,7 +216,7 @@ class EDIT(QMainWindow):
         self.layout.addWidget(self.btn_ci_points)
         self.layout.addWidget(self.btn_ds_points)
         self.layout.addWidget(self.btn_done)
-        self.dock = QDockWidget(f"{self.name}{self.extension}", self)
+        self.dock = QDockWidget(f"{self.name}.jpg", self)
         self.dock.setFeatures(QDockWidget.DockWidgetMovable)
         self.dock.setWidget(self.w)
 
@@ -247,14 +247,14 @@ class EDIT(QMainWindow):
         logging.info(f"Indice cubital Abeille #{self.NUM}) : {self.ci_value}")
         logging.info(f"Shift discoidal Abeille #{self.NUM}) : {clean(self.ds_value)}°")
         
-        plt.imsave(fname=f"{self.OUT}{self.NUM}_out{self.extension}", arr=im.data)
-        logging.info(f"Image sauvegardée : {self.OUT}{self.NUM}_out{self.extension}")
+        plt.imsave(fname=f"{self.OUT}{self.NUM}_out.jpg", arr=im.data)
+        logging.info(f"Image sauvegardée : {self.OUT}{self.NUM}_out.jpg")
 
         self.add_infos()
         # self.write_results()
         logging.info(f"Les infos ont été ajoutées sur l'image.")
         
-        img = f"{self.OUT}{self.NUM}_out{self.extension}"
+        img = f"{self.OUT}{self.NUM}_out.jpg"
         pixmap = QPixmap(img)
         pixmap = pixmap.scaled(self.WIDTH, self.HEIGHT, Qt.KeepAspectRatio, Qt.FastTransformation)
         
@@ -286,7 +286,7 @@ class EDIT(QMainWindow):
         return 0
 
     def add_infos(self):
-        img_path = resource_path(f"{self.OUT}{self.NUM}_out{self.extension}")
+        img_path = resource_path(f"{self.OUT}{self.NUM}_out.jpg")
         img = Image.open(img_path)
         # Create a drawing object
         draw = ImageDraw.Draw(img)
@@ -309,7 +309,7 @@ class EDIT(QMainWindow):
         draw.text(position, text, fill=text_color, font=font)
 
         # Save or display the image
-        img.save(f"{self.OUT}{self.NUM}_out{self.extension}")
+        img.save(f"{self.OUT}{self.NUM}_out.jpg")
 
     # def write_results(self):
     #     with open(self.path + os.sep + "out" + os.sep + "results.txt", "a") as f:
@@ -338,9 +338,9 @@ class EDIT(QMainWindow):
             file = self.last_name[self.ZOOM]
             if self.ZOOM:
                 xmin, xmax, ymin, ymax = get_zoom_center(file)
-                new_name = insertnow(self.name + "_zoom_" + f"xmin{xmin}xmax{xmax}ymin{ymin}ymax{ymax}end" + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + self.extension)
+                new_name = insertnow(self.name + "_zoom_" + f"xmin{xmin}xmax{xmax}ymin{ymin}ymax{ymax}end" + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + '.jpg')
             else:
-                new_name = insertnow(self.name + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + self.extension)
+                new_name = insertnow(self.name + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + '.jpg')
                 xmin, xmax, ymin, ymax = 0, 0, 0, 0
             self.last_name[self.ZOOM] = new_name
             A = IMAGE()
@@ -365,7 +365,7 @@ class EDIT(QMainWindow):
                 B = IMAGE()
                 B.load(self.TMP + file_wo_zoom)
                 B.highlight(node, self.color_ci)
-                new_name = insertnow(self.name + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + self.extension)
+                new_name = insertnow(self.name + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + '.jpg')
                 plt.imsave(fname=f"{self.TMP}{new_name}", arr=B.data)
         if self.count_ci_points in [1, 2, 3]:
             self.switch_back = True
@@ -391,9 +391,9 @@ class EDIT(QMainWindow):
             file = self.last_name[self.ZOOM]
             if self.ZOOM:
                 xmin, xmax, ymin, ymax = get_zoom_center(file)
-                new_name = insertnow(self.name + "_zoom_" + f"xmin{xmin}xmax{xmax}ymin{ymin}ymax{ymax}end" + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + self.extension)
+                new_name = insertnow(self.name + "_zoom_" + f"xmin{xmin}xmax{xmax}ymin{ymin}ymax{ymax}end" + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + '.jpg')
             else:
-                new_name = insertnow(self.name + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + self.extension)
+                new_name = insertnow(self.name + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + '.jpg')
                 xmin, xmax, ymin, ymax = 0, 0, 0, 0
             self.last_name[self.ZOOM] = new_name
             A = IMAGE()
@@ -419,7 +419,7 @@ class EDIT(QMainWindow):
                 B = IMAGE()
                 B.load(self.TMP + file_wo_zoom)
                 B.highlight(node, self.color_ds)
-                new_name = insertnow(self.name + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + self.extension)
+                new_name = insertnow(self.name + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + '.jpg')
                 plt.imsave(fname=f"{self.TMP}{new_name}", arr=B.data)
             
         if self.count_ds_points in [1, 2, 3, 4]:
@@ -505,7 +505,7 @@ class EDIT(QMainWindow):
     def zoom_in(self, ZOOM=True):
         #file_wo_zoom, file_w_zoom = self.get_last_file(self.TMP)
         self.ZOOM = ZOOM
-        zm = resource_path(f"search.png")
+        zm = os.sep.join([resource_path(""), "media", "search.png"])
         pixmap = QPixmap(zm)
         pixmap = pixmap.scaled(32, 32)
         cursor = QCursor(pixmap, 32, 32)
@@ -598,7 +598,7 @@ class EDIT(QMainWindow):
 
             image_temp = A.data[i_min:i_max, j_min:j_max, :]
 
-            new_name = insertnow(self.name + "_zoom_" + f"xmin{j_min}xmax{j_max}ymin{i_min}ymax{i_max}end" + self.extension)
+            new_name = insertnow(self.name + "_zoom_" + f"xmin{j_min}xmax{j_max}ymin{i_min}ymax{i_max}end" + '.jpg')
             self.last_name[self.ZOOM] = new_name
 
             plt.imsave(fname=f"{self.TMP}{new_name}", arr=image_temp)

@@ -805,9 +805,10 @@ class Tabs(QWidget):
             self.shifts = []
             self.id_bees = []
             for abeille in self.RES.keys():
-                self.indices.append(float(self.RES[abeille][0]))
-                self.shifts.append(float(self.RES[abeille][1]))
-                self.id_bees.append(abeille)
+                if globals.enabled[abeille-1]:
+                    self.indices.append(float(self.RES[abeille][0]))
+                    self.shifts.append(float(self.RES[abeille][1]))
+                    self.id_bees.append(abeille)
             ci_images, ds_image, HISTO = analyse(self.indices, self.shifts, self.id_bees, path_out=self.out, visu=classif)
             for image in ci_images:
                 if "mellifera" in image:
