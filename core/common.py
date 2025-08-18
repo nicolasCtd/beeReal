@@ -33,16 +33,6 @@ from PyQt5.QtWidgets import (
     QWidget,
 )
 
-
-def resource_path(relative_path):
-    """Retourne le chemin absolu, même si l'app est empaquetée avec PyInstaller"""
-    if getattr(sys, 'frozen', False):
-        # PyInstaller utilise ce répertoire temporaire
-        return os.path.join(sys._MEIPASS, "..", relative_path.replace(f"..{os.sep}", ""))
-    else:
-        # Script normal
-        return os.path.join(os.path.dirname(__file__), "..", relative_path)
-
 class MESSAGE(QMainWindow):
     def __init__(self):
         super(MESSAGE, self).__init__()
@@ -52,7 +42,7 @@ class MESSAGE(QMainWindow):
     def message_erreur1(self):
         self.setWindowTitle(' ')
         layout = QVBoxLayout()
-        coconfort = os.sep.join([resource_path(""), "media", "coconfort.png"])
+        coconfort = globals.media + "coconfort.png"
         pixmap = QPixmap(coconfort)
         label = QLabel()
         label.setPixmap(pixmap)
@@ -68,7 +58,7 @@ class MESSAGE(QMainWindow):
     def message_erreur2(self):
         self.setWindowTitle(' ')
         layout = QVBoxLayout()
-        coconfort = os.sep.join([resource_path(""), "media", "coconfort.png"])
+        coconfort = globals.media + "coconfort.png"
         pixmap = QPixmap(coconfort)
         label = QLabel()
         label.setPixmap(pixmap)
@@ -85,7 +75,7 @@ class MESSAGE(QMainWindow):
         self.move(100, 200)
         self.setWindowTitle(' ')
         layout = QHBoxLayout()
-        aspicot = resource_path(f"..{os.sep}media{os.sep}aspicot.png")
+        aspicot = globals.media + "aspicot.png"
         pixmap = QPixmap(aspicot)
         label = QLabel()
         label.setPixmap(pixmap)
@@ -149,10 +139,12 @@ class EDIT(QMainWindow):
         self.last_name[self.ZOOM] = insertnow(self.name + self.extension)
 
         try:
+            print(f"Copie du fichier : {self.IN_}{fileName} >> {self.TMP}{self.last_name[self.ZOOM]}")
             shutil.copyfile(self.IN_ + fileName, self.TMP + self.last_name[self.ZOOM])
             logging.info(f"Copie du fichier : {self.IN_}{fileName} >> {self.TMP}{self.last_name[self.ZOOM]}")
             
         except:
+            print("la copie du fichier a échoué")
             pass
 
         self.label = QLabel(self)
@@ -173,13 +165,13 @@ class EDIT(QMainWindow):
         self.show()
     
     def set_dock(self, tabs):
-        search = os.sep.join([resource_path(''), "media", "search.png"])
+        search = globals.media + "search.png"
         self.btn_zoom_1 = QPushButton("  ZOOM IN ")
         self.btn_zoom_1.setIcon(QtGui.QIcon(search))
         self.btn_zoom_1.setFont(QFont('Times', 14))
         self.btn_zoom_1.clicked.connect(partial(self.zoom_in, True))
 
-        fusee = os.sep.join([resource_path(''), "media", "fusee.webp"])
+        fusee = globals.media + "fusee.webp"
         self.btn_zoom_2 = QPushButton("  ZOOM OUT")
         self.btn_zoom_2.setIcon(QtGui.QIcon(fusee))
         self.btn_zoom_2.setFont(QFont('Times', 14))
@@ -188,7 +180,7 @@ class EDIT(QMainWindow):
         self.btn_zoom_1.setEnabled(self.switch_button_zoom_in)
         self.btn_zoom_2.setEnabled(self.switch_button_zoom_out)
 
-        back = os.sep.join([resource_path(''), "media", "back.png"])
+        back = globals.media + "back.png"
         self.btn_cancel = QPushButton("")
         self.btn_cancel.setIcon(QtGui.QIcon(back))
         self.btn_cancel.clicked.connect(self.cancel)
@@ -203,7 +195,7 @@ class EDIT(QMainWindow):
         self.btn_ds_points.setFont(QFont('Times', 13))
         self.btn_ds_points.clicked.connect(partial(self.set_ds_points, switch=self.switch_ds))
 
-        done = os.sep.join([resource_path(""), "media", "done.jpg"])
+        done = globals.media + "done.jpg"
         self.btn_done = QPushButton("  Done")
         self.btn_done.setIcon(QtGui.QIcon(done))
         self.btn_done.setFont(QFont('Times', 14))
@@ -254,7 +246,7 @@ class EDIT(QMainWindow):
         # self.write_results()
         logging.info(f"Les infos ont été ajoutées sur l'image.")
         
-        img = f"{self.OUT}{self.NUM}_out.jpg"
+        img = os.sep.join([self.OUT, f"{self.NUM}_out.jpg"])
         pixmap = QPixmap(img)
         pixmap = pixmap.scaled(self.WIDTH, self.HEIGHT, Qt.KeepAspectRatio, Qt.FastTransformation)
         
@@ -286,7 +278,7 @@ class EDIT(QMainWindow):
         return 0
 
     def add_infos(self):
-        img_path = resource_path(f"{self.OUT}{self.NUM}_out.jpg")
+        img_path = globals.out + f"{self.NUM}_out.jpg"
         img = Image.open(img_path)
         # Create a drawing object
         draw = ImageDraw.Draw(img)
@@ -298,7 +290,7 @@ class EDIT(QMainWindow):
         if np.sign(ds) == 1:
             tt = "+"
         text = f"Abeille #{num}             Indice cubital : {ci}             Angle discoïdal : {tt}{ds}°"
-        font_path = os.sep.join([resource_path(''), "core", "Paul.ttf"])
+        font_path = globals.path + "core" + os.sep + "Paul.ttf"
         font = ImageFont.truetype(font_path, size=40)
         text_color = (255, 0, 0)  # Red color
 
@@ -505,7 +497,7 @@ class EDIT(QMainWindow):
     def zoom_in(self, ZOOM=True):
         #file_wo_zoom, file_w_zoom = self.get_last_file(self.TMP)
         self.ZOOM = ZOOM
-        zm = os.sep.join([resource_path(""), "media", "search.png"])
+        zm = globals.media + "search.png"
         pixmap = QPixmap(zm)
         pixmap = pixmap.scaled(32, 32)
         cursor = QCursor(pixmap, 32, 32)

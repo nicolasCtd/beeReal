@@ -46,18 +46,9 @@ def log_exception(exc_type, exc_value, exc_traceback):
     logging.error("Exception non gérée :", exc_info=(exc_type, exc_value, exc_traceback))
 
 # Remplacer le hook d'exception
-# sys.excepthook = log_exception
+#sys.excepthook = log_exception
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-config_path = resource_path('') + "config.yml"
-
-with open(config_path, 'r') as file:
-    config = yaml.safe_load(file)
-
-classif = config['visu']
-seuil_min_abeilles = config['seuil_min_abeilles']
-
 
 connections_edit = {1:editFile1, 2:editFile2, 3:editFile3, 4:editFile4, 5:editFile5,
                     6:editFile6, 7:editFile7, 8:editFile8, 9:editFile9, 10:editFile10,
@@ -76,7 +67,9 @@ connections_edit = {1:editFile1, 2:editFile2, 3:editFile3, 4:editFile4, 5:editFi
                     71:editFile71, 72:editFile72, 73:editFile73, 74:editFile74, 75:editFile75,
                     76:editFile76, 77:editFile77, 78:editFile78, 79:editFile79, 80:editFile80,
                     81:editFile81, 82:editFile82, 83:editFile83, 84:editFile84, 85:editFile85,
-                    86:editFile86, 87:editFile87, 88:editFile88, 89:editFile89, 90:editFile90}
+                    86:editFile86, 87:editFile87, 88:editFile88, 89:editFile89, 90:editFile90,
+                    91:editFile91, 92:editFile92, 93:editFile93, 94:editFile94, 95:editFile95,
+                    96:editFile96, 97:editFile97, 98:editFile98, 99:editFile99, 100:editFile100}
 
 connections_visu = {1:visu1, 2:visu2, 3:visu3, 4:visu4, 5:visu5,
                        6:visu6, 7:visu7, 8:visu8, 9:visu9, 10:visu10,
@@ -95,7 +88,9 @@ connections_visu = {1:visu1, 2:visu2, 3:visu3, 4:visu4, 5:visu5,
                        71:visu71, 72:visu72, 73:visu73, 74:visu74, 75:visu75,
                        76:visu76, 77:visu77, 78:visu78, 79:visu79, 80:visu80,
                        81:visu81, 82:visu82, 83:visu83, 84:visu84, 85:visu85,
-                       86:visu86, 87:visu87, 88:visu88, 89:visu89, 90:visu90}
+                       86:visu86, 87:visu87, 88:visu88, 89:visu89, 90:visu90,
+                       91:visu91, 92:visu92, 93:visu93, 94:visu94, 95:visu95,
+                       96:visu96, 97:visu97, 98:visu98, 99:visu99, 100:visu100}
 
 connections_load = {1:browseFile1, 2:browseFile2, 3:browseFile3, 4:browseFile4, 5:browseFile5,
                        6:browseFile6, 7:browseFile7, 8:browseFile8, 9:browseFile9, 10:browseFile10,
@@ -114,7 +109,9 @@ connections_load = {1:browseFile1, 2:browseFile2, 3:browseFile3, 4:browseFile4, 
                        71:browseFile71, 72:browseFile72, 73:browseFile73, 74:browseFile74, 75:browseFile75,
                        76:browseFile76, 77:browseFile77, 78:browseFile78, 79:browseFile79, 80:browseFile80,
                        81:browseFile81, 82:browseFile82, 83:browseFile83, 84:browseFile84, 85:browseFile85,
-                       86:browseFile86, 87:browseFile87, 88:browseFile88, 89:browseFile89, 90:browseFile90}
+                       86:browseFile86, 87:browseFile87, 88:browseFile88, 89:browseFile89, 90:browseFile90,
+                       91:browseFile91, 92:browseFile92, 93:browseFile93, 94:browseFile94, 95:browseFile95,
+                       96:browseFile96, 97:browseFile97, 98:browseFile98, 99:browseFile99, 100:browseFile100}
         
 connections_ONOFF = {1:onoff1, 2:onoff2, 3:onoff3, 4:onoff4, 5:onoff5,
                      6:onoff6, 7:onoff7, 8:onoff8, 9:onoff9, 10:onoff10,
@@ -133,8 +130,32 @@ connections_ONOFF = {1:onoff1, 2:onoff2, 3:onoff3, 4:onoff4, 5:onoff5,
                      71:onoff71, 72:onoff72, 73:onoff73, 74:onoff74, 75:onoff75,
                      76:onoff76, 77:onoff77, 78:onoff78, 79:onoff79, 80:onoff80,
                      81:onoff82, 82:onoff82, 83:onoff83, 84:onoff84, 85:onoff85,
-                     86:onoff86, 87:onoff87, 88:onoff88, 89:onoff89, 90:onoff90}
+                     86:onoff86, 87:onoff87, 88:onoff88, 89:onoff89, 90:onoff90,
+                     91:onoff91, 92:onoff92, 93:onoff93, 94:onoff94, 95:onoff95,
+                     96:onoff96, 97:onoff97, 98:onoff98, 99:onoff99, 100:onoff100}
                        
+
+def set_paths():
+    """Retourne le chemin absolu du dossier qui contient le script main.py """
+    if getattr(sys, 'frozen', False):
+        # PyInstaller utilise ce répertoire temporaire
+        globals.out = os.sep.join([sys._MEIPASS, 'out']) + os.sep
+        globals.in_ = os.sep.join([sys._MEIPASS, 'in']) + os.sep
+        globals.tmp = os.sep.join([sys._MEIPASS, 'tmp']) + os.sep
+        globals.logs = os.sep.join([sys._MEIPASS, 'logs']) + os.sep
+        globals.media = os.sep.join([sys._MEIPASS, 'media']) + os.sep
+        globals.path = sys._MEIPASS + os.sep
+
+    else:
+        # Script normal
+        globals.out = os.sep.join([os.path.dirname(__file__), 'out']) + os.sep
+        globals.in_ = os.sep.join([os.path.dirname(__file__), 'in']) + os.sep
+        globals.tmp = os.sep.join([os.path.dirname(__file__), 'tmp']) + os.sep
+        globals.logs = os.sep.join([os.path.dirname(__file__), 'logs']) + os.sep
+        globals.media = os.sep.join([os.path.dirname(__file__), 'media']) + os.sep
+        globals.path = os.path.dirname(__file__) + os.sep
+    
+    return 0
 
 class FolderSelector(QWidget):
     def __init__(self):
@@ -160,16 +181,16 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Bee real")
 
-        self.out = resource_path("") + os.sep + "out"
-        self.in_ = resource_path("") + os.sep + "in"
-        self.tmp = resource_path("") + os.sep + "tmp"
-        self.path = resource_path("")
-        self.logs = resource_path("") + os.sep + "logs"
+        self.out = globals.out
+        self.in_ = globals.in_
+        self.tmp = globals.tmp
+        self.path = globals.path
+        self.logs = globals.logs
 
         if not(self.logs):
             os.makedirs(self.logs)
 
-        log_file = resource_path(self.logs + os.sep + f"logs_{date.today()}.log")
+        log_file = self.logs + os.sep + f"logs_{date.today()}.log"
 
         for handler in logging.root.handlers[:]:
             logging.root.removeHandler(handler)
@@ -281,11 +302,11 @@ class Tabs(QWidget):
     def __init__(self, parent, path): 
         super(QWidget, self).__init__(parent)
 
-        self.out = resource_path("") + os.sep + "out"
-        self.in_ = resource_path("") + os.sep + "in"
-        self.tmp = resource_path("") + os.sep + "tmp"
-        self.logs = resource_path("") + os.sep + "logs"
-        self.path = resource_path("")
+        self.out = globals.out
+        self.in_ = globals.in_
+        self.tmp = globals.tmp
+        self.logs = globals.logs
+        self.path = globals.path
 
         self.RES = {}
         self.analyse_name = str(date.today())
@@ -316,6 +337,8 @@ class Tabs(QWidget):
         self.tab16 = QWidget()
         self.tab17 = QWidget()
         self.tab18 = QWidget()
+        self.tab19 = QWidget()
+        self.tab20 = QWidget()
 
         mf = QFont("Times New Roman", 14)
 
@@ -338,6 +361,8 @@ class Tabs(QWidget):
         self.tabs.addTab(self.tab16, "76-80")
         self.tabs.addTab(self.tab17, "81-85")
         self.tabs.addTab(self.tab18, "85-90")
+        self.tabs.addTab(self.tab19, "90-95")
+        self.tabs.addTab(self.tab20, "95-100")
 
         self.tabs.setFont(QFont('Chalkduster', 13))
         self.tabs.setCurrentIndex(1)
@@ -345,9 +370,11 @@ class Tabs(QWidget):
         self.width = 413
         self.height = 307
 
-        nb_tabs = 18
+        nb_tabs = 20
 
         self.label_left = [QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
+                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
+                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
@@ -383,6 +410,8 @@ class Tabs(QWidget):
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
+                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
+                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                            QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self)]
         
         self.label_results = [QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
@@ -402,15 +431,9 @@ class Tabs(QWidget):
                              QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                              QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                              QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
+                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
+                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
                              QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self)]
-
-        self.browse = {}
-        self.edit = {}
-        self.visu = {}
-        for i in range(1, 101):
-            self.browse[i] = 0
-            self.edit[i] = 0
-            self.visu[i] = 0
 
         self.label_analyses = [QLabel(self), QLabel(self)]
         self.label_analyses[0].setFixedWidth(900)
@@ -464,8 +487,6 @@ class Tabs(QWidget):
         self.btn2.setStyleSheet("QPushButton {background-color: plum}")
         self.btn3.setStyleSheet("QPushButton {background-color: lightblue}")
 
-        # label1.setStyleSheet("border-bottom-width: 1px; border-bottom-style: solid; border-radius: 0px;");
-
         btn1.resize(150, 150)
         btn1.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
@@ -478,13 +499,13 @@ class Tabs(QWidget):
         self.pb.resize(150, 150)
         self.pb.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
-        empty1 = resource_path(f"media{os.sep}empty1.png")
+        empty1 = globals.media + "empty1.png"
         pixmap = QPixmap(empty1)
         image_empty1 = self.label_analyses[0]
         image_empty1.setPixmap(pixmap)
         # image_empty1.setContentsMargins(0, -500, 0, 0)
 
-        empty2 = resource_path(f"media{os.sep}empty2.png")
+        empty2 = globals.media + "empty2.png"
         pixmap = QPixmap(empty2)
         image_empty2 = self.label_analyses[1]
         image_empty2.setPixmap(pixmap)
@@ -494,7 +515,7 @@ class Tabs(QWidget):
         L3, H3 = 300, 200
 
         # cd1 = resource_path(f"images{os.sep}carte_dardagnan1.png")
-        cd1 = resource_path(f"media{os.sep}deco1.jpg")
+        cd1 = globals.media + "deco1.jpg"
         pixmap = QPixmap(cd1)
         deco1 = QLabel(cd1)
         # deco1.setScaledContents(True)
@@ -503,7 +524,7 @@ class Tabs(QWidget):
         deco1.setPixmap(scaled_pixmap)
 
         # cd1 = resource_path(f"images{os.sep}carte_dardagnan1.png")
-        cd2 = resource_path(f"media{os.sep}deco4.jpg")
+        cd2 = globals.media + "deco4.jpg"
         pixmap = QPixmap(cd2)
         deco2 = QLabel(cd2)
         # deco1.setScaledContents(True)
@@ -512,7 +533,7 @@ class Tabs(QWidget):
         deco2.setPixmap(scaled_pixmap)
 
         # cd3 = resource_path(f"images{os.sep}carte_dardagnan3.png")
-        cd3 = resource_path(f"media{os.sep}deco5.png")
+        cd3 = globals.media + "deco5.png"
         pixmap = QPixmap(cd3)
         deco3 = QLabel()
         # deco2.setScaledContents(True)
@@ -562,14 +583,14 @@ class Tabs(QWidget):
                 setBtn.setStyleSheet("background-color: aquamarine")
                 setBtn.clicked.connect(partial(connections_ONOFF[num_image], TABs=self))
 
-                darda = resource_path(f"media{os.sep}dardagnan2.png")
+                darda = globals.media + "dardagnan2.png"
                 pixmap = QPixmap(darda)
                 label = QLabel()
                 label.setPixmap(pixmap)
                 self.grids[-1].addWidget(setBtn, i, 0)
                 self.grids[-1].addWidget(label, i, 1)
 
-                im1 = resource_path(f"media{os.sep}im{num_image}.png")
+                im1 = globals.media + f"im{num_image}.png"
                 pixmap = QPixmap(im1)
                 label_left = self.label_left[num_image-1]
                 label_left.setPixmap(pixmap)
@@ -609,7 +630,7 @@ class Tabs(QWidget):
                 btn2.clicked.connect(partial(connections_edit[num_image], TABs=self))
                 btn3.clicked.connect(partial(connections_visu[num_image], TABs=self))
 
-                darda = resource_path(f"media{os.sep}dardagnan2.png")
+                darda = globals.media + "dardagnan2.png"
 
                 pixmap = QPixmap(darda)
                 darda = QLabel()
@@ -694,6 +715,14 @@ class Tabs(QWidget):
         # # Create 18th tab 
         self.tab18.layout = self.grids[17]
         self.tab18.setLayout(self.tab18.layout)
+
+        # # Create 19th tab 
+        self.tab19.layout = self.grids[18]
+        self.tab19.setLayout(self.tab19.layout)
+
+        # # Create 19th tab 
+        self.tab20.layout = self.grids[19]
+        self.tab20.setLayout(self.tab20.layout)
 
         # Final step
         # #######
@@ -861,9 +890,22 @@ if __name__ == '__main__':
     screen = app.screens()[0]
     dpi = screen.physicalDotsPerInch()
 
+    set_paths()
+
+    config_path = globals.path + "config.yml"
+
+    with open(config_path, 'r') as file:
+        config = yaml.safe_load(file)
+
+    classif = config['visu']
+    seuil_min_abeilles = config['seuil_min_abeilles']
+
+    print("aaabb")
+    print(globals.path)
+
     if 0:
         player = QMediaPlayer()
-        url = QUrl.fromLocalFile(resource_path("") + "/media/future.mp3" )
+        url = QUrl.fromLocalFile(globals.media + "future.mp3" )
         logging.info(url)
         player.setMedia(QMediaContent(url))
         player.setVolume(100)

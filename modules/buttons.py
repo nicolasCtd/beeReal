@@ -4,6 +4,9 @@ from core import common
 import os
 from PyQt5.QtCore import Qt
 import numpy as np
+from PIL import Image
+import logging
+from modules import globals
 
 def turnToGrayImages(TABs, num):
     a = TABs.label_left[num-1].grab()                       # get QPixmap
@@ -19,7 +22,7 @@ def turnToGrayImages(TABs, num):
     TABs.label_right[num-1].setPixmap(c)
 
     num_grid = (num-1) // 5
-    darda = common.resource_path(f"media{os.sep}dardagnan2_bw.png")
+    darda = globals.media + "dardagnan2_bw.png"
     pixmap = QPixmap(darda)
     label1 = QLabel()
     label2 = QLabel()
@@ -96,3 +99,9 @@ def turnToRGBImages(TABs, num):
     TXT.setText(TXT.text())
 
     return 0
+
+def save_image(nameFile, destination, num):
+    print(f'Image {num} : ' + destination + os.sep + f'{num}_in.jpg')
+    img = Image.open(nameFile)
+    img.save(destination + os.sep + f'{num}_in.jpg')
+    logging.info(f'Image {num} : ' + destination + os.sep + f'{num}_in.jpg')
