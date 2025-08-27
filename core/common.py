@@ -215,7 +215,7 @@ class EDIT(QMainWindow):
     def validate_editing(self, tabs):
         file_wo_zoom, file_w_zoom = self.get_last_file(self.TMP)
         im = IMAGE()
-        # img = resource_path(f"{self.TMP}{file_wo_zoom}")
+
         img = self.TMP + file_wo_zoom
         im.load(img)
         im.ci_points = sort_ci_points(self.ci_points)
@@ -270,11 +270,6 @@ class EDIT(QMainWindow):
 
         globals.edited[self.NUM] = 1
 
-        #print(self.isMaximized)
-        # tabs.adjustSize()
-        # tabs.repaint()
-        #tabs.showMaximized()
-
         return 0
 
     def add_infos(self):
@@ -290,7 +285,7 @@ class EDIT(QMainWindow):
         if np.sign(ds) == 1:
             tt = "+"
         text = f"Abeille #{num}             Indice cubital : {ci}             Angle discoïdal : {tt}{ds}°"
-        font_path = globals.path + "core" + os.sep + "Paul.ttf"
+        font_path = globals.media + "Paul.ttf"
         font = ImageFont.truetype(font_path, size=40)
         text_color = (255, 0, 0)  # Red color
 

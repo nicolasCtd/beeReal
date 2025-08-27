@@ -34,7 +34,7 @@ from datetime import date
 from modules import globals
 
 from PyQt5.QtCore import QUrl
-from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
+from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent, QAudioOutput
 
 # Définir une fonction pour attraper toutes les exceptions non gérées
 def log_exception(exc_type, exc_value, exc_traceback):
@@ -133,7 +133,6 @@ connections_ONOFF = {1:onoff1, 2:onoff2, 3:onoff3, 4:onoff4, 5:onoff5,
                      86:onoff86, 87:onoff87, 88:onoff88, 89:onoff89, 90:onoff90,
                      91:onoff91, 92:onoff92, 93:onoff93, 94:onoff94, 95:onoff95,
                      96:onoff96, 97:onoff97, 98:onoff98, 99:onoff99, 100:onoff100}
-                       
 
 def set_paths():
     """Retourne le chemin absolu du dossier qui contient le script main.py """
@@ -143,8 +142,10 @@ def set_paths():
         globals.in_ = os.sep.join([sys._MEIPASS, 'in']) + os.sep
         globals.tmp = os.sep.join([sys._MEIPASS, 'tmp']) + os.sep
         globals.logs = os.sep.join([sys._MEIPASS, 'logs']) + os.sep
+        # globals.logs = sys._MEIPASS + "/../"
         globals.media = os.sep.join([sys._MEIPASS, 'media']) + os.sep
         globals.path = sys._MEIPASS + os.sep
+        globals.future = os.sep.join([sys._MEIPASS, 'media', 'future.mp3'])
 
     else:
         # Script normal
@@ -154,6 +155,7 @@ def set_paths():
         globals.logs = os.sep.join([os.path.dirname(__file__), 'logs']) + os.sep
         globals.media = os.sep.join([os.path.dirname(__file__), 'media']) + os.sep
         globals.path = os.path.dirname(__file__) + os.sep
+        globals.future = os.sep.join([os.path.dirname(__file__), 'media', 'future.mp3'])
     
     return 0
 
@@ -173,7 +175,6 @@ class FolderSelector(QWidget):
         folder_path = QFileDialog.getExistingDirectory(self, 'Select Folder')
         print('Selected Folder:', folder_path)
 
-
 class MainWindow(QMainWindow):
     
     def __init__(self):
@@ -186,6 +187,7 @@ class MainWindow(QMainWindow):
         self.tmp = globals.tmp
         self.path = globals.path
         self.logs = globals.logs
+        self.son = True
 
         if not(self.logs):
             os.makedirs(self.logs)
@@ -279,6 +281,9 @@ class MainWindow(QMainWindow):
 
         self.showMaximized()
 
+
+
+
     def close_all_windows(self):
         win_list = QApplication.allWindows()
         for w in win_list:
@@ -307,6 +312,9 @@ class Tabs(QWidget):
         self.tmp = globals.tmp
         self.logs = globals.logs
         self.path = globals.path
+
+        self.player = QMediaPlayer()
+        self.play(globals.future)
 
         self.RES = {}
         self.analyse_name = str(date.today())
@@ -461,6 +469,12 @@ class Tabs(QWidget):
         label2 = QLabel("<u>Indice Cubital / Discoidal shift<u>")
         # self.edit_analyse_name = QLineEdit()
 
+        self.son = QPushButton("")
+        self.son.setIcon(QtGui.QIcon(globals.media + "son_on.png"))
+        self.son.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        self.son.resize(50, 50)
+        self.son.clicked.connect(self.mute)
+
         self.btn_extra_plot = QPushButton(f"Add histogram")
         self.btn_extra_plot.setEnabled(self.switch_extra_plot)
 
@@ -543,9 +557,10 @@ class Tabs(QWidget):
 
         # deco.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
-        layout_main_1.addWidget(label0, 0, 0, 1, 3)
-        layout_main_1.addWidget(self.label00, 0, 4, 1, 3)
-        layout_main_1.addWidget(self.pb, 0, 8, 1, 3)
+        layout_main_1.addWidget(label0, 0+1, 0, 1, 3)
+        layout_main_1.addWidget(self.label00, 0+1, 4, 1, 3)
+        layout_main_1.addWidget(self.pb, 0+1, 8, 1, 3)
+        layout_main_1.addWidget(self.son, 0, 0, 1, 3)
         layout_main_1.addWidget(btn1, 1, 0, 2, 2)
         layout_main_1.addWidget(self.btn2, 1, 4, 2, 2)
         layout_main_1.addWidget(self.btn3, 1, 8, 2, 2)
@@ -731,6 +746,30 @@ class Tabs(QWidget):
 
         self.tabs.setCurrentIndex(0)
 
+                        
+    def play(self, file):
+        url = QUrl.fromLocalFile(file)
+        content = QMediaContent(url)
+        self.player.setMedia(content)
+        self.player.setVolume(50)
+        self.player.play()
+        self.muted = False
+
+    def mute(self):
+        self.muted = not(self.muted)
+        self.player.setMuted(self.muted)
+
+        if not(self.muted):
+            icon = "son_on.png"
+        else:
+            icon = "son_off.png"
+
+        self.son.setIcon(QtGui.QIcon(globals.media + icon))
+        self.son.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        self.son.resize(50, 50)
+
+        return 0
+
     def edit_name(self):
         text, okPressed = QInputDialog.getText(self, " ", "Entrer le nom de l'analyse :", QLineEdit.Normal, "")
         if okPressed and text != '':
@@ -799,6 +838,8 @@ class Tabs(QWidget):
                 cla = H.get_classes([float(ci)])
                 self.label_results[num_abeille-1].setText(
                     f"<u>Abeille #{num_abeille}</u> <br /> Ci : {ci} <br /> Ds : {ds}° <br /> Classe : {cla}")
+                globals.edited[num_abeille] = 1
+                globals.loaded[num_abeille] = 1
             for file in os.listdir(self.in_):
                 num_abeille = int(file.split("_")[0])
                 if num_abeille not in self.RES.keys():
@@ -891,7 +932,7 @@ if __name__ == '__main__':
     dpi = screen.physicalDotsPerInch()
 
     set_paths()
-
+        
     config_path = globals.path + "config.yml"
 
     with open(config_path, 'r') as file:
@@ -899,17 +940,6 @@ if __name__ == '__main__':
 
     classif = config['visu']
     seuil_min_abeilles = config['seuil_min_abeilles']
-
-    print("aaabb")
-    print(globals.path)
-
-    if 0:
-        player = QMediaPlayer()
-        url = QUrl.fromLocalFile(globals.media + "future.mp3" )
-        logging.info(url)
-        player.setMedia(QMediaContent(url))
-        player.setVolume(100)
-        player.play()
 
     window = MainWindow()
 

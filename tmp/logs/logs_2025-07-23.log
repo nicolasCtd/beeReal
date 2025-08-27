@@ -1,0 +1,479 @@
+2025-07-23 00:03:38,975 - INFO - Démarrage du programme
+2025-07-23 00:03:38,975 - INFO - nettoyage du dossier 'out' : C:\Users\nicol\Documents\Bee real\out
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\10_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\11_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\12_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\13_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\14_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\15_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\1_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\2_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\3_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\4_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\5_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\6_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\7_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\8_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\9_out.jpg
+2025-07-23 00:03:38,981 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\out\results.txt
+2025-07-23 00:03:38,981 - INFO - nettoyage du dossier 'in' : C:\Users\nicol\Documents\Bee real\in
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\10_in.jpg
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\11_in.jpg
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\12_in.jpg
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\13_in.jpg
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\14_in.jpg
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\15_in.jpg
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\1_in.jpg
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\2_in.jpg
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\3_in.jpg
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\4_in.jpg
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\5_in.jpg
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\6_in.jpg
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\7_in.jpg
+2025-07-23 00:03:38,983 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\8_in.jpg
+2025-07-23 00:03:38,985 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\in\9_in.jpg
+2025-07-23 00:03:38,985 - INFO - nettoyage du dossier 'tmp' : C:\Users\nicol\Documents\Bee real\tmp
+2025-07-23 00:03:38,987 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\tmp\10
+2025-07-23 00:03:38,989 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\tmp\11
+2025-07-23 00:03:38,989 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\tmp\12
+2025-07-23 00:03:38,989 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\tmp\13
+2025-07-23 00:03:38,989 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\tmp\14
+2025-07-23 00:03:38,989 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\tmp\15
+2025-07-23 00:03:38,989 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\tmp\6
+2025-07-23 00:03:38,989 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\tmp\7
+2025-07-23 00:03:38,989 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\tmp\8
+2025-07-23 00:03:38,989 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\tmp\9
+2025-07-23 00:03:38,989 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\tmp\in
+2025-07-23 00:03:38,989 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\tmp\logs
+2025-07-23 00:03:39,005 - INFO - suppression du fichier C:\Users\nicol\Documents\Bee real\tmp\out
+2025-07-23 00:03:39,005 - INFO - Génération du fichier de résultats C:\Users\nicol\Documents\Bee real\out\results.txt
+2025-07-23 00:03:56,694 - INFO - Chargement du projet 'C:/Users/nicol/Documents/ABEILLES/etudes/ma_ruche_v1_15.zip'
+2025-07-23 00:03:56,764 - INFO - Affichage dans l'IHM des valeurs Ci et Ds
+2025-07-23 00:03:56,764 - INFO - Abeille n°1
+2025-07-23 00:03:56,764 - INFO - Ci : 1.77, Ds : +3.88°
+2025-07-23 00:03:56,764 - INFO - Abeille n°2
+2025-07-23 00:03:56,764 - INFO - Ci : 2.38, Ds : +1.05°
+2025-07-23 00:03:56,764 - INFO - Abeille n°3
+2025-07-23 00:03:56,764 - INFO - Ci : 2.91, Ds : +0.26°
+2025-07-23 00:03:56,767 - INFO - Abeille n°4
+2025-07-23 00:03:56,767 - INFO - Ci : 2.56, Ds : -2.08°
+2025-07-23 00:03:56,767 - INFO - Abeille n°5
+2025-07-23 00:03:56,767 - INFO - Ci : 2.07, Ds : +2.16°
+2025-07-23 00:03:56,767 - INFO - Abeille n°6
+2025-07-23 00:03:56,767 - INFO - Ci : 2.29, Ds : -1.51°
+2025-07-23 00:03:56,767 - INFO - Abeille n°7
+2025-07-23 00:03:56,767 - INFO - Ci : 2.48, Ds : +4.39°
+2025-07-23 00:03:56,767 - INFO - Abeille n°8
+2025-07-23 00:03:56,767 - INFO - Ci : 2.13, Ds : +2.5°
+2025-07-23 00:03:56,767 - INFO - Abeille n°9
+2025-07-23 00:03:56,767 - INFO - Ci : 2.16, Ds : +0.97°
+2025-07-23 00:03:56,767 - INFO - Abeille n°10
+2025-07-23 00:03:56,767 - INFO - Ci : 2.21, Ds : +4.0°
+2025-07-23 00:03:56,767 - INFO - Abeille n°11
+2025-07-23 00:03:56,767 - INFO - Ci : 1.99, Ds : +4.34°
+2025-07-23 00:03:56,767 - INFO - Abeille n°12
+2025-07-23 00:03:56,767 - INFO - Ci : 1.65, Ds : +2.03°
+2025-07-23 00:03:56,767 - INFO - Abeille n°13
+2025-07-23 00:03:56,767 - INFO - Ci : 2.97, Ds : +5.75°
+2025-07-23 00:03:56,767 - INFO - Abeille n°14
+2025-07-23 00:03:56,767 - INFO - Ci : 2.42, Ds : -2.05°
+2025-07-23 00:03:56,767 - INFO - Abeille n°15
+2025-07-23 00:03:56,767 - INFO - Ci : 2.75, Ds : +1.32°
+2025-07-23 00:04:12,333 - INFO - Image n°16 : C:\Users\nicol\Documents\Bee real\in\16_in.jpg
+2025-07-23 00:04:14,560 - INFO - Edition de l'image : 16_in.jpg
+2025-07-23 00:04:14,560 - INFO - Création du répertoire : C:\Users\nicol\Documents\Bee real\\tmp\16\
+2025-07-23 00:04:14,561 - INFO - Copie du fichier : C:\Users\nicol\Documents\Bee real\\in\16_in.jpg >> C:\Users\nicol\Documents\Bee real\\tmp\16\16_in___23_07_2025___00_04_14.jpg
+2025-07-23 00:04:14,598 - INFO - Edition de l'image n°16
+2025-07-23 00:04:14,598 - INFO - ----------------------
+2025-07-23 00:05:03,087 - INFO - Point Ci n°1 : (i,j)=(313, 1196)
+2025-07-23 00:05:03,087 - INFO - Point Ci n°2 : (i,j)=(331, 1303)
+2025-07-23 00:05:03,087 - INFO - Point Ci n°3 : (i,j)=(314, 1339)
+2025-07-23 00:05:03,087 - INFO - ----------------------
+2025-07-23 00:05:03,087 - INFO - Point Ds n°1 : (i,j)=(216, 880)
+2025-07-23 00:05:03,087 - INFO - Point Ds n°2 : (i,j)=(200, 1152)
+2025-07-23 00:05:03,087 - INFO - Point Ds n°3 : (i,j)=(90, 1531)
+2025-07-23 00:05:03,087 - INFO - Point Ds n°4 : (i,j)=(496, 1226)
+2025-07-23 00:05:03,120 - INFO - Indice cubital Abeille #16) : 2.7253917612640444
+2025-07-23 00:05:03,121 - INFO - Shift discoidal Abeille #16) : 3.06508475°
+2025-07-23 00:05:03,134 - INFO - Image sauvegardée : C:\Users\nicol\Documents\Bee real\\out\16_out.jpg
+2025-07-23 00:05:03,149 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 00:05:15,362 - INFO - Image n°17 : C:\Users\nicol\Documents\Bee real\in\17_in.jpg
+2025-07-23 00:05:16,357 - INFO - Edition de l'image : 17_in.jpg
+2025-07-23 00:05:16,358 - INFO - Création du répertoire : C:\Users\nicol\Documents\Bee real\\tmp\17\
+2025-07-23 00:05:16,358 - INFO - Copie du fichier : C:\Users\nicol\Documents\Bee real\\in\17_in.jpg >> C:\Users\nicol\Documents\Bee real\\tmp\17\17_in___23_07_2025___00_05_16.jpg
+2025-07-23 00:05:16,391 - INFO - Edition de l'image n°17
+2025-07-23 00:05:16,391 - INFO - ----------------------
+2025-07-23 00:05:57,015 - INFO - Point Ci n°1 : (i,j)=(304, 1333)
+2025-07-23 00:05:57,015 - INFO - Point Ci n°2 : (i,j)=(319, 1432)
+2025-07-23 00:05:57,015 - INFO - Point Ci n°3 : (i,j)=(297, 1478)
+2025-07-23 00:05:57,015 - INFO - ----------------------
+2025-07-23 00:05:57,015 - INFO - Point Ds n°1 : (i,j)=(232, 1034)
+2025-07-23 00:05:57,015 - INFO - Point Ds n°2 : (i,j)=(197, 1315)
+2025-07-23 00:05:57,015 - INFO - Point Ds n°3 : (i,j)=(76, 1639)
+2025-07-23 00:05:57,015 - INFO - Point Ds n°4 : (i,j)=(471, 1376)
+2025-07-23 00:05:57,048 - INFO - Indice cubital Abeille #17) : 1.963709206108136
+2025-07-23 00:05:57,048 - INFO - Shift discoidal Abeille #17) : -1.93008765°
+2025-07-23 00:05:57,062 - INFO - Image sauvegardée : C:\Users\nicol\Documents\Bee real\\out\17_out.jpg
+2025-07-23 00:05:57,078 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 00:06:01,420 - INFO - Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI
+2025-07-23 00:06:01,420 - INFO - calcul de l'histogramme de l'indice cubital
+2025-07-23 00:06:32,249 - INFO - Image n°18 : C:\Users\nicol\Documents\Bee real\in\18_in.jpg
+2025-07-23 00:06:33,014 - INFO - Edition de l'image : 18_in.jpg
+2025-07-23 00:06:33,014 - INFO - Création du répertoire : C:\Users\nicol\Documents\Bee real\\tmp\18\
+2025-07-23 00:06:33,015 - INFO - Copie du fichier : C:\Users\nicol\Documents\Bee real\\in\18_in.jpg >> C:\Users\nicol\Documents\Bee real\\tmp\18\18_in___23_07_2025___00_06_33.jpg
+2025-07-23 00:06:33,045 - INFO - Edition de l'image n°18
+2025-07-23 00:06:33,045 - INFO - ----------------------
+2025-07-23 00:07:17,971 - INFO - Point Ci n°1 : (i,j)=(339, 1231)
+2025-07-23 00:07:17,972 - INFO - Point Ci n°2 : (i,j)=(349, 1336)
+2025-07-23 00:07:17,972 - INFO - Point Ci n°3 : (i,j)=(327, 1383)
+2025-07-23 00:07:17,972 - INFO - ----------------------
+2025-07-23 00:07:17,972 - INFO - Point Ds n°1 : (i,j)=(275, 898)
+2025-07-23 00:07:17,972 - INFO - Point Ds n°2 : (i,j)=(228, 1194)
+2025-07-23 00:07:17,972 - INFO - Point Ds n°32025-07-23 19:47:18,325 - INFO - Affichage dans l'IHM des valeurs Ci et Ds
+2025-07-23 19:47:18,325 - INFO - Abeille n°1
+2025-07-23 19:47:18,325 - INFO - Ci : 1.77, Ds : +3.88°
+2025-07-23 19:47:18,341 - INFO - Abeille n°2
+2025-07-23 19:47:18,341 - INFO - Ci : 2.38, Ds : +1.05°
+2025-07-23 19:47:18,341 - INFO - Abeille n°3
+2025-07-23 19:47:18,341 - INFO - Ci : 2.91, Ds : +0.26°
+2025-07-23 19:47:18,341 - INFO - Abeille n°4
+2025-07-23 19:47:18,341 - INFO - Ci : 2.56, Ds : -2.08°
+2025-07-23 19:47:18,341 - INFO - Abeille n°5
+2025-07-23 19:47:18,341 - INFO - Ci : 2.07, Ds : +2.16°
+2025-07-23 19:47:18,341 - INFO - Abeille n°6
+2025-07-23 19:47:18,341 - INFO - Ci : 2.29, Ds : -1.51°
+2025-07-23 19:47:18,341 - INFO - Abeille n°7
+2025-07-23 19:47:18,341 - INFO - Ci : 2.48, Ds : +4.39°
+2025-07-23 19:47:18,341 - INFO - Abeille n°8
+2025-07-23 19:47:18,341 - INFO - Ci : 2.13, Ds : +2.5°
+2025-07-23 19:47:18,341 - INFO - Abeille n°9
+2025-07-23 19:47:18,341 - INFO - Ci : 2.16, Ds : +0.97°
+2025-07-23 19:47:18,341 - INFO - Abeille n°10
+2025-07-23 19:47:18,341 - INFO - Ci : 2.21, Ds : +4.0°
+2025-07-23 19:47:18,341 - INFO - Abeille n°11
+2025-07-23 19:47:18,341 - INFO - Ci : 1.99, Ds : +4.34°
+2025-07-23 19:47:18,341 - INFO - Abeille n°12
+2025-07-23 19:47:18,341 - INFO - Ci : 1.65, Ds : +2.03°
+2025-07-23 19:47:18,341 - INFO - Abeille n°13
+2025-07-23 19:47:18,341 - INFO - Ci : 2.97, Ds : +5.75°
+2025-07-23 19:47:18,341 - INFO - Abeille n°14
+2025-07-23 19:47:18,341 - INFO - Ci : 2.42, Ds : -2.05°
+2025-07-23 19:47:18,341 - INFO - Abeille n°15
+2025-07-23 19:47:18,341 - INFO - Ci : 2.75, Ds : +1.32°
+2025-07-23 19:47:18,341 - INFO - Abeille n°16
+2025-07-23 19:47:18,341 - INFO - Ci : 2.72, Ds : +3.06°
+2025-07-23 19:47:18,341 - INFO - Abeille n°17
+2025-07-23 19:47:18,341 - INFO - Ci : 1.96, Ds : -1.93°
+2025-07-23 19:47:18,341 - INFO - Abeille n°18
+2025-07-23 19:47:18,341 - INFO - Ci : 2.03, Ds : +0.07°
+2025-07-23 19:47:18,341 - INFO - Abeille n°19
+2025-07-23 19:47:18,341 - INFO - Ci : 2.91, Ds : -0.5°
+2025-07-23 19:47:18,341 - INFO - Abeille n°20
+2025-07-23 19:47:18,341 - INFO - Ci : 2.27, Ds : +0.06°
+2025-07-23 19:47:18,341 - INFO - Abeille n°21
+2025-07-23 19:47:18,341 - INFO - Ci : 2.82, Ds : +5.07°
+2025-07-23 19:47:18,341 - INFO - Abeille n°22
+2025-07-23 19:47:18,341 - INFO - Ci : 0.64, Ds : +3.17°
+2025-07-23 19:47:18,341 - INFO - Abeille n°23
+2025-07-23 19:47:18,341 - INFO - Ci : 1.85, Ds : +2.2°
+2025-07-23 19:47:18,341 - INFO - Abeille n°24
+2025-07-23 19:47:18,341 - INFO - Ci : 2.77, Ds : +8.26°
+2025-07-23 19:47:18,341 - INFO - Abeille n°25
+2025-07-23 19:47:18,341 - INFO - Ci : 2.35, Ds : -1.28°
+2025-07-23 19:47:18,341 - INFO - Abeille n°26
+2025-07-23 19:47:18,341 - INFO - Ci : 2.06, Ds : +0.0°
+2025-07-23 19:47:18,341 - INFO - Abeille n°27
+2025-07-23 19:47:18,341 - INFO - Ci : 2.47, Ds : -1.63°
+2025-07-23 19:47:18,341 - INFO - Abeille n°28
+2025-07-23 19:47:18,341 - INFO - Ci : 1.69, Ds : +3.34°
+2025-07-23 19:47:18,341 - INFO - Abeille n°29
+2025-07-23 19:47:18,341 - INFO - Ci : 1.7, Ds : +2.44°
+2025-07-23 19:47:18,341 - INFO - Abeille n°30
+2025-07-23 19:47:18,341 - INFO - Ci : 1.77, Ds : +1.65°
+2025-07-23 19:47:18,341 - INFO - Abeille n°31
+2025-07-23 19:47:18,341 - INFO - Ci : 2.28, Ds : +2.6°
+2025-07-23 19:47:18,341 - INFO - Abeille n°32
+2025-07-23 19:47:18,341 - INFO - Ci : 2.03, Ds : +1.84°
+2025-07-23 19:47:18,341 - INFO - Abeille n°33
+2025-07-23 19:47:18,341 - INFO - Ci : 2.35, Ds : -1.92°
+2025-07-23 19:47:18,341 - INFO - Abeille n°34
+2025-07-23 19:47:18,341 - INFO - Ci : 1.71, Ds : +1.17°
+2025-07-23 19:47:18,341 - INFO - Abeille n°35
+2025-07-23 19:47:18,341 - INFO - Ci : 1.69, Ds : +2.81°
+2025-07-23 19:47:31,099 - INFO - Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI
+2025-07-23 19:47:31,099 - INFO - calcul de l'histogramme de l'indice cubital
+2025-07-23 19:48:05,624 - INFO - Image n°36 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\36_in.jpg
+2025-07-23 19:48:06,670 - INFO - Edition de l'image : 36_in.jpg
+2025-07-23 19:48:06,670 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\36\
+2025-07-23 19:48:06,679 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\36_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\36\36_in___23_07_2025___19_48_06.jpg
+2025-07-23 19:48:06,745 - INFO - Edition de l'image n°36
+2025-07-23 19:48:06,745 - INFO - ----------------------
+2025-07-23 19:48:47,282 - INFO - Point Ci n°1 : (i,j)=(318, 1440)
+2025-07-23 19:48:47,283 - INFO - Point Ci n°2 : (i,j)=(335, 1542)
+2025-07-23 19:48:47,283 - INFO - Point Ci n°3 : (i,j)=(317, 1583)
+2025-07-23 19:48:47,283 - INFO - ----------------------
+2025-07-23 19:48:47,283 - INFO - Point Ds n°1 : (i,j)=(222, 1120)
+2025-07-23 19:48:47,283 - INFO - Point Ds n°2 : (i,j)=(203, 1413)
+2025-07-23 19:48:47,283 - INFO - Point Ds n°3 : (i,j)=(92, 1776)
+2025-07-23 19:48:47,283 - INFO - Point Ds n°4 : (i,j)=(489, 1462)
+2025-07-23 19:48:47,319 - INFO - Indice cubital Abeille #36) : 2.309365082072184
+2025-07-23 19:48:47,319 - INFO - Shift discoidal Abeille #36) : -1.58791446°
+2025-07-23 19:48:47,333 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\36_out.jpg
+2025-07-23 19:48:47,355 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 19:48:56,856 - INFO - Image n°37 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\37_in.jpg
+2025-07-23 19:49:01,797 - INFO - Edition de l'image : 37_in.jpg
+2025-07-23 19:49:01,797 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\37\
+2025-07-23 19:49:01,806 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\37_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\37\37_in___23_07_2025___19_49_01.jpg
+2025-07-23 19:49:01,836 - INFO - Edition de l'image n°37
+2025-07-23 19:49:01,836 - INFO - ----------------------
+2025-07-23 19:49:44,010 - INFO - Point Ci n°1 : (i,j)=(286, 1235)
+2025-07-23 19:49:44,010 - INFO - Point Ci n°2 : (i,j)=(304, 1345)
+2025-07-23 19:49:44,011 - INFO - Point Ci n°3 : (i,j)=(289, 1391)
+2025-07-23 19:49:44,011 - INFO - ----------------------
+2025-07-23 19:49:44,011 - INFO - Point Ds n°1 : (i,j)=(186, 934)
+2025-07-23 19:49:44,011 - INFO - Point Ds n°2 : (i,j)=(173, 1225)
+2025-07-23 19:49:44,011 - INFO - Point Ds n°3 : (i,j)=(69, 1579)
+2025-07-23 19:49:44,011 - INFO - Point Ds n°4 : (i,j)=(453, 1275)
+2025-07-23 19:49:44,043 - INFO - Indice cubital Abeille #37) : 2.3037217070526324
+2025-07-23 19:49:44,043 - INFO - Shift discoidal Abeille #37) : 0.°
+2025-07-23 19:49:44,055 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\37_out.jpg
+2025-07-23 19:49:44,068 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 19:49:52,647 - INFO - Image n°38 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\38_in.jpg
+2025-07-23 19:49:53,503 - INFO - Edition de l'image : 38_in.jpg
+2025-07-23 19:49:53,503 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\38\
+2025-07-23 19:49:53,511 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\38_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\38\38_in___23_07_2025___19_49_53.jpg
+2025-07-23 19:49:53,540 - INFO - Edition de l'image n°38
+2025-07-23 19:49:53,540 - INFO - ----------------------
+2025-07-23 19:50:40,034 - INFO - Point Ci n°1 : (i,j)=(311, 1377)
+2025-07-23 19:50:40,034 - INFO - Point Ci n°2 : (i,j)=(332, 1479)
+2025-07-23 19:50:40,034 - INFO - Point Ci n°3 : (i,j)=(316, 1529)
+2025-07-23 19:50:40,034 - INFO - ----------------------
+2025-07-23 19:50:40,034 - INFO - Point Ds n°1 : (i,j)=(209, 1080)
+2025-07-23 19:50:40,034 - INFO - Point Ds n°2 : (i,j)=(193, 1359)
+2025-07-23 19:50:40,034 - INFO - Point Ds n°3 : (i,j)=(98, 1717)
+2025-07-23 19:50:40,034 - INFO - Point Ds n°4 : (i,j)=(475, 1417)
+2025-07-23 19:50:40,070 - INFO - Indice cubital Abeille #38) : 1.983696246469793
+2025-07-23 19:50:40,071 - INFO - Shift discoidal Abeille #38) : 1.74216601°
+2025-07-23 19:50:40,084 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\38_out.jpg
+2025-07-23 19:50:40,098 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 19:50:50,943 - INFO - Image n°39 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\39_in.jpg
+2025-07-23 19:50:52,914 - INFO - Edition de l'image : 39_in.jpg
+2025-07-23 19:50:52,915 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\39\
+2025-07-23 19:50:52,922 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\39_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\39\39_in___23_07_2025___19_50_52.jpg
+2025-07-23 19:50:52,951 - INFO - Edition de l'image n°39
+2025-07-23 19:50:52,951 - INFO - ----------------------
+2025-07-23 19:51:32,986 - INFO - Point Ci n°1 : (i,j)=(299, 1379)
+2025-07-23 19:51:32,986 - INFO - Point Ci n°2 : (i,j)=(318, 1482)
+2025-07-23 19:51:32,986 - INFO - Point Ci n°3 : (i,j)=(298, 1540)
+2025-07-23 19:51:32,986 - INFO - ----------------------
+2025-07-23 19:51:32,986 - INFO - Point Ds n°1 : (i,j)=(201, 1091)
+2025-07-23 19:51:32,986 - INFO - Point Ds n°2 : (i,j)=(186, 1356)
+2025-07-23 19:51:32,986 - INFO - Point Ds n°3 : (i,j)=(80, 1726)
+2025-07-23 19:51:32,986 - INFO - Point Ds n°4 : (i,j)=(466, 1426)
+2025-07-23 19:51:33,019 - INFO - Indice cubital Abeille #39) : 1.7071768244335745
+2025-07-23 19:51:33,019 - INFO - Shift discoidal Abeille #39) : 3.2467731°
+2025-07-23 19:51:33,032 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\39_out.jpg
+2025-07-23 19:51:33,046 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 19:51:42,853 - INFO - Image n°40 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\40_in.jpg
+2025-07-23 19:51:44,029 - INFO - Edition de l'image : 40_in.jpg
+2025-07-23 19:51:44,029 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\40\
+2025-07-23 19:51:44,036 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\40_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\40\40_in___23_07_2025___19_51_44.jpg
+2025-07-23 19:51:44,066 - INFO - Edition de l'image n°40
+2025-07-23 19:51:44,067 - INFO - ----------------------
+2025-07-23 19:52:20,217 - INFO - Point Ci n°1 : (i,j)=(331, 1398)
+2025-07-23 19:52:20,217 - INFO - Point Ci n°2 : (i,j)=(341, 1507)
+2025-07-23 19:52:20,217 - INFO - Point Ci n°3 : (i,j)=(322, 1547)
+2025-07-23 19:52:20,218 - INFO - ----------------------
+2025-07-23 19:52:20,218 - INFO - Point Ds n°1 : (i,j)=(255, 1091)
+2025-07-23 19:52:20,218 - INFO - Point Ds n°2 : (i,j)=(222, 1345)
+2025-07-23 19:52:20,218 - INFO - Point Ds n°3 : (i,j)=(79, 1716)
+2025-07-23 19:52:20,218 - INFO - Point Ds n°4 : (i,j)=(506, 1456)
+2025-07-23 19:52:20,256 - INFO - Indice cubital Abeille #40) : 2.4717681808427376
+2025-07-23 19:52:20,256 - INFO - Shift discoidal Abeille #40) : 5.56935651°
+2025-07-23 19:52:20,271 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\40_out.jpg
+2025-07-23 19:52:20,286 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 19:52:46,011 - INFO - L'analyse 'ma_ruche_v1_40' a bien été enregistrée dans C:/Users/nicol/Documents/ABEILLES/etudes
+2025-07-23 19:52:49,424 - INFO - Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI
+2025-07-23 19:52:49,424 - INFO - calcul de l'histogramme de l'indice cubital
+2025-07-23 19:53:37,639 - INFO - Image n°41 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\41_in.jpg
+2025-07-23 19:53:38,860 - INFO - Edition de l'image : 41_in.jpg
+2025-07-23 19:53:38,861 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\41\
+2025-07-23 19:53:38,870 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\41_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\41\41_in___23_07_2025___19_53_38.jpg
+2025-07-23 19:53:38,902 - INFO - Edition de l'image n°41
+2025-07-23 19:53:38,902 - INFO - ----------------------
+2025-07-23 19:54:19,794 - INFO - Point Ci n°1 : (i,j)=(290, 1394)
+2025-07-23 19:54:19,795 - INFO - Point Ci n°2 : (i,j)=(310, 1489)
+2025-07-23 19:54:19,795 - INFO - Point Ci n°3 : (i,j)=(294, 1536)
+2025-07-23 19:54:19,795 - INFO - ----------------------
+2025-07-23 19:54:19,795 - INFO - Point Ds n°1 : (i,j)=(201, 1082)
+2025-07-23 19:54:19,795 - INFO - Point Ds n°2 : (i,j)=(178, 1343)
+2025-07-23 19:54:19,795 - INFO - Point Ds n°3 : (i,j)=(71, 1719)
+2025-07-23 19:54:19,795 - INFO - Point Ds n°4 : (i,j)=(459, 1426)
+2025-07-23 19:54:19,829 - INFO - Indice cubital Abeille #41) : 1.9553847221876073
+2025-07-23 19:54:19,829 - INFO - Shift discoidal Abeille #41) : 4.90790026°
+2025-07-23 19:54:19,841 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\41_out.jpg
+2025-07-23 19:54:19,855 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 19:54:29,251 - INFO - Image n°42 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\42_in.jpg
+2025-07-23 19:54:30,332 - INFO - Edition de l'image : 42_in.jpg
+2025-07-23 19:54:30,333 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\42\
+2025-07-23 19:54:30,340 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\42_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\42\42_in___23_07_2025___19_54_30.jpg
+2025-07-23 19:54:30,369 - INFO - Edition de l'image n°42
+2025-07-23 19:54:30,369 - INFO - ----------------------
+2025-07-23 19:56:07,328 - INFO - Point Ci n°1 : (i,j)=(263, 1281)
+2025-07-23 19:56:07,328 - INFO - Point Ci n°2 : (i,j)=(294, 1391)
+2025-07-23 19:56:07,328 - INFO - Point Ci n°3 : (i,j)=(282, 1429)
+2025-07-23 19:56:07,328 - INFO - ----------------------
+2025-07-23 19:56:07,328 - INFO - Point Ds n°1 : (i,j)=(142, 1001)
+2025-07-23 19:56:07,328 - INFO - Point Ds n°2 : (i,j)=(153, 1255)
+2025-07-23 19:56:07,328 - INFO - Point Ds n°3 : (i,j)=(79, 1643)
+2025-07-23 19:56:07,328 - INFO - Point Ds n°4 : (i,j)=(442, 1312)
+2025-07-23 19:56:07,361 - INFO - Indice cubital Abeille #42) : 2.8678931436027084
+2025-07-23 19:56:07,361 - INFO - Shift discoidal Abeille #42) : 5.54707765°
+2025-07-23 19:56:07,374 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\42_out.jpg
+2025-07-23 19:56:07,388 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 19:56:14,884 - INFO - Image n°43 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\43_in.jpg
+2025-07-23 19:56:16,415 - INFO - Edition de l'image : 43_in.jpg
+2025-07-23 19:56:16,415 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\43\
+2025-07-23 19:56:16,423 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\43_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\43\43_in___23_07_2025___19_56_16.jpg
+2025-07-23 19:56:16,452 - INFO - Edition de l'image n°43
+2025-07-23 19:56:16,452 - INFO - ----------------------
+2025-07-23 19:56:52,938 - INFO - Point Ci n°1 : (i,j)=(294, 1089)
+2025-07-23 19:56:52,938 - INFO - Point Ci n°2 : (i,j)=(319, 1186)
+2025-07-23 19:56:52,938 - INFO - Point Ci n°3 : (i,j)=(305, 1233)
+2025-07-23 19:56:52,938 - INFO - ----------------------
+2025-07-23 19:56:52,938 - INFO - Point Ds n°1 : (i,j)=(184, 779)
+2025-07-23 19:56:52,938 - INFO - Point Ds n°2 : (i,j)=(178, 1068)
+2025-07-23 19:56:52,938 - INFO - Point Ds n°3 : (i,j)=(91, 1434)
+2025-07-23 19:56:52,938 - INFO - Point Ds n°4 : (i,j)=(462, 1114)
+2025-07-23 19:56:52,971 - INFO - Indice cubital Abeille #43) : 2.042582035596458
+2025-07-23 19:56:52,972 - INFO - Shift discoidal Abeille #43) : 1.07029811°
+2025-07-23 19:56:52,984 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\43_out.jpg
+2025-07-23 19:56:52,998 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 19:56:59,697 - INFO - Image n°44 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\44_in.jpg
+2025-07-23 19:57:01,238 - INFO - Edition de l'image : 44_in.jpg
+2025-07-23 19:57:01,239 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\44\
+2025-07-23 19:57:01,246 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\44_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\44\44_in___23_07_2025___19_57_01.jpg
+2025-07-23 19:57:01,273 - INFO - Edition de l'image n°44
+2025-07-23 19:57:01,273 - INFO - ----------------------
+2025-07-23 19:57:35,747 - INFO - Point Ci n°1 : (i,j)=(276, 1344)
+2025-07-23 19:57:35,747 - INFO - Point Ci n°2 : (i,j)=(304, 1445)
+2025-07-23 19:57:35,747 - INFO - Point Ci n°3 : (i,j)=(292, 1485)
+2025-07-23 19:57:35,747 - INFO - ----------------------
+2025-07-23 19:57:35,747 - INFO - Point Ds n°1 : (i,j)=(150, 1041)
+2025-07-23 19:57:35,747 - INFO - Point Ds n°2 : (i,j)=(160, 1327)
+2025-07-23 19:57:35,747 - INFO - Point Ds n°3 : (i,j)=(86, 1704)
+2025-07-23 19:57:35,747 - INFO - Point Ds n°4 : (i,j)=(456, 1353)
+2025-07-23 19:57:35,780 - INFO - Indice cubital Abeille #44) : 2.509728776603179
+2025-07-23 19:57:35,780 - INFO - Shift discoidal Abeille #44) : -0.50768651°
+2025-07-23 19:57:35,794 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\44_out.jpg
+2025-07-23 19:57:35,807 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 19:57:42,248 - INFO - Image n°45 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\45_in.jpg
+2025-07-23 19:57:43,394 - INFO - Edition de l'image : 45_in.jpg
+2025-07-23 19:57:43,395 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\45\
+2025-07-23 19:57:43,402 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\45_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\45\45_in___23_07_2025___19_57_43.jpg
+2025-07-23 19:57:43,431 - INFO - Edition de l'image n°45
+2025-07-23 19:57:43,431 - INFO - ----------------------
+2025-07-23 19:58:27,273 - INFO - Point Ci n°1 : (i,j)=(283, 1388)
+2025-07-23 19:58:27,273 - INFO - Point Ci n°2 : (i,j)=(302, 1483)
+2025-07-23 19:58:27,273 - INFO - Point Ci n°3 : (i,j)=(287, 1533)
+2025-07-23 19:58:27,273 - INFO - ----------------------
+2025-07-23 19:58:27,273 - INFO - Point Ds n°1 : (i,j)=(183, 1096)
+2025-07-23 19:58:27,273 - INFO - Point Ds n°2 : (i,j)=(173, 1353)
+2025-07-23 19:58:27,273 - INFO - Point Ds n°3 : (i,j)=(83, 1728)
+2025-07-23 19:58:27,273 - INFO - Point Ds n°4 : (i,j)=(440, 1414)
+2025-07-23 19:58:27,308 - INFO - Indice cubital Abeille #45) : 1.8559104692104011
+2025-07-23 19:58:27,308 - INFO - Shift discoidal Abeille #45) : 3.88491912°
+2025-07-23 19:58:27,321 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\45_out.jpg
+2025-07-23 19:58:27,336 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 19:58:49,673 - INFO - L'analyse 'ma_ruche_v1_45' a bien été enregistrée dans C:/Users/nicol/Documents/ABEILLES/etudes
+2025-07-23 19:58:53,732 - INFO - Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI
+2025-07-23 19:58:53,732 - INFO - calcul de l'histogramme de l'indice cubital
+2025-07-23 19:59:38,488 - INFO - Image n°46 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\46_in.jpg
+2025-07-23 19:59:39,605 - INFO - Edition de l'image : 46_in.jpg
+2025-07-23 19:59:39,605 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\46\
+2025-07-23 19:59:39,614 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\46_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\46\46_in___23_07_2025___19_59_39.jpg
+2025-07-23 19:59:39,647 - INFO - Edition de l'image n°46
+2025-07-23 19:59:39,647 - INFO - ----------------------
+2025-07-23 20:00:12,350 - INFO - Point Ci n°1 : (i,j)=(296, 1491)
+2025-07-23 20:00:12,350 - INFO - Point Ci n°2 : (i,j)=(316, 1598)
+2025-07-23 20:00:12,350 - INFO - Point Ci n°3 : (i,j)=(302, 1646)
+2025-07-23 20:00:12,350 - INFO - ----------------------
+2025-07-23 20:00:12,350 - INFO - Point Ds n°1 : (i,j)=(183, 1189)
+2025-07-23 20:00:12,350 - INFO - Point Ds n°2 : (i,j)=(175, 1483)
+2025-07-23 20:00:12,350 - INFO - Point Ds n°3 : (i,j)=(99, 1856)
+2025-07-23 20:00:12,350 - INFO - Point Ds n°4 : (i,j)=(473, 1507)
+2025-07-23 20:00:12,386 - INFO - Indice cubital Abeille #46) : 2.1770622407271687
+2025-07-23 20:00:12,386 - INFO - Shift discoidal Abeille #46) : -2.52052919°
+2025-07-23 20:00:12,400 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\46_out.jpg
+2025-07-23 20:00:12,415 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 20:00:22,825 - INFO - Image n°47 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\47_in.jpg
+2025-07-23 20:00:23,932 - INFO - Edition de l'image : 37_in.jpg
+2025-07-23 20:00:23,933 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\37_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\37\37_in___23_07_2025___20_00_23.jpg
+2025-07-23 20:00:23,963 - INFO - Edition de l'image n°37
+2025-07-23 20:00:23,963 - INFO - ----------------------
+2025-07-23 20:00:55,006 - INFO - Point Ci n°1 : (i,j)=(285, 1235)
+2025-07-23 20:00:55,007 - INFO - Point Ci n°2 : (i,j)=(304, 1346)
+2025-07-23 20:00:55,007 - INFO - Point Ci n°3 : (i,j)=(290, 1391)
+2025-07-23 20:00:55,007 - INFO - ----------------------
+2025-07-23 20:00:55,007 - INFO - Point Ds n°1 : (i,j)=(190, 935)
+2025-07-23 20:00:55,007 - INFO - Point Ds n°2 : (i,j)=(172, 1223)
+2025-07-23 20:00:55,007 - INFO - Point Ds n°3 : (i,j)=(67, 1582)
+2025-07-23 20:00:55,007 - INFO - Point Ds n°4 : (i,j)=(454, 1272)
+2025-07-23 20:00:55,039 - INFO - Indice cubital Abeille #37) : 2.3895691080793746
+2025-07-23 20:00:55,040 - INFO - Shift discoidal Abeille #37) : -0.94228357°
+2025-07-23 20:00:55,052 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\37_out.jpg
+2025-07-23 20:00:55,064 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 20:01:01,295 - INFO - Image n°48 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\48_in.jpg
+2025-07-23 20:01:02,302 - INFO - Edition de l'image : 48_in.jpg
+2025-07-23 20:01:02,303 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\48\
+2025-07-23 20:01:02,310 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\48_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\48\48_in___23_07_2025___20_01_02.jpg
+2025-07-23 20:01:02,338 - INFO - Edition de l'image n°48
+2025-07-23 20:01:02,338 - INFO - ----------------------
+2025-07-23 20:01:39,374 - INFO - Point Ci n°1 : (i,j)=(303, 1443)
+2025-07-23 20:01:39,374 - INFO - Point Ci n°2 : (i,j)=(324, 1551)
+2025-07-23 20:01:39,374 - INFO - Point Ci n°3 : (i,j)=(312, 1589)
+2025-07-23 20:01:39,374 - INFO - ----------------------
+2025-07-23 20:01:39,375 - INFO - Point Ds n°1 : (i,j)=(180, 1130)
+2025-07-23 20:01:39,375 - INFO - Point Ds n°2 : (i,j)=(182, 1401)
+2025-07-23 20:01:39,375 - INFO - Point Ds n°3 : (i,j)=(95, 1787)
+2025-07-23 20:01:39,375 - INFO - Point Ds n°4 : (i,j)=(484, 1474)
+2025-07-23 20:01:39,410 - INFO - Indice cubital Abeille #48) : 2.760941138411556
+2025-07-23 20:01:39,410 - INFO - Shift discoidal Abeille #48) : 6.19497007°
+2025-07-23 20:01:39,424 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\48_out.jpg
+2025-07-23 20:01:39,438 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 20:01:49,124 - INFO - Image n°49 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\49_in.jpg
+2025-07-23 20:01:50,395 - INFO - Edition de l'image : 49_in.jpg
+2025-07-23 20:01:50,396 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\49\
+2025-07-23 20:01:50,403 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\49_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\49\49_in___23_07_2025___20_01_50.jpg
+2025-07-23 20:01:50,432 - INFO - Edition de l'image n°49
+2025-07-23 20:01:50,432 - INFO - ----------------------
+2025-07-23 20:02:26,920 - INFO - Point Ci n°1 : (i,j)=(308, 1427)
+2025-07-23 20:02:26,921 - INFO - Point Ci n°2 : (i,j)=(324, 1539)
+2025-07-23 20:02:26,921 - INFO - Point Ci n°3 : (i,j)=(307, 1588)
+2025-07-23 20:02:26,921 - INFO - ----------------------
+2025-07-23 20:02:26,921 - INFO - Point Ds n°1 : (i,j)=(222, 1124)
+2025-07-23 20:02:26,921 - INFO - Point Ds n°2 : (i,j)=(197, 1416)
+2025-07-23 20:02:26,921 - INFO - Point Ds n°3 : (i,j)=(75, 1775)
+2025-07-23 20:02:26,921 - INFO - Point Ds n°4 : (i,j)=(484, 1465)
+2025-07-23 20:02:26,958 - INFO - Indice cubital Abeille #49) : 2.1813675325968473
+2025-07-23 20:02:26,958 - INFO - Shift discoidal Abeille #49) : -3.04904414°
+2025-07-23 20:02:26,973 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\49_out.jpg
+2025-07-23 20:02:26,989 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-23 20:02:37,102 - INFO - Image n°50 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\50_in.jpg
+2025-07-23 20:02:38,353 - INFO - Edition de l'image : 50_in.jpg
+2025-07-23 20:02:38,353 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\50\
+2025-07-23 20:02:38,362 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\50_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\50\50_in___23_07_2025___20_02_38.jpg
+2025-07-23 20:02:38,393 - INFO - Edition de l'image n°50
+2025-07-23 20:02:38,393 - INFO - ----------------------
+2025-07-23 20:03:10,588 - INFO - Point Ci n°1 : (i,j)=(298, 1357)
+2025-07-23 20:03:10,588 - INFO - Point Ci n°2 : (i,j)=(320, 1463)
+2025-07-23 20:03:10,588 - INFO - Point Ci n°3 : (i,j)=(306, 1499)
+2025-07-23 20:03:10,588 - INFO - ----------------------
+2025-07-23 20:03:10,588 - INFO - Point Ds n°1 : (i,j)=(191, 1066)
+2025-07-23 20:03:10,588 - INFO - Point Ds n°2 : (i,j)=(185, 1323)
+2025-07-23 20:03:10,588 - INFO - Point Ds n°3 : (i,j)=(80, 1692)
+2025-07-23 20:03:10,588 - INFO - Point Ds n°4 : (i,j)=(476, 1389)
+2025-07-23 20:03:10,622 - INFO - Indice cubital Abeille #50) : 2.8027179455017466
+2025-07-23 20:03:10,622 - INFO - Shift discoidal Abeille #50) : 2.70552598°
+2025-07-23 20:03:10,635 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\50_out.jpg
+2025-07-23 20:03:10,649 - INFO - Les infos ont été ajoutées sur l'image.

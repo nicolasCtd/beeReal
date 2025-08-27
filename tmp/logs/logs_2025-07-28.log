@@ -1,0 +1,352 @@
+2025-07-28 23:30:08,317 - INFO - Démarrage du programme
+2025-07-28 23:30:08,317 - INFO - nettoyage du dossier 'out' : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out
+2025-07-28 23:30:08,318 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\0_histogramme_RUTTNER_mellifera.png
+2025-07-28 23:30:08,318 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\10_out.jpg
+2025-07-28 23:30:08,319 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\11_out.jpg
+2025-07-28 23:30:08,319 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\12_out.jpg
+2025-07-28 23:30:08,319 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\13_out.jpg
+2025-07-28 23:30:08,319 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\14_out.jpg
+2025-07-28 23:30:08,319 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\15_out.jpg
+2025-07-28 23:30:08,319 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\16_out.jpg
+2025-07-28 23:30:08,319 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\17_out.jpg
+2025-07-28 23:30:08,319 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\18_out.jpg
+2025-07-28 23:30:08,319 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\19_out.jpg
+2025-07-28 23:30:08,319 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\1_histogramme_RUTTNER_caucasica.png
+2025-07-28 23:30:08,319 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\1_out.jpg
+2025-07-28 23:30:08,319 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\20_out.jpg
+2025-07-28 23:30:08,319 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\21_out.jpg
+2025-07-28 23:30:08,323 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\22_out.jpg
+2025-07-28 23:30:08,323 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\23_out.jpg
+2025-07-28 23:30:08,323 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\24_out.jpg
+2025-07-28 23:30:08,324 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\25_out.jpg
+2025-07-28 23:30:08,324 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\26_out.jpg
+2025-07-28 23:30:08,324 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\27_out.jpg
+2025-07-28 23:30:08,325 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\28_out.jpg
+2025-07-28 23:30:08,325 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\29_out.jpg
+2025-07-28 23:30:08,325 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\2_histogramme_RUTTNER_ligustica.png
+2025-07-28 23:30:08,325 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\2_out.jpg
+2025-07-28 23:30:08,326 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\30_out.jpg
+2025-07-28 23:30:08,326 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\31_out.jpg
+2025-07-28 23:30:08,326 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\32_out.jpg
+2025-07-28 23:30:08,327 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\33_out.jpg
+2025-07-28 23:30:08,327 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\34_out.jpg
+2025-07-28 23:30:08,327 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\35_out.jpg
+2025-07-28 23:30:08,328 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\36_out.jpg
+2025-07-28 23:30:08,328 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\37_out.jpg
+2025-07-28 23:30:08,328 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\38_out.jpg
+2025-07-28 23:30:08,329 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\39_out.jpg
+2025-07-28 23:30:08,329 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\3_histogramme_RUTTNER_carnica.png
+2025-07-28 23:30:08,329 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\3_out.jpg
+2025-07-28 23:30:08,329 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\40_out.jpg
+2025-07-28 23:30:08,329 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\41_out.jpg
+2025-07-28 23:30:08,329 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\42_out.jpg
+2025-07-28 23:30:08,329 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\43_out.jpg
+2025-07-28 23:30:08,329 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\44_out.jpg
+2025-07-28 23:30:08,329 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\45_out.jpg
+2025-07-28 23:30:08,329 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\46_out.jpg
+2025-07-28 23:30:08,332 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\47_out.jpg
+2025-07-28 23:30:08,332 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\48_out.jpg
+2025-07-28 23:30:08,332 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\49_out.jpg
+2025-07-28 23:30:08,333 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\4_out.jpg
+2025-07-28 23:30:08,333 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\50_out.jpg
+2025-07-28 23:30:08,333 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\51_out.jpg
+2025-07-28 23:30:08,334 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\52_out.jpg
+2025-07-28 23:30:08,334 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\53_out.jpg
+2025-07-28 23:30:08,334 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\54_out.jpg
+2025-07-28 23:30:08,334 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\55_out.jpg
+2025-07-28 23:30:08,335 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\56_out.jpg
+2025-07-28 23:30:08,335 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\57_out.jpg
+2025-07-28 23:30:08,335 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\58_out.jpg
+2025-07-28 23:30:08,336 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\59_out.jpg
+2025-07-28 23:30:08,336 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\5_out.jpg
+2025-07-28 23:30:08,336 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\60_out.jpg
+2025-07-28 23:30:08,338 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\61_out.jpg
+2025-07-28 23:30:08,338 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\6_out.jpg
+2025-07-28 23:30:08,338 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\7_out.jpg
+2025-07-28 23:30:08,338 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\8_out.jpg
+2025-07-28 23:30:08,338 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\9_out.jpg
+2025-07-28 23:30:08,339 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\abacus_RUTTNER.txt
+2025-07-28 23:30:08,339 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\results.txt
+2025-07-28 23:30:08,340 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\scatter_plot.png
+2025-07-28 23:30:08,340 - INFO - nettoyage du dossier 'in' : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in
+2025-07-28 23:30:08,340 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\10_in.jpg
+2025-07-28 23:30:08,340 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\11_in.jpg
+2025-07-28 23:30:08,341 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\12_in.jpg
+2025-07-28 23:30:08,341 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\13_in.jpg
+2025-07-28 23:30:08,341 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\14_in.jpg
+2025-07-28 23:30:08,341 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\15_in.jpg
+2025-07-28 23:30:08,342 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\16_in.jpg
+2025-07-28 23:30:08,342 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\17_in.jpg
+2025-07-28 23:30:08,343 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\18_in.jpg
+2025-07-28 23:30:08,343 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\19_in.jpg
+2025-07-28 23:30:08,343 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\1_in.jpg
+2025-07-28 23:30:08,344 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\20_in.jpg
+2025-07-28 23:30:08,344 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\21_in.jpg
+2025-07-28 23:30:08,344 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\22_in.jpg
+2025-07-28 23:30:08,344 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\23_in.jpg
+2025-07-28 23:30:08,345 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\24_in.jpg
+2025-07-28 23:30:08,345 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\25_in.jpg
+2025-07-28 23:30:08,345 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\26_in.jpg
+2025-07-28 23:30:08,345 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\27_in.jpg
+2025-07-28 23:30:08,346 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\28_in.jpg
+2025-07-28 23:30:08,346 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\29_in.jpg
+2025-07-28 23:30:08,346 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\2_in.jpg
+2025-07-28 23:30:08,347 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\30_in.jpg
+2025-07-28 23:30:08,347 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\31_in.jpg
+2025-07-28 23:30:08,347 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\32_in.jpg
+2025-07-28 23:30:08,347 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\33_in.jpg
+2025-07-28 23:30:08,348 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\34_in.jpg
+2025-07-28 23:30:08,348 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\35_in.jpg
+2025-07-28 23:30:08,348 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\36_in.jpg
+2025-07-28 23:30:08,349 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\37_in.jpg
+2025-07-28 23:30:08,350 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\38_in.jpg
+2025-07-28 23:30:08,350 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\39_in.jpg
+2025-07-28 23:30:08,350 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\3_in.jpg
+2025-07-28 23:30:08,350 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\40_in.jpg
+2025-07-28 23:30:08,350 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\41_in.jpg
+2025-07-28 23:30:08,350 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\42_in.jpg
+2025-07-28 23:30:08,350 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\43_in.jpg
+2025-07-28 23:30:08,353 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\44_in.jpg
+2025-07-28 23:30:08,353 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\45_in.jpg
+2025-07-28 23:30:08,354 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\46_in.jpg
+2025-07-28 23:30:08,354 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\47_in.jpg
+2025-07-28 23:30:08,354 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\48_in.jpg
+2025-07-28 23:30:08,355 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\49_in.jpg
+2025-07-28 23:30:08,355 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\4_in.jpg
+2025-07-28 23:30:08,355 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\50_in.jpg
+2025-07-28 23:30:08,356 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\51_in.jpg
+2025-07-28 23:30:08,356 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\52_in.jpg
+2025-07-28 23:30:08,356 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\53_in.jpg
+2025-07-28 23:30:08,357 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\54_in.jpg
+2025-07-28 23:30:08,358 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\55_in.jpg
+2025-07-28 23:30:08,358 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\56_in.jpg
+2025-07-28 23:30:08,358 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\57_in.jpg
+2025-07-28 23:30:08,359 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\58_in.jpg
+2025-07-28 23:30:08,359 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\59_in.jpg
+2025-07-28 23:30:08,359 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\5_in.jpg
+2025-07-28 23:30:08,359 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\60_in.jpg
+2025-07-28 23:30:08,359 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\61_in.jpg
+2025-07-28 23:30:08,359 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\62_in.jpg
+2025-07-28 23:30:08,359 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\6_in.jpg
+2025-07-28 23:30:08,359 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\7_in.jpg
+2025-07-28 23:30:08,363 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\8_in.jpg
+2025-07-28 23:30:08,363 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\9_in.jpg
+2025-07-28 23:30:08,363 - INFO - nettoyage du dossier 'tmp' : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\tmp
+2025-07-28 23:30:08,366 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\tmp\61
+2025-07-28 23:30:08,369 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\tmp\in
+2025-07-28 23:30:08,374 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\tmp\logs
+2025-07-28 23:30:08,379 - INFO - suppression du fichier C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\tmp\out
+2025-07-28 23:30:08,382 - INFO - Génération du fichier de résultats C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\out\results.txt
+2025-07-28 23:30:20,212 - INFO - Chargement du projet 'C:/Users/nicol/Documents/ABEILLES/etudes/ma_ruche_v1_60.zip'
+2025-07-28 23:30:21,066 - INFO - Affichage dans l'IHM des valeurs Ci et Ds
+2025-07-28 23:30:21,066 - INFO - Abeille n°1
+2025-07-28 23:30:21,066 - INFO - Ci : 1.77, Ds : +3.88°
+2025-07-28 23:30:21,066 - INFO - Abeille n°2
+2025-07-28 23:30:21,066 - INFO - Ci : 2.38, Ds : +1.05°
+2025-07-28 23:30:21,066 - INFO - Abeille n°3
+2025-07-28 23:30:21,066 - INFO - Ci : 2.91, Ds : +0.26°
+2025-07-28 23:30:21,066 - INFO - Abeille n°4
+2025-07-28 23:30:21,066 - INFO - Ci : 2.56, Ds : -2.08°
+2025-07-28 23:30:21,066 - INFO - Abeille n°5
+2025-07-28 23:30:21,066 - INFO - Ci : 2.07, Ds : +2.16°
+2025-07-28 23:30:21,066 - INFO - Abeille n°6
+2025-07-28 23:30:21,066 - INFO - Ci : 2.29, Ds : -1.51°
+2025-07-28 23:30:21,066 - INFO - Abeille n°7
+2025-07-28 23:30:21,066 - INFO - Ci : 2.48, Ds : +4.39°
+2025-07-28 23:30:21,066 - INFO - Abeille n°8
+2025-07-28 23:30:21,066 - INFO - Ci : 2.13, Ds : +2.5°
+2025-07-28 23:30:21,066 - INFO - Abeille n°9
+2025-07-28 23:30:21,066 - INFO - Ci : 2.16, Ds : +0.97°
+2025-07-28 23:30:21,066 - INFO - Abeille n°10
+2025-07-28 23:30:21,066 - INFO - Ci : 2.21, Ds : +4.0°
+2025-07-28 23:30:21,066 - INFO - Abeille n°11
+2025-07-28 23:30:21,066 - INFO - Ci : 1.99, Ds : +4.34°
+2025-07-28 23:30:21,066 - INFO - Abeille n°12
+2025-07-28 23:30:21,066 - INFO - Ci : 1.65, Ds : +2.03°
+2025-07-28 23:30:21,066 - INFO - Abeille n°13
+2025-07-28 23:30:21,066 - INFO - Ci : 2.97, Ds : +5.75°
+2025-07-28 23:30:21,066 - INFO - Abeille n°14
+2025-07-28 23:30:21,066 - INFO - Ci : 2.42, Ds : -2.05°
+2025-07-28 23:30:21,066 - INFO - Abeille n°15
+2025-07-28 23:30:21,066 - INFO - Ci : 2.75, Ds : +1.32°
+2025-07-28 23:30:21,066 - INFO - Abeille n°16
+2025-07-28 23:30:21,066 - INFO - Ci : 2.72, Ds : +3.06°
+2025-07-28 23:30:21,066 - INFO - Abeille n°17
+2025-07-28 23:30:21,066 - INFO - Ci : 1.96, Ds : -1.93°
+2025-07-28 23:30:21,066 - INFO - Abeille n°18
+2025-07-28 23:30:21,066 - INFO - Ci : 2.03, Ds : +0.07°
+2025-07-28 23:30:21,066 - INFO - Abeille n°19
+2025-07-28 23:30:21,066 - INFO - Ci : 2.91, Ds : -0.5°
+2025-07-28 23:30:21,066 - INFO - Abeille n°20
+2025-07-28 23:30:21,066 - INFO - Ci : 2.27, Ds : +0.06°
+2025-07-28 23:30:21,066 - INFO - Abeille n°21
+2025-07-28 23:30:21,066 - INFO - Ci : 2.82, Ds : +5.07°
+2025-07-28 23:30:21,066 - INFO - Abeille n°22
+2025-07-28 23:30:21,066 - INFO - Ci : 0.64, Ds : +3.17°
+2025-07-28 23:30:21,066 - INFO - Abeille n°23
+2025-07-28 23:30:21,066 - INFO - Ci : 1.85, Ds : +2.2°
+2025-07-28 23:30:21,066 - INFO - Abeille n°24
+2025-07-28 23:30:21,066 - INFO - Ci : 2.77, Ds : +8.26°
+2025-07-28 23:30:21,066 - INFO - Abeille n°25
+2025-07-28 23:30:21,066 - INFO - Ci : 2.35, Ds : -1.28°
+2025-07-28 23:30:21,066 - INFO - Abeille n°26
+2025-07-28 23:30:21,066 - INFO - Ci : 2.06, Ds : +0.0°
+2025-07-28 23:30:21,082 - INFO - Abeille n°27
+2025-07-28 23:30:21,082 - INFO - Ci : 2.47, Ds : -1.63°
+2025-07-28 23:30:21,084 - INFO - Abeille n°28
+2025-07-28 23:30:21,084 - INFO - Ci : 1.69, Ds : +3.34°
+2025-07-28 23:30:21,084 - INFO - Abeille n°29
+2025-07-28 23:30:21,084 - INFO - Ci : 1.7, Ds : +2.44°
+2025-07-28 23:30:21,084 - INFO - Abeille n°30
+2025-07-28 23:30:21,084 - INFO - Ci : 1.77, Ds : +1.65°
+2025-07-28 23:30:21,084 - INFO - Abeille n°31
+2025-07-28 23:30:21,084 - INFO - Ci : 2.28, Ds : +2.6°
+2025-07-28 23:30:21,084 - INFO - Abeille n°32
+2025-07-28 23:30:21,084 - INFO - Ci : 2.03, Ds : +1.84°
+2025-07-28 23:30:21,084 - INFO - Abeille n°33
+2025-07-28 23:30:21,084 - INFO - Ci : 2.35, Ds : -1.92°
+2025-07-28 23:30:21,084 - INFO - Abeille n°34
+2025-07-28 23:30:21,084 - INFO - Ci : 1.71, Ds : +1.17°
+2025-07-28 23:30:21,084 - INFO - Abeille n°35
+2025-07-28 23:30:21,084 - INFO - Ci : 1.69, Ds : +2.81°
+2025-07-28 23:30:21,084 - INFO - Abeille n°36
+2025-07-28 23:30:21,084 - INFO - Ci : 2.3, Ds : -1.58°
+2025-07-28 23:30:21,084 - INFO - Abeille n°37
+2025-07-28 23:30:21,084 - INFO - Ci : 2.38, Ds : -0.94°
+2025-07-28 23:30:21,089 - INFO - Abeille n°38
+2025-07-28 23:30:21,089 - INFO - Ci : 1.98, Ds : +1.74°
+2025-07-28 23:30:21,089 - INFO - Abeille n°39
+2025-07-28 23:30:21,089 - INFO - Ci : 1.7, Ds : +3.24°
+2025-07-28 23:30:21,089 - INFO - Abeille n°40
+2025-07-28 23:30:21,089 - INFO - Ci : 2.47, Ds : +5.56°
+2025-07-28 23:30:21,089 - INFO - Abeille n°41
+2025-07-28 23:30:21,089 - INFO - Ci : 1.95, Ds : +4.9°
+2025-07-28 23:30:21,089 - INFO - Abeille n°42
+2025-07-28 23:30:21,089 - INFO - Ci : 2.86, Ds : +5.54°
+2025-07-28 23:30:21,089 - INFO - Abeille n°43
+2025-07-28 23:30:21,089 - INFO - Ci : 2.04, Ds : +1.07°
+2025-07-28 23:30:21,089 - INFO - Abeille n°44
+2025-07-28 23:30:21,089 - INFO - Ci : 2.5, Ds : -0.5°
+2025-07-28 23:30:21,089 - INFO - Abeille n°45
+2025-07-28 23:30:21,089 - INFO - Ci : 1.85, Ds : +3.88°
+2025-07-28 23:30:21,091 - INFO - Abeille n°46
+2025-07-28 23:30:21,091 - INFO - Ci : 2.17, Ds : -2.52°
+2025-07-28 23:30:21,091 - INFO - Abeille n°47
+2025-07-28 23:30:21,091 - INFO - Ci : 2.78, Ds : +0.84°
+2025-07-28 23:30:21,091 - INFO - Abeille n°48
+2025-07-28 23:30:21,091 - INFO - Ci : 2.76, Ds : +6.19°
+2025-07-28 23:30:21,091 - INFO - Abeille n°49
+2025-07-28 23:30:21,091 - INFO - Ci : 2.18, Ds : -3.04°
+2025-07-28 23:30:21,091 - INFO - Abeille n°50
+2025-07-28 23:30:21,091 - INFO - Ci : 2.8, Ds : +2.7°
+2025-07-28 23:30:21,091 - INFO - Abeille n°51
+2025-07-28 23:30:21,091 - INFO - Ci : 2.09, Ds : -1.83°
+2025-07-28 23:30:21,091 - INFO - Abeille n°52
+2025-07-28 23:30:21,091 - INFO - Ci : 2.38, Ds : -1.5°
+2025-07-28 23:30:21,091 - INFO - Abeille n°53
+2025-07-28 23:30:21,091 - INFO - Ci : 2.18, Ds : +0.04°
+2025-07-28 23:30:21,091 - INFO - Abeille n°54
+2025-07-28 23:30:21,091 - INFO - Ci : 2.56, Ds : +2.99°
+2025-07-28 23:30:21,091 - INFO - Abeille n°55
+2025-07-28 23:30:21,091 - INFO - Ci : 2.21, Ds : -0.3°
+2025-07-28 23:30:21,091 - INFO - Abeille n°56
+2025-07-28 23:30:21,091 - INFO - Ci : 2.22, Ds : -4.1°
+2025-07-28 23:30:21,091 - INFO - Abeille n°57
+2025-07-28 23:30:21,091 - INFO - Ci : 2.31, Ds : +6.08°
+2025-07-28 23:30:21,091 - INFO - Abeille n°58
+2025-07-28 23:30:21,091 - INFO - Ci : 2.18, Ds : +1.09°
+2025-07-28 23:30:21,091 - INFO - Abeille n°59
+2025-07-28 23:30:21,091 - INFO - Ci : 2.62, Ds : +0.4°
+2025-07-28 23:30:21,091 - INFO - Abeille n°60
+2025-07-28 23:30:21,091 - INFO - Ci : 2.0, Ds : +5.55°
+2025-07-28 23:30:57,355 - INFO - Image n°61 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\61_in.jpg
+2025-07-28 23:30:58,239 - INFO - Edition de l'image : 61_in.jpg
+2025-07-28 23:30:58,239 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\61\
+2025-07-28 23:30:58,247 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\61_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\61\61_in___28_07_2025___23_30_58.jpg
+2025-07-28 23:30:58,282 - INFO - Edition de l'image n°61
+2025-07-28 23:30:58,282 - INFO - ----------------------
+2025-07-28 23:31:23,706 - INFO - Point Ci n°1 : (i,j)=(305, 1432)
+2025-07-28 23:31:23,707 - INFO - Point Ci n°2 : (i,j)=(322, 1545)
+2025-07-28 23:31:23,707 - INFO - Point Ci n°3 : (i,j)=(305, 1582)
+2025-07-28 23:31:23,707 - INFO - ----------------------
+2025-07-28 23:31:23,707 - INFO - Point Ds n°1 : (i,j)=(213, 1117)
+2025-07-28 23:31:23,707 - INFO - Point Ds n°2 : (i,j)=(195, 1378)
+2025-07-28 23:31:23,707 - INFO - Point Ds n°3 : (i,j)=(79, 1769)
+2025-07-28 23:31:23,707 - INFO - Point Ds n°4 : (i,j)=(481, 1472)
+2025-07-28 23:31:23,744 - INFO - Indice cubital Abeille #61) : 2.8063773659980242
+2025-07-28 23:31:23,744 - INFO - Shift discoidal Abeille #61) : 6.58850715°
+2025-07-28 23:31:23,758 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\61_out.jpg
+2025-07-28 23:31:23,774 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-28 23:31:30,642 - INFO - Image n°62 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\62_in.jpg
+2025-07-28 23:31:31,196 - INFO - Edition de l'image : 62_in.jpg
+2025-07-28 23:31:31,197 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\62\
+2025-07-28 23:31:31,204 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\62_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\62\62_in___28_07_2025___23_31_31.jpg
+2025-07-28 23:31:31,235 - INFO - Edition de l'image n°62
+2025-07-28 23:31:31,235 - INFO - ----------------------
+2025-07-28 23:32:05,612 - INFO - Point Ci n°1 : (i,j)=(281, 1349)
+2025-07-28 23:32:05,612 - INFO - Point Ci n°2 : (i,j)=(302, 1426)
+2025-07-28 23:32:05,612 - INFO - Point Ci n°3 : (i,j)=(285, 1483)
+2025-07-28 23:32:05,612 - INFO - ----------------------
+2025-07-28 23:32:05,612 - INFO - Point Ds n°1 : (i,j)=(176, 1029)
+2025-07-28 23:32:05,612 - INFO - Point Ds n°2 : (i,j)=(162, 1305)
+2025-07-28 23:32:05,612 - INFO - Point Ds n°3 : (i,j)=(75, 1683)
+2025-07-28 23:32:05,612 - INFO - Point Ds n°4 : (i,j)=(447, 1354)
+2025-07-28 23:32:05,646 - INFO - Indice cubital Abeille #62) : 1.3418093131663469
+2025-07-28 23:32:05,646 - INFO - Shift discoidal Abeille #62) : 1.00112862°
+2025-07-28 23:32:05,658 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\62_out.jpg
+2025-07-28 23:32:05,671 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-28 23:32:24,158 - INFO - L'analyse 'ma_ruche_v1_62' a bien été enregistrée dans C:/Users/nicol/Documents/ABEILLES/etudes
+2025-07-28 23:32:35,368 - INFO - Image n°63 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\63_in.jpg
+2025-07-28 23:32:39,552 - INFO - Edition de l'image : 63_in.jpg
+2025-07-28 23:32:39,553 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\63\
+2025-07-28 23:32:39,560 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\63_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\63\63_in___28_07_2025___23_32_39.jpg
+2025-07-28 23:32:39,590 - INFO - Edition de l'image n°63
+2025-07-28 23:32:39,590 - INFO - ----------------------
+2025-07-28 23:33:05,956 - INFO - Point Ci n°1 : (i,j)=(301, 1309)
+2025-07-28 23:33:05,956 - INFO - Point Ci n°2 : (i,j)=(319, 1405)
+2025-07-28 23:33:05,956 - INFO - Point Ci n°3 : (i,j)=(304, 1448)
+2025-07-28 23:33:05,956 - INFO - ----------------------
+2025-07-28 23:33:05,956 - INFO - Point Ds n°1 : (i,j)=(200, 1016)
+2025-07-28 23:33:05,956 - INFO - Point Ds n°2 : (i,j)=(186, 1280)
+2025-07-28 23:33:05,956 - INFO - Point Ds n°3 : (i,j)=(85, 1650)
+2025-07-28 23:33:05,956 - INFO - Point Ds n°4 : (i,j)=(462, 1344)
+2025-07-28 23:33:05,991 - INFO - Indice cubital Abeille #63) : 2.1447160968224073
+2025-07-28 23:33:05,991 - INFO - Shift discoidal Abeille #63) : 2.75040076°
+2025-07-28 23:33:06,004 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\63_out.jpg
+2025-07-28 23:33:06,018 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-28 23:33:16,821 - INFO - Image n°64 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\64_in.jpg
+2025-07-28 23:33:18,035 - INFO - Edition de l'image : 64_in.jpg
+2025-07-28 23:33:18,035 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\64\
+2025-07-28 23:33:18,042 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\64_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\64\64_in___28_07_2025___23_33_18.jpg
+2025-07-28 23:33:18,076 - INFO - Edition de l'image n°64
+2025-07-28 23:33:18,076 - INFO - ----------------------
+2025-07-28 23:33:51,305 - INFO - Point Ci n°1 : (i,j)=(504, 1768)
+2025-07-28 23:33:51,306 - INFO - Point Ci n°2 : (i,j)=(544, 1888)
+2025-07-28 23:33:51,306 - INFO - Point Ci n°3 : (i,j)=(533, 1936)
+2025-07-28 23:33:51,306 - INFO - ----------------------
+2025-07-28 23:33:51,306 - INFO - Point Ds n°1 : (i,j)=(334, 1442)
+2025-07-28 23:33:51,306 - INFO - Point Ds n°2 : (i,j)=(367, 1736)
+2025-07-28 23:33:51,306 - INFO - Point Ds n°3 : (i,j)=(319, 2202)
+2025-07-28 23:33:51,306 - INFO - Point Ds n°4 : (i,j)=(710, 1770)
+2025-07-28 23:33:51,355 - INFO - Indice cubital Abeille #64) : 2.568645196271742
+2025-07-28 23:33:51,355 - INFO - Shift discoidal Abeille #64) : 4.53766938°
+2025-07-28 23:33:51,381 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\64_out.jpg
+2025-07-28 23:33:51,401 - INFO - Les infos ont été ajoutées sur l'image.
+2025-07-28 23:34:02,142 - INFO - Image n°65 : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\in\65_in.jpg
+2025-07-28 23:34:03,257 - INFO - Edition de l'image : 65_in.jpg
+2025-07-28 23:34:03,257 - INFO - Création du répertoire : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\65\
+2025-07-28 23:34:03,264 - INFO - Copie du fichier : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\in\65_in.jpg >> C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\tmp\65\65_in___28_07_2025___23_34_03.jpg
+2025-07-28 23:34:03,297 - INFO - Edition de l'image n°65
+2025-07-28 23:34:03,297 - INFO - ----------------------
+2025-07-28 23:34:32,605 - INFO - Point Ci n°1 : (i,j)=(426, 1576)
+2025-07-28 23:34:32,605 - INFO - Point Ci n°2 : (i,j)=(448, 1688)
+2025-07-28 23:34:32,605 - INFO - Point Ci n°3 : (i,j)=(430, 1739)
+2025-07-28 23:34:32,605 - INFO - ----------------------
+2025-07-28 23:34:32,605 - INFO - Point Ds n°1 : (i,j)=(329, 1238)
+2025-07-28 23:34:32,605 - INFO - Point Ds n°2 : (i,j)=(309, 1543)
+2025-07-28 23:34:32,605 - INFO - Point Ds n°3 : (i,j)=(191, 1951)
+2025-07-28 23:34:32,605 - INFO - Point Ds n°4 : (i,j)=(619, 1606)
+2025-07-28 23:34:32,649 - INFO - Indice cubital Abeille #65) : 2.1104542387877294
+2025-07-28 23:34:32,650 - INFO - Shift discoidal Abeille #65) : 0.52720272°
+2025-07-28 23:34:32,673 - INFO - Image sauvegardée : C:\Users\nicol\Documents\ABEILLES\logiciel\blackBeeID\\out\65_out.jpg
+2025-07-28 23:34:32,692 - INFO - Les infos ont été ajoutées sur l'image.
