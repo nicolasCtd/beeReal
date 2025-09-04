@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['main.py'],
+    ['beeReal.py'],
     pathex=[],
     binaries=[],
     datas=[('config.yml', '.'),
@@ -28,7 +28,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='main',
+    name='beeReal',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -41,4 +41,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+	icon='media/favicon.ico',
 )

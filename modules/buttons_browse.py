@@ -2,8 +2,6 @@ from PyQt5.QtWidgets import QFileDialog
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 import os
-import logging
-from PIL import Image
 from modules import globals
 from modules import buttons
 

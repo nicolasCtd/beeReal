@@ -1,3 +1,4 @@
+log_mode = 'w'
 out = ''
 in_ = ''
 tmp = ''
@@ -6,6 +7,11 @@ path = ''
 media = ''
 future = ''
 
-loaded = [0] * 100
-edited = [0] * 100
-enabled = [1] * 100
+loaded = dict()
+edited = dict()
+enabled = dict()
+
+for i in range(1, 101):
+    loaded[i] = 0
+    edited[i] = 0
+    enabled[i] = 1

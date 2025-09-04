@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import csv
 from matplotlib.ticker import MultipleLocator
 from scipy.stats import pearsonr
+from modules import globals
     
 def copytree(src, dst):
     if os.path.exists(dst):
@@ -30,18 +31,21 @@ def load_results(file):
     res = {}
     with open(file, "r") as f:
         a = f.readlines()
-    for i in range(len(a)):
-        line = a[i].replace("\n", "").split(" ")
-        res[int(line[0])] = (line[1], line[2])
+    for i in range(len(a)-1):
+        line = a[i+1].replace("\n", "").split(" ")
+        res[int(line[0])] = (line[1], line[2], line[3])
     return res
 
 def save_results_txt(path, res):
+    liste_abeilles = [int(key) for key in res.keys()]
     with open(path + "results.txt", "w") as f:
-        liste_abeilles = [int(key) for key in res.keys()]
+        line = f"num indice_cubital angle_discoidal enabled\n"
+        f.write(line)
         for num in sorted(liste_abeilles):
-            line = f"{num} {clean(res[num][0])} {res[num][1]}\n"
+            line = f"{num} {clean(res[num][0])} {res[num][1]} {globals.enabled[num]}\n"
             f.write(line)
-        f.close()
+    f.close()
+    return 0
 
 def write_line(file, num, ci_value, ds_value):
     line = f"{num} {ci_value} {ds_value}\n"

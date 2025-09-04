@@ -264,11 +264,11 @@ class EDIT(QMainWindow):
 
         self.LAB_RES[self.NUM-1].setText(f"<u>Abeille #{self.NUM}</u> <br /> Ci : {ci} <br /> Ds : {ds}° <br /> Classe : {H.get_classes([self.ci_value])}")
 
+        globals.edited[self.NUM] = 1
+
         self.RES[int(self.NUM)] = (clean(self.ci_value), clean(self.ds_value))
 
-        save_results_txt(self.OUT, self.RES)
-
-        globals.edited[self.NUM] = 1
+        # save_results_txt(self.OUT, self.RES)
 
         return 0
 
@@ -297,14 +297,6 @@ class EDIT(QMainWindow):
 
         # Save or display the image
         img.save(f"{self.OUT}{self.NUM}_out.jpg")
-
-    # def write_results(self):
-    #     with open(self.path + os.sep + "out" + os.sep + "results.txt", "a") as f:
-    #         ds_value = float(str(self.ds_value).replace("[", "").replace("]", ""))
-    #         line = f"{self.num} {int(self.ci_value*100)/100} {int(ds_value*100)/100}\n"
-    #         f.write(line)
-    #     f.close()
-    #     return 0
 
     def set_ci_points(self, switch):
         self.switch_ci = switch
@@ -509,7 +501,7 @@ class EDIT(QMainWindow):
         time0 =  datetime.strptime("01/01/2000 00:00:00", "%d/%m/%Y %H:%M:%S")
 
         for file in os.listdir(path):
-            if "zoom" not in file:
+            if "zoom" not in file and os.path.isfile(path + os.sep + file):
                 tmp = file.replace(self.extension, "").split("___")
                 date1 = tmp[-2].replace("_", "/")
                 hour1 = tmp[-1].replace("_", ":")

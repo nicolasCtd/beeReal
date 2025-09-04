@@ -32,6 +32,7 @@ import sys
 import logging
 from datetime import date
 from modules import globals
+from modules import buttons
 
 from PyQt5.QtCore import QUrl
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent, QAudioOutput
@@ -46,7 +47,7 @@ def log_exception(exc_type, exc_value, exc_traceback):
     logging.error("Exception non gérée :", exc_info=(exc_type, exc_value, exc_traceback))
 
 # Remplacer le hook d'exception
-#sys.excepthook = log_exception
+#¶sys.excepthook = log_exception
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
@@ -142,7 +143,6 @@ def set_paths():
         globals.in_ = os.sep.join([sys._MEIPASS, 'in']) + os.sep
         globals.tmp = os.sep.join([sys._MEIPASS, 'tmp']) + os.sep
         globals.logs = os.sep.join([sys._MEIPASS, 'logs']) + os.sep
-        # globals.logs = sys._MEIPASS + "/../"
         globals.media = os.sep.join([sys._MEIPASS, 'media']) + os.sep
         globals.path = sys._MEIPASS + os.sep
         globals.future = os.sep.join([sys._MEIPASS, 'media', 'future.mp3'])
@@ -158,6 +158,20 @@ def set_paths():
         globals.future = os.sep.join([os.path.dirname(__file__), 'media', 'future.mp3'])
     
     return 0
+
+def launch_log(path, name):
+    log_file =path + os.sep + name
+
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
+                            
+    logging.basicConfig(
+        filename=log_file,
+        filemode=globals.log_mode,
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s')
+    return 0
+
 
 class FolderSelector(QWidget):
     def __init__(self):
@@ -188,20 +202,6 @@ class MainWindow(QMainWindow):
         self.path = globals.path
         self.logs = globals.logs
         self.son = True
-
-        if not(self.logs):
-            os.makedirs(self.logs)
-
-        log_file = self.logs + os.sep + f"logs_{date.today()}.log"
-
-        for handler in logging.root.handlers[:]:
-            logging.root.removeHandler(handler)
-                               
-        logging.basicConfig(
-            filename=log_file,
-            filemode="w",
-            level=logging.INFO,
-            format='%(asctime)s - %(levelname)s - %(message)s')
 
         logging.info("Démarrage du programme")
 
@@ -268,20 +268,34 @@ class MainWindow(QMainWindow):
             logging.info(f"Création du répertoire où sont stockés les fichiers temporaires : {self.tmp}")
             os.makedirs(self.tmp)
 
-        with open(self.out + os.sep + "results.txt", "w") as f:
-            p = self.out + os.sep + "results.txt"
-            print(f"Les résultats seront écrits dans {p}")
-            logging.info(f"Génération du fichier de résultats {p}")
-            line = f"num indice_cubital angle_discoidal\n"
-            f.write(line)
-            f.close
+
+        if os.path.isdir(self.logs):
+            print(f"nettoyage du dossier 'logs' : {self.logs}")
+            logging.info(f"nettoyage du dossier 'logs' : {self.logs}")
+            for filename in os.listdir(self.logs):
+                file_path = self.logs + os.sep + filename
+                try:
+                    if os.path.isfile(file_path):
+                        os.unlink(file_path)
+                        print(f"suppression du fichier {file_path}")
+                        logging.info(f"suppression du fichier {file_path}")
+                    elif os.path.isdir(file_path):
+                        shutil.rmtree(file_path)
+                        print(f"suppression du dossier {file_path}")
+                        logging.info(f"suppression du fichier {file_path}")
+                except Exception as e:
+                    print('Failed to delete %s. Reason: %s' % (file_path, e))
+                    logging.info('Failed to delete %s. Reason: %s' % (file_path, e))
+        else:
+            logging.info(f"Création du répertoire où sont stockés les fichiers temporaires : {self.logs}")
+            os.makedirs(self.logs)
+
+        launch_log(self.logs, f"logs_{date.today()}.log")
 
         self.tab_widget = Tabs(self, self.path)
         self.setCentralWidget(self.tab_widget)
 
         self.showMaximized()
-
-
 
 
     def close_all_windows(self):
@@ -746,7 +760,6 @@ class Tabs(QWidget):
 
         self.tabs.setCurrentIndex(0)
 
-                        
     def play(self, file):
         url = QUrl.fromLocalFile(file)
         content = QMediaContent(url)
@@ -773,29 +786,31 @@ class Tabs(QWidget):
     def edit_name(self):
         text, okPressed = QInputDialog.getText(self, " ", "Entrer le nom de l'analyse :", QLineEdit.Normal, "")
         if okPressed and text != '':
-            self.analyse_name = text
             self.label00.setText(text)
-            self.btn2.setText(f"Sauvegarder\nl'analyse\n{self.analyse_name}")
-            self.btn3.setText(f"Lancer\nl'analyse\n{self.analyse_name}")
+            self.btn2.setText(f"Sauvegarder\nl'analyse\n{text}")
+            self.btn3.setText(f"Lancer\nl'analyse\n{text}")
+            print(os.path.isfile(self.logs + f"logs_{self.analyse_name}.txt"))
+            print('aa')
+            logging.shutdown()
+            shutil.move(self.logs + f"logs_{self.analyse_name}.log", self.logs + f"logs_{text}.log")
+            self.analyse_name = text
+            globals.log_mode = 'a'
+            launch_log(self.logs, f"logs_{text}.log")
         return 0
 
     def save_project(self):
         DIR = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
         if DIR != "":
+            save_results_txt(self.out, self.RES)
             with zipfile.ZipFile(DIR + os.sep + self.analyse_name + '.zip', "w") as zf:
-                
                 for file in os.listdir(self.out):
                     zf.write(f"{self.out}{os.sep}{file}", f"out{os.sep}{file}", zipfile.ZIP_DEFLATED )
-                
                 for file in os.listdir(self.tmp):
                     zf.write(f"{self.tmp}{os.sep}{file}", f"tmp{os.sep}{file}", zipfile.ZIP_DEFLATED )
-                
                 for file in os.listdir(self.in_):
                     zf.write(f"{self.in_}{os.sep}{file}", f"in{os.sep}{file}", zipfile.ZIP_DEFLATED )
-
                 for file in os.listdir(self.logs):
                     zf.write(f"{self.logs}{os.sep}{file}", f"logs{os.sep}{file}", zipfile.ZIP_DEFLATED )
-
             self.dialog = MESSAGE()
             msg = f"L'analyse '{self.analyse_name}' a bien été enregistrée dans {DIR}"
             logging.info(msg)
@@ -819,11 +834,12 @@ class Tabs(QWidget):
             shutil.unpack_archive(filename=project_file, extract_dir=self.tmp)
             copytree(src=self.tmp + os.sep + "in", dst=self.in_)
             copytree(src=self.tmp + os.sep + "out", dst=self.out)
-            for file in os.listdir(f"{self.tmp}{os.sep}logs"):
-                print(file)
-                shutil.copyfile(src=f"{self.tmp}{os.sep}logs{os.sep}{file}", dst=f"{self.path}{os.sep}logs{os.sep}{file}")
-            
-            self.RES = load_results(self.tmp + os.sep + "out" + os.sep + "results.txt")
+
+            shutil.copyfile(src=f"{self.tmp}{os.sep}logs{os.sep}logs_{self.analyse_name}.log", dst=f"{self.path}{os.sep}logs{os.sep}logs_{self.analyse_name}.log")
+            globals.log_mode = 'a'
+
+            print(f"chargement des résultats {self.out}results.txt")
+            self.RES = load_results(self.out + "results.txt")
             print("results already computed:")
             print(self.RES)
 
@@ -856,6 +872,10 @@ class Tabs(QWidget):
                     pixmap_out = QPixmap(ff_out)
                     pixmap_out = pixmap_out.scaled(self.width, self.height, Qt.KeepAspectRatio, Qt.FastTransformation)
                     self.label_right[num_abeille-1].setPixmap(pixmap_out)
+                    globals.enabled[num_abeille] = int(self.RES[num_abeille][2])
+            for num_abeille in self.RES.keys():
+                if not globals.enabled[num_abeille]:
+                    buttons.turnToGrayImages(TABs=self, num=num_abeille)
         else:
             pass
         # self.tabs.setCurrentIndex(1)
@@ -875,7 +895,7 @@ class Tabs(QWidget):
             self.shifts = []
             self.id_bees = []
             for abeille in self.RES.keys():
-                if globals.enabled[abeille-1]:
+                if globals.enabled[abeille]:
                     self.indices.append(float(self.RES[abeille][0]))
                     self.shifts.append(float(self.RES[abeille][1]))
                     self.id_bees.append(abeille)

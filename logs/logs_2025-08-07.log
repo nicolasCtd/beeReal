@@ -1,7 +1,0 @@
-2025-08-07 23:39:55,439 - INFO - Démarrage du programme
-2025-08-07 23:39:55,440 - INFO - nettoyage du dossier 'out' : c:\Users\nicol\Documents\ABEILLES\beeReal\\out
-2025-08-07 23:39:55,440 - INFO - suppression du fichier c:\Users\nicol\Documents\ABEILLES\beeReal\\out\results.txt
-2025-08-07 23:39:55,440 - INFO - nettoyage du dossier 'in' : c:\Users\nicol\Documents\ABEILLES\beeReal\\in
-2025-08-07 23:39:55,441 - INFO - nettoyage du dossier 'tmp' : c:\Users\nicol\Documents\ABEILLES\beeReal\\tmp
-2025-08-07 23:39:55,441 - INFO - Génération du fichier de résultats c:\Users\nicol\Documents\ABEILLES\beeReal\\out\results.txt
-2025-08-07 23:40:18,530 - INFO - Image n°61 : c:\Users\nicol\Documents\ABEILLES\beeReal\\in\61_in.jpg
