@@ -181,7 +181,7 @@ class HISTOGRAM():
         for i in range(len(idx)):
             xticks.append(str(int(idx[i]*100)/100))
         
-        ax.set_xticks(np.arange(1, 24), xticks, fontsize=8)
+        ax.set_xticks(np.arange(1, 24), xticks, fontsize=6)
 
         ax.xaxis.set_major_locator(MultipleLocator(1))
         # ax.xaxis.set_minor_locator(MultipleLocator(0.5))
@@ -220,8 +220,8 @@ class HISTOGRAM():
             for i in range(0, 24):
                 ax.axvline(i, color='black', linewidth=0.5, zorder=0)
             
-            for classe in np.arange(1, 24):
-                plt.text(classe+0.4, 0.15, str(classe), color='black', fontsize=7, fontweight='bold', zorder=30)
+            for classe in np.arange(6, 24):
+                plt.text(classe+0.3, 0.15, str(classe), color='black', fontsize=7, fontweight='bold', zorder=30)
 
             plt.vlines(mean_of_classes+0.5, 0, max(positions), color='black', linewidth=1.5, linestyle="--", zorder=6)
 
@@ -234,21 +234,22 @@ class HISTOGRAM():
             plt.fill_between(xx, yy1, yy2, color=colors[m], alpha=alpha, zorder=2)
             # plt.text(cmin + (cmax - cmin)/3, max(positions)-1.5, espece + f"\n     {self.mclc[espece]}%", fontsize=12, style='italic', zorder=10)
             plt.text(cmin + (cmax - cmin)/3, 3/4*max(positions), espece, fontsize=12, style='italic', zorder=10)
-            plt.text(mean_of_classes+0., 0.8, f'Moyenne indices : {int(np.mean(self.indices) * 100)/100}', 
-                     fontstyle='italic', fontweight='bold', fontsize=8, zorder=20)
+            plt.text(mean_of_classes+0., 2, f'Moyenne indices : {int(np.mean(self.indices) * 100)/100}', 
+                     fontstyle='italic', fontweight='light', fontsize=8, zorder=20)
         
             # plt.title(f"Histogramme de l'indice cubital (classification {self.visu})", fontweight='bold', fontsize='xx-large')
             plt.xticks(rotation=45)
             # plt.xlabel("Indice", fontsize='x-large', fontweight='light')
-            plt.xlabel("Indice", fontsize=12, fontweight='light')
+            plt.xlabel("Indice cubital (-)", fontsize=10, fontweight='light')
             # plt.ylabel("Nombre d'abeilles", fontsize='x-large', fontweight='light')
-            plt.ylabel("Nombre d'abeilles", fontsize=12, fontweight='light')
+            plt.ylabel("Nombre d'abeilles", fontsize=10, fontweight='light')
             plt.legend(loc='upper left', fontsize=10)
-            plt.tight_layout()
+            #plt.tight_layout()
             plt.grid()
             PATH = f"{self.path}{os.sep}{3-m}_histogramme_{self.visu}_{espece}.png"
             figures_out.append(PATH)
             ax.set_xlim(6, 26)
+            ax.tick_params(axis='y', labelsize=8)
 
             if add_plot:
                 PATH = f"{self.path}{os.sep}{3-m}_histogramme_{self.visu}_{espece}_2.png"
@@ -261,6 +262,7 @@ class HISTOGRAM():
 
                 plt.ylim(0, 1.2*max(positions))
                 ax.set_xlim(6, 26)
+                ax.tick_params(axis='y', labelsize=8)
 
             if show:
                 plt.show()
@@ -272,10 +274,10 @@ class HISTOGRAM():
 
         return figures_out
 
-    def scatter_plot(self, path, indices=list(), shifts=list(), id_bees=list(), name_fig="", title=""):
+    def scatter_plot(self, path, indices=list(), shifts=list(), id_bees=list(), id_bees_add=list(), add_plot=False, x_add=list(), y_add=list(), name_fig="", title=""):
         
         fig, ax = plt.subplots(figsize=(HEIGHT/dpi, WIDTH/dpi), dpi=dpi)
-        # fig.set_size_inches((16*0.5, 9*0.7))
+        #fig.set_size_inches((16*0.5, 9*0.7))
     #
         # colors = ["blue", "red", "black"]
 
@@ -285,34 +287,51 @@ class HISTOGRAM():
         indices = np.array(indices)
         shifts = np.array(shifts)
 
-        abeilles_noires = (indices < 2.05) &  (indices > 1) & (shifts < 0)
+        xmax = 3
+    
+        abeilles_noires = (indices < 2.05) &  (indices > 1) & (shifts < 0.1)
         autres_abeilles = ~(abeilles_noires)
 
         ratio = int(len(indices[abeilles_noires])/indices.size*100)
 
         plt.plot(indices[abeilles_noires], shifts[abeilles_noires], "*", 
-                color="black", markersize=10, 
+                color="black", markersize=8, 
                 label=f"Abeilles noires : {len(indices[abeilles_noires])}/{indices.size} ({ratio}%)")
         
-        plt.plot(indices[autres_abeilles], shifts[autres_abeilles], "*", color="blue", markersize=10)
+        plt.plot(indices[autres_abeilles], shifts[autres_abeilles], "*", color="blue", markersize=8)
+
+        if add_plot:
+            plt.plot(x_add, y_add, "^", color="red", markersize=3)
 
         # add bee number on the graph
-        for i in range(len(indices[0])):
-            plt.text(indices[0][i], shifts[0][i], id_bees[i])
+        for i in range(len(id_bees)):
+            if autres_abeilles.squeeze()[i] or abeilles_noires.squeeze()[i]:
+            # plt.text(indices[autres_abeilles][i], shifts[autres_abeilles][i], id_bees[autres_abeilles.squeeze()][i])
+                plt.text(indices.squeeze()[i], shifts.squeeze()[i], id_bees[i], fontsize=8)
 
-        plt.ylim([-np.max(np.abs(shifts)), +np.max(np.abs(shifts))])
+        for i in range(len(x_add)):
+            plt.text(x_add[i], y_add[i], id_bees_add[i], fontsize=7, color='red')
+
+        ax = plt.gca()
+        ax.fill_between([1, 2], [-np.max(np.abs(shifts)), -np.max(np.abs(shifts))], color='grey', alpha=0.5)
+        ax.tick_params(axis='x', labelsize=8)
+        ax.tick_params(axis='y', labelsize=8)
+
+        #plt.ylim([-np.max(np.abs(shifts)), +np.max(np.abs(shifts))])
+        plt.ylim([-np.std(shifts), +np.std(shifts)])
+        plt.xlim([1, xmax])
 
         # mean = np.mean(indices)
         # std = np.std(indices)
-        plt.xlim([1, 3])
+        plt.xlim([1, xmax])
         plt.axhline(0, color="darkgrey", linewidth=5, zorder=0)
         plt.axvline(2, color="darkgrey", linewidth=5, zorder=0)
         plt.grid()
         # plt.ylabel("Transgression discoïdale (°)", fontweight='bold', fontsize=14)
-        plt.ylabel("Transgression discoïdale (°)", fontsize=12)
+        plt.ylabel("Transgression discoïdale (°)", fontsize=10, fontweight='light')
         # plt.xlabel("Indice cubital (-)", fontweight='bold', fontsize=14)
-        plt.xlabel("Indice cubital (-)", fontsize=12)
-        plt.tight_layout()
+        plt.xlabel("Indice cubital (-)", fontsize=10, fontweight='light')
+        #plt.tight_layout()
         # plt.title(title)
         plt.legend()
         if name_fig != "":
@@ -333,13 +352,14 @@ def analyse(indices, shifts, id_bees, visu="RUTTNER", path_out=""):
 
     return list_of_ci_images, ds_image, H
 
-def analyse2(indices, shifts, id_bees, x_add, y_add, legend="", visu="RUTTNER", path_out=""):
+def analyse2(indices, shifts, id_bees, x_add, y_add, x_add_indices, y_add_shifts, id_bees_add, LEG="", visu="RUTTNER", path_out=""):
     
     H = HISTOGRAM(indices=indices, id_bees=id_bees, visu=visu, path=path_out)
 
-    list_of_ci_images = H.plot_histogram(add_plot=True, x_add=x_add, y_add=y_add, legend=legend, show=False, save=True)
+    list_of_ci_images = H.plot_histogram(add_plot=True, x_add=x_add, y_add=y_add, legend=LEG, show=False, save=True)
 
-    ds_image = H.scatter_plot(id_bees=id_bees, path=path_out, indices=[indices], shifts=[shifts], name_fig="add_plot")
+    ds_image = H.scatter_plot(indices=indices, shifts=shifts, add_plot=True, x_add=x_add_indices, y_add=y_add_shifts, 
+                              id_bees=id_bees, id_bees_add=id_bees_add, path=path_out, name_fig="add_plot")
 
     return list_of_ci_images, ds_image, H
 

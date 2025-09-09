@@ -36,6 +36,7 @@ from modules import buttons
 
 from PyQt5.QtCore import QUrl
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent, QAudioOutput
+import csv
 
 # Définir une fonction pour attraper toutes les exceptions non gérées
 def log_exception(exc_type, exc_value, exc_traceback):
@@ -382,9 +383,9 @@ class Tabs(QWidget):
         self.tabs.addTab(self.tab15, "71-75")
         self.tabs.addTab(self.tab16, "76-80")
         self.tabs.addTab(self.tab17, "81-85")
-        self.tabs.addTab(self.tab18, "85-90")
-        self.tabs.addTab(self.tab19, "90-95")
-        self.tabs.addTab(self.tab20, "95-100")
+        self.tabs.addTab(self.tab18, "86-90")
+        self.tabs.addTab(self.tab19, "91-95")
+        self.tabs.addTab(self.tab20, "96-100")
 
         self.tabs.setFont(QFont('Chalkduster', 13))
         self.tabs.setCurrentIndex(1)
@@ -471,16 +472,16 @@ class Tabs(QWidget):
         vl.addLayout(layout_main_2)
 
         # layout_main_1.setVerticalSpacing(50)
-        layout_main_1.setContentsMargins(0, 0, 10, 0)
-        layout_main_2.setContentsMargins(0, 40, 0, 0)
+        layout_main_1.setContentsMargins(0, 0, 15, 0)
+        layout_main_2.setContentsMargins(0, 35, 0, 0)
 
-        btn1 = QPushButton("Charger\nune analyse")
-        self.btn2 = QPushButton(f"Sauvegarder\nl'analyse\n{self.analyse_name}")
-        self.btn3 = QPushButton(f"Lancer\nl'analyse\n{self.analyse_name}")
-        label0 = QLabel("Nom de l'analyse : ")
+        btn1 = QPushButton("Load\nanalysis")
+        self.btn2 = QPushButton(f"Save\nanalysis\n{self.analyse_name}")
+        self.btn3 = QPushButton(f"Launch\nanalysis\n{self.analyse_name}")
+        label0 = QLabel("Name of the analysis: ")
         self.label00 = QLabel(self.analyse_name)
-        label1 = QLabel("<u>Histogramme de l'Indice Cubital<u>")
-        label2 = QLabel("<u>Indice Cubital / Discoidal shift<u>")
+        label1 = QLabel("<u>Histogram of cubital index<u>")
+        label2 = QLabel("<u>Cubital Index / Discoidal shift<u>")
         # self.edit_analyse_name = QLineEdit()
 
         self.son = QPushButton("")
@@ -489,14 +490,14 @@ class Tabs(QWidget):
         self.son.resize(50, 50)
         self.son.clicked.connect(self.mute)
 
-        self.btn_extra_plot = QPushButton(f"Add histogram")
+        self.btn_extra_plot = QPushButton(f"Add Deepwings data")
         self.btn_extra_plot.setEnabled(self.switch_extra_plot)
 
         label1.setStyleSheet("margin-bottom: 50px;")
         label2.setStyleSheet("margin-bottom: 50px;")
         self.btn_extra_plot.setStyleSheet("margin-bottom: 50px;")
 
-        self.pb = QPushButton("Editer")
+        self.pb = QPushButton("Edit")
         self.pb.clicked.connect(self.edit_name)
 
         my_font = QFont("Chalkduster", 20)
@@ -916,22 +917,39 @@ class Tabs(QWidget):
     def add_histogram(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
-        data_txt, _ = QFileDialog.getOpenFileName(self.tab0, "Select File", "", "All Files (*)", options=options)
+        csv_file, _ = QFileDialog.getOpenFileName(self.tab0, "Select File", "", "All Files (*)", options=options)
 
-        leg = data_txt.split("/")[-1].replace(" ", "_").replace(".txt", "")
+        leg = csv_file.split("/")[-1].replace(" ", "_").replace(".csv", "")
 
-        with open(data_txt, "r") as f:
-           liste_indices_tmp = f.readlines()
-           
-        liste_indices = []
-        for indice in liste_indices_tmp:
-            liste_indices.append(float(indice.replace('\n', '').replace(',', '.')))
+        #res = dict()
+        indices = list()
+        angles = list()
+        abeilles = list()
+        with open(csv_file, newline='', encoding="utf-8") as f:
+            lecteur = csv.reader(f, delimiter=";")
+            for ligne in lecteur:
+                # each lign is a list of values (1 value per column)
+                try:
+                    if ligne[5] != '0':
+                        abeilles.append(int(ligne[0].replace('.jpg', '')))
+                        indices.append(float(ligne[5].replace(',', '.')))
+                        angles.append(float(ligne[7].replace(',', '.')))
+                except:
+                    continue
 
-        new_histo = HISTOGRAM(indices=liste_indices, path="", id_bees=range(1, len(liste_indices)+1), save_abacus=0)
+        new_histo = HISTOGRAM(indices=indices, path="", id_bees=range(1, len(indices)+1), save_abacus=0)
         x, y = new_histo.histogram()
 
-        ci_images, ds_image, HISTO = analyse2(self.indices, self.shifts, id_bees=self.id_bees,
-                                              x_add=x, y_add=y, legend=leg + f" ({len(liste_indices)} abeilles)", path_out=self.out, visu=classif)
+        print(leg + f" ({len(indices)} abeilles)")
+
+        ci_images, ds_image, HISTO = analyse2(self.indices, self.shifts, self.id_bees,
+                                              x, 
+                                              y,
+                                              indices, 
+                                              angles,
+                                              abeilles,
+                                              LEG=leg + f" ({len(indices)} abeilles)", path_out=self.out, visu=classif)
+
 
         for image in ci_images:
             if "mellifera" in image:
