@@ -1,0 +1,757 @@
+2025-09-03 19:17:12,456 - INFO - Image 1 : C:\Users\nicol\AppData\Local\Temp\_MEI178642\in\\1_in.jpg
+2025-09-03 19:17:13,501 - INFO - Edition de l'image : 1_in.jpg
+2025-09-03 19:17:13,501 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI178642\in\\1_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI178642\tmp\\1_in___03_09_2025___19_17_13.jpg
+2025-09-03 19:17:13,534 - INFO - Edition de l'image 1
+2025-09-03 19:17:13,534 - INFO - ----------------------
+2025-09-03 19:17:42,520 - INFO - Point Ci n°1 : (i,j)=(284, 1401)
+2025-09-03 19:17:42,520 - INFO - Point Ci n°2 : (i,j)=(308, 1489)
+2025-09-03 19:17:42,522 - INFO - Point Ci n°3 : (i,j)=(295, 1535)
+2025-09-03 19:17:42,522 - INFO - ----------------------
+2025-09-03 19:17:42,522 - INFO - Point Ds n°1 : (i,j)=(166, 1116)
+2025-09-03 19:17:42,522 - INFO - Point Ds n°2 : (i,j)=(168, 1364)
+2025-09-03 19:17:42,522 - INFO - Point Ds n°3 : (i,j)=(84, 1751)
+2025-09-03 19:17:42,522 - INFO - Point Ds n°4 : (i,j)=(448, 1424)
+2025-09-03 19:17:42,554 - INFO - Indice cubital Abeille #1) : 1.9081765787211278
+2025-09-03 19:17:42,555 - INFO - Shift discoidal Abeille #1) : 4.73526244°
+2025-09-03 19:17:42,568 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI178642\out\\1_out.jpg
+2025-09-03 19:17:42,583 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:17:45,483 - INFO - Image 2 : C:\Users\nicol\AppData\Local\Temp\_MEI178642\in\\2_in.jpg
+2025-09-03 19:17:46,276 - INFO - Edition de l'image : 2_in.jpg
+2025-09-03 19:17:46,277 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI178642\in\\2_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI178642\tmp\\2_in___03_09_2025___19_17_46.jpg
+2025-09-03 19:17:46,307 - INFO - Edition de l'image 2
+2025-09-03 19:17:46,307 - INFO - ----------------------
+2025-09-03 19:18:18,895 - INFO - Point Ci n°1 : (i,j)=(256, 1413)
+2025-09-03 19:18:18,895 - INFO - Point Ci n°2 : (i,j)=(295, 1512)
+2025-09-03 19:18:18,895 - INFO - Point Ci n°3 : (i,j)=(288, 1558)
+2025-09-03 19:18:18,895 - INFO - ----------------------
+2025-09-03 19:18:18,896 - INFO - Point Ds n°1 : (i,j)=(98, 1129)
+2025-09-03 19:18:18,896 - INFO - Point Ds n°2 : (i,j)=(138, 1404)
+2025-09-03 19:18:18,896 - INFO - Point Ds n°3 : (i,j)=(108, 1785)
+2025-09-03 19:18:18,896 - INFO - Point Ds n°4 : (i,j)=(426, 1408)
+2025-09-03 19:18:18,928 - INFO - Indice cubital Abeille #2) : 2.286823386473863
+2025-09-03 19:18:18,929 - INFO - Shift discoidal Abeille #2) : 1.67712755°
+2025-09-03 19:18:18,941 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI178642\out\\2_out.jpg
+2025-09-03 19:18:18,956 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:18:22,416 - INFO - Image 3 : C:\Users\nicol\AppData\Local\Temp\_MEI178642\in\\3_in.jpg
+2025-09-03 19:18:23,335 - INFO - Edition de l'image : 3_in.jpg
+2025-09-03 19:18:23,335 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI178642\in\\3_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI178642\tmp\\3_in___03_09_2025___19_18_23.jpg
+2025-09-03 19:18:23,366 - INFO - Edition de l'image 3
+2025-09-03 19:18:23,366 - INFO - ----------------------
+2025-09-03 19:18:55,017 - INFO - Point Ci n°1 : (i,j)=(290, 1367)
+2025-09-03 19:18:55,017 - INFO - Point Ci n°2 : (i,j)=(318, 1488)
+2025-09-03 19:18:55,017 - INFO - Point Ci n°3 : (i,j)=(306, 1528)
+2025-09-03 19:18:55,017 - INFO - ----------------------
+2025-09-03 19:18:55,018 - INFO - Point Ds n°1 : (i,j)=(165, 1062)
+2025-09-03 19:18:55,018 - INFO - Point Ds n°2 : (i,j)=(171, 1363)
+2025-09-03 19:18:55,018 - INFO - Point Ds n°3 : (i,j)=(88, 1756)
+2025-09-03 19:18:55,018 - INFO - Point Ds n°4 : (i,j)=(476, 1399)
+2025-09-03 19:18:55,051 - INFO - Indice cubital Abeille #3) : 2.9739889192367746
+2025-09-03 19:18:55,052 - INFO - Shift discoidal Abeille #3) : 0.39144296°
+2025-09-03 19:18:55,065 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI178642\out\\3_out.jpg
+2025-09-03 19:18:55,080 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:19:00,040 - INFO - Image 4 : C:\Users\nicol\AppData\Local\Temp\_MEI178642\in\\4_in.jpg
+2025-09-03 19:19:01,178 - INFO - Edition de l'image : 4_in.jpg
+2025-09-03 19:19:01,179 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI178642\in\\4_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI178642\tmp\\4_in___03_09_2025___19_19_01.jpg
+2025-09-03 19:19:01,208 - INFO - Edition de l'image 4
+2025-09-03 19:19:01,208 - INFO - ----------------------
+2025-09-03 19:19:29,362 - INFO - Point Ci n°1 : (i,j)=(264, 1417)
+2025-09-03 19:19:29,362 - INFO - Point Ci n°2 : (i,j)=(294, 1522)
+2025-09-03 19:19:29,362 - INFO - Point Ci n°3 : (i,j)=(285, 1564)
+2025-09-03 19:19:29,362 - INFO - ----------------------
+2025-09-03 19:19:29,362 - INFO - Point Ds n°1 : (i,j)=(125, 1124)
+2025-09-03 19:19:29,362 - INFO - Point Ds n°2 : (i,j)=(146, 1421)
+2025-09-03 19:19:29,362 - INFO - Point Ds n°3 : (i,j)=(91, 1776)
+2025-09-03 19:19:29,362 - INFO - Point Ds n°4 : (i,j)=(441, 1427)
+2025-09-03 19:19:29,393 - INFO - Indice cubital Abeille #4) : 2.542324651602612
+2025-09-03 19:19:29,394 - INFO - Shift discoidal Abeille #4) : -1.84761027°
+2025-09-03 19:19:29,407 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI178642\out\\4_out.jpg
+2025-09-03 19:19:29,422 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:19:36,996 - INFO - Image 5 : C:\Users\nicol\AppData\Local\Temp\_MEI178642\in\\5_in.jpg
+2025-09-03 19:19:37,877 - INFO - Edition de l'image : 5_in.jpg
+2025-09-03 19:19:37,878 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI178642\in\\5_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI178642\tmp\\5_in___03_09_2025___19_19_37.jpg
+2025-09-03 19:19:37,907 - INFO - Edition de l'image 5
+2025-09-03 19:19:37,907 - INFO - ----------------------
+2025-09-03 19:20:04,881 - INFO - Point Ci n°1 : (i,j)=(265, 1430)
+2025-09-03 19:20:04,881 - INFO - Point Ci n°2 : (i,j)=(300, 1529)
+2025-09-03 19:20:04,881 - INFO - Point Ci n°3 : (i,j)=(290, 1578)
+2025-09-03 19:20:04,881 - INFO - ----------------------
+2025-09-03 19:20:04,881 - INFO - Point Ds n°1 : (i,j)=(124, 1135)
+2025-09-03 19:20:04,881 - INFO - Point Ds n°2 : (i,j)=(147, 1412)
+2025-09-03 19:20:04,881 - INFO - Point Ds n°3 : (i,j)=(98, 1800)
+2025-09-03 19:20:04,881 - INFO - Point Ds n°4 : (i,j)=(437, 1434)
+2025-09-03 19:20:04,913 - INFO - Indice cubital Abeille #5) : 2.099675342852282
+2025-09-03 19:20:04,913 - INFO - Shift discoidal Abeille #5) : 2.09042755°
+2025-09-03 19:20:04,926 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI178642\out\\5_out.jpg
+2025-09-03 19:20:04,940 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:39:42,864 - INFO - L'analyse 'ma_ruche_verif_15' a bien été enregistrée dans C:/Users/nicol/Documents/ABEILLES/etudes
+2025-09-03 19:40:33,572 - INFO - Image 16 : C:\Users\nicol\AppData\Local\Temp\_MEI39882\in\\16_in.jpg
+2025-09-03 19:40:34,366 - INFO - Edition de l'image : 16_in.jpg
+2025-09-03 19:40:34,367 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI39882\in\\16_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI39882\tmp\\16_in___03_09_2025___19_40_34.jpg
+2025-09-03 19:40:34,399 - INFO - Edition de l'image 16
+2025-09-03 19:40:34,399 - INFO - ----------------------
+2025-09-03 19:41:05,000 - INFO - Point Ci n°1 : (i,j)=(312, 1195)
+2025-09-03 19:41:05,000 - INFO - Point Ci n°2 : (i,j)=(332, 1302)
+2025-09-03 19:41:05,000 - INFO - Point Ci n°3 : (i,j)=(315, 1338)
+2025-09-03 19:41:05,000 - INFO - ----------------------
+2025-09-03 19:41:05,000 - INFO - Point Ds n°1 : (i,j)=(218, 878)
+2025-09-03 19:41:05,000 - INFO - Point Ds n°2 : (i,j)=(199, 1152)
+2025-09-03 19:41:05,000 - INFO - Point Ds n°3 : (i,j)=(89, 1534)
+2025-09-03 19:41:05,000 - INFO - Point Ds n°4 : (i,j)=(497, 1226)
+2025-09-03 19:41:05,032 - INFO - Indice cubital Abeille #16) : 2.7341744236935237
+2025-09-03 19:41:05,032 - INFO - Shift discoidal Abeille #16) : 2.80443692°
+2025-09-03 19:41:05,046 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI39882\out\\16_out.jpg
+2025-09-03 19:41:05,061 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:41:08,884 - INFO - Image 17 : C:\Users\nicol\AppData\Local\Temp\_MEI39882\in\\17_in.jpg
+2025-09-03 19:41:09,660 - INFO - Edition de l'image : 17_in.jpg
+2025-09-03 19:41:09,662 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI39882\in\\17_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI39882\tmp\\17_in___03_09_2025___19_41_09.jpg
+2025-09-03 19:41:09,693 - INFO - Edition de l'image 17
+2025-09-03 19:41:09,693 - INFO - ----------------------
+2025-09-03 19:41:42,222 - INFO - Point Ci n°1 : (i,j)=(306, 1335)
+2025-09-03 19:41:42,222 - INFO - Point Ci n°2 : (i,j)=(319, 1430)
+2025-09-03 19:41:42,222 - INFO - Point Ci n°3 : (i,j)=(297, 1478)
+2025-09-03 19:41:42,222 - INFO - ----------------------
+2025-09-03 19:41:42,222 - INFO - Point Ds n°1 : (i,j)=(232, 1035)
+2025-09-03 19:41:42,222 - INFO - Point Ds n°2 : (i,j)=(196, 1315)
+2025-09-03 19:41:42,222 - INFO - Point Ds n°3 : (i,j)=(77, 1640)
+2025-09-03 19:41:42,222 - INFO - Point Ds n°4 : (i,j)=(472, 1374)
+2025-09-03 19:41:42,256 - INFO - Indice cubital Abeille #17) : 1.8159582725472276
+2025-09-03 19:41:42,256 - INFO - Shift discoidal Abeille #17) : -2.33211755°
+2025-09-03 19:41:42,271 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI39882\out\\17_out.jpg
+2025-09-03 19:41:42,286 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:41:46,222 - INFO - Image 18 : C:\Users\nicol\AppData\Local\Temp\_MEI39882\in\\18_in.jpg
+2025-09-03 19:41:47,004 - INFO - Edition de l'image : 18_in.jpg
+2025-09-03 19:41:47,004 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI39882\in\\18_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI39882\tmp\\18_in___03_09_2025___19_41_47.jpg
+2025-09-03 19:41:47,035 - INFO - Edition de l'image 18
+2025-09-03 19:41:47,035 - INFO - ----------------------
+2025-09-03 19:42:15,157 - INFO - Point Ci n°1 : (i,j)=(341, 1231)
+2025-09-03 19:42:15,157 - INFO - Point Ci n°2 : (i,j)=(350, 1336)
+2025-09-03 19:42:15,157 - INFO - Point Ci n°3 : (i,j)=(326, 1383)
+2025-09-03 19:42:15,157 - INFO - ----------------------
+2025-09-03 19:42:15,157 - INFO - Point Ds n°1 : (i,j)=(274, 898)
+2025-09-03 19:42:15,157 - INFO - Point Ds n°2 : (i,j)=(227, 1195)
+2025-09-03 19:42:15,158 - INFO - Point Ds n°3 : (i,j)=(80, 1547)
+2025-09-03 19:42:15,158 - INFO - Point Ds n°4 : (i,j)=(519, 1278)
+2025-09-03 19:42:15,191 - INFO - Indice cubital Abeille #18) : 1.996945603032835
+2025-09-03 19:42:15,191 - INFO - Shift discoidal Abeille #18) : -0.76070224°
+2025-09-03 19:42:15,208 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI39882\out\\18_out.jpg
+2025-09-03 19:42:15,223 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:42:20,227 - INFO - Image 19 : C:\Users\nicol\AppData\Local\Temp\_MEI39882\in\\19_in.jpg
+2025-09-03 19:42:21,189 - INFO - Edition de l'image : 19_in.jpg
+2025-09-03 19:42:21,190 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI39882\in\\19_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI39882\tmp\\19_in___03_09_2025___19_42_21.jpg
+2025-09-03 19:42:21,223 - INFO - Edition de l'image 19
+2025-09-03 19:42:21,224 - INFO - ----------------------
+2025-09-03 19:42:50,078 - INFO - Point Ci n°1 : (i,j)=(340, 1428)
+2025-09-03 19:42:50,078 - INFO - Point Ci n°2 : (i,j)=(346, 1547)
+2025-09-03 19:42:50,078 - INFO - Point Ci n°3 : (i,j)=(324, 1585)
+2025-09-03 19:42:50,078 - INFO - ----------------------
+2025-09-03 19:42:50,078 - INFO - Point Ds n°1 : (i,j)=(303, 1107)
+2025-09-03 19:42:50,078 - INFO - Point Ds n°2 : (i,j)=(238, 1396)
+2025-09-03 19:42:50,078 - INFO - Point Ds n°3 : (i,j)=(69, 1744)
+2025-09-03 19:42:50,078 - INFO - Point Ds n°4 : (i,j)=(515, 1497)
+2025-09-03 19:42:50,119 - INFO - Indice cubital Abeille #19) : 2.713593413099733
+2025-09-03 19:42:50,119 - INFO - Shift discoidal Abeille #19) : 0.°
+2025-09-03 19:42:50,140 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI39882\out\\19_out.jpg
+2025-09-03 19:42:50,160 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:42:56,273 - INFO - Image 20 : C:\Users\nicol\AppData\Local\Temp\_MEI39882\in\\20_in.jpg
+2025-09-03 19:42:57,264 - INFO - Edition de l'image : 20_in.jpg
+2025-09-03 19:42:57,265 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI39882\in\\20_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI39882\tmp\\20_in___03_09_2025___19_42_57.jpg
+2025-09-03 19:42:57,299 - INFO - Edition de l'image 20
+2025-09-03 19:42:57,299 - INFO - ----------------------
+2025-09-03 19:43:25,502 - INFO - Point Ci n°1 : (i,j)=(312, 1366)
+2025-09-03 19:43:25,502 - INFO - Point Ci n°2 : (i,j)=(324, 1476)
+2025-09-03 19:43:25,502 - INFO - Point Ci n°3 : (i,j)=(308, 1521)
+2025-09-03 19:43:25,502 - INFO - ----------------------
+2025-09-03 19:43:25,502 - INFO - Point Ds n°1 : (i,j)=(240, 1070)
+2025-09-03 19:43:25,502 - INFO - Point Ds n°2 : (i,j)=(202, 1344)
+2025-09-03 19:43:25,502 - INFO - Point Ds n°3 : (i,j)=(76, 1694)
+2025-09-03 19:43:25,502 - INFO - Point Ds n°4 : (i,j)=(480, 1415)
+2025-09-03 19:43:25,537 - INFO - Indice cubital Abeille #20) : 2.31685587188389
+2025-09-03 19:43:25,537 - INFO - Shift discoidal Abeille #20) : -0.43361266°
+2025-09-03 19:43:25,553 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI39882\out\\20_out.jpg
+2025-09-03 19:43:25,569 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:54:09,395 - INFO - L'analyse 'ma_ruche_verif_25' a bien été enregistrée dans C:/Users/nicol/Documents/ABEILLES/etudes
+2025-09-03 19:54:12,601 - INFO - Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI
+2025-09-03 19:54:12,602 - INFO - calcul de l'histogramme de l'indice cubital
+2025-09-03 19:55:18,025 - INFO - Image 26 : C:\Users\nicol\AppData\Local\Temp\_MEI38122\in\\26_in.jpg
+2025-09-03 19:55:18,815 - INFO - Edition de l'image : 26_in.jpg
+2025-09-03 19:55:18,816 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI38122\in\\26_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI38122\tmp\\26_in___03_09_2025___19_55_18.jpg
+2025-09-03 19:55:18,848 - INFO - Edition de l'image 26
+2025-09-03 19:55:18,848 - INFO - ----------------------
+2025-09-03 19:55:53,573 - INFO - Point Ci n°1 : (i,j)=(285, 1374)
+2025-09-03 19:55:53,573 - INFO - Point Ci n°2 : (i,j)=(304, 1476)
+2025-09-03 19:55:53,573 - INFO - Point Ci n°3 : (i,j)=(288, 1526)
+2025-09-03 19:55:53,574 - INFO - ----------------------
+2025-09-03 19:55:53,574 - INFO - Point Ds n°1 : (i,j)=(173, 1083)
+2025-09-03 19:55:53,574 - INFO - Point Ds n°2 : (i,j)=(170, 1364)
+2025-09-03 19:55:53,574 - INFO - Point Ds n°3 : (i,j)=(77, 1713)
+2025-09-03 19:55:53,574 - INFO - Point Ds n°4 : (i,j)=(458, 1408)
+2025-09-03 19:55:53,595 - INFO - draw_ds_line_02_perpendicular(): la recherche + précise d'un autre pixel appartenant à la droite perpendiculaire à la première n'a pas marché
+2025-09-03 19:55:53,605 - INFO - Indice cubital Abeille #26) : 1.9763661659877092
+2025-09-03 19:55:53,605 - INFO - Shift discoidal Abeille #26) : 0.0°
+2025-09-03 19:55:53,617 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI38122\out\\26_out.jpg
+2025-09-03 19:55:53,632 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:55:57,449 - INFO - Image 27 : C:\Users\nicol\AppData\Local\Temp\_MEI38122\in\\27_in.jpg
+2025-09-03 19:55:58,061 - INFO - Edition de l'image : 27_in.jpg
+2025-09-03 19:55:58,062 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI38122\in\\27_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI38122\tmp\\27_in___03_09_2025___19_55_58.jpg
+2025-09-03 19:55:58,089 - INFO - Edition de l'image 27
+2025-09-03 19:55:58,089 - INFO - ----------------------
+2025-09-03 19:56:38,020 - INFO - Point Ci n°1 : (i,j)=(282, 1335)
+2025-09-03 19:56:38,020 - INFO - Point Ci n°2 : (i,j)=(305, 1433)
+2025-09-03 19:56:38,020 - INFO - Point Ci n°3 : (i,j)=(291, 1475)
+2025-09-03 19:56:38,020 - INFO - ----------------------
+2025-09-03 19:56:38,020 - INFO - Point Ds n°1 : (i,j)=(163, 1031)
+2025-09-03 19:56:38,020 - INFO - Point Ds n°2 : (i,j)=(162, 1324)
+2025-09-03 19:56:38,020 - INFO - Point Ds n°3 : (i,j)=(78, 1677)
+2025-09-03 19:56:38,020 - INFO - Point Ds n°4 : (i,j)=(455, 1355)
+2025-09-03 19:56:38,052 - INFO - Indice cubital Abeille #27) : 2.273740961319841
+2025-09-03 19:56:38,052 - INFO - Shift discoidal Abeille #27) : -1.46780468°
+2025-09-03 19:56:38,065 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI38122\out\\27_out.jpg
+2025-09-03 19:56:38,080 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:56:45,291 - INFO - Image 28 : C:\Users\nicol\AppData\Local\Temp\_MEI38122\in\\28_in.jpg
+2025-09-03 19:56:46,265 - INFO - Edition de l'image : 28_in.jpg
+2025-09-03 19:56:46,266 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI38122\in\\28_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI38122\tmp\\28_in___03_09_2025___19_56_46.jpg
+2025-09-03 19:56:46,296 - INFO - Edition de l'image 28
+2025-09-03 19:56:46,296 - INFO - ----------------------
+2025-09-03 19:57:31,694 - INFO - Point Ci n°1 : (i,j)=(292, 1392)
+2025-09-03 19:57:31,694 - INFO - Point Ci n°2 : (i,j)=(308, 1478)
+2025-09-03 19:57:31,694 - INFO - Point Ci n°3 : (i,j)=(288, 1527)
+2025-09-03 19:57:31,694 - INFO - ----------------------
+2025-09-03 19:57:31,694 - INFO - Point Ds n°1 : (i,j)=(210, 1084)
+2025-09-03 19:57:31,694 - INFO - Point Ds n°2 : (i,j)=(181, 1342)
+2025-09-03 19:57:31,694 - INFO - Point Ds n°3 : (i,j)=(71, 1698)
+2025-09-03 19:57:31,694 - INFO - Point Ds n°4 : (i,j)=(448, 1420)
+2025-09-03 19:57:31,726 - INFO - Indice cubital Abeille #28) : 1.652840425117697
+2025-09-03 19:57:31,726 - INFO - Shift discoidal Abeille #28) : 3.52109453°
+2025-09-03 19:57:31,739 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI38122\out\\28_out.jpg
+2025-09-03 19:57:31,756 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:57:35,521 - INFO - Image 29 : C:\Users\nicol\AppData\Local\Temp\_MEI38122\in\\29_in.jpg
+2025-09-03 19:57:36,293 - INFO - Edition de l'image : 29_in.jpg
+2025-09-03 19:57:36,293 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI38122\in\\29_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI38122\tmp\\29_in___03_09_2025___19_57_36.jpg
+2025-09-03 19:57:36,323 - INFO - Edition de l'image 29
+2025-09-03 19:57:36,323 - INFO - ----------------------
+2025-09-03 19:58:06,913 - INFO - Point Ci n°1 : (i,j)=(307, 1083)
+2025-09-03 19:58:06,913 - INFO - Point Ci n°2 : (i,j)=(321, 1177)
+2025-09-03 19:58:06,913 - INFO - Point Ci n°3 : (i,j)=(304, 1231)
+2025-09-03 19:58:06,913 - INFO - ----------------------
+2025-09-03 19:58:06,913 - INFO - Point Ds n°1 : (i,j)=(219, 776)
+2025-09-03 19:58:06,913 - INFO - Point Ds n°2 : (i,j)=(195, 1045)
+2025-09-03 19:58:06,913 - INFO - Point Ds n°3 : (i,j)=(83, 1413)
+2025-09-03 19:58:06,913 - INFO - Point Ds n°4 : (i,j)=(476, 1119)
+2025-09-03 19:58:06,943 - INFO - Indice cubital Abeille #29) : 1.67871877450303
+2025-09-03 19:58:06,943 - INFO - Shift discoidal Abeille #29) : 2.71245367°
+2025-09-03 19:58:06,956 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI38122\out\\29_out.jpg
+2025-09-03 19:58:06,970 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 19:58:12,543 - INFO - Image 30 : C:\Users\nicol\AppData\Local\Temp\_MEI38122\in\\30_in.jpg
+2025-09-03 19:58:13,561 - INFO - Edition de l'image : 30_in.jpg
+2025-09-03 19:58:13,561 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI38122\in\\30_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI38122\tmp\\30_in___03_09_2025___19_58_13.jpg
+2025-09-03 19:58:13,591 - INFO - Edition de l'image 30
+2025-09-03 19:58:13,591 - INFO - ----------------------
+2025-09-03 19:58:46,953 - INFO - Point Ci n°1 : (i,j)=(300, 1181)
+2025-09-03 19:58:46,953 - INFO - Point Ci n°2 : (i,j)=(319, 1279)
+2025-09-03 19:58:46,953 - INFO - Point Ci n°3 : (i,j)=(302, 1332)
+2025-09-03 19:58:46,953 - INFO - ----------------------
+2025-09-03 19:58:46,953 - INFO - Point Ds n°1 : (i,j)=(210, 873)
+2025-09-03 19:58:46,953 - INFO - Point Ds n°2 : (i,j)=(185, 1152)
+2025-09-03 19:58:46,953 - INFO - Point Ds n°3 : (i,j)=(72, 1518)
+2025-09-03 19:58:46,953 - INFO - Point Ds n°4 : (i,j)=(472, 1224)
+2025-09-03 19:58:46,985 - INFO - Indice cubital Abeille #30) : 1.7934858096058595
+2025-09-03 19:58:46,986 - INFO - Shift discoidal Abeille #30) : 1.98845013°
+2025-09-03 19:58:46,997 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI38122\out\\30_out.jpg
+2025-09-03 19:58:47,012 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:03:15,129 - INFO - L'analyse 'ma_ruche_verif_40' a bien été enregistrée dans C:/Users/nicol/Documents/ABEILLES/etudes
+2025-09-03 23:03:18,777 - INFO - Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI
+2025-09-03 23:03:18,777 - INFO - calcul de l'histogramme de l'indice cubital
+2025-09-03 23:04:28,073 - INFO - Image 41 : C:\Users\nicol\AppData\Local\Temp\_MEI169642\in\\41_in.jpg
+2025-09-03 23:04:28,895 - INFO - Edition de l'image : 41_in.jpg
+2025-09-03 23:04:28,895 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI169642\in\\41_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI169642\tmp\\41_in___03_09_2025___23_04_28.jpg
+2025-09-03 23:04:28,928 - INFO - Edition de l'image 41
+2025-09-03 23:04:28,928 - INFO - ----------------------
+2025-09-03 23:05:01,456 - INFO - Point Ci n°1 : (i,j)=(289, 1393)
+2025-09-03 23:05:01,457 - INFO - Point Ci n°2 : (i,j)=(311, 1488)
+2025-09-03 23:05:01,457 - INFO - Point Ci n°3 : (i,j)=(293, 1536)
+2025-09-03 23:05:01,457 - INFO - ----------------------
+2025-09-03 23:05:01,457 - INFO - Point Ds n°1 : (i,j)=(199, 1084)
+2025-09-03 23:05:01,457 - INFO - Point Ds n°2 : (i,j)=(178, 1342)
+2025-09-03 23:05:01,457 - INFO - Point Ds n°3 : (i,j)=(69, 1720)
+2025-09-03 23:05:01,457 - INFO - Point Ds n°4 : (i,j)=(456, 1428)
+2025-09-03 23:05:01,488 - INFO - Indice cubital Abeille #41) : 1.9021937187582683
+2025-09-03 23:05:01,488 - INFO - Shift discoidal Abeille #41) : 5.61961251°
+2025-09-03 23:05:01,501 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI169642\out\\41_out.jpg
+2025-09-03 23:05:01,516 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:05:06,962 - INFO - Image 42 : C:\Users\nicol\AppData\Local\Temp\_MEI169642\in\\42_in.jpg
+2025-09-03 23:05:07,849 - INFO - Edition de l'image : 42_in.jpg
+2025-09-03 23:05:07,849 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI169642\in\\42_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI169642\tmp\\42_in___03_09_2025___23_05_07.jpg
+2025-09-03 23:05:07,879 - INFO - Edition de l'image 42
+2025-09-03 23:05:07,879 - INFO - ----------------------
+2025-09-03 23:05:41,558 - INFO - Point Ci n°1 : (i,j)=(263, 1282)
+2025-09-03 23:05:41,558 - INFO - Point Ci n°2 : (i,j)=(295, 1391)
+2025-09-03 23:05:41,558 - INFO - Point Ci n°3 : (i,j)=(281, 1428)
+2025-09-03 23:05:41,558 - INFO - ----------------------
+2025-09-03 23:05:41,558 - INFO - Point Ds n°1 : (i,j)=(143, 1003)
+2025-09-03 23:05:41,558 - INFO - Point Ds n°2 : (i,j)=(153, 1254)
+2025-09-03 23:05:41,558 - INFO - Point Ds n°3 : (i,j)=(82, 1643)
+2025-09-03 23:05:41,558 - INFO - Point Ds n°4 : (i,j)=(441, 1311)
+2025-09-03 23:05:41,590 - INFO - Indice cubital Abeille #42) : 2.8715860408102625
+2025-09-03 23:05:41,590 - INFO - Shift discoidal Abeille #42) : 5.74951904°
+2025-09-03 23:05:41,604 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI169642\out\\42_out.jpg
+2025-09-03 23:05:41,618 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:05:49,817 - INFO - Image 43 : C:\Users\nicol\AppData\Local\Temp\_MEI169642\in\\43_in.jpg
+2025-09-03 23:05:50,739 - INFO - Edition de l'image : 43_in.jpg
+2025-09-03 23:05:50,740 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI169642\in\\43_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI169642\tmp\\43_in___03_09_2025___23_05_50.jpg
+2025-09-03 23:05:50,767 - INFO - Edition de l'image 43
+2025-09-03 23:05:50,767 - INFO - ----------------------
+2025-09-03 23:06:22,888 - INFO - Point Ci n°1 : (i,j)=(293, 1090)
+2025-09-03 23:06:22,888 - INFO - Point Ci n°2 : (i,j)=(318, 1186)
+2025-09-03 23:06:22,888 - INFO - Point Ci n°3 : (i,j)=(305, 1233)
+2025-09-03 23:06:22,888 - INFO - ----------------------
+2025-09-03 23:06:22,888 - INFO - Point Ds n°1 : (i,j)=(185, 780)
+2025-09-03 23:06:22,888 - INFO - Point Ds n°2 : (i,j)=(177, 1068)
+2025-09-03 23:06:22,888 - INFO - Point Ds n°3 : (i,j)=(91, 1435)
+2025-09-03 23:06:22,888 - INFO - Point Ds n°4 : (i,j)=(461, 1112)
+2025-09-03 23:06:22,919 - INFO - Indice cubital Abeille #43) : 2.03429387157543
+2025-09-03 23:06:22,919 - INFO - Shift discoidal Abeille #43) : 0.67669034°
+2025-09-03 23:06:22,932 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI169642\out\\43_out.jpg
+2025-09-03 23:06:22,946 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:06:29,627 - INFO - Image 44 : C:\Users\nicol\AppData\Local\Temp\_MEI169642\in\\44_in.jpg
+2025-09-03 23:06:30,712 - INFO - Edition de l'image : 44_in.jpg
+2025-09-03 23:06:30,713 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI169642\in\\44_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI169642\tmp\\44_in___03_09_2025___23_06_30.jpg
+2025-09-03 23:06:30,744 - INFO - Edition de l'image 44
+2025-09-03 23:06:30,744 - INFO - ----------------------
+2025-09-03 23:07:04,217 - INFO - Point Ci n°1 : (i,j)=(276, 1345)
+2025-09-03 23:07:04,217 - INFO - Point Ci n°2 : (i,j)=(304, 1444)
+2025-09-03 23:07:04,217 - INFO - Point Ci n°3 : (i,j)=(293, 1485)
+2025-09-03 23:07:04,217 - INFO - ----------------------
+2025-09-03 23:07:04,217 - INFO - Point Ds n°1 : (i,j)=(151, 1041)
+2025-09-03 23:07:04,217 - INFO - Point Ds n°2 : (i,j)=(160, 1329)
+2025-09-03 23:07:04,217 - INFO - Point Ds n°3 : (i,j)=(86, 1704)
+2025-09-03 23:07:04,217 - INFO - Point Ds n°4 : (i,j)=(455, 1353)
+2025-09-03 23:07:04,249 - INFO - Indice cubital Abeille #44) : 2.423639588888115
+2025-09-03 23:07:04,249 - INFO - Shift discoidal Abeille #44) : -0.95243033°
+2025-09-03 23:07:04,263 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI169642\out\\44_out.jpg
+2025-09-03 23:07:04,278 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:07:10,083 - INFO - Image 45 : C:\Users\nicol\AppData\Local\Temp\_MEI169642\in\\45_in.jpg
+2025-09-03 23:07:10,903 - INFO - Edition de l'image : 45_in.jpg
+2025-09-03 23:07:10,904 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI169642\in\\45_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI169642\tmp\\45_in___03_09_2025___23_07_10.jpg
+2025-09-03 23:07:10,932 - INFO - Edition de l'image 45
+2025-09-03 23:07:10,932 - INFO - ----------------------
+2025-09-03 23:07:42,439 - INFO - Point Ci n°1 : (i,j)=(283, 1390)
+2025-09-03 23:07:42,439 - INFO - Point Ci n°2 : (i,j)=(302, 1482)
+2025-09-03 23:07:42,439 - INFO - Point Ci n°3 : (i,j)=(286, 1534)
+2025-09-03 23:07:42,439 - INFO - ----------------------
+2025-09-03 23:07:42,439 - INFO - Point Ds n°1 : (i,j)=(182, 1098)
+2025-09-03 23:07:42,439 - INFO - Point Ds n°2 : (i,j)=(172, 1356)
+2025-09-03 23:07:42,439 - INFO - Point Ds n°3 : (i,j)=(82, 1731)
+2025-09-03 23:07:42,439 - INFO - Point Ds n°4 : (i,j)=(441, 1412)
+2025-09-03 23:07:42,472 - INFO - Indice cubital Abeille #45) : 1.7266785800834266
+2025-09-03 23:07:42,472 - INFO - Shift discoidal Abeille #45) : 2.77552747°
+2025-09-03 23:07:42,487 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI169642\out\\45_out.jpg
+2025-09-03 23:07:42,502 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:16:57,365 - INFO - L'analyse 'ma_ruche_verif_50' a bien été enregistrée dans C:/Users/nicol/Documents/ABEILLES/etudes
+2025-09-03 23:17:00,363 - INFO - Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI
+2025-09-03 23:17:00,363 - INFO - calcul de l'histogramme de l'indice cubital
+2025-09-03 23:17:31,677 - INFO - Image 51 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\51_in.jpg
+2025-09-03 23:17:32,833 - INFO - Edition de l'image : 51_in.jpg
+2025-09-03 23:17:32,834 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\51_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\51_in___03_09_2025___23_17_32.jpg
+2025-09-03 23:17:32,866 - INFO - Edition de l'image 51
+2025-09-03 23:17:32,867 - INFO - ----------------------
+2025-09-03 23:18:37,368 - INFO - Point Ci n°1 : (i,j)=(284, 1313)
+2025-09-03 23:18:37,368 - INFO - Point Ci n°2 : (i,j)=(310, 1415)
+2025-09-03 23:18:37,368 - INFO - Point Ci n°3 : (i,j)=(296, 1460)
+2025-09-03 23:18:37,368 - INFO - ----------------------
+2025-09-03 23:18:37,368 - INFO - Point Ds n°1 : (i,j)=(170, 1015)
+2025-09-03 23:18:37,368 - INFO - Point Ds n°2 : (i,j)=(167, 1298)
+2025-09-03 23:18:37,368 - INFO - Point Ds n°3 : (i,j)=(80, 1675)
+2025-09-03 23:18:37,368 - INFO - Point Ds n°4 : (i,j)=(458, 1330)
+2025-09-03 23:18:37,399 - INFO - Indice cubital Abeille #51) : 2.2335495985303306
+2025-09-03 23:18:37,399 - INFO - Shift discoidal Abeille #51) : -1.48981292°
+2025-09-03 23:18:37,411 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\51_out.jpg
+2025-09-03 23:18:37,426 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:18:47,142 - INFO - Image 52 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\52_in.jpg
+2025-09-03 23:18:48,027 - INFO - Edition de l'image : 52_in.jpg
+2025-09-03 23:18:48,028 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\52_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\52_in___03_09_2025___23_18_48.jpg
+2025-09-03 23:18:48,059 - INFO - Edition de l'image 52
+2025-09-03 23:18:48,059 - INFO - ----------------------
+2025-09-03 23:19:28,587 - INFO - Point Ci n°1 : (i,j)=(311, 1413)
+2025-09-03 23:19:28,587 - INFO - Point Ci n°2 : (i,j)=(326, 1519)
+2025-09-03 23:19:28,587 - INFO - Point Ci n°3 : (i,j)=(305, 1563)
+2025-09-03 23:19:28,587 - INFO - ----------------------
+2025-09-03 23:19:28,587 - INFO - Point Ds n°1 : (i,j)=(228, 1096)
+2025-09-03 23:19:28,587 - INFO - Point Ds n°2 : (i,j)=(195, 1390)
+2025-09-03 23:19:28,587 - INFO - Point Ds n°3 : (i,j)=(70, 1746)
+2025-09-03 23:19:28,587 - INFO - Point Ds n°4 : (i,j)=(483, 1454)
+2025-09-03 23:19:28,622 - INFO - Indice cubital Abeille #52) : 2.1958196409693596
+2025-09-03 23:19:28,622 - INFO - Shift discoidal Abeille #52) : -1.14530021°
+2025-09-03 23:19:28,636 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\52_out.jpg
+2025-09-03 23:19:28,653 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:19:35,811 - INFO - Image 53 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\53_in.jpg
+2025-09-03 23:19:37,310 - INFO - Edition de l'image : 53_in.jpg
+2025-09-03 23:19:37,311 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\53_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\53_in___03_09_2025___23_19_37.jpg
+2025-09-03 23:19:37,344 - INFO - Edition de l'image 53
+2025-09-03 23:19:37,344 - INFO - ----------------------
+2025-09-03 23:20:22,671 - INFO - Point Ci n°1 : (i,j)=(307, 1448)
+2025-09-03 23:20:22,671 - INFO - Point Ci n°2 : (i,j)=(326, 1554)
+2025-09-03 23:20:22,671 - INFO - Point Ci n°3 : (i,j)=(306, 1600)
+2025-09-03 23:20:22,671 - INFO - ----------------------
+2025-09-03 23:20:22,672 - INFO - Point Ds n°1 : (i,j)=(219, 1126)
+2025-09-03 23:20:22,672 - INFO - Point Ds n°2 : (i,j)=(195, 1418)
+2025-09-03 23:20:22,672 - INFO - Point Ds n°3 : (i,j)=(74, 1795)
+2025-09-03 23:20:22,672 - INFO - Point Ds n°4 : (i,j)=(490, 1481)
+2025-09-03 23:20:22,707 - INFO - Indice cubital Abeille #53) : 2.146928148995102
+2025-09-03 23:20:22,707 - INFO - Shift discoidal Abeille #53) : 0.°
+2025-09-03 23:20:22,724 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\53_out.jpg
+2025-09-03 23:20:22,740 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:20:30,423 - INFO - Image 54 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\54_in.jpg
+2025-09-03 23:20:31,349 - INFO - Edition de l'image : 54_in.jpg
+2025-09-03 23:20:31,350 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\54_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\54_in___03_09_2025___23_20_31.jpg
+2025-09-03 23:20:31,379 - INFO - Edition de l'image 54
+2025-09-03 23:20:31,379 - INFO - ----------------------
+2025-09-03 23:21:09,795 - INFO - Point Ci n°1 : (i,j)=(289, 1316)
+2025-09-03 23:21:09,795 - INFO - Point Ci n°2 : (i,j)=(317, 1417)
+2025-09-03 23:21:09,795 - INFO - Point Ci n°3 : (i,j)=(301, 1454)
+2025-09-03 23:21:09,795 - INFO - ----------------------
+2025-09-03 23:21:09,795 - INFO - Point Ds n°1 : (i,j)=(179, 1020)
+2025-09-03 23:21:09,795 - INFO - Point Ds n°2 : (i,j)=(176, 1274)
+2025-09-03 23:21:09,795 - INFO - Point Ds n°3 : (i,j)=(79, 1654)
+2025-09-03 23:21:09,795 - INFO - Point Ds n°4 : (i,j)=(472, 1336)
+2025-09-03 23:21:09,826 - INFO - Indice cubital Abeille #54) : 2.6
+2025-09-03 23:21:09,826 - INFO - Shift discoidal Abeille #54) : 2.84585777°
+2025-09-03 23:21:09,837 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\54_out.jpg
+2025-09-03 23:21:09,852 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:21:15,058 - INFO - Image 55 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\55_in.jpg
+2025-09-03 23:21:17,051 - INFO - Edition de l'image : 55_in.jpg
+2025-09-03 23:21:17,051 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\55_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\55_in___03_09_2025___23_21_17.jpg
+2025-09-03 23:21:17,081 - INFO - Edition de l'image 55
+2025-09-03 23:21:17,081 - INFO - ----------------------
+2025-09-03 23:21:59,582 - INFO - Point Ci n°1 : (i,j)=(281, 1438)
+2025-09-03 23:21:59,582 - INFO - Point Ci n°2 : (i,j)=(304, 1535)
+2025-09-03 23:21:59,582 - INFO - Point Ci n°3 : (i,j)=(289, 1576)
+2025-09-03 23:21:59,582 - INFO - ----------------------
+2025-09-03 23:21:59,583 - INFO - Point Ds n°1 : (i,j)=(172, 1135)
+2025-09-03 23:21:59,583 - INFO - Point Ds n°2 : (i,j)=(165, 1417)
+2025-09-03 23:21:59,583 - INFO - Point Ds n°3 : (i,j)=(80, 1782)
+2025-09-03 23:21:59,583 - INFO - Point Ds n°4 : (i,j)=(451, 1457)
+2025-09-03 23:21:59,615 - INFO - Indice cubital Abeille #55) : 2.2834318164641383
+2025-09-03 23:21:59,615 - INFO - Shift discoidal Abeille #55) : 0.°
+2025-09-03 23:21:59,628 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\55_out.jpg
+2025-09-03 23:21:59,643 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:22:30,642 - INFO - L'analyse 'ma_ruche_verif_55' a bien été enregistrée dans C:/Users/nicol/Documents/ABEILLES/etudes
+2025-09-03 23:22:44,758 - INFO - Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI
+2025-09-03 23:22:44,758 - INFO - calcul de l'histogramme de l'indice cubital
+2025-09-03 23:23:10,712 - INFO - Image 56 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\56_in.jpg
+2025-09-03 23:23:11,680 - INFO - Edition de l'image : 56_in.jpg
+2025-09-03 23:23:11,681 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\56_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\56_in___03_09_2025___23_23_11.jpg
+2025-09-03 23:23:11,711 - INFO - Edition de l'image 56
+2025-09-03 23:23:11,711 - INFO - ----------------------
+2025-09-03 23:23:55,313 - INFO - Point Ci n°1 : (i,j)=(287, 1413)
+2025-09-03 23:23:55,313 - INFO - Point Ci n°2 : (i,j)=(308, 1515)
+2025-09-03 23:23:55,313 - INFO - Point Ci n°3 : (i,j)=(295, 1557)
+2025-09-03 23:23:55,313 - INFO - ----------------------
+2025-09-03 23:23:55,313 - INFO - Point Ds n°1 : (i,j)=(182, 1099)
+2025-09-03 23:23:55,313 - INFO - Point Ds n°2 : (i,j)=(170, 1406)
+2025-09-03 23:23:55,313 - INFO - Point Ds n°3 : (i,j)=(95, 1760)
+2025-09-03 23:23:55,313 - INFO - Point Ds n°4 : (i,j)=(466, 1426)
+2025-09-03 23:23:55,347 - INFO - Indice cubital Abeille #56) : 2.368638866015583
+2025-09-03 23:23:55,347 - INFO - Shift discoidal Abeille #56) : -3.63039647°
+2025-09-03 23:23:55,360 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\56_out.jpg
+2025-09-03 23:23:55,374 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:24:01,839 - INFO - Image 57 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\57_in.jpg
+2025-09-03 23:24:02,589 - INFO - Edition de l'image : 57_in.jpg
+2025-09-03 23:24:02,590 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\57_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\57_in___03_09_2025___23_24_02.jpg
+2025-09-03 23:24:02,619 - INFO - Edition de l'image 57
+2025-09-03 23:24:02,619 - INFO - ----------------------
+2025-09-03 23:24:36,951 - INFO - Point Ci n°1 : (i,j)=(280, 1402)
+2025-09-03 23:24:36,951 - INFO - Point Ci n°2 : (i,j)=(308, 1497)
+2025-09-03 23:24:36,951 - INFO - Point Ci n°3 : (i,j)=(292, 1538)
+2025-09-03 23:24:36,951 - INFO - ----------------------
+2025-09-03 23:24:36,951 - INFO - Point Ds n°1 : (i,j)=(163, 1109)
+2025-09-03 23:24:36,951 - INFO - Point Ds n°2 : (i,j)=(167, 1351)
+2025-09-03 23:24:36,951 - INFO - Point Ds n°3 : (i,j)=(75, 1740)
+2025-09-03 23:24:36,951 - INFO - Point Ds n°4 : (i,j)=(456, 1423)
+2025-09-03 23:24:36,983 - INFO - Indice cubital Abeille #57) : 2.2503369792971806
+2025-09-03 23:24:36,984 - INFO - Shift discoidal Abeille #57) : 6.03324997°
+2025-09-03 23:24:36,996 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\57_out.jpg
+2025-09-03 23:24:37,010 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:24:51,680 - INFO - Image 58 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\58_in.jpg
+2025-09-03 23:24:52,558 - INFO - Edition de l'image : 58_in.jpg
+2025-09-03 23:24:52,558 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\58_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\58_in___03_09_2025___23_24_52.jpg
+2025-09-03 23:24:52,588 - INFO - Edition de l'image 58
+2025-09-03 23:24:52,588 - INFO - ----------------------
+2025-09-03 23:25:22,488 - INFO - Point Ci n°1 : (i,j)=(284, 1389)
+2025-09-03 23:25:22,488 - INFO - Point Ci n°2 : (i,j)=(307, 1490)
+2025-09-03 23:25:22,488 - INFO - Point Ci n°3 : (i,j)=(293, 1535)
+2025-09-03 23:25:22,488 - INFO - ----------------------
+2025-09-03 23:25:22,488 - INFO - Point Ds n°1 : (i,j)=(177, 1103)
+2025-09-03 23:25:22,488 - INFO - Point Ds n°2 : (i,j)=(169, 1372)
+2025-09-03 23:25:22,488 - INFO - Point Ds n°3 : (i,j)=(83, 1738)
+2025-09-03 23:25:22,488 - INFO - Point Ds n°4 : (i,j)=(441, 1418)
+2025-09-03 23:25:22,519 - INFO - Indice cubital Abeille #58) : 2.197989339470288
+2025-09-03 23:25:22,519 - INFO - Shift discoidal Abeille #58) : 1.16783035°
+2025-09-03 23:25:22,531 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\58_out.jpg
+2025-09-03 23:25:22,547 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:25:28,046 - INFO - Image 59 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\59_in.jpg
+2025-09-03 23:25:28,925 - INFO - Edition de l'image : 59_in.jpg
+2025-09-03 23:25:28,925 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\59_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\59_in___03_09_2025___23_25_28.jpg
+2025-09-03 23:25:28,956 - INFO - Edition de l'image 59
+2025-09-03 23:25:28,956 - INFO - ----------------------
+2025-09-03 23:26:01,966 - INFO - Point Ci n°1 : (i,j)=(304, 1392)
+2025-09-03 23:26:01,966 - INFO - Point Ci n°2 : (i,j)=(328, 1500)
+2025-09-03 23:26:01,966 - INFO - Point Ci n°3 : (i,j)=(315, 1542)
+2025-09-03 23:26:01,966 - INFO - ----------------------
+2025-09-03 23:26:01,966 - INFO - Point Ds n°1 : (i,j)=(187, 1096)
+2025-09-03 23:26:01,966 - INFO - Point Ds n°2 : (i,j)=(190, 1374)
+2025-09-03 23:26:01,966 - INFO - Point Ds n°3 : (i,j)=(108, 1747)
+2025-09-03 23:26:01,966 - INFO - Point Ds n°4 : (i,j)=(482, 1410)
+2025-09-03 23:26:02,000 - INFO - Indice cubital Abeille #59) : 2.516371639615284
+2025-09-03 23:26:02,001 - INFO - Shift discoidal Abeille #59) : 0.1072786°
+2025-09-03 23:26:02,013 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\59_out.jpg
+2025-09-03 23:26:02,028 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:26:09,245 - INFO - Image 60 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\60_in.jpg
+2025-09-03 23:26:10,555 - INFO - Edition de l'image : 60_in.jpg
+2025-09-03 23:26:10,556 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\60_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\60_in___03_09_2025___23_26_10.jpg
+2025-09-03 23:26:10,587 - INFO - Edition de l'image 60
+2025-09-03 23:26:10,587 - INFO - ----------------------
+2025-09-03 23:26:53,030 - INFO - Point Ci n°1 : (i,j)=(326, 1390)
+2025-09-03 23:26:53,030 - INFO - Point Ci n°2 : (i,j)=(345, 1491)
+2025-09-03 23:26:53,030 - INFO - Point Ci n°3 : (i,j)=(325, 1540)
+2025-09-03 23:26:53,030 - INFO - ----------------------
+2025-09-03 23:26:53,030 - INFO - Point Ds n°1 : (i,j)=(228, 1080)
+2025-09-03 23:26:53,030 - INFO - Point Ds n°2 : (i,j)=(210, 1342)
+2025-09-03 23:26:53,030 - INFO - Point Ds n°3 : (i,j)=(105, 1743)
+2025-09-03 23:26:53,030 - INFO - Point Ds n°4 : (i,j)=(503, 1427)
+2025-09-03 23:26:53,064 - INFO - Indice cubital Abeille #60) : 0.3528219895291049
+2025-09-03 23:26:53,064 - INFO - Shift discoidal Abeille #60) : 5.68221481°
+2025-09-03 23:26:53,078 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\60_out.jpg
+2025-09-03 23:26:53,095 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:27:11,576 - INFO - L'analyse 'ma_ruche_verif_60' a bien été enregistrée dans C:/Users/nicol/Documents/ABEILLES/etudes
+2025-09-03 23:27:18,282 - INFO - Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI
+2025-09-03 23:27:18,282 - INFO - calcul de l'histogramme de l'indice cubital
+2025-09-03 23:28:01,725 - INFO - Image 61 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\61_in.jpg
+2025-09-03 23:28:02,723 - INFO - Edition de l'image : 61_in.jpg
+2025-09-03 23:28:02,724 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\61_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\61_in___03_09_2025___23_28_02.jpg
+2025-09-03 23:28:02,757 - INFO - Edition de l'image 61
+2025-09-03 23:28:02,757 - INFO - ----------------------
+2025-09-03 23:29:16,445 - INFO - Point Ci n°1 : (i,j)=(303, 1433)
+2025-09-03 23:29:16,445 - INFO - Point Ci n°2 : (i,j)=(319, 1542)
+2025-09-03 23:29:16,445 - INFO - Point Ci n°3 : (i,j)=(304, 1583)
+2025-09-03 23:29:16,445 - INFO - ----------------------
+2025-09-03 23:29:16,445 - INFO - Point Ds n°1 : (i,j)=(218, 1117)
+2025-09-03 23:29:16,445 - INFO - Point Ds n°2 : (i,j)=(198, 1378)
+2025-09-03 23:29:16,445 - INFO - Point Ds n°3 : (i,j)=(81, 1768)
+2025-09-03 23:29:16,445 - INFO - Point Ds n°4 : (i,j)=(478, 1475)
+2025-09-03 23:29:16,481 - INFO - Indice cubital Abeille #61) : 2.5234472332782314
+2025-09-03 23:29:16,481 - INFO - Shift discoidal Abeille #61) : 7.207826°
+2025-09-03 23:29:16,497 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\61_out.jpg
+2025-09-03 23:29:16,513 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:29:24,274 - INFO - Image 62 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\62_in.jpg
+2025-09-03 23:29:25,925 - INFO - Edition de l'image : 62_in.jpg
+2025-09-03 23:29:25,927 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\62_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\62_in___03_09_2025___23_29_25.jpg
+2025-09-03 23:29:25,959 - INFO - Edition de l'image 62
+2025-09-03 23:29:25,959 - INFO - ----------------------
+2025-09-03 23:29:53,330 - INFO - Point Ci n°1 : (i,j)=(280, 1351)
+2025-09-03 23:29:53,330 - INFO - Point Ci n°2 : (i,j)=(301, 1426)
+2025-09-03 23:29:53,330 - INFO - Point Ci n°3 : (i,j)=(286, 1482)
+2025-09-03 23:29:53,330 - INFO - ----------------------
+2025-09-03 23:29:53,330 - INFO - Point Ds n°1 : (i,j)=(175, 1030)
+2025-09-03 23:29:53,330 - INFO - Point Ds n°2 : (i,j)=(162, 1304)
+2025-09-03 23:29:53,330 - INFO - Point Ds n°3 : (i,j)=(75, 1684)
+2025-09-03 23:29:53,330 - INFO - Point Ds n°4 : (i,j)=(444, 1353)
+2025-09-03 23:29:53,361 - INFO - Indice cubital Abeille #62) : 1.3434358913060904
+2025-09-03 23:29:53,361 - INFO - Shift discoidal Abeille #62) : 1.19309686°
+2025-09-03 23:29:53,375 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\62_out.jpg
+2025-09-03 23:29:53,389 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:29:59,822 - INFO - Image 63 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\63_in.jpg
+2025-09-03 23:30:00,868 - INFO - Edition de l'image : 63_in.jpg
+2025-09-03 23:30:00,869 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\63_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\63_in___03_09_2025___23_30_00.jpg
+2025-09-03 23:30:00,898 - INFO - Edition de l'image 63
+2025-09-03 23:30:00,898 - INFO - ----------------------
+2025-09-03 23:30:40,515 - INFO - Point Ci n°1 : (i,j)=(299, 1312)
+2025-09-03 23:30:40,516 - INFO - Point Ci n°2 : (i,j)=(318, 1406)
+2025-09-03 23:30:40,516 - INFO - Point Ci n°3 : (i,j)=(304, 1447)
+2025-09-03 23:30:40,516 - INFO - ----------------------
+2025-09-03 23:30:40,516 - INFO - Point Ds n°1 : (i,j)=(200, 1016)
+2025-09-03 23:30:40,516 - INFO - Point Ds n°2 : (i,j)=(183, 1282)
+2025-09-03 23:30:40,516 - INFO - Point Ds n°3 : (i,j)=(84, 1650)
+2025-09-03 23:30:40,516 - INFO - Point Ds n°4 : (i,j)=(461, 1344)
+2025-09-03 23:30:40,547 - INFO - Indice cubital Abeille #63) : 2.2135582600159447
+2025-09-03 23:30:40,547 - INFO - Shift discoidal Abeille #63) : 2.17812056°
+2025-09-03 23:30:40,561 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\63_out.jpg
+2025-09-03 23:30:40,576 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:30:45,432 - INFO - Image 64 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\64_in.jpg
+2025-09-03 23:30:46,240 - INFO - Edition de l'image : 64_in.jpg
+2025-09-03 23:30:46,241 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\64_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\64_in___03_09_2025___23_30_46.jpg
+2025-09-03 23:30:46,273 - INFO - Edition de l'image 64
+2025-09-03 23:30:46,273 - INFO - ----------------------
+2025-09-03 23:31:22,283 - INFO - Point Ci n°1 : (i,j)=(503, 1767)
+2025-09-03 23:31:22,283 - INFO - Point Ci n°2 : (i,j)=(544, 1887)
+2025-09-03 23:31:22,283 - INFO - Point Ci n°3 : (i,j)=(533, 1936)
+2025-09-03 23:31:22,283 - INFO - ----------------------
+2025-09-03 23:31:22,283 - INFO - Point Ds n°1 : (i,j)=(340, 1445)
+2025-09-03 23:31:22,283 - INFO - Point Ds n°2 : (i,j)=(366, 1736)
+2025-09-03 23:31:22,283 - INFO - Point Ds n°3 : (i,j)=(321, 2204)
+2025-09-03 23:31:22,283 - INFO - Point Ds n°4 : (i,j)=(711, 1770)
+2025-09-03 23:31:22,332 - INFO - Indice cubital Abeille #64) : 2.525131414361204
+2025-09-03 23:31:22,332 - INFO - Shift discoidal Abeille #64) : 4.19627°
+2025-09-03 23:31:22,357 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\64_out.jpg
+2025-09-03 23:31:22,378 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:31:33,437 - INFO - Image 65 : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\65_in.jpg
+2025-09-03 23:31:34,370 - INFO - Edition de l'image : 65_in.jpg
+2025-09-03 23:31:34,371 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI158522\in\\65_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI158522\tmp\\65_in___03_09_2025___23_31_34.jpg
+2025-09-03 23:31:34,405 - INFO - Edition de l'image 65
+2025-09-03 23:31:34,405 - INFO - ----------------------
+2025-09-03 23:32:06,258 - INFO - Point Ci n°1 : (i,j)=(427, 1576)
+2025-09-03 23:32:06,258 - INFO - Point Ci n°2 : (i,j)=(448, 1687)
+2025-09-03 23:32:06,258 - INFO - Point Ci n°3 : (i,j)=(430, 1738)
+2025-09-03 23:32:06,258 - INFO - ----------------------
+2025-09-03 23:32:06,258 - INFO - Point Ds n°1 : (i,j)=(333, 1236)
+2025-09-03 23:32:06,258 - INFO - Point Ds n°2 : (i,j)=(307, 1540)
+2025-09-03 23:32:06,258 - INFO - Point Ds n°3 : (i,j)=(192, 1953)
+2025-09-03 23:32:06,258 - INFO - Point Ds n°4 : (i,j)=(618, 1607)
+2025-09-03 23:32:06,306 - INFO - Indice cubital Abeille #65) : 2.088797961287047
+2025-09-03 23:32:06,306 - INFO - Shift discoidal Abeille #65) : 1.02058425°
+2025-09-03 23:32:06,328 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI158522\out\\65_out.jpg
+2025-09-03 23:32:06,348 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:41:37,554 - INFO - L'analyse 'ma_ruche_verif_70' a bien été enregistrée dans C:/Users/nicol/Documents/ABEILLES/etudes
+2025-09-03 23:41:37,907 - INFO - Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI
+2025-09-03 23:41:37,907 - INFO - calcul de l'histogramme de l'indice cubital
+2025-09-03 23:42:11,839 - INFO - Image 71 : C:\Users\nicol\AppData\Local\Temp\_MEI89922\in\\71_in.jpg
+2025-09-03 23:42:12,852 - INFO - Edition de l'image : 71_in.jpg
+2025-09-03 23:42:12,854 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI89922\in\\71_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI89922\tmp\\71_in___03_09_2025___23_42_12.jpg
+2025-09-03 23:42:12,892 - INFO - Edition de l'image 71
+2025-09-03 23:42:12,892 - INFO - ----------------------
+2025-09-03 23:42:41,706 - INFO - Point Ci n°1 : (i,j)=(367, 1707)
+2025-09-03 23:42:41,706 - INFO - Point Ci n°2 : (i,j)=(405, 1812)
+2025-09-03 23:42:41,706 - INFO - Point Ci n°3 : (i,j)=(392, 1866)
+2025-09-03 23:42:41,706 - INFO - ----------------------
+2025-09-03 23:42:41,706 - INFO - Point Ds n°1 : (i,j)=(214, 1364)
+2025-09-03 23:42:41,706 - INFO - Point Ds n°2 : (i,j)=(236, 1701)
+2025-09-03 23:42:41,706 - INFO - Point Ds n°3 : (i,j)=(190, 2133)
+2025-09-03 23:42:41,706 - INFO - Point Ds n°4 : (i,j)=(567, 1697)
+2025-09-03 23:42:41,753 - INFO - Indice cubital Abeille #71) : 2.0104266300982245
+2025-09-03 23:42:41,754 - INFO - Shift discoidal Abeille #71) : -2.42806701°
+2025-09-03 23:42:41,775 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI89922\out\\71_out.jpg
+2025-09-03 23:42:41,794 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:42:46,482 - INFO - Image 72 : C:\Users\nicol\AppData\Local\Temp\_MEI89922\in\\72_in.jpg
+2025-09-03 23:42:47,246 - INFO - Edition de l'image : 72_in.jpg
+2025-09-03 23:42:47,247 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI89922\in\\72_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI89922\tmp\\72_in___03_09_2025___23_42_47.jpg
+2025-09-03 23:42:47,286 - INFO - Edition de l'image 72
+2025-09-03 23:42:47,286 - INFO - ----------------------
+2025-09-03 23:43:17,210 - INFO - Point Ci n°1 : (i,j)=(577, 1731)
+2025-09-03 23:43:17,210 - INFO - Point Ci n°2 : (i,j)=(624, 1832)
+2025-09-03 23:43:17,210 - INFO - Point Ci n°3 : (i,j)=(622, 1892)
+2025-09-03 23:43:17,210 - INFO - ----------------------
+2025-09-03 23:43:17,210 - INFO - Point Ds n°1 : (i,j)=(390, 1425)
+2025-09-03 23:43:17,210 - INFO - Point Ds n°2 : (i,j)=(455, 1752)
+2025-09-03 23:43:17,210 - INFO - Point Ds n°3 : (i,j)=(450, 2163)
+2025-09-03 23:43:17,210 - INFO - Point Ds n°4 : (i,j)=(773, 1707)
+2025-09-03 23:43:17,263 - INFO - Indice cubital Abeille #72) : 1.8556390345148204
+2025-09-03 23:43:17,263 - INFO - Shift discoidal Abeille #72) : -3.38755607°
+2025-09-03 23:43:17,291 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI89922\out\\72_out.jpg
+2025-09-03 23:43:17,314 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-03 23:43:22,917 - INFO - Image 73 : C:\Users\nicol\AppData\Local\Temp\_MEI89922\in\\73_in.jpg
+2025-09-03 23:43:23,966 - INFO - Edition de l'image : 73_in.jpg
+2025-09-03 23:43:23,967 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI89922\in\\73_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI89922\tmp\\73_in___03_09_2025___23_43_23.jpg
+2025-09-03 23:43:24,004 - INFO - Edition de l'image 73
+2025-09-03 23:43:24,004 - INFO - ----------------------
+2025-09-03 23:43:59,666 - INFO - Point Ci n°1 : (i,j)=(580, 1697)
+2025-09-03 23:43:59,666 - INFO - Point Ci n°2 : (i,j)=(616, 1843)
+2025-09-03 23:43:59,666 - INFO - Point Ci n°3 : (i,j)=(602, 1882)
+2025-09-03 23:43:59,666 - INFO - ----------------------
+2025-09-03 23:43:59,666 - INFO - Point Ds n°1 : (i,j)=(455, 1353)
+2025-09-03 23:43:59,666 - INFO - Point Ds n°2 : (i,j)=(451, 1645)
+2025-09-03 23:43:59,666 - INFO - Point Ds n°3 : (i,j)=(368, 2122)
+2025-09-03 23:43:59,666 - INFO - Point Ds n°4 : (i,j)=(791, 1738)
+2025-09-03 23:43:59,722 - INFO - Indice cubital Abeille #73) : 4.496099390167743
+2025-09-03 23:43:59,722 - INFO - Shift discoidal Abeille #73) : 8.83561674°
+2025-09-03 23:43:59,751 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI89922\out\\73_out.jpg
+2025-09-03 23:43:59,775 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-05 09:11:09,391 - INFO - L'analyse 'ma_ruche_verif_75' a bien été enregistrée dans C:/Users/nicol/Documents/ABEILLES/etudes
+2025-09-05 09:11:32,480 - INFO - Image 76 : C:\Users\nicol\AppData\Local\Temp\_MEI102642\in\\76_in.jpg
+2025-09-05 09:11:37,603 - INFO - Edition de l'image : 76_in.jpg
+2025-09-05 09:11:37,604 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI102642\in\\76_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI102642\tmp\\76_in___05_09_2025___09_11_37.jpg
+2025-09-05 09:11:37,640 - INFO - Edition de l'image 76
+2025-09-05 09:11:37,640 - INFO - ----------------------
+2025-09-05 09:12:13,248 - INFO - Point Ci n°1 : (i,j)=(401, 1512)
+2025-09-05 09:12:13,248 - INFO - Point Ci n°2 : (i,j)=(427, 1602)
+2025-09-05 09:12:13,248 - INFO - Point Ci n°3 : (i,j)=(412, 1637)
+2025-09-05 09:12:13,249 - INFO - ----------------------
+2025-09-05 09:12:13,249 - INFO - Point Ds n°1 : (i,j)=(292, 1215)
+2025-09-05 09:12:13,249 - INFO - Point Ds n°2 : (i,j)=(291, 1464)
+2025-09-05 09:12:13,249 - INFO - Point Ds n°3 : (i,j)=(200, 1842)
+2025-09-05 09:12:13,249 - INFO - Point Ds n°4 : (i,j)=(577, 1527)
+2025-09-05 09:12:13,285 - INFO - Indice cubital Abeille #76) : 2.4601653995419595
+2025-09-05 09:12:13,285 - INFO - Shift discoidal Abeille #76) : 4.08621761°
+2025-09-05 09:12:13,304 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI102642\out\\76_out.jpg
+2025-09-05 09:12:13,323 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-05 09:12:18,384 - INFO - Image 77 : C:\Users\nicol\AppData\Local\Temp\_MEI102642\in\\77_in.jpg
+2025-09-05 09:12:19,345 - INFO - Edition de l'image : 77_in.jpg
+2025-09-05 09:12:19,347 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI102642\in\\77_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI102642\tmp\\77_in___05_09_2025___09_12_19.jpg
+2025-09-05 09:12:19,382 - INFO - Edition de l'image 77
+2025-09-05 09:12:19,382 - INFO - ----------------------
+2025-09-05 09:12:54,310 - INFO - Point Ci n°1 : (i,j)=(476, 1396)
+2025-09-05 09:12:54,310 - INFO - Point Ci n°2 : (i,j)=(515, 1485)
+2025-09-05 09:12:54,310 - INFO - Point Ci n°3 : (i,j)=(510, 1534)
+2025-09-05 09:12:54,310 - INFO - ----------------------
+2025-09-05 09:12:54,310 - INFO - Point Ds n°1 : (i,j)=(324, 1135)
+2025-09-05 09:12:54,310 - INFO - Point Ds n°2 : (i,j)=(367, 1410)
+2025-09-05 09:12:54,310 - INFO - Point Ds n°3 : (i,j)=(348, 1764)
+2025-09-05 09:12:54,310 - INFO - Point Ds n°4 : (i,j)=(650, 1379)
+2025-09-05 09:12:54,348 - INFO - Indice cubital Abeille #77) : 1.972816083067358
+2025-09-05 09:12:54,348 - INFO - Shift discoidal Abeille #77) : -4.04869408°
+2025-09-05 09:12:54,366 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI102642\out\\77_out.jpg
+2025-09-05 09:12:54,384 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-05 09:13:02,538 - INFO - Image 78 : C:\Users\nicol\AppData\Local\Temp\_MEI102642\in\\78_in.jpg
+2025-09-05 09:13:03,684 - INFO - Edition de l'image : 78_in.jpg
+2025-09-05 09:13:03,686 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI102642\in\\78_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI102642\tmp\\78_in___05_09_2025___09_13_03.jpg
+2025-09-05 09:13:03,719 - INFO - Edition de l'image 78
+2025-09-05 09:13:03,720 - INFO - ----------------------
+2025-09-05 09:13:54,457 - INFO - Point Ci n°1 : (i,j)=(341, 1507)
+2025-09-05 09:13:54,457 - INFO - Point Ci n°2 : (i,j)=(361, 1594)
+2025-09-05 09:13:54,457 - INFO - Point Ci n°3 : (i,j)=(345, 1640)
+2025-09-05 09:13:54,457 - INFO - ----------------------
+2025-09-05 09:13:54,457 - INFO - Point Ds n°1 : (i,j)=(256, 1218)
+2025-09-05 09:13:54,457 - INFO - Point Ds n°2 : (i,j)=(231, 1479)
+2025-09-05 09:13:54,457 - INFO - Point Ds n°3 : (i,j)=(128, 1834)
+2025-09-05 09:13:54,457 - INFO - Point Ds n°4 : (i,j)=(504, 1534)
+2025-09-05 09:13:54,493 - INFO - Indice cubital Abeille #78) : 1.8329244778911689
+2025-09-05 09:13:54,493 - INFO - Shift discoidal Abeille #78) : -0.34503497°
+2025-09-05 09:13:54,512 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI102642\out\\78_out.jpg
+2025-09-05 09:13:54,531 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-05 09:14:03,007 - INFO - Image 79 : C:\Users\nicol\AppData\Local\Temp\_MEI102642\in\\79_in.jpg
+2025-09-05 09:14:03,898 - INFO - Edition de l'image : 79_in.jpg
+2025-09-05 09:14:03,900 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI102642\in\\79_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI102642\tmp\\79_in___05_09_2025___09_14_03.jpg
+2025-09-05 09:14:03,933 - INFO - Edition de l'image 79
+2025-09-05 09:14:03,933 - INFO - ----------------------
+2025-09-05 09:14:46,409 - INFO - Point Ci n°1 : (i,j)=(321, 1332)
+2025-09-05 09:14:46,409 - INFO - Point Ci n°2 : (i,j)=(347, 1419)
+2025-09-05 09:14:46,409 - INFO - Point Ci n°3 : (i,j)=(334, 1469)
+2025-09-05 09:14:46,409 - INFO - ----------------------
+2025-09-05 09:14:46,409 - INFO - Point Ds n°1 : (i,j)=(225, 1076)
+2025-09-05 09:14:46,409 - INFO - Point Ds n°2 : (i,j)=(218, 1325)
+2025-09-05 09:14:46,409 - INFO - Point Ds n°3 : (i,j)=(142, 1652)
+2025-09-05 09:14:46,409 - INFO - Point Ds n°4 : (i,j)=(471, 1353)
+2025-09-05 09:14:46,440 - INFO - Indice cubital Abeille #79) : 1.7576040437260871
+2025-09-05 09:14:46,441 - INFO - Shift discoidal Abeille #79) : -1.81476778°
+2025-09-05 09:14:46,455 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI102642\out\\79_out.jpg
+2025-09-05 09:14:46,472 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-05 09:14:58,486 - INFO - Image 80 : C:\Users\nicol\AppData\Local\Temp\_MEI102642\in\\80_in.jpg
+2025-09-05 09:14:59,591 - INFO - Edition de l'image : 80_in.jpg
+2025-09-05 09:14:59,592 - INFO - Copie du fichier : C:\Users\nicol\AppData\Local\Temp\_MEI102642\in\\80_in.jpg >> C:\Users\nicol\AppData\Local\Temp\_MEI102642\tmp\\80_in___05_09_2025___09_14_59.jpg
+2025-09-05 09:14:59,625 - INFO - Edition de l'image 80
+2025-09-05 09:14:59,625 - INFO - ----------------------
+2025-09-05 09:15:50,472 - INFO - Point Ci n°1 : (i,j)=(331, 1474)
+2025-09-05 09:15:50,472 - INFO - Point Ci n°2 : (i,j)=(360, 1556)
+2025-09-05 09:15:50,472 - INFO - Point Ci n°3 : (i,j)=(348, 1605)
+2025-09-05 09:15:50,472 - INFO - ----------------------
+2025-09-05 09:15:50,472 - INFO - Point Ds n°1 : (i,j)=(205, 1190)
+2025-09-05 09:15:50,472 - INFO - Point Ds n°2 : (i,j)=(218, 1449)
+2025-09-05 09:15:50,472 - INFO - Point Ds n°3 : (i,j)=(164, 1827)
+2025-09-05 09:15:50,472 - INFO - Point Ds n°4 : (i,j)=(494, 1473)
+2025-09-05 09:15:50,507 - INFO - Indice cubital Abeille #80) : 1.7240925405582623
+2025-09-05 09:15:50,507 - INFO - Shift discoidal Abeille #80) : 1.27475282°
+2025-09-05 09:15:50,523 - INFO - Image sauvegardée : C:\Users\nicol\AppData\Local\Temp\_MEI102642\out\\80_out.jpg
+2025-09-05 09:15:50,541 - INFO - Les infos ont été ajoutées sur l'image.
+2025-09-09 18:36:47,672 - INFO - L'analyse 'ma_ruche_verif_100' a bien été enregistrée dans C:/Users/nicol/Documents/ABEILLES/etudes
+2025-09-09 18:36:51,420 - INFO - Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI
+2025-09-09 18:36:51,420 - INFO - calcul de l'histogramme de l'indice cubital
+2025-09-09 18:54:43,158 - INFO - Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI
+2025-09-09 18:54:43,158 - INFO - calcul de l'histogramme de l'indice cubital

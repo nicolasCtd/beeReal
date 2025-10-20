@@ -306,7 +306,7 @@ class MainWindow(QMainWindow):
 
     def closeEvent(self, event: QCloseEvent) -> None:
         close = QMessageBox()
-        close.setText("Voulez vous quitter l'application ?")
+        close.setText("Exit the app?")
         close.setStandardButtons(QMessageBox.Yes | QMessageBox.Cancel)
         close.setWindowTitle(" ")
         close = close.exec()
@@ -480,8 +480,8 @@ class Tabs(QWidget):
         self.btn3 = QPushButton(f"Launch\nanalysis\n{self.analyse_name}")
         label0 = QLabel("Name of the analysis: ")
         self.label00 = QLabel(self.analyse_name)
-        label1 = QLabel("<u>Histogram of cubital index<u>")
-        label2 = QLabel("<u>Cubital Index / Discoidal shift<u>")
+        label1 = QLabel("<u>Histogram of Cubital Index<u>")
+        label2 = QLabel("<u>Cubital Index / Discoidal Shift<u>")
         # self.edit_analyse_name = QLineEdit()
 
         self.son = QPushButton("")
@@ -788,8 +788,8 @@ class Tabs(QWidget):
         text, okPressed = QInputDialog.getText(self, " ", "Entrer le nom de l'analyse :", QLineEdit.Normal, "")
         if okPressed and text != '':
             self.label00.setText(text)
-            self.btn2.setText(f"Sauvegarder\nl'analyse\n{text}")
-            self.btn3.setText(f"Lancer\nl'analyse\n{text}")
+            self.btn2.setText(f"Save\nanalysis\n{text}")
+            self.btn3.setText(f"Launch\nanalysis\n{text}")
             print(os.path.isfile(self.logs + f"logs_{self.analyse_name}.txt"))
             print('aa')
             logging.shutdown()
@@ -825,12 +825,12 @@ class Tabs(QWidget):
         DIR = QFileDialog.getOpenFileName(self, "Select a .zip project file")
         if DIR[0] != "":
             project_file = str(DIR[0])
-            logging.info(f"Chargement du projet '{project_file}'")
+            logging.info(f"Load project '{project_file}'")
 
             self.analyse_name = get_file_name(project_file)
             self.label00.setText(self.analyse_name)
-            self.btn2.setText(f"Sauvegarder\nl'analyse\n{self.analyse_name}")
-            self.btn3.setText(f"Lancer\nl'analyse\n{self.analyse_name}")
+            self.btn2.setText(f"Save\nanalysis\n{self.analyse_name}")
+            self.btn3.setText(f"Launch\nanalysis\n{self.analyse_name}")
             
             shutil.unpack_archive(filename=project_file, extract_dir=self.tmp)
             copytree(src=self.tmp + os.sep + "in", dst=self.in_)
@@ -925,26 +925,26 @@ class Tabs(QWidget):
         indices = list()
         angles = list()
         abeilles = list()
-        with open(csv_file, newline='', encoding="utf-8") as f:
-            lecteur = csv.reader(f, delimiter=";")
-            for ligne in lecteur:
-                # each lign is a list of values (1 value per column)
-                try:
-                    if ligne[5] != '0':
-                        abeilles.append(int(ligne[0].replace('.jpg', '')))
-                        indices.append(float(ligne[5].replace(',', '.')))
-                        angles.append(float(ligne[7].replace(',', '.')))
-                except:
-                    continue
 
-        new_histo = HISTOGRAM(indices=indices, path="", id_bees=range(1, len(indices)+1), save_abacus=0)
-        x, y = new_histo.histogram()
+        if csv_file.split(os.sep)[-1] != '':
+            with open(csv_file, newline='', encoding="utf-8") as f:
+                lecteur = csv.reader(f, delimiter=";")
+                for ligne in lecteur:
+                    # each lign is a list of values (1 value per column)
+                    try:
+                        if ligne[5] != '0':
+                            abeilles.append(int(ligne[0].replace('.jpg', '')))
+                            indices.append(float(ligne[5].replace(',', '.')))
+                            angles.append(float(ligne[7].replace(',', '.')))
+                    except:
+                        continue
+
+        #new_histo = HISTOGRAM(indices=indices, path="", id_bees=abeilles, save_abacus=0)
+        #x, y = new_histo.histogram()
 
         print(leg + f" ({len(indices)} abeilles)")
 
         ci_images, ds_image, HISTO = analyse2(self.indices, self.shifts, self.id_bees,
-                                              x, 
-                                              y,
                                               indices, 
                                               angles,
                                               abeilles,
