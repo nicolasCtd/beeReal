@@ -82,6 +82,8 @@ class IMAGE():
         self.data = np.copy(plt.imread(file))
         # self.data = np.copy((plt.imread(file)*255).astype(np.uint8))
         #self.data = (self.data * 255).astype(np.uint8)
+        if self.data.ndim == 2:    #image grayscale
+            self.data = np.stack((self.data,)*3, axis=-1)   # convert to RGB
         self.data_copy = np.copy(self.data)
         self.nb_lignes = self.data.shape[0]
         self.nb_col = self.data.shape[1]
