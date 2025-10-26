@@ -37,6 +37,9 @@ from modules import buttons
 from PyQt5.QtCore import QUrl
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent, QAudioOutput
 import csv
+from ui import BeeReal_ui as ui
+
+
 
 # Définir une fonction pour attraper toutes les exceptions non gérées
 def log_exception(exc_type, exc_value, exc_traceback):
@@ -962,6 +965,31 @@ class Tabs(QWidget):
 
         return 0
 
+
+class otherMainWindow(QMainWindow):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = ui.Ui_mainWindow()
+        self.ui.setupUi(self)
+        self.initialize()
+        
+    def initialize(self):
+
+        imagePath = globals.path + "media\\"
+        decoImagePathList=[imagePath+"deco1.jpg", imagePath+"deco4.jpg", imagePath+"deco5.png"]
+
+        imagesList = []
+
+        for imagePath in decoImagePathList:
+            image = QPixmap(imagePath).scaledToWidth(200)
+            imagesList.append(image)
+
+        self.ui.label.setPixmap(imagesList[0])
+        self.ui.label_2.setPixmap(imagesList[1])
+        self.ui.label_3.setPixmap(imagesList[2])
+
+
+
 if __name__ == '__main__':
 
     app = QApplication(sys.argv)
@@ -979,7 +1007,8 @@ if __name__ == '__main__':
     classif = config['visu']
     seuil_min_abeilles = config['seuil_min_abeilles']
 
-    window = MainWindow()
+    #window = MainWindow()
+    window = otherMainWindow()
 
     window.show()
 
