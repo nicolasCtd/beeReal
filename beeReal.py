@@ -975,16 +975,6 @@ class otherMainWindow(QMainWindow):
         self.initialize()
         
     def initialize(self):
-
-        imagePath = globals.path + "media/"
-        decoImagePathList=[imagePath+"deco1.jpg", imagePath+"deco4.jpg", imagePath+"deco5.png"]
-
-        imagesList = []
-
-        for imagePath in decoImagePathList:
-            image = QPixmap(imagePath).scaledToWidth(200)
-            imagesList.append(image)
-
         self.ui.label.setPixmap(QPixmap(":/images/deco1.jpg").scaledToWidth(200))
         self.ui.label_2.setPixmap(QPixmap(":/images/deco4.jpg").scaledToWidth(200))
         self.ui.label_3.setPixmap(QPixmap(":/images/deco5.png").scaledToWidth(200))
