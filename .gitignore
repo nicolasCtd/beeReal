@@ -3,10 +3,10 @@
 /build/
 __pycache__/
 *py[cod]
-modules/
+/modules/
 ui/BeeReal_ui.py
 tmp/
 resources/resources_rc.py
-out/
-logs/
-in/
+/out/
+/logs/
+/in/
