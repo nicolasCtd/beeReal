@@ -332,8 +332,8 @@ class Tabs(QWidget):
         self.logs = globals.logs
         self.path = globals.path
 
-        self.player = QMediaPlayer()
-        self.play(globals.future)
+        #self.player = QMediaPlayer()
+        #self.play(globals.future)
 
         self.RES = {}
         self.analyse_name = str(date.today())
@@ -976,7 +976,7 @@ class otherMainWindow(QMainWindow):
         
     def initialize(self):
 
-        imagePath = globals.path + "media\\"
+        imagePath = globals.path + "media/"
         decoImagePathList=[imagePath+"deco1.jpg", imagePath+"deco4.jpg", imagePath+"deco5.png"]
 
         imagesList = []
