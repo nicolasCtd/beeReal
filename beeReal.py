@@ -38,6 +38,7 @@ from PyQt5.QtCore import QUrl
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent, QAudioOutput
 import csv
 from ui import BeeReal_ui as ui
+from resources import resources_rc
 
 
 
@@ -984,9 +985,9 @@ class otherMainWindow(QMainWindow):
             image = QPixmap(imagePath).scaledToWidth(200)
             imagesList.append(image)
 
-        self.ui.label.setPixmap(imagesList[0])
-        self.ui.label_2.setPixmap(imagesList[1])
-        self.ui.label_3.setPixmap(imagesList[2])
+        self.ui.label.setPixmap(QPixmap(":/images/deco1.jpg").scaledToWidth(200))
+        self.ui.label_2.setPixmap(QPixmap(":/images/deco4.jpg").scaledToWidth(200))
+        self.ui.label_3.setPixmap(QPixmap(":/images/deco5.png").scaledToWidth(200))
 
 
 
