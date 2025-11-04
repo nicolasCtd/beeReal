@@ -4,11 +4,9 @@ from datetime import date
 invalidValue = -100
 
 class Measure:
-    ''' A measure '''
-     
-    def __init__(self):
-        self.image = "image"
-        self.image = ""
+    ''' A measure '''     
+    def __init__(self, imageFile):
+        self.image = imageFile
         self.treated = False
         self.imageSizePixels = [invalidValue, invalidValue]
         self.cubitalPointsPixels = {"P1": [invalidValue, invalidValue], 
@@ -25,21 +23,19 @@ class Measure:
         self.comment=""
         return
 
-
 class Analysis:
     '''This class may at least contains a list of measures'''
-    name=""
-    date = None
     measures = []
-    
+
     def __init__(self,name):
         self.name = name
-        self.date=date.today()
+        self.date = date.today()
+        self.comment = ""
+        self.author = ""
 
     def appendMeasure(self, measure):
         self.measures.append(measure)
         
-
 class AnalysisFile:
     def __init__(self, fileName):
         self.fileName = fileName
@@ -61,6 +57,7 @@ class AnalysisFile:
 
         # Construction tree
         tree = ET.ElementTree(root)
+        ET.indent(tree, space="\t", level=0)
 
         # write to the file
         tree.write(self.fileName, encoding="utf-8", xml_declaration=True)
@@ -71,17 +68,12 @@ class AnalysisFile:
     
 if __name__ == '__main__':
     analysis = Analysis("testAnalysis")
-    print(analysis.date)
-    measure = Measure()
 
-    for attr, value in measure.__dict__.items():
-        print(value)
-
-    analysis.appendMeasure(measure)
-    analysis.appendMeasure(measure)
-    analysis.appendMeasure(measure)
-    analysis.appendMeasure(measure)
-    analysisFile = AnalysisFile("toto.xml")
+    analysis.appendMeasure(Measure("bee1.png"))
+    analysis.appendMeasure(Measure("bee2.png"))
+    analysis.appendMeasure(Measure("bee3.png"))
+    analysis.appendMeasure(Measure("bee4.png"))
+    analysisFile = AnalysisFile("analysis1.xml")
 
     # Saving
     analysisFile.saveAnalysis(analysis)
