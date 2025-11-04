@@ -41,6 +41,8 @@ class AnalysisFile:
         self.fileName = fileName
         return
     
+
+
     def saveAnalysis(self, analysis):
         # creating root element
         root = ET.Element("Analysis")
@@ -64,7 +66,25 @@ class AnalysisFile:
         return
 
     def loadAnalysis(self):
-        return
+        # TODO: check existence of the file
+        # TODO: Check if the parsing turns well
+        # TODO: Check if image are on disk. Reject if not ?
+
+        tree = ET.parse(self.fileName)
+        root = tree.getroot()
+        analysis = Analysis("")
+
+        for child in root:
+            if child.tag != "measure":
+                setattr(analysis, child.tag, child.text )
+            else:
+                # This is a measure
+                measure = Measure("")
+                for measureNode in child:
+                    setattr(measure, measureNode.tag, measureNode.text )
+                analysis.measures.append(measure)
+
+        return analysis
     
 if __name__ == '__main__':
     analysis = Analysis("testAnalysis")
@@ -79,7 +99,12 @@ if __name__ == '__main__':
     analysisFile.saveAnalysis(analysis)
 
     # Loading 
+    loadedAnalysis = analysisFile.loadAnalysis()
 
+    print(loadedAnalysis.name, loadedAnalysis.date, analysis.measures[3].image)
+    
+
+    print("finished")
 
 
 
