@@ -11,3 +11,4 @@ resources/resources_rc.py
 /logs/
 /in/
 ui/AnalysisSettingForm_ui.py
+ui/MainWindow_ui.py

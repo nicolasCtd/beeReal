@@ -37,7 +37,7 @@ from modules import buttons
 from PyQt5.QtCore import QUrl
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent, QAudioOutput
 import csv
-from ui import BeeReal_ui as ui
+from ui import MainWindow_ui as ui
 from resources import resources_rc
 from ui import AnalysisSettingForm_ui
 
