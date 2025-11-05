@@ -37,9 +37,8 @@ from modules import buttons
 from PyQt5.QtCore import QUrl
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent, QAudioOutput
 import csv
-from ui import MainWindow_ui as ui
 from resources import resources_rc
-from ui import AnalysisSettingForm_ui
+from ui import MainWindow as MW
 
 
 
@@ -195,7 +194,7 @@ class FolderSelector(QWidget):
         folder_path = QFileDialog.getExistingDirectory(self, 'Select Folder')
         print('Selected Folder:', folder_path)
 
-class MainWindow(QMainWindow):
+class OldMainWindow(QMainWindow):
     
     def __init__(self):
         super().__init__()
@@ -967,34 +966,6 @@ class Tabs(QWidget):
 
         return 0
 
-class AnalysisSettingForm(QWidget):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.ui = AnalysisSettingForm_ui.Ui_AnalysisSettingForm()
-        self.ui.setupUi(self)
-        self.initialize()
-
-    def initialize(self):
-        self.ui.cubitalCheckBox.setText("Use cubitabl points")
-        self.ui.discoidalCheckBox.setText("Use discoidal points")
-        self.ui.startAnalysisPushButton.setText("Start analysis")
-
-class otherMainWindow(QMainWindow):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.ui = ui.Ui_mainWindow()
-        self.ui.setupUi(self)
-        self.initialize()
-        
-    def initialize(self):
-        self.analysisForm = AnalysisSettingForm()
-        self.setCentralWidget(self.analysisForm)
-        # self.ui.label.setPixmap(QPixmap(":/images/deco1.jpg").scaledToWidth(200))
-        # self.ui.label_2.setPixmap(QPixmap(":/images/deco4.jpg").scaledToWidth(200))
-        # self.ui.label_3.setPixmap(QPixmap(":/images/deco5.png").scaledToWidth(200))
-
-
-
 if __name__ == '__main__':
 
     app = QApplication(sys.argv)
@@ -1012,8 +983,7 @@ if __name__ == '__main__':
     classif = config['visu']
     seuil_min_abeilles = config['seuil_min_abeilles']
 
-    #window = MainWindow()
-    window = otherMainWindow()
+    window = MW.MainWindow()
 
     window.show()
 
