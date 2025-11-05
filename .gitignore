@@ -10,3 +10,4 @@ resources/resources_rc.py
 /out/
 /logs/
 /in/
+ui/AnalysisSettingForm_ui.py

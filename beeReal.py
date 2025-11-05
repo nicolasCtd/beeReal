@@ -39,6 +39,7 @@ from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent, QAudioOutput
 import csv
 from ui import BeeReal_ui as ui
 from resources import resources_rc
+from ui import AnalysisSettingForm_ui
 
 
 
@@ -966,6 +967,17 @@ class Tabs(QWidget):
 
         return 0
 
+class AnalysisSettingForm(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = AnalysisSettingForm_ui.Ui_AnalysisSettingForm()
+        self.ui.setupUi(self)
+        self.initialize()
+
+    def initialize(self):
+        self.ui.cubitalCheckBox.setText("Use cubitabl points")
+        self.ui.discoidalCheckBox.setText("Use discoidal points")
+        self.ui.startAnalysisPushButton.setText("Start analysis")
 
 class otherMainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -975,9 +987,11 @@ class otherMainWindow(QMainWindow):
         self.initialize()
         
     def initialize(self):
-        self.ui.label.setPixmap(QPixmap(":/images/deco1.jpg").scaledToWidth(200))
-        self.ui.label_2.setPixmap(QPixmap(":/images/deco4.jpg").scaledToWidth(200))
-        self.ui.label_3.setPixmap(QPixmap(":/images/deco5.png").scaledToWidth(200))
+        self.analysisForm = AnalysisSettingForm()
+        self.setCentralWidget(self.analysisForm)
+        # self.ui.label.setPixmap(QPixmap(":/images/deco1.jpg").scaledToWidth(200))
+        # self.ui.label_2.setPixmap(QPixmap(":/images/deco4.jpg").scaledToWidth(200))
+        # self.ui.label_3.setPixmap(QPixmap(":/images/deco5.png").scaledToWidth(200))
 
 
 
