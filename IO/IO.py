@@ -9,27 +9,41 @@ if __name__ == '__main__':
 
 import xml.etree.ElementTree as ET
 from dataStruct import dataStructure as DS
+from pathlib import Path
         
 AnalysisXmlTag = "Analysis"
 MeasureXmlTag = "measure"
+MeasuresDictXmlTag = "measures"
+ImageXmlTag = "image"
 
 class AnalysisFile:
     def __init__(self, fileName):
-        self.fileName = fileName
+        self.filePath = Path(fileName)
         return
     
+    def checkImagesExistence(self, analysis):
+        for measure in analysis.measures:
+            #print(type(measure.image))
+            #measure.image.exists()
+            print(measure.image, measure.image.exists())
+
+        return
+
+
     def saveAnalysis(self, analysis):
         # creating root element
         root = ET.Element(AnalysisXmlTag)
         # Add attributes
         for attr, value in analysis.__dict__.items():
-            child = ET.SubElement(root, attr)
-            child.text = str(value)
+            if (attr!=MeasuresDictXmlTag):
+                child = ET.SubElement(root, attr)
+                child.text = str(value)
 
         for measure in analysis.measures:
             measureElement = ET.SubElement(root, MeasureXmlTag)
             for attr, value in measure.__dict__.items():
                 child = ET.SubElement(measureElement, attr)
+                toto = str(value)
                 child.text = str(value)
 
         # Construct tree
@@ -37,7 +51,7 @@ class AnalysisFile:
         ET.indent(tree, space="\t", level=0)
 
         # Write to the file
-        tree.write(self.fileName, encoding="utf-8", xml_declaration=True)
+        tree.write(self.filePath, encoding="utf-8", xml_declaration=True)
         return
 
     def loadAnalysis(self):
@@ -45,42 +59,58 @@ class AnalysisFile:
         # TODO: Check if the parsing turns well
         # TODO: Check if image are on disk. Reject if not ?
 
-        tree = ET.parse(self.fileName)
+        if (not self.filePath.exists()):
+            print("Analysis file does no exists")
+            return
+            
+
+        tree = ET.parse(self.filePath)
         root = tree.getroot()
         analysis = DS.Analysis("")
 
         for child in root:
-            if child.tag != MeasureXmlTag:
-                setattr(analysis, child.tag, child.text )
-            else:
+            if child.tag == MeasureXmlTag:                
                 # This is a measure
                 measure = DS.Measure("")
                 for measureNode in child:
-                    setattr(measure, measureNode.tag, measureNode.text )
+                    if measureNode.tag==ImageXmlTag:                        
+                        setattr(measure, measureNode.tag, Path(measureNode.text) )
+                    else:
+                        setattr(measure, measureNode.tag, measureNode.text )
+
                 analysis.measures.append(measure)
+            else:
+                setattr(analysis, child.tag, child.text )
+
+        # Check image existence
+        self.checkImagesExistence(analysis)
 
         return analysis
     
 if __name__ == '__main__':  
 
-    analysis = DS.Analysis("testAnalysis")
+    '''Define main test function: Doing so also avoid declaring module global variables'''
+    def mainTest():
+        analysis = DS.Analysis("testAnalysis")
+        analysis.appendMeasure(DS.Measure("bee1.png"))
+        analysis.appendMeasure(DS.Measure("bee2.png"))
+        analysis.appendMeasure(DS.Measure("bee3.png"))
+        analysis.appendMeasure(DS.Measure("bee4.png"))
+        analysisFile = AnalysisFile("analysis1.xml")
 
-    analysis.appendMeasure(DS.Measure("bee1.png"))
-    analysis.appendMeasure(DS.Measure("bee2.png"))
-    analysis.appendMeasure(DS.Measure("bee3.png"))
-    analysis.appendMeasure(DS.Measure("bee4.png"))
-    analysisFile = AnalysisFile("analysis1.xml")
+        # Saving
+        analysisFile.saveAnalysis(analysis)
 
-    # Saving
-    analysisFile.saveAnalysis(analysis)
+        #return
 
-    # Loading 
-    loadedAnalysis = analysisFile.loadAnalysis()
+        # Loading 
+        loadedAnalysis = analysisFile.loadAnalysis()
 
-    print(loadedAnalysis.name, loadedAnalysis.date, analysis.measures[3].image)
-    
+        print(loadedAnalysis.name, loadedAnalysis.date, loadedAnalysis.measures[3].image)
+        print("finished")
 
-    print("finished")
+    # launch the tests
+    mainTest()
 
 
 
