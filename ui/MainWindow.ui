@@ -6,20 +6,60 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>648</width>
-    <height>373</height>
+    <width>507</width>
+    <height>453</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>BeeReal</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="analysisVerticalLayout"/>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="resultVerticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Graph1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Graph2</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>648</width>
+     <width>507</width>
      <height>26</height>
     </rect>
    </property>
@@ -27,18 +67,18 @@
     <property name="title">
      <string>file</string>
     </property>
-    <addaction name="actionLoad_analysys"/>
-    <addaction name="actionNew_analisys"/>
+    <addaction name="actionLoad_analysis"/>
+    <addaction name="actionNew_analysis"/>
    </widget>
    <addaction name="menufile"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionLoad_analysys">
+  <action name="actionLoad_analysis">
    <property name="text">
     <string>Load analysis</string>
    </property>
   </action>
-  <action name="actionNew_analisys">
+  <action name="actionNew_analysis">
    <property name="text">
     <string>New analysis</string>
    </property>
