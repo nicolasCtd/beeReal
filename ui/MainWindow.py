@@ -11,4 +11,5 @@ class MainWindow(QMainWindow):
         
     def initialize(self):
         self.analysisForm = ASF.AnalysisSettingForm()
+        #self.analysisForm .setEnabled(False)
         self.setCentralWidget(self.analysisForm)

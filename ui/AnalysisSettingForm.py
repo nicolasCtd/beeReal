@@ -9,6 +9,11 @@ class AnalysisSettingForm(QWidget):
         self.initialize()
 
     def initialize(self):
-        self.ui.cubitalCheckBox.setText("Use cubitabl points")
+        self.ui.cubitalCheckBox.setText("Use cubital points")
         self.ui.discoidalCheckBox.setText("Use discoidal points")
         self.ui.startAnalysisPushButton.setText("Start analysis")
+        self.ui.analysisNameLabel.setText("Analysis name")
+        self.ui.authorNameLabel.setText("Author")
+        self.ui.commentLabel.setText("Comments")
+        self.ui.inputImagelabel.setText("Input images")
+        self.ui.treatedImageLael.setText("Treated images")
