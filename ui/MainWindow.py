@@ -40,8 +40,7 @@ class MainWindow(QMainWindow):
         if chemin:
             analysisFile = IO.AnalysisFile(chemin)
             analysis = analysisFile.loadAnalysis()
-
-            self.analysisForm.populateFromAnalysis(analysis)
+            self.analysisForm.setAnalysis(analysis)
 
 
         return
