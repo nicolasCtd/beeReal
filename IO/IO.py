@@ -15,6 +15,7 @@ AnalysisXmlTag = "Analysis"
 MeasureXmlTag = "measure"
 MeasuresDictXmlTag = "measures"
 ImageXmlTag = "image"
+ImageTreatedXmlTag = "treated"
 
 class AnalysisFile:
     def __init__(self, fileName):
@@ -25,7 +26,7 @@ class AnalysisFile:
         for measure in analysis.measures:
             #print(type(measure.image))
             #measure.image.exists()
-            print(measure.image, measure.image.exists())
+            print(measure.image, measure.image.exists(), measure.treated)
 
         return
 
@@ -75,6 +76,12 @@ class AnalysisFile:
                 for measureNode in child:
                     if measureNode.tag==ImageXmlTag:                        
                         setattr(measure, measureNode.tag, Path(measureNode.text) )
+                    elif measureNode.tag==ImageTreatedXmlTag:
+                        imageTreated = True
+                        if (measureNode.text == "False"):
+                            imageTreated = False
+                                                        
+                        setattr(measure, measureNode.tag, imageTreated )
                     else:
                         setattr(measure, measureNode.tag, measureNode.text )
 

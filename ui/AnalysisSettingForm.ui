@@ -26,7 +26,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="nameLineEdit"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="authorNameLabel">
@@ -36,7 +36,7 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="authorLineEdit"/>
        </item>
       </layout>
      </item>
@@ -89,7 +89,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QTextEdit" name="textEdit">
+      <widget class="QTextEdit" name="commentsTextEdit">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -110,7 +110,7 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QListWidget" name="wingListWidget_2"/>
+      <widget class="QListWidget" name="treatedWingListWidget"/>
      </item>
      <item row="0" column="1">
       <widget class="QLabel" name="treatedImageLael">
@@ -120,7 +120,7 @@
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QListWidget" name="wingListWidget"/>
+      <widget class="QListWidget" name="nonTreatedWingListWidget"/>
      </item>
     </layout>
    </item>

@@ -3,6 +3,7 @@ from PyQt5.QtGui import QIcon
 from ui import MainWindow_ui as ui
 from ui import AnalysisSettingForm as ASF
 from PyQt5.QtCore import pyqtSlot
+from IO import IO
 
 
 class MainWindow(QMainWindow):
@@ -27,7 +28,7 @@ class MainWindow(QMainWindow):
 
     @pyqtSlot()
     def loadAnalysis(self):
-        print("Loading analysis")
+        #print("Loading analysis")
         # QFileDialog renvoie un tuple (chemin, filtre)
         chemin, _ = QFileDialog.getOpenFileName(
             self,
@@ -35,5 +36,12 @@ class MainWindow(QMainWindow):
             "",
             "xml file (*.xml);; bee file (*.bee)"
         )
+
+        if chemin:
+            analysisFile = IO.AnalysisFile(chemin)
+            analysis = analysisFile.loadAnalysis()
+
+        self.analysisForm.populateFromAnalysis(analysis)
+
 
         return
