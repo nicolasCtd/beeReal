@@ -103,7 +103,11 @@ if __name__ == '__main__':
         analysis.appendMeasure(DS.Measure("bee2.png"))
         analysis.appendMeasure(DS.Measure("bee3.png"))
         analysis.appendMeasure(DS.Measure("bee4.png"))
-        analysisFile = AnalysisFile("analysis1.xml")
+        analysis.measures[2].treated= True
+        analysis.measures[3].treated= True
+        analysis.author = "Jerem"
+        analysis.comment="Bzzzzzz! A very nice analysis"
+        analysisFile = AnalysisFile("analysisTestFile.xml")
 
         # Saving
         analysisFile.saveAnalysis(analysis)

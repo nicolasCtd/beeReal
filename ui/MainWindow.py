@@ -41,7 +41,7 @@ class MainWindow(QMainWindow):
             analysisFile = IO.AnalysisFile(chemin)
             analysis = analysisFile.loadAnalysis()
 
-        self.analysisForm.populateFromAnalysis(analysis)
+            self.analysisForm.populateFromAnalysis(analysis)
 
 
         return

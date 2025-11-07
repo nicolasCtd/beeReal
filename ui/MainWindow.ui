@@ -70,7 +70,19 @@
     <addaction name="actionLoad_analysis"/>
     <addaction name="actionNew_analysis"/>
    </widget>
+   <widget class="QMenu" name="menuoptions">
+    <property name="title">
+     <string>options</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuabout">
+    <property name="title">
+     <string>about</string>
+    </property>
+   </widget>
    <addaction name="menufile"/>
+   <addaction name="menuoptions"/>
+   <addaction name="menuabout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionLoad_analysis">

@@ -12,3 +12,4 @@ resources/resources_rc.py
 /in/
 ui/AnalysisSettingForm_ui.py
 ui/MainWindow_ui.py
+analysisTestFile.xml
