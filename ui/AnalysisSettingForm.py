@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget
+from PyQt5.QtWidgets import QWidget, QListWidgetItem
 from ui import AnalysisSettingForm_ui as ui
 from dataStruct import dataStructure as DS
 from PyQt5.QtCore import pyqtSlot
@@ -24,11 +24,20 @@ class AnalysisSettingForm(QWidget):
 
     def setupConnection(self):
         self.ui.nameLineEdit.editingFinished.connect(self.slotNameLineEditEditingFinished)
+        self.ui.nonTreatedWingListWidget.itemDoubleClicked.connect(self.slotImageItemDoubleClicked)
 
     @pyqtSlot()
-    def slotNameLineEditEditingFinished(self, text):
+    def slotNameLineEditEditingFinished(self):
         if self.analysis is not None:
             self.analysis.name = self.ui.nameLineEdit.text
+
+    @pyqtSlot(QListWidgetItem)
+    def slotImageItemDoubleClicked(self, item : QListWidgetItem):
+        if item is not None:
+            print(item.text())
+
+        
+        return
 
     def setAnalysis(self, analysis : DS):
         self.analysis = analysis

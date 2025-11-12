@@ -120,7 +120,7 @@
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QListWidget" name="nonTreatedWingListWidget"/>
+      <widget class="SpecializedListWidget" name="nonTreatedWingListWidget"/>
      </item>
     </layout>
    </item>
@@ -133,6 +133,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SpecializedListWidget</class>
+   <extends>QListWidget</extends>
+   <header>ui.specializedListWidget</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

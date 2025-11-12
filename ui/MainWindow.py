@@ -16,8 +16,7 @@ class MainWindow(QMainWindow):
     def initialize(self):        
         #self.setWindowIcon(QIcon(":/images/deco1.jpg"))        
         self.analysisForm = ASF.AnalysisSettingForm()
-        #self.analysisForm .setEnabled(False)
-        #self.setCentralWidget(self.analysisForm)
+        self.analysisForm .setEnabled(False)        
         self.ui.analysisVerticalLayout.addWidget(self.analysisForm)
 
         # Some shortcuts
@@ -41,6 +40,7 @@ class MainWindow(QMainWindow):
             analysisFile = IO.AnalysisFile(chemin)
             analysis = analysisFile.loadAnalysis()
             self.analysisForm.setAnalysis(analysis)
+            self.analysisForm .setEnabled(True)
 
 
         return
