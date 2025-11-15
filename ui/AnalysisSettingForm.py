@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QWidget, QListWidgetItem
+from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from ui import AnalysisSettingForm_ui as ui
 from dataStruct import dataStructure as DS
 from PyQt5.QtCore import pyqtSlot
@@ -10,6 +11,9 @@ class AnalysisSettingForm(QWidget):
         self.ui.setupUi(self)
         self.initialize()
         self.analysis = DS.Analysis("")
+        self.model = QStandardItemModel()
+        self.model.setHorizontalHeaderLabels(["name", "Status"])
+        self.ui.beeTableView.setModel(self.model)
 
     def initialize(self):
         self.ui.cubitalCheckBox.setText("Use cubital points")
@@ -34,9 +38,7 @@ class AnalysisSettingForm(QWidget):
     @pyqtSlot(QListWidgetItem)
     def slotImageItemDoubleClicked(self, item : QListWidgetItem):
         if item is not None:
-            print(item.text())
-
-        
+            print(item.text())        
         return
 
     def setAnalysis(self, analysis : DS):
@@ -55,8 +57,12 @@ class AnalysisSettingForm(QWidget):
             if measure.treated:
                 self.ui.treatedWingListWidget.addItem(imagePath)
             else:
-                self.ui.nonTreatedWingListWidget.addItem(imagePath)
+                self.ui.nonTreatedWingListWidget.addItem(imagePath)                
 
+            nameItem = QStandardItem(imagePath)
+            statusItem = QStandardItem(measure.treated) # <= Faut passer par un setData ou un checkBox
+
+            self.model.appendRow([nameItem, statusItem])
 
         # and so on ...
         
