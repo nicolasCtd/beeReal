@@ -18,7 +18,6 @@ class AnalysisSettingForm(QWidget):
         self.ui.beeTableView.setModel(self.model)
 
     def initialize(self):
-        self.ui.cubitalCheckBox.setText("Use cubital points")
         self.ui.discoidalCheckBox.setText("Use discoidal points")
         self.ui.startAnalysisPushButton.setText("Start analysis")
         self.ui.analysisNameLabel.setText("Analysis name")
@@ -52,6 +51,7 @@ class AnalysisSettingForm(QWidget):
         self.ui.nameLineEdit.setText(self.analysis.name)
         self.ui.authorLineEdit.setText(self.analysis.author)
         self.ui.commentsTextEdit.setText(self.analysis.comment)
+        self.ui.discoidalCheckBox.setChecked(self.analysis.useDiscoidalPoints)
 
         for measure in self.analysis.measures:
             imagePath = str(measure.image)

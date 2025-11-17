@@ -31,8 +31,9 @@ class Analysis:
         self.date = date.today()
         self.comment = ""
         self.author = ""
+        self.useDiscoidalPoints = False
         self.measures = []
-
+        
     def appendMeasure(self, measure):
         self.measures.append(measure)
         

@@ -16,6 +16,7 @@ MeasureXmlTag = "measure"
 MeasuresDictXmlTag = "measures"
 ImageXmlTag = "image"
 ImageTreatedXmlTag = "treated"
+DiscoidalUsageXmlTag = "useDiscoidalPoints"
 
 class AnalysisFile:
     def __init__(self, fileName):
@@ -87,7 +88,11 @@ class AnalysisFile:
 
                 analysis.measures.append(measure)
             else:
-                setattr(analysis, child.tag, child.text )
+                if child.tag == DiscoidalUsageXmlTag:
+                    useDisco = True if child.text=="True" else False
+                    setattr(analysis, child.tag, useDisco )
+                else:
+                    setattr(analysis, child.tag, child.text )
 
         # Check image existence
         self.checkImagesExistence(analysis)
