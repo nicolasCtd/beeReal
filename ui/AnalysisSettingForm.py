@@ -3,6 +3,8 @@ from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from ui import AnalysisSettingForm_ui as ui
 from dataStruct import dataStructure as DS
 from PyQt5.QtCore import pyqtSlot
+from PyQt5.QtCore import Qt
+
 
 class AnalysisSettingForm(QWidget):
     def __init__(self, parent=None):
@@ -56,12 +58,16 @@ class AnalysisSettingForm(QWidget):
             print(measure.image, measure.treated)
             if measure.treated:
                 self.ui.treatedWingListWidget.addItem(imagePath)
+                checkState = Qt.Checked
             else:
-                self.ui.nonTreatedWingListWidget.addItem(imagePath)                
+                self.ui.nonTreatedWingListWidget.addItem(imagePath)
+                checkState = Qt.Unchecked                
 
             nameItem = QStandardItem(imagePath)
-            statusItem = QStandardItem(measure.treated) # <= Faut passer par un setData ou un checkBox
+            statusItem = QStandardItem()
 
+            statusItem.setCheckable(True)          
+            statusItem.setCheckState(checkState)
             self.model.appendRow([nameItem, statusItem])
 
         # and so on ...
