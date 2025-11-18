@@ -23,13 +23,10 @@ class AnalysisSettingForm(QWidget):
         self.ui.analysisNameLabel.setText("Analysis name")
         self.ui.authorNameLabel.setText("Author")
         self.ui.commentLabel.setText("Comments")
-        self.ui.inputImagelabel.setText("Input images")
-        self.ui.treatedImageLael.setText("Treated images")
         self.setupConnection()
 
     def setupConnection(self):
         self.ui.nameLineEdit.editingFinished.connect(self.slotNameLineEditEditingFinished)
-        self.ui.nonTreatedWingListWidget.itemDoubleClicked.connect(self.slotImageItemDoubleClicked)
 
     @pyqtSlot()
     def slotNameLineEditEditingFinished(self):
@@ -54,15 +51,6 @@ class AnalysisSettingForm(QWidget):
         self.ui.discoidalCheckBox.setChecked(self.analysis.useDiscoidalPoints)
 
         for measure in self.analysis.measures:
-            imagePath = str(measure.image)
-            print(measure.image, measure.treated)
-            if measure.treated:
-                self.ui.treatedWingListWidget.addItem(imagePath)
-                #checkState = Qt.Checked
-            else:
-                self.ui.nonTreatedWingListWidget.addItem(imagePath)
-                #checkState = Qt.Unchecked                
-
             self.model.appendMeasure(measure)
 
         # and so on ...
