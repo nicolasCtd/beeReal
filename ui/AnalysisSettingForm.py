@@ -1,9 +1,8 @@
 from PyQt5.QtWidgets import QWidget, QListWidgetItem
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from ui import AnalysisSettingForm_ui as ui
 from dataStruct import dataStructure as DS
 from PyQt5.QtCore import pyqtSlot
-from PyQt5.QtCore import Qt
+from models.beeItemModel import BeeItemModel
 
 
 class AnalysisSettingForm(QWidget):
@@ -13,8 +12,9 @@ class AnalysisSettingForm(QWidget):
         self.ui.setupUi(self)
         self.initialize()
         self.analysis = DS.Analysis("")
-        self.model = QStandardItemModel()
-        self.model.setHorizontalHeaderLabels(["name", "Status"])
+        #self.model = QStandardItemModel()
+        #self.model.setHorizontalHeaderLabels(["name", "Status"])
+        self.model = BeeItemModel()
         self.ui.beeTableView.setModel(self.model)
 
     def initialize(self):
@@ -58,17 +58,12 @@ class AnalysisSettingForm(QWidget):
             print(measure.image, measure.treated)
             if measure.treated:
                 self.ui.treatedWingListWidget.addItem(imagePath)
-                checkState = Qt.Checked
+                #checkState = Qt.Checked
             else:
                 self.ui.nonTreatedWingListWidget.addItem(imagePath)
-                checkState = Qt.Unchecked                
+                #checkState = Qt.Unchecked                
 
-            nameItem = QStandardItem(imagePath)
-            statusItem = QStandardItem()
-
-            statusItem.setCheckable(True)          
-            statusItem.setCheckState(checkState)
-            self.model.appendRow([nameItem, statusItem])
+            self.model.appendMeasure(measure)
 
         # and so on ...
         
