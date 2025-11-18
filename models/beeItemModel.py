@@ -1,6 +1,19 @@
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
+from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon
 from dataStruct import dataStructure as DS
 from PyQt5.QtCore import Qt
+
+def getStatusItemWithIcon(statusTreated):
+    statusItem = QStandardItem()
+    statusItem.setText("") 
+    statusIcon = None
+    if statusTreated:
+        statusIcon = QIcon(":images/checkmark-32.png")
+    else:
+        statusIcon = QIcon(":images/x-mark-32.png")
+
+    statusItem.setIcon(statusIcon)
+    statusItem.setData(statusTreated, Qt.UserRole)    
+    return statusItem
 
 class BeeItemModel(QStandardItemModel):
     def __init__(self, parent=None):
@@ -9,18 +22,19 @@ class BeeItemModel(QStandardItemModel):
         return 
 
     def appendMeasure(self, measure : DS.Measure):
-        imagePath = str(measure.image)
-        
-        if measure.treated:
-            checkState = Qt.Checked
-        else:
-            checkState = Qt.Unchecked                
+        imagePath = str(measure.image)        
 
         nameItem = QStandardItem(imagePath)
-        statusItem = QStandardItem()
+        nameItem.setEditable(False)
 
-        statusItem.setCheckable(True)          
-        statusItem.setCheckState(checkState)
+        statusItem = getStatusItemWithIcon(measure.treated)
         self.appendRow([nameItem, statusItem])
 
+        return
+    
+    def addNewImage(self, imagePath):
+        nameItem = QStandardItem(imagePath)
+        nameItem.setEditable(False)
+        statusItem = getStatusItemWithIcon(False)
+        self.appendRow([nameItem, statusItem])
         return

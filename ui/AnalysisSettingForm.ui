@@ -101,7 +101,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QTableView" name="beeTableView"/>
+    <widget class="BeeTableView" name="beeTableView"/>
    </item>
    <item>
     <widget class="QPushButton" name="startAnalysisPushButton">
@@ -112,6 +112,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>BeeTableView</class>
+   <extends>QTableView</extends>
+   <header>ui.beeTableView</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
