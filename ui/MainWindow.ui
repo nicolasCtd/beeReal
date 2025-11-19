@@ -60,15 +60,17 @@
      <x>0</x>
      <y>0</y>
      <width>507</width>
-     <height>26</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menufile">
     <property name="title">
      <string>file</string>
     </property>
-    <addaction name="actionLoad_analysis"/>
-    <addaction name="actionNew_analysis"/>
+    <addaction name="actionNew"/>
+    <addaction name="actionLoad"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSaveAs"/>
    </widget>
    <widget class="QMenu" name="menuoptions">
     <property name="title">
@@ -85,14 +87,24 @@
    <addaction name="menuabout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionLoad_analysis">
+  <action name="actionLoad">
    <property name="text">
-    <string>Load analysis</string>
+    <string>Load</string>
    </property>
   </action>
-  <action name="actionNew_analysis">
+  <action name="actionNew">
    <property name="text">
-    <string>New analysis</string>
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="text">
+    <string>Save as ...</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
    </property>
   </action>
  </widget>

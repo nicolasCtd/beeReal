@@ -25,13 +25,17 @@ class AnalysisSettingForm(QWidget):
         self.ui.commentLabel.setText("Comments")
         self.setupConnection()
 
+    def getAnalysis(self):
+        # NOTE: IHM should be reparsed to fill self.analysis here
+        return self.analysis
+
     def setupConnection(self):
         self.ui.nameLineEdit.editingFinished.connect(self.slotNameLineEditEditingFinished)
 
     @pyqtSlot()
     def slotNameLineEditEditingFinished(self):
         if self.analysis is not None:
-            self.analysis.name = self.ui.nameLineEdit.text
+            self.analysis.name = self.ui.nameLineEdit.text()
 
     @pyqtSlot(QListWidgetItem)
     def slotImageItemDoubleClicked(self, item : QListWidgetItem):

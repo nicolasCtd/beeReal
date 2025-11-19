@@ -4,6 +4,7 @@ from ui import MainWindow_ui as ui
 from ui import AnalysisSettingForm as ASF
 from PyQt5.QtCore import pyqtSlot
 from IO import IO
+from dataStruct import dataStructure as DS
 
 
 class MainWindow(QMainWindow):
@@ -12,6 +13,7 @@ class MainWindow(QMainWindow):
         self.ui = ui.Ui_mainWindow()
         self.ui.setupUi(self)
         self.initialize()
+        self.analysisPath = None
         
     def initialize(self):        
         #self.setWindowIcon(QIcon(":/images/deco1.jpg"))        
@@ -20,10 +22,14 @@ class MainWindow(QMainWindow):
         self.ui.analysisVerticalLayout.addWidget(self.analysisForm)
 
         # Some shortcuts
-        self.ui.actionLoad_analysis.setShortcut("Ctrl+O")
-
+        self.ui.actionLoad.setShortcut("Ctrl+O")
+        self.ui.actionNew.setShortcut("Ctrl+N")
+        self.ui.actionSave.setShortcut("Ctrl+S")        
         # Connection
-        self.ui.actionLoad_analysis.triggered.connect(self.loadAnalysis)
+        self.ui.actionLoad.triggered.connect(self.loadAnalysis)
+        self.ui.actionSave.triggered.connect(self.saveAnalysis)
+        self.ui.actionSaveAs.triggered.connect(self.saveAnalysisAs)
+
 
     @pyqtSlot()
     def loadAnalysis(self):
@@ -37,10 +43,40 @@ class MainWindow(QMainWindow):
         )
 
         if chemin:
+            self.analysisPath = chemin
             analysisFile = IO.AnalysisFile(chemin)
             analysis = analysisFile.loadAnalysis()
             self.analysisForm.setAnalysis(analysis)
             self.analysisForm .setEnabled(True)
 
+
+
+        return
+    
+    @pyqtSlot()   
+    def saveAnalysisAs(self):
+
+        chemin, ext = QFileDialog.getSaveFileName(
+            self,
+            "Save analysis to ...",
+            "",
+            "xml file (*.xml);; bee file (*.bee)"
+        )
+
+        # TODO: find a way to automatically add default extension if missing
+
+        if chemin:
+            self.analysisPath = chemin
+            self.saveAnalysis()
+
+        return
+
+    @pyqtSlot()
+    def saveAnalysis(self):
+
+        if self.analysisPath is not None:
+            analysis =self.analysisForm.getAnalysis()
+            analysisFile = IO.AnalysisFile(self.analysisPath)
+            analysisFile.saveAnalysis(analysis)
 
         return
