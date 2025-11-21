@@ -4,8 +4,6 @@ from ui import MainWindow_ui as ui
 from ui import AnalysisSettingForm as ASF
 from PyQt5.QtCore import pyqtSlot
 from IO import IO
-from dataStruct import dataStructure as DS
-
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -20,23 +18,33 @@ class MainWindow(QMainWindow):
         self.analysisForm = ASF.AnalysisSettingForm()
         self.analysisForm .setEnabled(False)        
         self.ui.analysisVerticalLayout.addWidget(self.analysisForm)
+        self.ui.actionSave.setEnabled(False)
+        self.ui.actionSaveAs.setEnabled(False)
 
         # Some shortcuts
         self.ui.actionLoad.setShortcut("Ctrl+O")
         self.ui.actionNew.setShortcut("Ctrl+N")
         self.ui.actionSave.setShortcut("Ctrl+S")        
-        self.ui.actionSave.setEnabled(False)
-        self.ui.actionSaveAs.setEnabled(False)
+
+
         # Connection
         self.ui.actionLoad.triggered.connect(self.loadAnalysis)
         self.ui.actionSave.triggered.connect(self.saveAnalysis)
         self.ui.actionSaveAs.triggered.connect(self.saveAnalysisAs)
+        self.ui.actionNew.triggered.connect(self.newAnalysis)
 
+########## SLOTS GOES HERE
+
+    @pyqtSlot()
+    def newAnalysis(self):
+        # TODO: Check saving former one if any
+        self.analysisForm.setEnabled(True)
+        self.ui.actionSave.setEnabled(True)
+        self.ui.actionSaveAs.setEnabled(True)
+        return
 
     @pyqtSlot()
     def loadAnalysis(self):
-        #print("Loading analysis")
-        # QFileDialog renvoie un tuple (chemin, filtre)
         chemin, _ = QFileDialog.getOpenFileName(
             self,
             "Open analysis file",
@@ -53,11 +61,7 @@ class MainWindow(QMainWindow):
             self.ui.actionSave.setEnabled(True)
             self.ui.actionSaveAs.setEnabled(True)
 
-
-
         return
-    
-########## SLOTS GOES HERE
 
     @pyqtSlot()   
     def saveAnalysisAs(self):
@@ -85,5 +89,7 @@ class MainWindow(QMainWindow):
             analysis.updateDate()    
             analysisFile = IO.AnalysisFile(self.analysisPath)
             analysisFile.saveAnalysis(analysis)
+        else:
+            self.saveAnalysisAs()
 
         return
