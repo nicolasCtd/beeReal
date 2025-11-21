@@ -4,7 +4,6 @@ from dataStruct import dataStructure as DS
 from PyQt5.QtCore import pyqtSlot
 from models.beeItemModel import BeeItemModel
 
-
 class AnalysisSettingForm(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -12,8 +11,6 @@ class AnalysisSettingForm(QWidget):
         self.ui.setupUi(self)
         self.initialize()
         self.analysis = DS.Analysis("")
-        #self.model = QStandardItemModel()
-        #self.model.setHorizontalHeaderLabels(["name", "Status"])
         self.model = BeeItemModel()
         self.ui.beeTableView.setModel(self.model)
 
@@ -26,22 +23,7 @@ class AnalysisSettingForm(QWidget):
         self.setupConnection()
 
     def getAnalysis(self):
-        # NOTE: IHM should be reparsed to fill self.analysis here
         return self.analysis
-
-    def setupConnection(self):
-        self.ui.nameLineEdit.editingFinished.connect(self.slotNameLineEditEditingFinished)
-
-    @pyqtSlot()
-    def slotNameLineEditEditingFinished(self):
-        if self.analysis is not None:
-            self.analysis.name = self.ui.nameLineEdit.text()
-
-    @pyqtSlot(QListWidgetItem)
-    def slotImageItemDoubleClicked(self, item : QListWidgetItem):
-        if item is not None:
-            print(item.text())        
-        return
 
     def setAnalysis(self, analysis : DS):
         self.analysis = analysis
@@ -59,4 +41,37 @@ class AnalysisSettingForm(QWidget):
 
         # and so on ...
         
+        return
+    
+    def setupConnection(self):
+        self.ui.nameLineEdit.editingFinished.connect(self.slotNameLineEditEditingFinished)
+        self.ui.authorLineEdit.editingFinished.connect(self.slotAuthorLineEditEditingFinished)
+        self.ui.discoidalCheckBox.toggled.connect(self.slotDiscoidalCheckBoxToggled)
+        self.ui.commentsTextEdit.textChanged.connect(self.slotCommentsTextEditTextChanged)
+
+    #### SLOTS GOES HERE
+    @pyqtSlot()
+    def slotNameLineEditEditingFinished(self):
+        if self.analysis is not None:
+            self.analysis.name = self.ui.nameLineEdit.text()   
+
+    @pyqtSlot()
+    def slotAuthorLineEditEditingFinished(self):
+        if self.analysis is not None:
+            self.analysis.author = self.ui.authorLineEdit.text()         
+
+    @pyqtSlot()
+    def slotCommentsTextEditTextChanged(self):
+        if self.analysis is not None:
+            self.analysis.comment = self.ui.commentsTextEdit.toPlainText()
+
+    @pyqtSlot(bool)
+    def slotDiscoidalCheckBoxToggled(self, checked):
+        if self.analysis is not None:
+            self.analysis.useDiscoidalPoints = checked   
+
+    @pyqtSlot(QListWidgetItem)
+    def slotImageItemDoubleClicked(self, item : QListWidgetItem):
+        if item is not None:
+            print(item.text())        
         return
