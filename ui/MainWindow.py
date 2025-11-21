@@ -25,6 +25,8 @@ class MainWindow(QMainWindow):
         self.ui.actionLoad.setShortcut("Ctrl+O")
         self.ui.actionNew.setShortcut("Ctrl+N")
         self.ui.actionSave.setShortcut("Ctrl+S")        
+        self.ui.actionSave.setEnabled(False)
+        self.ui.actionSaveAs.setEnabled(False)
         # Connection
         self.ui.actionLoad.triggered.connect(self.loadAnalysis)
         self.ui.actionSave.triggered.connect(self.saveAnalysis)
@@ -48,11 +50,15 @@ class MainWindow(QMainWindow):
             analysis = analysisFile.loadAnalysis()
             self.analysisForm.setAnalysis(analysis)
             self.analysisForm .setEnabled(True)
+            self.ui.actionSave.setEnabled(True)
+            self.ui.actionSaveAs.setEnabled(True)
 
 
 
         return
     
+########## SLOTS GOES HERE
+
     @pyqtSlot()   
     def saveAnalysisAs(self):
 
@@ -75,7 +81,8 @@ class MainWindow(QMainWindow):
     def saveAnalysis(self):
 
         if self.analysisPath is not None:
-            analysis =self.analysisForm.getAnalysis()
+            analysis =self.analysisForm.getAnalysis()        
+            analysis.updateDate()    
             analysisFile = IO.AnalysisFile(self.analysisPath)
             analysisFile.saveAnalysis(analysis)
 

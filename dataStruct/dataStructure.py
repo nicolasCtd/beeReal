@@ -33,7 +33,10 @@ class Analysis:
         self.author = ""
         self.useDiscoidalPoints = False
         self.measures = []
-        
+
+    def updateDate(self):
+        self.date = date.today()
+
     def appendMeasure(self, measure):
         self.measures.append(measure)
         
