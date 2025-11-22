@@ -18,18 +18,29 @@ ImageXmlTag = "image"
 ImageTreatedXmlTag = "treated"
 DiscoidalUsageXmlTag = "useDiscoidalPoints"
 
+def checkImagesExistence(analysis : DS.Analysis, rejectIfNonExitent = False):
+
+    
+    validMesures = []
+    for measure in analysis.measures:
+        if measure.image.exists():
+            validMesures.append(measure)
+        else:
+            print("Image file", measure.image, "does not exists")
+
+    if rejectIfNonExitent:
+        # Mount a new analysis with only existing files
+        analysis.measures = validMesures            
+
+    return
+
+
 class AnalysisFile:
     def __init__(self, fileName):
         self.filePath = Path(fileName)
         return
     
-    def checkImagesExistence(self, analysis):
-        for measure in analysis.measures:
-            #print(type(measure.image))
-            #measure.image.exists()
-            print(measure.image, measure.image.exists(), measure.treated)
 
-        return
 
 
     def saveAnalysis(self, analysis):
@@ -95,7 +106,7 @@ class AnalysisFile:
                     setattr(analysis, child.tag, child.text )
 
         # Check image existence
-        self.checkImagesExistence(analysis)
+        checkImagesExistence(analysis, True)
 
         return analysis
     
