@@ -3,7 +3,7 @@ from ui import AnalysisSettingForm_ui as ui
 from dataStruct import dataStructure as DS
 from PyQt5.QtCore import pyqtSlot
 from models.beeItemModel import BeeItemModel
-from pathlib import Path
+from ui.ImageViewer import ImageViewer 
 
 class AnalysisSettingForm(QWidget):
     def __init__(self, parent=None):
@@ -20,7 +20,7 @@ class AnalysisSettingForm(QWidget):
         self.ui.discoidalCheckBox.setText("Use discoidal points")
         self.ui.startAnalysisPushButton.setText("Start analysis")
         self.ui.stopAnalysisPushButton.setText("Stop")
-        self.ui.stopAnalysisPushButton.setEnabled(False)
+        #self.ui.stopAnalysisPushButton.setEnabled(False)
         self.ui.analysisNameLabel.setText("Analysis name")
         self.ui.authorNameLabel.setText("Author")
         self.ui.commentLabel.setText("Comments")
@@ -53,6 +53,7 @@ class AnalysisSettingForm(QWidget):
         self.ui.authorLineEdit.editingFinished.connect(self.slotAuthorLineEditEditingFinished)
         self.ui.discoidalCheckBox.toggled.connect(self.slotDiscoidalCheckBoxToggled)
         self.ui.commentsTextEdit.textChanged.connect(self.slotCommentsTextEditTextChanged)
+        self.ui.stopAnalysisPushButton.released.connect(self.slotStopAnalysisReleased)
 
     #### SLOTS GOES HERE
     @pyqtSlot()
@@ -85,4 +86,10 @@ class AnalysisSettingForm(QWidget):
     def slotMeasureAdded(self, measure : DS.Measure):
         # Append a measure to the analyse
         self.analysis.appendMeasure(measure)
+        return
+    
+    @pyqtSlot()
+    def slotStopAnalysisReleased(self):
+        self.viewer = ImageViewer("/home/chesnelj/Images/abeille.jpg")
+        self.viewer.show()
         return

@@ -13,3 +13,4 @@ resources/resources_rc.py
 ui/AnalysisSettingForm_ui.py
 ui/MainWindow_ui.py
 analysisTestFile.xml
+ui/ImageViewer_ui.py
