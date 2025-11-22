@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import QTableView, QMenu
-from PyQt5.QtCore import QPoint, Qt, pyqtSignal
+from PyQt5.QtCore import QPoint, Qt, pyqtSignal, pyqtSlot, QModelIndex
 from dataStruct import dataStructure as DS
 from pathlib import Path
-
+from ui.ImageViewer import ImageViewer 
 
 
 def is_image_file(path):
@@ -18,6 +18,7 @@ class BeeTableView(QTableView):
         self.setAcceptDrops(True)
         self.setContextMenuPolicy(Qt.CustomContextMenu)
         self.customContextMenuRequested.connect(self.openMenu)
+        self.doubleClicked.connect(self.slotItemDoulbeClicked)
 
         return
 
@@ -79,5 +80,12 @@ class BeeTableView(QTableView):
 
 
         event.acceptProposedAction()
+
+    @pyqtSlot(QModelIndex)
+    def slotItemDoulbeClicked(self, index : QModelIndex):
+        imagePath = self.model().data(index, Qt.UserRole)
+        self.viewer = ImageViewer(str(imagePath))
+        self.viewer.show()
+        return
 
 

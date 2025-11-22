@@ -25,6 +25,7 @@ class BeeItemModel(QStandardItemModel):
         imagePath = str(measure.image)        
 
         nameItem = QStandardItem(QFileInfo(imagePath).fileName())
+        nameItem.setData(measure.image, Qt.UserRole)
         nameItem.setEditable(False)
 
         statusItem = getStatusItemWithIcon(measure.treated)
