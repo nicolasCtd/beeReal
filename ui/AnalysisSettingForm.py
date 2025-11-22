@@ -3,6 +3,7 @@ from ui import AnalysisSettingForm_ui as ui
 from dataStruct import dataStructure as DS
 from PyQt5.QtCore import pyqtSlot
 from models.beeItemModel import BeeItemModel
+from pathlib import Path
 
 class AnalysisSettingForm(QWidget):
     def __init__(self, parent=None):
@@ -13,6 +14,7 @@ class AnalysisSettingForm(QWidget):
         self.analysis = DS.Analysis("")
         self.model = BeeItemModel()
         self.ui.beeTableView.setModel(self.model)
+        self.ui.beeTableView.imageAdded.connect(self.slotImageAdded)
 
     def initialize(self):
         self.ui.discoidalCheckBox.setText("Use discoidal points")
@@ -77,4 +79,12 @@ class AnalysisSettingForm(QWidget):
     def slotImageItemDoubleClicked(self, item : QListWidgetItem):
         if item is not None:
             print(item.text())        
+        return
+    
+    @pyqtSlot(str)
+    def slotImageAdded(self, image : str):
+        # Append a measure to the analyse
+        measure = DS.Measure("")
+        measure.image = Path(image)
+        self.analysis.appendMeasure(measure)
         return

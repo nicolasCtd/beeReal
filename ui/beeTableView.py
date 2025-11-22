@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QTableView, QMenu
-from PyQt5.QtCore import QPoint, Qt
+from PyQt5.QtCore import QPoint, Qt, pyqtSignal
 from models.beeItemModel import BeeItemModel
 
 
@@ -9,6 +9,9 @@ def is_image_file(path):
     return ext in ('jpg', 'jpeg', 'png')
 
 class BeeTableView(QTableView):
+
+    imageAdded = pyqtSignal(str)
+
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setAcceptDrops(True)
@@ -69,7 +72,10 @@ class BeeTableView(QTableView):
             if is_image_file(chemin):
                 model = self.model()
                 model.addNewImage(chemin)
+                self.imageAdded.emit(chemin)
+                
 
 
         event.acceptProposedAction()
+
 

@@ -74,7 +74,6 @@ class MainWindow(QMainWindow):
         )
 
         # TODO: find a way to automatically add default extension if missing
-
         if chemin:
             self.analysisPath = chemin
             self.saveAnalysis()
