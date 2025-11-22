@@ -17,9 +17,12 @@ class AnalysisSettingForm(QWidget):
     def initialize(self):
         self.ui.discoidalCheckBox.setText("Use discoidal points")
         self.ui.startAnalysisPushButton.setText("Start analysis")
+        self.ui.stopAnalysisPushButton.setText("Stop")
+        self.ui.stopAnalysisPushButton.setEnabled(False)
         self.ui.analysisNameLabel.setText("Analysis name")
         self.ui.authorNameLabel.setText("Author")
         self.ui.commentLabel.setText("Comments")
+        
         self.setupConnection()
 
     def getAnalysis(self):
