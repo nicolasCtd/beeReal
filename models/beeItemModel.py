@@ -1,6 +1,6 @@
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon
 from dataStruct import dataStructure as DS
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QFileInfo
 
 def getStatusItemWithIcon(statusTreated):
     statusItem = QStandardItem()
@@ -24,7 +24,7 @@ class BeeItemModel(QStandardItemModel):
     def appendMeasure(self, measure : DS.Measure):
         imagePath = str(measure.image)        
 
-        nameItem = QStandardItem(imagePath)
+        nameItem = QStandardItem(QFileInfo(imagePath).fileName())
         nameItem.setEditable(False)
 
         statusItem = getStatusItemWithIcon(measure.treated)
@@ -32,9 +32,3 @@ class BeeItemModel(QStandardItemModel):
 
         return
     
-    def addNewImage(self, imagePath):
-        nameItem = QStandardItem(imagePath)
-        nameItem.setEditable(False)
-        statusItem = getStatusItemWithIcon(False)
-        self.appendRow([nameItem, statusItem])
-        return

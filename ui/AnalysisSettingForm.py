@@ -14,7 +14,7 @@ class AnalysisSettingForm(QWidget):
         self.analysis = DS.Analysis("")
         self.model = BeeItemModel()
         self.ui.beeTableView.setModel(self.model)
-        self.ui.beeTableView.imageAdded.connect(self.slotImageAdded)
+        self.ui.beeTableView.measureAdded.connect(self.slotMeasureAdded)
 
     def initialize(self):
         self.ui.discoidalCheckBox.setText("Use discoidal points")
@@ -81,10 +81,8 @@ class AnalysisSettingForm(QWidget):
             print(item.text())        
         return
     
-    @pyqtSlot(str)
-    def slotImageAdded(self, image : str):
+    @pyqtSlot(DS.Measure)
+    def slotMeasureAdded(self, measure : DS.Measure):
         # Append a measure to the analyse
-        measure = DS.Measure("")
-        measure.image = Path(image)
         self.analysis.appendMeasure(measure)
         return

@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QTableView, QMenu
 from PyQt5.QtCore import QPoint, Qt, pyqtSignal
-from models.beeItemModel import BeeItemModel
+from dataStruct import dataStructure as DS
+from pathlib import Path
 
 
 
@@ -10,7 +11,7 @@ def is_image_file(path):
 
 class BeeTableView(QTableView):
 
-    imageAdded = pyqtSignal(str)
+    measureAdded = pyqtSignal(DS.Measure)
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -70,9 +71,10 @@ class BeeTableView(QTableView):
         for url in event.mimeData().urls():
             chemin = url.toLocalFile()
             if is_image_file(chemin):
-                model = self.model()
-                model.addNewImage(chemin)
-                self.imageAdded.emit(chemin)
+                measure = DS.Measure("")
+                measure.image = Path(chemin)
+                self.model().appendMeasure(measure)
+                self.measureAdded.emit(measure)
                 
 
 
