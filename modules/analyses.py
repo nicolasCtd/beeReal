@@ -67,7 +67,7 @@ class HISTOGRAM():
 
         CLASSES = list()
         INDICES = list()
-        for i in range(-5, 18):
+        for i in range(-5, 20):
             a = 50 + i * delta 
             b = 50 - i * delta 
             CLASSES.append(6 + i)
@@ -184,7 +184,7 @@ class HISTOGRAM():
         for i in range(len(idx)):
             xticks.append(str(int(idx[i]*100)/100))
         
-        ax.set_xticks(np.arange(1, 24), xticks, fontsize=6)
+        ax.set_xticks(np.arange(1, 26), xticks, fontsize=6)
 
         ax.xaxis.set_major_locator(MultipleLocator(1))
         # ax.xaxis.set_minor_locator(MultipleLocator(0.5))
