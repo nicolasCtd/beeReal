@@ -90,6 +90,4 @@ class AnalysisSettingForm(QWidget):
     
     @pyqtSlot()
     def slotStopAnalysisReleased(self):
-        self.viewer = ImageViewer("/home/chesnelj/Images/abeille.jpg")
-        self.viewer.show()
         return

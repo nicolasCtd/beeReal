@@ -26,28 +26,23 @@ class BeeTableView(QTableView):
         index = self.indexAt(pos)
         if not index.isValid():
             return
-
-        row = index.row()
-
         # menu
         menu = QMenu(self)
 
-        act_view = menu.addAction("Voir l'image")
-        act_mark = menu.addAction("Marquer pour retraiter")
-        act_delete = menu.addAction("Supprimer")
+        act_view = menu.addAction("Show image")
+        act_mark = menu.addAction("Mark for update")
+        act_delete = menu.addAction("Supress Image")
 
         action = menu.exec_(self.mapToGlobal(pos))
         if action is None:
             return
 
-        #if action == act_view:
-            #self.parent().viewImage(row)
-
+        if action == act_view:
+            self.showImageAtIndex(index)
         #elif action == act_mark:
-            #self.parent().markRowForRetry(row)
-
+            #self.markRowForRetry(row)
         #elif action == act_delete:
-            #self.parent().deleteRow(row)
+            #self.deleteRow(row)
 
 
     def dragEnterEvent(self, event):
@@ -77,15 +72,27 @@ class BeeTableView(QTableView):
                 self.model().appendMeasure(measure)
                 self.measureAdded.emit(measure)
                 
-
-
         event.acceptProposedAction()
+
+    def showImageAtIndex(self, index : QModelIndex):
+        # get index at colum 0 which correpond to image name
+        imageIndex = index.siblingAtColumn(0)
+        #get image path and trimed name
+        imagePath = self.model().data(imageIndex, Qt.UserRole)
+        imageName = self.model().data(imageIndex)
+        # show viewer
+        self.showImageViewer(imagePath, imageName)
+        return
+
+    def showImageViewer(self, imagePath : str, windowTitle : str ):
+        self.viewer = ImageViewer(str(imagePath))
+        self.viewer.setWindowTitle(windowTitle)
+        self.viewer.show()        
+        return
 
     @pyqtSlot(QModelIndex)
     def slotItemDoulbeClicked(self, index : QModelIndex):
-        imagePath = self.model().data(index, Qt.UserRole)
-        self.viewer = ImageViewer(str(imagePath))
-        self.viewer.show()
+        self.showImageAtIndex(index)
         return
 
 
