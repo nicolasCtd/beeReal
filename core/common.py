@@ -301,13 +301,13 @@ class EDIT(QMainWindow):
     def set_ci_points(self, switch):
         self.switch_ci = switch
         # Set the cursor to a cross cursor
-        self.setCursor(Qt.CrossCursor)
+        # self.setCursor(Qt.CrossCursor)
         self.label.mousePressEvent = self.getPos_ci
     
     def set_ds_points(self, switch):
         self.switch_ds = switch
         # Set the cursor to a cross cursor
-        self.setCursor(Qt.CrossCursor)
+        # self.setCursor(Qt.CrossCursor)
         self.label.mousePressEvent = self.getPos_ds
 
     def getPos_ci(self, event):
