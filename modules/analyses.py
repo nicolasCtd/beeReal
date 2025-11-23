@@ -306,7 +306,7 @@ class HISTOGRAM():
 
         plt.plot(indices[abeilles_noires], shifts[abeilles_noires], "*", 
                 color="black", markersize=8, 
-                label=f"Black bees: {len(indices[abeilles_noires])}/{indices.size} ({ratio}%)")
+                label=f"mellifera mellifera: {len(indices[abeilles_noires])}/{indices.size} ({ratio}%)")
         
         plt.plot(indices[autres_abeilles], shifts[autres_abeilles], "*", color="blue", markersize=8)
 
@@ -346,7 +346,8 @@ class HISTOGRAM():
         ax.tick_params(axis='y', labelsize=8)
 
         #plt.ylim([-np.max(np.abs(shifts)), +np.max(np.abs(shifts))])
-        plt.ylim([-2*np.std(shifts), +2*np.std(shifts)])
+        #plt.ylim([-2.5*np.std(shifts), +2.5*np.std(shifts)])
+        plt.ylim([-6, +6])
         plt.xlim([1, xmax])
 
         # mean = np.mean(indices)

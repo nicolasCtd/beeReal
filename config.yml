@@ -1,2 +1,3 @@
-visu: RUTTNER
-seuil_min_abeilles: 10
+visu: RUTTNER   # RUTTNER: variation of cubital index = 60/100
+seuil_min_abeilles: 10  # minimum number of bees to compute histogram
+y_max_scatter_plot: 6   # degrees for discoidal shift angle

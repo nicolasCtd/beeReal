@@ -157,7 +157,16 @@ def set_paths():
         globals.media = os.sep.join([os.path.dirname(__file__), 'media']) + os.sep
         globals.path = os.path.dirname(__file__) + os.sep
         globals.future = os.sep.join([os.path.dirname(__file__), 'media', 'future.mp3'])
-    
+
+    config_path = globals.path + "config.yml"
+
+    with open(config_path, 'r') as file:
+
+        config = yaml.safe_load(file)
+        globals.classif = config['visu']
+        globals.seuil_min_abeilles = config['seuil_min_abeilles']
+        globals.y_max_scatter_plot = config['y_max_scatter_plot']
+
     return 0
 
 def launch_log(path, name):
@@ -306,7 +315,7 @@ class MainWindow(QMainWindow):
 
     def closeEvent(self, event: QCloseEvent) -> None:
         close = QMessageBox()
-        close.setText("Exit the app?")
+        close.setText("Exit?")
         close.setStandardButtons(QMessageBox.Yes | QMessageBox.Cancel)
         close.setWindowTitle(" ")
         close = close.exec()
@@ -362,6 +371,7 @@ class Tabs(QWidget):
         self.tab18 = QWidget()
         self.tab19 = QWidget()
         self.tab20 = QWidget()
+        self.tab21 = QWidget()
 
         mf = QFont("Times New Roman", 14)
 
@@ -386,6 +396,7 @@ class Tabs(QWidget):
         self.tabs.addTab(self.tab18, "86-90")
         self.tabs.addTab(self.tab19, "91-95")
         self.tabs.addTab(self.tab20, "96-100")
+        self.tabs.addTab(self.tab21, "settings")
 
         self.tabs.setFont(QFont('Chalkduster', 13))
         self.tabs.setCurrentIndex(1)
@@ -395,68 +406,14 @@ class Tabs(QWidget):
 
         nb_tabs = 20
 
-        self.label_left = [QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self)]
-        
-        self.label_right = [QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                           QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self)]
-        
-        self.label_results = [QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self),
-                             QLabel(self), QLabel(self), QLabel(self), QLabel(self), QLabel(self)]
+        self.label_left = list()
+        self.label_right = list()
+        self.label_results = list()
+
+        for i in range(100):
+            self.label_left.append(QLabel(self))
+            self.label_right.append(QLabel(self))
+            self.label_results.append(QLabel(self))
 
         self.label_analyses = [QLabel(self), QLabel(self)]
         self.label_analyses[0].setFixedWidth(900)
@@ -470,6 +427,8 @@ class Tabs(QWidget):
         vl = QVBoxLayout()
         vl.addLayout(layout_main_1)
         vl.addLayout(layout_main_2)
+
+        sl = QVBoxLayout()
 
         # layout_main_1.setVerticalSpacing(50)
         layout_main_1.setContentsMargins(0, 0, 15, 0)
@@ -750,9 +709,14 @@ class Tabs(QWidget):
         self.tab19.layout = self.grids[18]
         self.tab19.setLayout(self.tab19.layout)
 
-        # # Create 19th tab 
+        # # Create 20th tab 
         self.tab20.layout = self.grids[19]
         self.tab20.setLayout(self.tab20.layout)
+
+        # # Create settings tab 
+        self.tab21.layout =sl
+        self.tab21.setLayout(self.tab21.layout)
+
 
         # Final step
         # #######
@@ -884,9 +848,10 @@ class Tabs(QWidget):
     
     def lancer_analyse(self):
         logging.info(f"Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI")
-        if len(self.RES) <= seuil_min_abeilles:
+        print(globals.seuil_min_abeilles)
+        if len(self.RES) <= globals.seuil_min_abeilles:
             self.dialog = MESSAGE()
-            msg = f"Le nombre d'ailes mesurées ({len(self.RES)}) est trop faible (il en faut au moins {seuil_min_abeilles})"
+            msg = f"Le nombre d'ailes mesurées ({len(self.RES)}) est trop faible (il en faut au moins {globals.seuil_min_abeilles})"
             self.dialog.message(msg)
             logging.info(msg)
         else:
@@ -900,7 +865,7 @@ class Tabs(QWidget):
                     self.indices.append(float(self.RES[abeille][0]))
                     self.shifts.append(float(self.RES[abeille][1]))
                     self.id_bees.append(abeille)
-            ci_images, ds_image, HISTO = analyse(self.indices, self.shifts, self.id_bees, path_out=self.out, visu=classif)
+            ci_images, ds_image, HISTO = analyse(self.indices, self.shifts, self.id_bees, path_out=self.out, visu=globals.classif)
             for image in ci_images:
                 if "mellifera" in image:
                     ci_image = image 
@@ -948,7 +913,7 @@ class Tabs(QWidget):
                                               indices, 
                                               angles,
                                               abeilles,
-                                              LEG=leg + f" ({len(indices)} abeilles)", path_out=self.out, visu=classif)
+                                              LEG=leg + f" ({len(indices)} bees)", path_out=self.out, visu=classif)
 
 
         for image in ci_images:
@@ -970,14 +935,6 @@ if __name__ == '__main__':
     dpi = screen.physicalDotsPerInch()
 
     set_paths()
-        
-    config_path = globals.path + "config.yml"
-
-    with open(config_path, 'r') as file:
-        config = yaml.safe_load(file)
-
-    classif = config['visu']
-    seuil_min_abeilles = config['seuil_min_abeilles']
 
     window = MainWindow()
 
