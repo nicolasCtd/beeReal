@@ -1,9 +1,13 @@
-from PyQt5.QtWidgets import QGraphicsView
+from PyQt5.QtWidgets import QGraphicsView, QGraphicsTextItem
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QFont, QColor
 
 # Some local constants constants
 zoomFactor = 1.25
 maxZoomLevel = 10
+
+addPointModifier = Qt.ControlModifier
+
 
 class CustomGraphicsView(QGraphicsView):
     def __init__(self, parent=None) :
@@ -18,13 +22,11 @@ class CustomGraphicsView(QGraphicsView):
         self.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
         self.zoomLevel = 0
-        self.setDragMode(QGraphicsView.DragMode.ScrollHandDrag)    
+        #self.setDragMode(QGraphicsView.DragMode.ScrollHandDrag)    
         
 
 
     def wheelEvent(self, event):
-        # TODO: limit zoom level
-
         if self.zoomLevel > maxZoomLevel or self.zoomLevel < 0 :
             event.accept()
             return
@@ -57,3 +59,20 @@ class CustomGraphicsView(QGraphicsView):
 
         event.accept()
 
+
+    def mouseReleaseEvent(self, event):
+
+        if event.modifiers() == addPointModifier:
+            posImage = self.mapToScene(event.pos())
+            item = QGraphicsTextItem("+")                 
+            serifFont = QFont("Times", 20, QFont.Bold)  
+            item.setDefaultTextColor(QColor(0, 255, 0))
+            brect = item.boundingRect()
+            print(brect)
+            item.setPos(posImage.x()-brect.width(),posImage.y()-brect.height() ) 
+            item.setFont(serifFont)
+            self.scene().addItem(item)
+            print(posImage)
+
+        
+        return super().mouseReleaseEvent(event)
