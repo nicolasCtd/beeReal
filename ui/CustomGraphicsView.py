@@ -1,6 +1,9 @@
 from PyQt5.QtWidgets import QGraphicsView
 from PyQt5.QtCore import Qt
 
+# Some local constants constants
+zoomFactor = 1.25
+maxZoomLevel = 10
 
 class CustomGraphicsView(QGraphicsView):
     def __init__(self, parent=None) :
@@ -14,17 +17,35 @@ class CustomGraphicsView(QGraphicsView):
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
-        self.zoom_factor = 1.25
+        self.zoomLevel = 0
+        self.setDragMode(QGraphicsView.DragMode.ScrollHandDrag)    
+        
+
 
     def wheelEvent(self, event):
         # TODO: limit zoom level
 
+        if self.zoomLevel > maxZoomLevel or self.zoomLevel < 0 :
+            event.accept()
+            return
+
         old_pos = self.mapToScene(event.pos())
 
+        factor = 1.
+
         if event.angleDelta().y() > 0:
-            factor = self.zoom_factor
+            # ZOOM
+            if self.zoomLevel < maxZoomLevel:                
+                factor = zoomFactor
+                self.zoomLevel+=1            
         else:
-            factor = 1 / self.zoom_factor
+            # UNZOOM
+            if self.zoomLevel > 0:                
+                factor = 1. / zoomFactor
+                self.zoomLevel-=1
+
+
+
 
         self.scale(factor, factor)
 
