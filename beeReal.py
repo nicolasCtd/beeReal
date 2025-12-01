@@ -18,6 +18,7 @@ from PyQt5.QtWidgets import (
     QFileDialog,
     QInputDialog,
     QMessageBox,
+    QComboBox
 )
 from PyQt5.QtGui import QPixmap, QFont
 from functools import partial
@@ -157,15 +158,6 @@ def set_paths():
         globals.media = os.sep.join([os.path.dirname(__file__), 'media']) + os.sep
         globals.path = os.path.dirname(__file__) + os.sep
         globals.future = os.sep.join([os.path.dirname(__file__), 'media', 'future.mp3'])
-
-    config_path = globals.path + "config.yml"
-
-    with open(config_path, 'r') as file:
-
-        config = yaml.safe_load(file)
-        globals.classif = config['visu']
-        globals.seuil_min_abeilles = config['seuil_min_abeilles']
-        globals.y_max_scatter_plot = config['y_max_scatter_plot']
 
     return 0
 
@@ -428,7 +420,60 @@ class Tabs(QWidget):
         vl.addLayout(layout_main_1)
         vl.addLayout(layout_main_2)
 
+        SL = QGridLayout()
+
+        my_font = QFont("Chalkduster", 16)
+
+        text0 = QLabel("<u>Parameters for Histogram</u>")
+        text1 = QLabel("<u>Parameters for Scatter plot</u>")
+
+        text0.setFont(my_font)
+        text1.setFont(my_font)
+
+        SL.addWidget(text0, 0, 0, 1, 2, alignment=Qt.AlignTop)
+        SL.addWidget(text1, 4, 0, 1, 2, alignment=Qt.AlignTop)
+
         sl = QVBoxLayout()
+
+        self.BTN_params_apply = QPushButton()
+        self.BTN_params_reset = QPushButton()
+
+        self.BTN_params_apply.setFixedWidth(80)
+        self.BTN_params_reset.setFixedWidth(80)
+
+        SL.addWidget(self.BTN_params_apply, 6, 0, 1, 2)
+        SL.addWidget(self.BTN_params_reset, 7, 0, 1, 2)
+
+        self.BTN_params_apply.setText("Apply")
+        self.BTN_params_reset.setText("Reset")
+
+        self.visualisation = QComboBox()
+        self.visualisation.addItems(['RUTTNER', 'DREHER'])
+        self.visualisation.setCurrentText('RUTTNER')
+
+        self.y_max = QComboBox()
+        self.y_max.addItems(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'])
+        self.y_max.setCurrentText('6')
+
+        SL.addWidget(self.visualisation, 1, 2, 1, 2)
+
+        SL.addWidget( QLabel("Visualisation"), 1, 1, 1, 2)
+
+        self.BTN_params_apply.setEnabled(True)
+        self.BTN_params_reset.setEnabled(False)
+
+        self.BTN_params_apply.clicked.connect(self.params_apply_button)
+        self.BTN_params_reset.clicked.connect(self.params_reset_button)
+
+        self.classif = globals.classif
+        self.y_max_scatter_plot = globals.y_max_scatter_plot
+
+        label_max_y_scatter = QLabel("Max for Y-axis (°)")
+
+        SL.addWidget(label_max_y_scatter, 5, 1, 1, 2)
+        SL.addWidget(self.y_max, 5, 2, 1, 2)
+
+        self.tab21.setLayout(SL)
 
         # layout_main_1.setVerticalSpacing(50)
         layout_main_1.setContentsMargins(0, 0, 15, 0)
@@ -725,6 +770,30 @@ class Tabs(QWidget):
 
         self.tabs.setCurrentIndex(0)
 
+
+    def params_apply_button(self):
+        print("apply button")
+        self.BTN_params_apply.setEnabled(False)
+        self.BTN_params_reset.setEnabled(True)
+        globals.classif = self.visualisation.currentText()
+        globals.y_max_scatter_plot = self.y_max.currentText()
+        print(f"nouvelle valeur y_max : {globals.y_max_scatter_plot}")
+        print(f"nouvelle valeur visualisation : {globals.classif}")
+        return 0
+    
+    def params_reset_button(self):
+        print("reset button")
+        self.BTN_params_apply.setEnabled(True)
+        self.BTN_params_reset.setEnabled(False)
+        globals.classif = "RUTTNER"
+        globals.y_max_scatter_plot = 6
+        self.y_max.setCurrentText(str(globals.y_max_scatter_plot))
+        self.visualisation.setCurrentText(str(globals.classif))
+        print(f"valeurs remises aux valeurs par défaut")
+        print(f"y_max : {globals.y_max_scatter_plot}°")
+        print(f"classif : {globals.classif}")
+        return 0
+
     def play(self, file):
         url = QUrl.fromLocalFile(file)
         content = QMediaContent(url)
@@ -848,14 +917,12 @@ class Tabs(QWidget):
     
     def lancer_analyse(self):
         logging.info(f"Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI")
-        print(globals.seuil_min_abeilles)
-        if len(self.RES) <= globals.seuil_min_abeilles:
+        if len(self.RES) < 1:
             self.dialog = MESSAGE()
-            msg = f"Le nombre d'ailes mesurées ({len(self.RES)}) est trop faible (il en faut au moins {globals.seuil_min_abeilles})"
+            msg = f"Error: at least 1 measure is expected (advised: >30)"
             self.dialog.message(msg)
             logging.info(msg)
         else:
-            print("calcul de l'histogramme de l'indice cubital")
             logging.info("calcul de l'histogramme de l'indice cubital")
             self.indices = []
             self.shifts = []
