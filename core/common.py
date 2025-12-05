@@ -156,8 +156,14 @@ class EDIT(QMainWindow):
         self.pixmapWidth = pixmap.width()
         self.pixmapHeight = pixmap.height()
 
-        coeff = 0.83
-        self.label.setFixedSize(int(self.pixmapWidth*coeff), int(self.pixmapHeight*coeff))
+        # coeff = 0.83
+
+        width = min(1800, self.pixmapWidth)
+        ratio = width / self.pixmapWidth 
+        height = int(ratio * self.pixmapHeight)
+        self.label.setFixedSize(width, height)
+
+        # self.label.setFixedSize(int(self.pixmapWidth*coeff), int(self.pixmapHeight*coeff))
 
         self.label.setScaledContents(True)
 
@@ -618,8 +624,11 @@ class VISU(QMainWindow):
         self.pixmapWidth = pixmap.width()
         self.pixmapHeight = pixmap.height()
 
-        coeff = 0.83
-        self.label.setFixedSize(int(self.pixmapWidth*coeff), int(self.pixmapHeight*coeff))
+        # coeff = 0.83
+        width = min(1800, self.pixmapWidth)
+        ratio = width / self.pixmapWidth 
+        height = int(ratio * self.pixmapHeight)
+        self.label.setFixedSize(width, height)
 
         self.label.setScaledContents(True)
         self.move(50, 50)

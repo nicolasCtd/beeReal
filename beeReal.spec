@@ -5,7 +5,7 @@ a = Analysis(
     ['beeReal.py'],
     pathex=[],
     binaries=[],
-    datas=[('config.yml', '.'),
+    datas=[
 	       ('media/', 'media'),
 		   ('media/future.mp3', '.'),
 		   ('tmp/', '.'),

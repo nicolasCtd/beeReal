@@ -7,9 +7,8 @@ path = ''
 media = ''
 future = ''
 
-classif = None
-seuil_min_abeilles = None
-y_max_scatter_plot = None
+classif = "RUTTNER"
+y_max_scatter_plot = 6
 
 loaded = dict()
 edited = dict()

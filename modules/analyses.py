@@ -12,7 +12,7 @@ from scipy.stats import pearsonr
 from matplotlib.ticker import MultipleLocator
 import logging
 from scipy.spatial import procrustes
-
+from modules import globals
 
 
 warnings.filterwarnings('ignore') 
@@ -215,7 +215,7 @@ class HISTOGRAM():
             ax = plt.gca()
             # fig.set_size_inches((16*0.9, 9*0.9))
 
-            plt.plot(np.array(x)+0.5, y, label=f"Bee Real ({len(self.indices)} bees)", linewidth=3.5, zorder=5)
+            plt.plot(np.array(x)+0.5, y, label=f"BeeReal ({len(self.indices)} bees)", linewidth=3.5, zorder=5)
 
             tck_label, positions = self.reset_ticks(ax)
             plt.ylim(0, max(positions))
@@ -341,13 +341,14 @@ class HISTOGRAM():
             plt.text(x_add[i], y_add[i], id_bees_add[i], fontsize=7, color='red')
 
         ax = plt.gca()
-        ax.fill_between([1, 2], [-np.max(np.abs(shifts)), -np.max(np.abs(shifts))], color='grey', alpha=0.5)
+        # ax.fill_between([1, 2], [-np.max(np.abs(shifts)), -np.max(np.abs(shifts))], color='grey', alpha=0.5)
+        ax.fill_between([1, 2], [-globals.y_max_scatter_plot, -globals.y_max_scatter_plot], color='grey', alpha=0.5)
         ax.tick_params(axis='x', labelsize=8)
         ax.tick_params(axis='y', labelsize=8)
 
         #plt.ylim([-np.max(np.abs(shifts)), +np.max(np.abs(shifts))])
         #plt.ylim([-2.5*np.std(shifts), +2.5*np.std(shifts)])
-        plt.ylim([-6, +6])
+        plt.ylim([-globals.y_max_scatter_plot, +globals.y_max_scatter_plot])
         plt.xlim([1, xmax])
 
         # mean = np.mean(indices)
