@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QGraphicsView, QGraphicsTextItem
+from PyQt5.QtWidgets import QGraphicsView, QGraphicsItem, QGraphicsTextItem
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont, QColor
 
@@ -22,7 +22,7 @@ class CustomGraphicsView(QGraphicsView):
         self.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
         self.zoomLevel = 0
-        #self.setDragMode(QGraphicsView.DragMode.ScrollHandDrag)    
+        self.setDragMode(QGraphicsView.DragMode.ScrollHandDrag)    
         
 
 
@@ -71,6 +71,7 @@ class CustomGraphicsView(QGraphicsView):
             print(brect)
             item.setPos(posImage.x()-brect.width(),posImage.y()-brect.height() ) 
             item.setFont(serifFont)
+            item.setFlag(QGraphicsItem.ItemIgnoresTransformations)
             self.scene().addItem(item)
             print(posImage)
 
