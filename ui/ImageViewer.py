@@ -1,10 +1,12 @@
 from ui import ImageViewer_ui as ui
 from PyQt5.QtWidgets import QWidget, QGraphicsScene
 from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import Qt
 
 class ImageViewer(QWidget):
     def __init__(self, image_path : str, parent=None):
         super().__init__(parent)
+        self.setWindowFlag(Qt.Window) # Autonomous windows
         self.ui = ui.Ui_ImageViewer()
         self.ui.setupUi(self)
         self.scene = QGraphicsScene(self.ui.graphicsView)

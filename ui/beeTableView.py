@@ -85,7 +85,7 @@ class BeeTableView(QTableView):
         return
 
     def showImageViewer(self, imagePath : str, windowTitle : str ):
-        self.viewer = ImageViewer(str(imagePath))
+        self.viewer = ImageViewer(str(imagePath), self)
         self.viewer.setWindowTitle(windowTitle)
         self.viewer.show()        
         return
