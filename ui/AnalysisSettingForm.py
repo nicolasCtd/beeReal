@@ -2,8 +2,7 @@ from PyQt5.QtWidgets import QWidget, QListWidgetItem
 from ui import AnalysisSettingForm_ui as ui
 from dataStruct import dataStructure as DS
 from PyQt5.QtCore import pyqtSlot
-from models.beeItemModel import BeeItemModel
-from ui.ImageViewer import ImageViewer 
+from models.beeItemModel import BeeItemModel 
 
 class AnalysisSettingForm(QWidget):
     def __init__(self, parent=None):

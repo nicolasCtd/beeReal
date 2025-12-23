@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QGraphicsView, QGraphicsItem, QGraphicsTextItem, QGraphicsPixmapItem
 from PyQt5.QtCore import Qt, QPointF
-from PyQt5.QtGui import QFont, QColor, QPixmap
+from PyQt5.QtGui import QPixmap
 
 # Some local constants constants
 zoomFactor = 1.25
