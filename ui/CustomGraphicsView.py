@@ -1,10 +1,11 @@
-from PyQt5.QtWidgets import QGraphicsView, QGraphicsItem, QGraphicsTextItem
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QFont, QColor
+from PyQt5.QtWidgets import QGraphicsView, QGraphicsItem, QGraphicsTextItem, QGraphicsPixmapItem
+from PyQt5.QtCore import Qt, QPointF
+from PyQt5.QtGui import QFont, QColor, QPixmap
 
 # Some local constants constants
 zoomFactor = 1.25
 maxZoomLevel = 10
+targetItemMidSize = 32 #pixels
 
 addPointModifier = Qt.ControlModifier
 
@@ -82,17 +83,12 @@ class CustomGraphicsView(QGraphicsView):
             self._panning = False
 
         if event.modifiers() == addPointModifier:
-            posImage = self.mapToScene(event.pos())
-            item = QGraphicsTextItem("+")                 
-            serifFont = QFont("Times", 20, QFont.Bold)  
-            item.setDefaultTextColor(QColor(0, 255, 0))
-            brect = item.boundingRect()
-            print(brect)
-            item.setPos(posImage.x()-brect.width(),posImage.y()-brect.height() ) 
-            item.setFont(serifFont)
+            posImage = self.mapToScene(event.pos())                      
+            plusImage = QPixmap(":images/plus.png").scaled(2*targetItemMidSize, 2*targetItemMidSize)
+            item = QGraphicsPixmapItem(plusImage)
+            item.setOffset(-targetItemMidSize, -targetItemMidSize)
+            item.setPos(posImage.x(),posImage.y()) 
             item.setFlag(QGraphicsItem.ItemIgnoresTransformations)
             self.scene().addItem(item)
-            print(posImage)
-
         
         return super().mouseReleaseEvent(event)
