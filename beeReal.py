@@ -294,7 +294,7 @@ class MainWindow(QMainWindow):
 
         launch_log(self.logs, f"logs_{date.today()}.log")
 
-        self.tab_widget = Tabs(self, self.path)
+        self.tab_widget = Tabs(self)
         self.setCentralWidget(self.tab_widget)
 
         self.showMaximized()
@@ -320,7 +320,7 @@ class MainWindow(QMainWindow):
 
 
 class Tabs(QWidget): 
-    def __init__(self, parent, path): 
+    def __init__(self, parent): 
         super(QWidget, self).__init__(parent)
 
         self.out = globals.out
@@ -479,9 +479,9 @@ class Tabs(QWidget):
         layout_main_1.setContentsMargins(0, 0, 15, 0)
         layout_main_2.setContentsMargins(0, 35, 0, 0)
 
-        btn1 = QPushButton("Load\nanalysis")
-        self.btn2 = QPushButton(f"Save\nanalysis\n{self.analyse_name}")
-        self.btn3 = QPushButton(f"Launch\nanalysis\n{self.analyse_name}")
+        self.btn_tab0_load_analysis = QPushButton("Load\nanalysis")
+        self.btn_tab0_save_analysis = QPushButton(f"Save\nanalysis\n{self.analyse_name}")
+        self.btn_tab0_launch_analysis = QPushButton(f"Launch\nanalysis\n{self.analyse_name}")
         label0 = QLabel("Name of the analysis: ")
         self.label00 = QLabel(self.analyse_name)
         label1 = QLabel("<u>Histogram of Cubital Index<u>")
@@ -494,15 +494,15 @@ class Tabs(QWidget):
         self.son.resize(50, 50)
         self.son.clicked.connect(self.mute)
 
-        self.btn_extra_plot = QPushButton(f"Add Deepwings data")
-        self.btn_extra_plot.setEnabled(self.switch_extra_plot)
+        self.btn_tab0_extra_plot = QPushButton(f"Add Deepwings data")
+        self.btn_tab0_extra_plot.setEnabled(self.switch_extra_plot)
 
         label1.setStyleSheet("margin-bottom: 50px;")
         label2.setStyleSheet("margin-bottom: 50px;")
-        self.btn_extra_plot.setStyleSheet("margin-bottom: 50px;")
+        self.btn_tab0_extra_plot.setStyleSheet("margin-bottom: 50px;")
 
-        self.pb = QPushButton("Edit")
-        self.pb.clicked.connect(self.edit_name)
+        self.btn_tab0_edit_name_analysis = QPushButton("Edit")
+        self.btn_tab0_edit_name_analysis.clicked.connect(self.edit_name)
 
         my_font = QFont("Chalkduster", 20)
         my_font2 = QFont("Chalkduster", 15)
@@ -512,31 +512,30 @@ class Tabs(QWidget):
         label1.setFont(my_font)
         label2.setFont(my_font)
         label0.setFont(my_font2)
-        btn1.setFont(my_font3)
-        self.btn2.setFont(my_font3)
-        self.btn3.setFont(my_font3)
-        self.btn_extra_plot.setFont(my_font4)
+        self.btn_tab0_load_analysis.setFont(my_font3)
+        self.btn_tab0_edit_name_analysis.setFont(my_font3)
+        self.btn_tab0_launch_analysis.setFont(my_font3)
+        self.btn_tab0_extra_plot.setFont(my_font4)
 
-        self.btn2.setStyleSheet("QPushButton {background-color: plum}")
-        self.btn3.setStyleSheet("QPushButton {background-color: lightblue}")
+        # self.btn_tab0_save_analysis.setStyleSheet("QPushButton {background-color: plum}")
+        # self.btn_tab0_launch_analysis.setStyleSheet("QPushButton {background-color: lightblue}")
 
-        btn1.resize(150, 150)
-        btn1.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        self.btn_tab0_load_analysis.resize(150, 150)
+        self.btn_tab0_load_analysis.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
-        self.btn2.resize(150, 150)
-        self.btn2.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        self.btn_tab0_save_analysis.resize(150, 150)
+        self.btn_tab0_save_analysis.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
-        self.btn3.resize(150, 150)
-        self.btn3.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        self.btn_tab0_launch_analysis.resize(150, 150)
+        self.btn_tab0_launch_analysis.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
-        self.pb.resize(150, 150)
-        self.pb.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        self.btn_tab0_edit_name_analysis.resize(150, 150)
+        self.btn_tab0_edit_name_analysis.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
         empty1 = globals.media + "empty1.png"
         pixmap = QPixmap(empty1)
         image_empty1 = self.label_analyses[0]
         image_empty1.setPixmap(pixmap)
-        # image_empty1.setContentsMargins(0, -500, 0, 0)
 
         empty2 = globals.media + "empty2.png"
         pixmap = QPixmap(empty2)
@@ -547,42 +546,31 @@ class Tabs(QWidget):
         L2, H2 = 300, 200
         L3, H3 = 300, 200
 
-        # cd1 = resource_path(f"images{os.sep}carte_dardagnan1.png")
         cd1 = globals.media + "deco1.jpg"
         pixmap = QPixmap(cd1)
         deco1 = QLabel(cd1)
-        # deco1.setScaledContents(True)
         scaled_pixmap = pixmap.scaled(L1, H1)
-        # scaled_pixmap = pixmap.scaled(L1, H1, Qt.IgnoreAspectRatio)
         deco1.setPixmap(scaled_pixmap)
 
-        # cd1 = resource_path(f"images{os.sep}carte_dardagnan1.png")
         cd2 = globals.media + "deco4.jpg"
         pixmap = QPixmap(cd2)
         deco2 = QLabel(cd2)
-        # deco1.setScaledContents(True)
         scaled_pixmap = pixmap.scaled(L2, H2, Qt.IgnoreAspectRatio)
-        # scaled_pixmap = pixmap.scaled(L2, H2)
         deco2.setPixmap(scaled_pixmap)
 
-        # cd3 = resource_path(f"images{os.sep}carte_dardagnan3.png")
         cd3 = globals.media + "deco5.png"
         pixmap = QPixmap(cd3)
         deco3 = QLabel()
-        # deco2.setScaledContents(True)
-        # scaled_pixmap = pixmap.scaled(L3, H3, Qt.IgnoreAspectRatio)
         scaled_pixmap = pixmap.scaled(L3, H3)
         deco3.setPixmap(scaled_pixmap)
 
-        # deco.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-
         layout_main_1.addWidget(label0, 0+1, 0, 1, 3)
         layout_main_1.addWidget(self.label00, 0+1, 4, 1, 3)
-        layout_main_1.addWidget(self.pb, 0+1, 8, 1, 3)
+        layout_main_1.addWidget(self.btn_tab0_edit_name_analysis, 0+1, 8, 1, 3)
         layout_main_1.addWidget(self.son, 0, 0, 1, 3)
-        layout_main_1.addWidget(btn1, 1, 0, 2, 2)
-        layout_main_1.addWidget(self.btn2, 1, 4, 2, 2)
-        layout_main_1.addWidget(self.btn3, 1, 8, 2, 2)
+        layout_main_1.addWidget(self.btn_tab0_load_analysis, 1, 0, 2, 2)
+        layout_main_1.addWidget(self.btn_tab0_save_analysis, 1, 4, 2, 2)
+        layout_main_1.addWidget(self.btn_tab0_edit_name_analysis, 1, 8, 2, 2)
         
         layout_main_1.addWidget(deco1, 0, 10, 3, 3)
         layout_main_1.addWidget(deco2, 0, 13, 3, 3)
@@ -594,12 +582,12 @@ class Tabs(QWidget):
         layout_main_2.addWidget(label1, 1, 2, 1, 5)
         layout_main_2.addWidget(label2, 1, 12, 1, 5)
 
-        layout_main_2.addWidget(self.btn_extra_plot, 1, 0, 1, 1)
+        layout_main_2.addWidget(self.btn_tab0_extra_plot, 1, 0, 1, 1)
 
-        btn1.clicked.connect(self.load_project)
-        self.btn2.clicked.connect(self.save_project)
-        self.btn3.clicked.connect(self.lancer_analyse)
-        self.btn_extra_plot.clicked.connect(self.add_histogram)
+        self.btn_tab0_load_analysis.clicked.connect(self.load_project)
+        self.btn_tab0_save_analysis.clicked.connect(self.save_project)
+        self.btn_tab0_edit_name_analysis.clicked.connect(self.lancer_analyse)
+        self.btn_tab0_extra_plot.clicked.connect(self.add_histogram)
 
         self.grids = list()
 
@@ -641,28 +629,28 @@ class Tabs(QWidget):
                 label_results.setContentsMargins(30, 0, 0, 0)
                 self.grids[-1].addWidget(label_results, i, 6+1, 1, 1)
 
-                btn1 = QPushButton("Load")
-                btn1.resize(50, 150)
-                btn1.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+                btn_tabN_load = QPushButton("Load")
+                btn_tabN_load.resize(50, 150)
+                btn_tabN_load.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
                 
-                btn2 = QPushButton("Edit")
-                btn2.resize(50, 150)
-                btn2.move(0,100)
-                btn2.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+                btn_tabN_edit = QPushButton("Edit")
+                btn_tabN_edit.resize(50, 150)
+                btn_tabN_edit.move(0,100)
+                btn_tabN_edit.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
-                btn3 = QPushButton("Visu")
-                # btn3.resize(80, 80)
-                btn3.setFixedHeight(80)
-                btn3.setFixedWidth(80)
-                btn3.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+                btn_tabN_visu = QPushButton("Visu")
+                # btn_tabN_visu.resize(80, 80)
+                btn_tabN_visu.setFixedHeight(80)
+                btn_tabN_visu.setFixedWidth(80)
+                btn_tabN_visu.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
-                self.grids[-1].addWidget(btn1, i, 1+1)
-                self.grids[-1].addWidget(btn2, i, 3+1)
-                self.grids[-1].addWidget(btn3, i, 5+1)
+                self.grids[-1].addWidget(btn_tabN_load, i, 1+1)
+                self.grids[-1].addWidget(btn_tabN_edit, i, 3+1)
+                self.grids[-1].addWidget(btn_tabN_visu, i, 5+1)
                 
-                btn1.clicked.connect(partial(connections_load[num_image], TABs=self))
-                btn2.clicked.connect(partial(connections_edit[num_image], TABs=self))
-                btn3.clicked.connect(partial(connections_visu[num_image], TABs=self))
+                btn_tabN_load.clicked.connect(partial(connections_load[num_image], TABs=self))
+                btn_tabN_edit.clicked.connect(partial(connections_edit[num_image], TABs=self))
+                btn_tabN_visu.clicked.connect(partial(connections_visu[num_image], TABs=self))
 
                 darda = globals.media + "dardagnan2.png"
 
@@ -821,10 +809,8 @@ class Tabs(QWidget):
         text, okPressed = QInputDialog.getText(self, " ", "Entrer le nom de l'analyse :", QLineEdit.Normal, "")
         if okPressed and text != '':
             self.label00.setText(text)
-            self.btn2.setText(f"Save\nanalysis\n{text}")
-            self.btn3.setText(f"Launch\nanalysis\n{text}")
-            print(os.path.isfile(self.logs + f"logs_{self.analyse_name}.txt"))
-            print('aa')
+            self.btn_tab0_edit_name_analysis.setText(f"Save\nanalysis\n{text}")
+            self.btn_tab0_launch_analysis.setText(f"Launch\nanalysis\n{text}")
             logging.shutdown()
             shutil.move(self.logs + f"logs_{self.analyse_name}.log", self.logs + f"logs_{text}.log")
             self.analyse_name = text
@@ -862,8 +848,8 @@ class Tabs(QWidget):
 
             self.analyse_name = get_file_name(project_file)
             self.label00.setText(self.analyse_name)
-            self.btn2.setText(f"Save\nanalysis\n{self.analyse_name}")
-            self.btn3.setText(f"Launch\nanalysis\n{self.analyse_name}")
+            self.btn_tab0_save_analysis.setText(f"Save\nanalysis\n{self.analyse_name}")
+            self.btn_tab0_launch_analysis.setText(f"Launch\nanalysis\n{self.analyse_name}")
             
             shutil.unpack_archive(filename=project_file, extract_dir=self.tmp)
             copytree(src=self.tmp + os.sep + "in", dst=self.in_)

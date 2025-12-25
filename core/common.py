@@ -36,8 +36,8 @@ from PyQt5.QtWidgets import (
 class MESSAGE(QMainWindow):
     def __init__(self):
         super(MESSAGE, self).__init__()
-        self.error1 = "Veuillez d'abord charger \nune image..."
-        self.error2 = "Veuillez d'abord éditer \nune image..."
+        self.error1 = "Please first load \nan image..."
+        self.error2 = "Please first edit \nan image..."
 
     def message_erreur1(self):
         self.setWindowTitle(' ')
@@ -91,22 +91,26 @@ class MESSAGE(QMainWindow):
 class EDIT(QMainWindow):
     def __init__(self, tabs, num, title=' ', parent=None):
         super(EDIT, self).__init__(parent)
-        self.setWindowTitle(title)
-        self.move(50, 100)
 
-        self.w = QWidget()
-        self.layout = QVBoxLayout(self.w)
-
-        self.switch_button_zoom_in = True
-        self.switch_button_zoom_out = False
-
+        # count_ci_points : compteur pour le nombre de nombre de points placés sur l’image corresondant à l’indice cubital (3 points max)
+        # count_ds_points : compteur pour le nombre de nombre de points placés sur l’image corresondant à l’angle discoidal (4 points max)
         self.count_ci_points = 0
         self.count_ds_points = 0
 
+        # switchs pour activer / désactiver les boutons
         self.switch_ci = False
         self.switch_ds = False
         self.switch_back = False
         self.switch_done = False
+        self.switch_button_zoom_in = True
+        self.switch_button_zoom_out = False
+
+        self.setWindowTitle(title)
+        self.move(50, 100)
+
+        self.window = QWidget()
+        self.layout = QVBoxLayout(self.window)
+
 
         self.ZOOM = 0
         self.last_name =  ["", ""]
@@ -216,7 +220,7 @@ class EDIT(QMainWindow):
         self.layout.addWidget(self.btn_done)
         self.dock = QDockWidget(f"{self.name}.jpg", self)
         self.dock.setFeatures(QDockWidget.DockWidgetMovable)
-        self.dock.setWidget(self.w)
+        self.dock.setWidget(self.window)
 
     def validate_editing(self, tabs):
         file_wo_zoom, file_w_zoom = self.get_last_file(self.TMP)

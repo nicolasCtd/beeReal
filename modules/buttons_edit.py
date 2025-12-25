@@ -2,6 +2,8 @@ from core.common import *
 import logging
 from modules import globals
 
+# Fonctions qui permettent de lancer une fenêtre d’édition.
+
 def editFile1(TABs):
     if globals.loaded[1]:
         TABs.dialog = EDIT(TABs, 1)
