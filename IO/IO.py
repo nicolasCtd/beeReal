@@ -56,7 +56,6 @@ class AnalysisFile:
             measureElement = ET.SubElement(root, MeasureXmlTag)
             for attr, value in measure.__dict__.items():
                 child = ET.SubElement(measureElement, attr)
-                toto = str(value)
                 child.text = str(value)
 
         # Construct tree

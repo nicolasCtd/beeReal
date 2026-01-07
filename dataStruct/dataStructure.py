@@ -1,6 +1,6 @@
 from datetime import date
 from pathlib import Path
-
+import uuid
 
 invalidValuePixel = -100
 invalidValueReal = -100.
@@ -23,6 +23,7 @@ class Measure:
         self.cubitalIndex= invalidValueReal
         self.discoidalShift= invalidValueReal
         self.comment=""
+        self.id = str(uuid.uuid4())
 
 
 class Analysis:
