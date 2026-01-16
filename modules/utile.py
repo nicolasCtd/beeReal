@@ -70,7 +70,45 @@ def get_path(path2file):
     path_split = path2file.replace(os.sep, "/").split("/")
     return os.sep.join(path_split[:-1]) + os.sep
 
+def get_last_file(path, extension):
+    """
+    Cette fonction est très spécifique. Elle permet de récupérer les dernières images du dossier 'tmp' de l'application :
+    la dernière image avec zoom (w), et la dernière image sans zoom (wo)
+    - path (str) : chemin du dossier
+    - extension (str) : extension des fichiers (par exemple '.png')
+    Les fichiers doivent avoir le format suivant : 
+    <nom>___<DD>_<MM>_<YYYY>___<hh>_<mm>_<ss>.png (sans zoom)
+    <nom>_zoom___<DD>_<MM>_<YYYY>___<hh>_<mm>_<ss>.png (sans zoom)
+    """
+    file_w_zoom = ""
+    file_wo_zoom = ""
 
+    time0 =  datetime.strptime("01/01/2000 00:00:00", "%d/%m/%Y %H:%M:%S")
+
+    for file in os.listdir(path):
+        if "zoom" not in file and os.path.isfile(path + os.sep + file):
+            tmp = file.replace(extension, "").split("___")
+            date1 = tmp[-2].replace("_", "/")
+            hour1 = tmp[-1].replace("_", ":")
+            time1 = datetime.strptime(date1 + " " + hour1, "%d/%m/%Y %H:%M:%S")
+            if time1 >= time0:
+                time0 = time1
+                file_wo_zoom = file
+            else:
+                continue
+
+    for file in os.listdir(path):
+        if "zoom" in file:
+            tmp = file.replace(extension, "").split("___")
+            date1 = tmp[-2].replace("_", "/")
+            hour1 = tmp[-1].replace("_", ":")
+            time1 = datetime.strptime(date1 + " " + hour1, "%d/%m/%Y %H:%M:%S")
+            if time1 >= time0:
+                time0 = time1
+                file_w_zoom = file
+            else:
+                continue
+    return file_wo_zoom, file_w_zoom
 
 def gauss(x, mu, sigma):
     return 1/(np.sqrt(2*np.pi) * sigma) * np.exp(-(x - mu)**2/(2*sigma**2))

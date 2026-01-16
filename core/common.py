@@ -34,12 +34,14 @@ from PyQt5.QtWidgets import (
 )
 
 class MESSAGE(QMainWindow):
+    """Cette classe permet de gérer les messages de l'IHM"""
     def __init__(self):
-        super(MESSAGE, self).__init__()
+        super().__init__()
         self.error1 = "Please first load \nan image..."
         self.error2 = "Please first edit \nan image..."
 
     def message_erreur1(self):
+        """Affiche le message d'erreur 1"""
         self.setWindowTitle(' ')
         layout = QVBoxLayout()
         coconfort = globals.media + "coconfort.png"
@@ -56,6 +58,7 @@ class MESSAGE(QMainWindow):
         self.show()
 
     def message_erreur2(self):
+        """Affiche le message d'erreur 2"""
         self.setWindowTitle(' ')
         layout = QVBoxLayout()
         coconfort = globals.media + "coconfort.png"
@@ -72,6 +75,7 @@ class MESSAGE(QMainWindow):
         self.show()
 
     def message(self, msg):
+        """Fonction permettant d'afficher un message en entrée."""
         self.move(100, 200)
         self.setWindowTitle(' ')
         layout = QHBoxLayout()
@@ -89,11 +93,22 @@ class MESSAGE(QMainWindow):
         self.show()
 
 class EDIT(QMainWindow):
-    def __init__(self, tabs, num, title=' ', parent=None):
-        super(EDIT, self).__init__(parent)
+    """
+    Fenêtre d'édition de l'image.
+    
+    Gère le placement des points nécessaires au calcul :
+    - de l'indice cubital (3 points)
+    - de l'angle discoidal (4 points)
+    """
+    def __init__(self, tabs, num, parent=None):
+        super().__init__(parent)
+        
+        # - count_ci_points : compteur pour le nombre de nombre de points 
+        # placés sur l’image permettant de calculer l’indice cubital (3 points)
 
-        # count_ci_points : compteur pour le nombre de nombre de points placés sur l’image corresondant à l’indice cubital (3 points max)
-        # count_ds_points : compteur pour le nombre de nombre de points placés sur l’image corresondant à l’angle discoidal (4 points max)
+        # - count_ds_points : compteur pour le nombre de nombre de points
+        # placés sur l’image permettant de calculer l’angle discoidal (4 points)
+
         self.count_ci_points = 0
         self.count_ds_points = 0
 
@@ -105,12 +120,11 @@ class EDIT(QMainWindow):
         self.switch_button_zoom_in = True
         self.switch_button_zoom_out = False
 
-        self.setWindowTitle(title)
+        self.setWindowTitle('')
         self.move(50, 100)
 
         self.window = QWidget()
         self.layout = QVBoxLayout(self.window)
-
 
         self.ZOOM = 0
         self.last_name =  ["", ""]
@@ -118,6 +132,7 @@ class EDIT(QMainWindow):
         self.color_ci = [0, 255, 255]
         self.color_ds = [255, 255, 51]
 
+        # Label pour afficher les résultats après édition de l'image (valeur du CI, classe etc)
         self.LAB_RIGHT = tabs.label_right
 
         self.GRIDS = tabs.grids
@@ -135,7 +150,8 @@ class EDIT(QMainWindow):
         self.IN_ = tabs.in_ + os.sep
         self.OUT = tabs.out + os.sep
 
-    def display(self, fileName, tabs):
+    def display(self, fileName, all_tabs):
+        """ Cette fonction permet d'aficher la fenêtre d'édition."""
         logging.info(f"Edition de l'image : {fileName}")
         self.name = get_file_name(fileName).replace(".jpg", "").replace("png", "")
         self.extension = "." + fileName.split(".")[-1]
@@ -160,35 +176,32 @@ class EDIT(QMainWindow):
         self.pixmapWidth = pixmap.width()
         self.pixmapHeight = pixmap.height()
 
-        # coeff = 0.83
-
         width = min(1800, self.pixmapWidth)
         ratio = width / self.pixmapWidth 
         height = int(ratio * self.pixmapHeight)
         self.label.setFixedSize(width, height)
 
-        # self.label.setFixedSize(int(self.pixmapWidth*coeff), int(self.pixmapHeight*coeff))
-
         self.label.setScaledContents(True)
 
-        self.set_dock(tabs)
+        self.set_dock(all_tabs)
         self.show()
     
-    def set_dock(self, tabs):
+    def set_dock(self, all_tabs):
+        """Ajoute les boutons à la fenêtre d'édition (ZOOM IN, ZOOM OUT, annuler, 3 CI points, 4 DS points, Done)."""
         search = globals.media + "search.png"
-        self.btn_zoom_1 = QPushButton("  ZOOM IN ")
-        self.btn_zoom_1.setIcon(QtGui.QIcon(search))
-        self.btn_zoom_1.setFont(QFont('Times', 14))
-        self.btn_zoom_1.clicked.connect(partial(self.zoom_in, True))
+        self.btn_zoom_in = QPushButton("  ZOOM IN ")
+        self.btn_zoom_in.setIcon(QtGui.QIcon(search))
+        self.btn_zoom_in.setFont(QFont('Times', 14))
+        self.btn_zoom_in.clicked.connect(self.zoom_in)
 
         fusee = globals.media + "fusee.webp"
-        self.btn_zoom_2 = QPushButton("  ZOOM OUT")
-        self.btn_zoom_2.setIcon(QtGui.QIcon(fusee))
-        self.btn_zoom_2.setFont(QFont('Times', 14))
-        self.btn_zoom_2.clicked.connect(self.zoom_out)
+        self.btn_zoom_out = QPushButton("  ZOOM OUT")
+        self.btn_zoom_out.setIcon(QtGui.QIcon(fusee))
+        self.btn_zoom_out.setFont(QFont('Times', 14))
+        self.btn_zoom_out.clicked.connect(self.zoom_out)
 
-        self.btn_zoom_1.setEnabled(self.switch_button_zoom_in)
-        self.btn_zoom_2.setEnabled(self.switch_button_zoom_out)
+        self.btn_zoom_in.setEnabled(self.switch_button_zoom_in)
+        self.btn_zoom_out.setEnabled(self.switch_button_zoom_out)
 
         back = globals.media + "back.png"
         self.btn_cancel = QPushButton("")
@@ -210,10 +223,10 @@ class EDIT(QMainWindow):
         self.btn_done.setIcon(QtGui.QIcon(done))
         self.btn_done.setFont(QFont('Times', 14))
         self.btn_done.setEnabled(self.switch_done)
-        self.btn_done.clicked.connect(partial(self.validate_editing, tabs))
+        self.btn_done.clicked.connect(partial(self.validate_editing, all_tabs))
 
-        self.layout.addWidget(self.btn_zoom_1)
-        self.layout.addWidget(self.btn_zoom_2)
+        self.layout.addWidget(self.btn_zoom_in)
+        self.layout.addWidget(self.btn_zoom_out)
         self.layout.addWidget(self.btn_cancel)
         self.layout.addWidget(self.btn_ci_points)
         self.layout.addWidget(self.btn_ds_points)
@@ -223,7 +236,16 @@ class EDIT(QMainWindow):
         self.dock.setWidget(self.window)
 
     def validate_editing(self, tabs):
-        file_wo_zoom, file_w_zoom = self.get_last_file(self.TMP)
+        """
+        Valide l'édition d'une image :
+        - trace les 2 segments dont les longueurs permettent de calculer l'indice cubital (en bleu)
+        - trace les 2 droites qui permettent de visualiser l'angle discoidal (en jaune)
+        - ajoute les informations sur l'image (numéro de l'abeille, indice cubital, angle discoidal)
+        - met à jour la fenêtre principale del'IHM : 
+                * ajout de l'image éditée
+                * ajout des informations de l'aile : indice cubital, angle discoidal, classe
+        """
+        file_wo_zoom, file_w_zoom = get_last_file(self.TMP, self.extension)
         im = IMAGE()
 
         img = self.TMP + file_wo_zoom
@@ -265,11 +287,9 @@ class EDIT(QMainWindow):
         tabs.showMinimized()
         self.close()
 
-        # write_line(f"{self.path}{os.sep}out{os.sep}results.txt", self.num, clean(self.ci_value), clean(self.ds_value))
-
         ci, ds = get_ci_ds(self.ci_value, self.ds_value)
 
-        H = HISTOGRAM(indices=[], path="", id_bees=[], save_abacus=0)
+        H = HISTOGRAM(indices=[], path="", id_bees=[], save_abacus=0) # seulement utilisé pour utiliser la fonction get_classes()
         self.LAB_RES[self.NUM-1].setContentsMargins(30, 0, 0, 0)
 
         self.LAB_RES[self.NUM-1].setText(f"<u>Abeille #{self.NUM}</u> <br /> Ci : {ci} <br /> Ds : {ds}° <br /> Classe : {H.get_classes([self.ci_value])}")
@@ -278,9 +298,6 @@ class EDIT(QMainWindow):
 
         self.RES[int(self.NUM)] = (clean(self.ci_value), clean(self.ds_value))
 
-        # save_results_txt(self.OUT, self.RES)
-
-        return 0
 
     def add_infos(self):
         img_path = globals.out + f"{self.NUM}_out.jpg"
@@ -309,18 +326,25 @@ class EDIT(QMainWindow):
         img.save(f"{self.OUT}{self.NUM}_out.jpg")
 
     def set_ci_points(self, switch):
+        """Appel de la fonction getPos_ci()"""
         self.switch_ci = switch
         # Set the cursor to a cross cursor
         # self.setCursor(Qt.CrossCursor)
         self.label.mousePressEvent = self.getPos_ci
     
     def set_ds_points(self, switch):
+        """Appel de la fonction getPos_ds()"""
         self.switch_ds = switch
         # Set the cursor to a cross cursor
         # self.setCursor(Qt.CrossCursor)
         self.label.mousePressEvent = self.getPos_ds
 
     def getPos_ci(self, event):
+        """
+        - Récupère les coordonnées (x,y) du clic de l'utilisateur pour placer un point CI.
+        - Dessine un point bleu où l'utilisateur a cliqué.
+        - L'utilisateur place un maximum de 3 points pour le calcul de l'indice cubital.
+        """
         self.count_ci_points += 1
         if  self.count_ci_points <= 3:
             x, y = self.get_pos_in_widget(event)
@@ -337,7 +361,10 @@ class EDIT(QMainWindow):
             node, node_zoom = POINT(), POINT()
             node_zoom.j, node_zoom.i = x, y
             node.j, node.i = x+xmin, y+ymin
+            # Sauvegarde de la position du point 
+            # ///////////////////////////////////
             self.ci_points[self.count_ci_points-1] = node
+            # ///////////////////////////////////
             # logging.info(f"coordonnées (ligne, col) du point Ci : ({node.i}, {node.j})")
             if self.ZOOM:
                 A.highlight(node_zoom, self.color_ci)
@@ -350,7 +377,7 @@ class EDIT(QMainWindow):
             self.setCentralWidget(self.label)
             self.setCursor(Qt.ArrowCursor)
             if self.ZOOM:
-                file_wo_zoom, file_w_zoom = self.get_last_file(self.TMP)
+                file_wo_zoom, file_w_zoom = get_last_file(self.TMP, self.extension)
                 B = IMAGE()
                 B.load(self.TMP + file_wo_zoom)
                 B.highlight(node, self.color_ci)
@@ -374,6 +401,11 @@ class EDIT(QMainWindow):
         self.setCursor(Qt.ArrowCursor)
 
     def getPos_ds(self, event):
+        """
+        - Récupère les coordonnées (x,y) du clic de l'utilisateur pour placer un point DS.
+        - Dessine un point jaune où l'utilisateur a cliqué.
+        - L'utilisateur place un maximum de 4 points pour le calcul de l'angle discoidal.
+        """
         self.count_ds_points += 1
         if  self.count_ds_points <= 4:
             x, y = self.get_pos_in_widget(event)
@@ -391,7 +423,10 @@ class EDIT(QMainWindow):
             node_zoom.j, node_zoom.i = x, y
             node.j, node.i = x+xmin, y+ymin
             # logging.info(f"coordonnées (ligne, col) du point Ds : ({node.i}, {node.j})")
+            # Sauvegarde de la position du point 
+            # ///////////////////////////////////
             self.ds_points[self.count_ds_points-1] = node
+            # ///////////////////////////////////
             if self.ZOOM:
                 A.highlight(node_zoom, self.color_ds)
             else:
@@ -404,7 +439,7 @@ class EDIT(QMainWindow):
             self.setCentralWidget(self.label)
             self.setCursor(Qt.ArrowCursor)
             if self.ZOOM:
-                file_wo_zoom, file_w_zoom = self.get_last_file(self.TMP)
+                file_wo_zoom, file_w_zoom = get_last_file(self.TMP, self.extension)
                 B = IMAGE()
                 B.load(self.TMP + file_wo_zoom)
                 B.highlight(node, self.color_ds)
@@ -431,13 +466,14 @@ class EDIT(QMainWindow):
         self.setCursor(Qt.ArrowCursor)
 
     def cancel(self):
-        last_file_wo_zoom, last_file_w_zoom = self.get_last_file(path=self.TMP)
+        """Enlève le dernier point placé par l'utilisateur."""
+        last_file_wo_zoom, last_file_w_zoom = get_last_file(self.TMP, self.extension)
         os.remove(self.TMP + last_file_wo_zoom)
         try:
             os.remove(self.TMP + last_file_w_zoom)
         except:
             pass
-        last_file_wo_zoom, last_file_w_zoom = self.get_last_file(path=self.TMP)
+        last_file_wo_zoom, last_file_w_zoom = get_last_file(self.TMP, self.extension)
         self.last_name[0] = last_file_wo_zoom
         self.last_name[1] = last_file_w_zoom
 
@@ -488,66 +524,38 @@ class EDIT(QMainWindow):
         self.btn_ds_points.setEnabled(self.switch_ds)
         self.switch_done = False
         self.btn_done.setEnabled(self.switch_done)
-        
-        return 0
 
-    def zoom_in(self, ZOOM=True):
-        #file_wo_zoom, file_w_zoom = self.get_last_file(self.TMP)
-        self.ZOOM = ZOOM
+
+    def zoom_in(self):
+        """
+        - Change le curseur de la souris (forme de loupe).
+        - Détecte la zone où l'utilisateur a cliqué.
+        - Zoom sur cette zone.
+        """
+        self.ZOOM = 1
         zm = globals.media + "search.png"
         pixmap = QPixmap(zm)
         pixmap = pixmap.scaled(32, 32)
         cursor = QCursor(pixmap, 32, 32)
         self.setCursor(cursor)
-        #pixmap = QPixmap(self.TMP + file_wo_zoom)
         self.label.mousePressEvent = self.getPos_and_zoom
-        return 0
-
-    def get_last_file(self, path):
-
-        file_w_zoom = ""
-        file_wo_zoom = ""
-
-        time0 =  datetime.strptime("01/01/2000 00:00:00", "%d/%m/%Y %H:%M:%S")
-
-        for file in os.listdir(path):
-            if "zoom" not in file and os.path.isfile(path + os.sep + file):
-                tmp = file.replace(self.extension, "").split("___")
-                date1 = tmp[-2].replace("_", "/")
-                hour1 = tmp[-1].replace("_", ":")
-                time1 = datetime.strptime(date1 + " " + hour1, "%d/%m/%Y %H:%M:%S")
-                if time1 >= time0:
-                    time0 = time1
-                    file_wo_zoom = file
-                else:
-                    continue
-
-        for file in os.listdir(path):
-            if "zoom" in file:
-                tmp = file.replace(self.extension, "").split("___")
-                date1 = tmp[-2].replace("_", "/")
-                hour1 = tmp[-1].replace("_", ":")
-                time1 = datetime.strptime(date1 + " " + hour1, "%d/%m/%Y %H:%M:%S")
-                if time1 >= time0:
-                    time0 = time1
-                    file_w_zoom = file
-                else:
-                    continue
-        return file_wo_zoom, file_w_zoom
 
     def zoom_out(self):
-        last_file_wo_zoom, last_file_w_zoom = self.get_last_file(path=self.TMP)
+        """
+        - Affiche l'image initiale (affichage sans zoom)
+        - désactive le bouton 'ZOOM OUT'
+        """
+        last_file_wo_zoom, last_file_w_zoom = get_last_file(self.TMP, self.extension)
         pixmap = QPixmap(self.TMP + last_file_wo_zoom)
         self.label.setPixmap(pixmap)
         self.setCentralWidget(self.label)
         self.switch_button_zoom_in = True
-        self.btn_zoom_1.setEnabled(self.switch_button_zoom_in)
+        self.btn_zoom_in.setEnabled(self.switch_button_zoom_in)
         self.switch_button_zoom_out = False
-        self.btn_zoom_2.setEnabled(self.switch_button_zoom_out)
+        self.btn_zoom_out.setEnabled(self.switch_button_zoom_out)
         self.ZOOM = 0
         self.last_name[0] = last_file_wo_zoom
         self.last_name[1] = last_file_w_zoom
-        return 0
 
     def get_pos_in_widget(self, event):
         pos = event.pos()
@@ -564,17 +572,22 @@ class EDIT(QMainWindow):
         return x, y
 
     def getPos_and_zoom(self, event):
+        """
+        - Détecte la position x, y de l'endroit où a cliqué l'utilisateur
+        - zoom sur cette zone
+        - désactive le bouton 'ZOOM IN'
+        """
 
         x, y = self.get_pos_in_widget(event)
 
         zoom_x = int(self.pixmapWidth / 2.5)
         zoom_y = int(self.pixmapHeight / 2.5)
 
-        self.btn_zoom_1.setEnabled(self.switch_button_zoom_in)
+        self.btn_zoom_in.setEnabled(self.switch_button_zoom_in)
 
         if self.switch_button_zoom_in and self.ZOOM:
 
-            file_wo_zoom, file_w_zoom = self.get_last_file(self.TMP)
+            file_wo_zoom, file_w_zoom = get_last_file(self.TMP, self.extension)
 
             A = IMAGE()
             A.load(self.TMP + file_wo_zoom)
@@ -603,14 +616,12 @@ class EDIT(QMainWindow):
 
             self.switch_button_zoom_in = False
             self.switch_button_zoom_out = True
-            self.btn_zoom_1.setEnabled(self.switch_button_zoom_in)
-            self.btn_zoom_2.setEnabled(self.switch_button_zoom_out)
+            self.btn_zoom_in.setEnabled(self.switch_button_zoom_in)
+            self.btn_zoom_out.setEnabled(self.switch_button_zoom_out)
             self.ZOOM = 1
 
         else:
             pass
-        
-        return
 
 
 class VISU(QMainWindow):

@@ -24,7 +24,7 @@ from PyQt5.QtGui import QPixmap, QFont
 from functools import partial
 from modules.buttons_edit import *
 from modules.buttons_visu import *
-from modules.buttons_browse import *
+from modules.buttons_load import *
 from modules.buttons_onoff import *
 from modules.ci_and_ds_tools import *
 from modules.utile import *
@@ -53,26 +53,47 @@ def log_exception(exc_type, exc_value, exc_traceback):
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-connections_edit = {1:editFile1, 2:editFile2, 3:editFile3, 4:editFile4, 5:editFile5,
-                    6:editFile6, 7:editFile7, 8:editFile8, 9:editFile9, 10:editFile10,
-                    11:editFile11, 12:editFile12, 13:editFile13, 14:editFile14, 15:editFile15,
-                    16:editFile16, 17:editFile17, 18:editFile18, 19:editFile19, 20:editFile20,
-                    21:editFile21, 22:editFile22, 23:editFile23, 24:editFile24, 25:editFile25,
-                    26:editFile26, 27:editFile27, 28:editFile28, 29:editFile29, 30:editFile30,
-                    31:editFile31, 32:editFile32, 33:editFile33, 34:editFile34, 35:editFile35,
-                    36:editFile36, 37:editFile37, 38:editFile38, 39:editFile39, 40:editFile40,
-                    41:editFile41, 42:editFile42, 43:editFile43, 44:editFile44, 45:editFile45,
-                    46:editFile46, 47:editFile47, 48:editFile48, 49:editFile49, 50:editFile50,
-                    51:editFile51, 52:editFile52, 53:editFile53, 54:editFile54, 55:editFile55,
-                    56:editFile56, 57:editFile57, 58:editFile58, 59:editFile59, 60:editFile60,
-                    61:editFile61, 62:editFile62, 63:editFile63, 64:editFile64, 65:editFile65,
-                    66:editFile66, 67:editFile67, 68:editFile68, 69:editFile69, 70:editFile70,
-                    71:editFile71, 72:editFile72, 73:editFile73, 74:editFile74, 75:editFile75,
-                    76:editFile76, 77:editFile77, 78:editFile78, 79:editFile79, 80:editFile80,
-                    81:editFile81, 82:editFile82, 83:editFile83, 84:editFile84, 85:editFile85,
-                    86:editFile86, 87:editFile87, 88:editFile88, 89:editFile89, 90:editFile90,
-                    91:editFile91, 92:editFile92, 93:editFile93, 94:editFile94, 95:editFile95,
-                    96:editFile96, 97:editFile97, 98:editFile98, 99:editFile99, 100:editFile100}
+connections_load = {1:load1, 2:load2, 3:load3, 4:load4, 5:load5,
+                       6:load6, 7:load7, 8:load8, 9:load9, 10:load10,
+                       11:load11, 12:load12, 13:load13, 14:load14, 15:load15,
+                       16:load16, 17:load17, 18:load18, 19:load19, 20:load20,
+                       21:load21, 22:load22, 23:load23, 24:load24, 25:load25,
+                       26:load26, 27:load27, 28:load28, 29:load29, 30:load30,
+                       31:load31, 32:load32, 33:load33, 34:load34, 35:load35,
+                       36:load36, 37:load37, 38:load38, 39:load39, 40:load40,
+                       41:load41, 42:load42, 43:load43, 44:load44, 45:load45,
+                       46:load46, 47:load47, 48:load48, 49:load49, 50:load50,
+                       51:load51, 52:load52, 53:load53, 54:load54, 55:load55,
+                       56:load56, 57:load57, 58:load58, 59:load59, 60:load60,
+                       61:load61, 62:load62, 63:load63, 64:load64, 65:load65,
+                       66:load66, 67:load67, 68:load68, 69:load69, 70:load70,
+                       71:load71, 72:load72, 73:load73, 74:load74, 75:load75,
+                       76:load76, 77:load77, 78:load78, 79:load79, 80:load80,
+                       81:load81, 82:load82, 83:load83, 84:load84, 85:load85,
+                       86:load86, 87:load87, 88:load88, 89:load89, 90:load90,
+                       91:load91, 92:load92, 93:load93, 94:load94, 95:load95,
+                       96:load96, 97:load97, 98:load98, 99:load99, 100:load100}
+
+connections_edit = {1:edit1, 2:edit2, 3:edit3, 4:edit4, 5:edit5,
+                    6:edit6, 7:edit7, 8:edit8, 9:edit9, 10:edit10,
+                    11:edit11, 12:edit12, 13:edit13, 14:edit14, 15:edit15,
+                    16:edit16, 17:edit17, 18:edit18, 19:edit19, 20:edit20,
+                    21:edit21, 22:edit22, 23:edit23, 24:edit24, 25:edit25,
+                    26:edit26, 27:edit27, 28:edit28, 29:edit29, 30:edit30,
+                    31:edit31, 32:edit32, 33:edit33, 34:edit34, 35:edit35,
+                    36:edit36, 37:edit37, 38:edit38, 39:edit39, 40:edit40,
+                    41:edit41, 42:edit42, 43:edit43, 44:edit44, 45:edit45,
+                    46:edit46, 47:edit47, 48:edit48, 49:edit49, 50:edit50,
+                    51:edit51, 52:edit52, 53:edit53, 54:edit54, 55:edit55,
+                    56:edit56, 57:edit57, 58:edit58, 59:edit59, 60:edit60,
+                    61:edit61, 62:edit62, 63:edit63, 64:edit64, 65:edit65,
+                    66:edit66, 67:edit67, 68:edit68, 69:edit69, 70:edit70,
+                    71:edit71, 72:edit72, 73:edit73, 74:edit74, 75:edit75,
+                    76:edit76, 77:edit77, 78:edit78, 79:edit79, 80:edit80,
+                    81:edit81, 82:edit82, 83:edit83, 84:edit84, 85:edit85,
+                    86:edit86, 87:edit87, 88:edit88, 89:edit89, 90:edit90,
+                    91:edit91, 92:edit92, 93:edit93, 94:edit94, 95:edit95,
+                    96:edit96, 97:edit97, 98:edit98, 99:edit99, 100:edit100}
 
 connections_visu = {1:visu1, 2:visu2, 3:visu3, 4:visu4, 5:visu5,
                        6:visu6, 7:visu7, 8:visu8, 9:visu9, 10:visu10,
@@ -94,29 +115,8 @@ connections_visu = {1:visu1, 2:visu2, 3:visu3, 4:visu4, 5:visu5,
                        86:visu86, 87:visu87, 88:visu88, 89:visu89, 90:visu90,
                        91:visu91, 92:visu92, 93:visu93, 94:visu94, 95:visu95,
                        96:visu96, 97:visu97, 98:visu98, 99:visu99, 100:visu100}
-
-connections_load = {1:browseFile1, 2:browseFile2, 3:browseFile3, 4:browseFile4, 5:browseFile5,
-                       6:browseFile6, 7:browseFile7, 8:browseFile8, 9:browseFile9, 10:browseFile10,
-                       11:browseFile11, 12:browseFile12, 13:browseFile13, 14:browseFile14, 15:browseFile15,
-                       16:browseFile16, 17:browseFile17, 18:browseFile18, 19:browseFile19, 20:browseFile20,
-                       21:browseFile21, 22:browseFile22, 23:browseFile23, 24:browseFile24, 25:browseFile25,
-                       26:browseFile26, 27:browseFile27, 28:browseFile28, 29:browseFile29, 30:browseFile30,
-                       31:browseFile31, 32:browseFile32, 33:browseFile33, 34:browseFile34, 35:browseFile35,
-                       36:browseFile36, 37:browseFile37, 38:browseFile38, 39:browseFile39, 40:browseFile40,
-                       41:browseFile41, 42:browseFile42, 43:browseFile43, 44:browseFile44, 45:browseFile45,
-                       46:browseFile46, 47:browseFile47, 48:browseFile48, 49:browseFile49, 50:browseFile50,
-                       51:browseFile51, 52:browseFile52, 53:browseFile53, 54:browseFile54, 55:browseFile55,
-                       56:browseFile56, 57:browseFile57, 58:browseFile58, 59:browseFile59, 60:browseFile60,
-                       61:browseFile61, 62:browseFile62, 63:browseFile63, 64:browseFile64, 65:browseFile65,
-                       66:browseFile66, 67:browseFile67, 68:browseFile68, 69:browseFile69, 70:browseFile70,
-                       71:browseFile71, 72:browseFile72, 73:browseFile73, 74:browseFile74, 75:browseFile75,
-                       76:browseFile76, 77:browseFile77, 78:browseFile78, 79:browseFile79, 80:browseFile80,
-                       81:browseFile81, 82:browseFile82, 83:browseFile83, 84:browseFile84, 85:browseFile85,
-                       86:browseFile86, 87:browseFile87, 88:browseFile88, 89:browseFile89, 90:browseFile90,
-                       91:browseFile91, 92:browseFile92, 93:browseFile93, 94:browseFile94, 95:browseFile95,
-                       96:browseFile96, 97:browseFile97, 98:browseFile98, 99:browseFile99, 100:browseFile100}
         
-connections_ONOFF = {1:onoff1, 2:onoff2, 3:onoff3, 4:onoff4, 5:onoff5,
+connections_onoff = {1:onoff1, 2:onoff2, 3:onoff3, 4:onoff4, 5:onoff5,
                      6:onoff6, 7:onoff7, 8:onoff8, 9:onoff9, 10:onoff10,
                      11:onoff11, 12:onoff12, 13:onoff13, 14:onoff14, 15:onoff15,
                      16:onoff16, 17:onoff17, 18:onoff18, 19:onoff19, 20:onoff20,
@@ -138,7 +138,7 @@ connections_ONOFF = {1:onoff1, 2:onoff2, 3:onoff3, 4:onoff4, 5:onoff5,
                      96:onoff96, 97:onoff97, 98:onoff98, 99:onoff99, 100:onoff100}
 
 def set_paths():
-    """Retourne le chemin absolu du dossier qui contient le script main.py """
+    """Définit les chemins absolus des répertoires de travail de l'application."""
     if getattr(sys, 'frozen', False):
         # PyInstaller utilise ce répertoire temporaire
         globals.out = os.sep.join([sys._MEIPASS, 'out']) + os.sep
@@ -159,10 +159,9 @@ def set_paths():
         globals.path = os.path.dirname(__file__) + os.sep
         globals.future = os.sep.join([os.path.dirname(__file__), 'media', 'future.mp3'])
 
-    return 0
-
 def launch_log(path, name):
-    log_file =path + os.sep + name
+    """Création et configuration du fichier de log."""
+    log_file = path + os.sep + name
 
     for handler in logging.root.handlers[:]:
         logging.root.removeHandler(handler)
@@ -172,31 +171,13 @@ def launch_log(path, name):
         filemode=globals.log_mode,
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s')
-    return 0
 
-
-class FolderSelector(QWidget):
-    def __init__(self):
-        super().__init__()
-        self.initUI()
-
-    def initUI(self):
-        layout = QVBoxLayout()
-        self.button = QPushButton('Select Folder', self)
-        self.button.clicked.connect(self.showFolderDialog)
-        layout.addWidget(self.button)
-        self.setLayout(layout)
-
-    def showFolderDialog(self):
-        folder_path = QFileDialog.getExistingDirectory(self, 'Select Folder')
-        print('Selected Folder:', folder_path)
-
-class MainWindow(QMainWindow):
-    
+class MAIN_WINDOW(QMainWindow):
+    """Création de la fenêtre principale de l'application."""
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("Bee real")
+        self.setWindowTitle("Please, bee real")
 
         self.out = globals.out
         self.in_ = globals.in_
@@ -207,6 +188,7 @@ class MainWindow(QMainWindow):
 
         logging.info("Démarrage du programme")
 
+        # nettoyage du dossier self.out
         if os.path.isdir(self.out):
             print(f"nettoyage du dossier 'out' : {self.out}")
             logging.info(f"nettoyage du dossier 'out' : {self.out}")
@@ -228,6 +210,7 @@ class MainWindow(QMainWindow):
             logging.info(f"Création du répertoire de sortie : {self.out}")
             os.makedirs(self.out)
 
+        # nettoyage du dossier self.in_
         if os.path.isdir(self.in_):
             print(f"nettoyage du dossier 'in' : {self.in_}")
             logging.info(f"nettoyage du dossier 'in' : {self.in_}")
@@ -249,6 +232,7 @@ class MainWindow(QMainWindow):
             logging.info(f"Création du répertoire d'entrée : {self.in_}")
             os.makedirs(self.in_)
 
+        # nettoyage du dossier self.tmp
         if os.path.isdir(self.tmp):
             print(f"nettoyage du dossier 'tmp' : {self.tmp}")
             logging.info(f"nettoyage du dossier 'tmp' : {self.tmp}")
@@ -270,7 +254,7 @@ class MainWindow(QMainWindow):
             logging.info(f"Création du répertoire où sont stockés les fichiers temporaires : {self.tmp}")
             os.makedirs(self.tmp)
 
-
+        # nettoyage du dossier self.logs
         if os.path.isdir(self.logs):
             print(f"nettoyage du dossier 'logs' : {self.logs}")
             logging.info(f"nettoyage du dossier 'logs' : {self.logs}")
@@ -294,18 +278,20 @@ class MainWindow(QMainWindow):
 
         launch_log(self.logs, f"logs_{date.today()}.log")
 
-        self.tab_widget = Tabs(self)
-        self.setCentralWidget(self.tab_widget)
+        # self -> QMainWindow
+        self.setCentralWidget( ALL_TABS(self) )
 
         self.showMaximized()
 
 
     def close_all_windows(self):
+        """Ferme toutes les fenêtres de l'IHM."""
         win_list = QApplication.allWindows()
         for w in win_list:
             w.close()
 
     def closeEvent(self, event: QCloseEvent) -> None:
+        """Détecte un QCloseEvent et appelle la fonction close_all_windows()."""
         close = QMessageBox()
         close.setText("Exit?")
         close.setStandardButtons(QMessageBox.Yes | QMessageBox.Cancel)
@@ -319,9 +305,10 @@ class MainWindow(QMainWindow):
             event.ignore()
 
 
-class Tabs(QWidget): 
+class ALL_TABS(QWidget): 
     def __init__(self, parent): 
-        super(QWidget, self).__init__(parent)
+        # super(QWidget, self).__init__(parent)
+        super().__init__(parent)
 
         self.out = globals.out
         self.in_ = globals.in_
@@ -329,8 +316,15 @@ class Tabs(QWidget):
         self.logs = globals.logs
         self.path = globals.path
 
+        self.son = QPushButton("")
+        self.son.setIcon(QtGui.QIcon(globals.media + "son_on.png"))
+        self.son.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        self.son.resize(50, 50)
+        self.son.clicked.connect(self.mute)
+
         self.player = QMediaPlayer()
         self.play(globals.future)
+        self.mute()
 
         self.RES = {}
         self.analyse_name = str(date.today())
@@ -488,12 +482,6 @@ class Tabs(QWidget):
         label2 = QLabel("<u>Cubital Index / Discoidal Shift<u>")
         # self.edit_analyse_name = QLineEdit()
 
-        self.son = QPushButton("")
-        self.son.setIcon(QtGui.QIcon(globals.media + "son_on.png"))
-        self.son.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        self.son.resize(50, 50)
-        self.son.clicked.connect(self.mute)
-
         self.btn_tab0_extra_plot = QPushButton(f"Add Deepwings data")
         self.btn_tab0_extra_plot.setEnabled(self.switch_extra_plot)
 
@@ -586,7 +574,7 @@ class Tabs(QWidget):
 
         self.btn_tab0_load_analysis.clicked.connect(self.load_project)
         self.btn_tab0_save_analysis.clicked.connect(self.save_project)
-        self.btn_tab0_edit_name_analysis.clicked.connect(self.lancer_analyse)
+        self.btn_tab0_edit_name_analysis.clicked.connect(self.launch_analysis)
         self.btn_tab0_extra_plot.clicked.connect(self.add_histogram)
 
         self.grids = list()
@@ -603,7 +591,7 @@ class Tabs(QWidget):
                 setBtn.setFixedWidth(60)
                 setBtn.setFixedHeight(60)
                 setBtn.setStyleSheet("background-color: aquamarine")
-                setBtn.clicked.connect(partial(connections_ONOFF[num_image], TABs=self))
+                setBtn.clicked.connect(partial(connections_onoff[num_image], all_tabs=self))
 
                 darda = globals.media + "dardagnan2.png"
                 pixmap = QPixmap(darda)
@@ -648,9 +636,9 @@ class Tabs(QWidget):
                 self.grids[-1].addWidget(btn_tabN_edit, i, 3+1)
                 self.grids[-1].addWidget(btn_tabN_visu, i, 5+1)
                 
-                btn_tabN_load.clicked.connect(partial(connections_load[num_image], TABs=self))
-                btn_tabN_edit.clicked.connect(partial(connections_edit[num_image], TABs=self))
-                btn_tabN_visu.clicked.connect(partial(connections_visu[num_image], TABs=self))
+                btn_tabN_load.clicked.connect(partial(connections_load[num_image], all_tabs=self))
+                btn_tabN_edit.clicked.connect(partial(connections_edit[num_image], all_tabs=self))
+                btn_tabN_visu.clicked.connect(partial(connections_visu[num_image], all_tabs=self))
 
                 darda = globals.media + "dardagnan2.png"
 
@@ -750,7 +738,6 @@ class Tabs(QWidget):
         self.tab21.layout =sl
         self.tab21.setLayout(self.tab21.layout)
 
-
         # Final step
         # #######
         self.layout.addWidget(self.tabs)
@@ -758,18 +745,16 @@ class Tabs(QWidget):
 
         self.tabs.setCurrentIndex(0)
 
-
     def params_apply_button(self):
+        """"""
         print("apply button")
         self.BTN_params_apply.setEnabled(False)
         self.BTN_params_reset.setEnabled(True)
         globals.classif = self.visualisation.currentText()
         globals.y_max_scatter_plot = self.y_max.currentText()
-        print(f"nouvelle valeur y_max : {globals.y_max_scatter_plot}")
-        print(f"nouvelle valeur visualisation : {globals.classif}")
-        return 0
     
     def params_reset_button(self):
+        """"""
         print("reset button")
         self.BTN_params_apply.setEnabled(True)
         self.BTN_params_reset.setEnabled(False)
@@ -777,12 +762,9 @@ class Tabs(QWidget):
         globals.y_max_scatter_plot = 6
         self.y_max.setCurrentText(str(globals.y_max_scatter_plot))
         self.visualisation.setCurrentText(str(globals.classif))
-        print(f"valeurs remises aux valeurs par défaut")
-        print(f"y_max : {globals.y_max_scatter_plot}°")
-        print(f"classif : {globals.classif}")
-        return 0
 
     def play(self, file):
+        """"""
         url = QUrl.fromLocalFile(file)
         content = QMediaContent(url)
         self.player.setMedia(content)
@@ -791,6 +773,7 @@ class Tabs(QWidget):
         self.muted = False
 
     def mute(self):
+        """"""
         self.muted = not(self.muted)
         self.player.setMuted(self.muted)
 
@@ -803,9 +786,8 @@ class Tabs(QWidget):
         self.son.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         self.son.resize(50, 50)
 
-        return 0
-
     def edit_name(self):
+        """"""
         text, okPressed = QInputDialog.getText(self, " ", "Entrer le nom de l'analyse :", QLineEdit.Normal, "")
         if okPressed and text != '':
             self.label00.setText(text)
@@ -816,9 +798,9 @@ class Tabs(QWidget):
             self.analyse_name = text
             globals.log_mode = 'a'
             launch_log(self.logs, f"logs_{text}.log")
-        return 0
 
     def save_project(self):
+        """Enregistrement d'une analyse au format .ZIP"""
         DIR = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
         if DIR != "":
             save_results_txt(self.out, self.RES)
@@ -838,9 +820,9 @@ class Tabs(QWidget):
             self.dialog.show()
         else:
             pass
-        return 0
     
     def load_project(self):
+        """Charge une analyse au format .zip."""
         DIR = QFileDialog.getOpenFileName(self, "Select a .zip project file")
         if DIR[0] != "":
             project_file = str(DIR[0])
@@ -899,9 +881,9 @@ class Tabs(QWidget):
         else:
             pass
         # self.tabs.setCurrentIndex(1)
-        return 0
     
-    def lancer_analyse(self):
+    def launch_analysis(self):
+        """Lance le calul de l'histogramme de l'indice cubital et du diagramme décalage discoidal/indice cubital."""
         logging.info(f"Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI")
         if len(self.RES) < 1:
             self.dialog = MESSAGE()
@@ -930,9 +912,16 @@ class Tabs(QWidget):
             self.resize(self.tab0.sizeHint().width(), self.tab0.sizeHint().height())
             self.switch_extra_plot = True
             self.btn_extra_plot.setEnabled(self.switch_extra_plot)
-        return
     
     def add_histogram(self):
+        """Ajoute un histogramme sur le graphe de gauche afin de comparer l'histogramme obtenu avec ce logiciel
+        avec celui obtenu à partir de données externes (=>DeepWings). Le fichier en entrée doit être au format CSV.
+        Le fichier CSV doit contenir :
+        - colonne 1 : numéro d'abeille
+        - colonne 2 : indice cubital
+        - colonne 3 : angle discoidal
+        Le nom du fichier CSV est utilisé pour la légende de ce graphe.
+        """
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         csv_file, _ = QFileDialog.getOpenFileName(self.tab0, "Select File", "", "All Files (*)", options=options)
@@ -957,17 +946,11 @@ class Tabs(QWidget):
                     except:
                         continue
 
-        #new_histo = HISTOGRAM(indices=indices, path="", id_bees=abeilles, save_abacus=0)
-        #x, y = new_histo.histogram()
-
-        print(leg + f" ({len(indices)} abeilles)")
-
         ci_images, ds_image, HISTO = analyse2(self.indices, self.shifts, self.id_bees,
                                               indices, 
                                               angles,
                                               abeilles,
-                                              LEG=leg + f" ({len(indices)} bees)", path_out=self.out, visu=classif)
-
+                                              LEG=leg + f" ({len(indices)} bees)", path_out=self.out, visu=globals.classif)
 
         for image in ci_images:
             if "mellifera" in image:
@@ -978,18 +961,14 @@ class Tabs(QWidget):
         self.label_analyses[1].setPixmap(pixmap)
         self.resize(self.tab0.sizeHint().width(), self.tab0.sizeHint().height())
 
-        return 0
 
 if __name__ == '__main__':
 
     app = QApplication(sys.argv)
     
-    screen = app.screens()[0]
-    dpi = screen.physicalDotsPerInch()
-
     set_paths()
 
-    window = MainWindow()
+    window = MAIN_WINDOW()
 
     window.show()
 
