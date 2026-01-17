@@ -4,7 +4,7 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 
 class ImageViewer(QWidget):
-    def __init__(self, image_path : str, parent=None):
+    def __init__(self, image_path : str, parent=None, showAnalysisPannel : bool = False):
         super().__init__(parent)
         self.setWindowFlag(Qt.Window) # Autonomous windows
         self.ui = ui.Ui_ImageViewer()
@@ -19,4 +19,7 @@ class ImageViewer(QWidget):
         img_w = self.pixmap.width()
         img_h = self.pixmap.height()
         self.ui.graphicsView.setMinimumSize(img_w, img_h)
+
+        self.ui.analysisFrame.setHidden(not showAnalysisPannel)
+        
 
