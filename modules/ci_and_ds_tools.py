@@ -46,15 +46,38 @@ def sort_ds_points(nodes):
     return nodes_ordered
 
 def compute_cubital_index(ci_points):
+    """
+    Calcule l'indice cubital.
+
+    Parameters
+    -------
+    ci_points : list
+        liste des 3 points permettant de calculer l'indice cubital.
+    
+    Returns
+    -----
+    float
+        Valeur de l'indice cubital.
+    """
     n0 = ci_points[0]
     n1 = ci_points[1]
     n2 = ci_points[2]
     a = DROITE(n0, n1).distance
     b = DROITE(n1, n2).distance
-    cubital_index = a/b
-    return cubital_index
+    return a/b
 
 def compute_discoidal_shift(perp_02_point1, perp_02_point2, ds_points):
+    """
+    Calcule le décalage discoidal.
+    
+    Args:
+        perp_02_point1 (): Description
+        perp_02_point2 (): Description
+        ds_points (): Description
+    
+    Returns:
+        float: Décalage discoidal.
+    """
     U = DROITE(perp_02_point1, perp_02_point2)
     V = DROITE(ds_points[1], ds_points[3])
     dot = U.nX * V.nX + U.nY * V.nY
@@ -63,6 +86,9 @@ def compute_discoidal_shift(perp_02_point1, perp_02_point2, ds_points):
     return discoidal_shift
 
 class IMAGE():
+    """
+    Classe permettant de charger et editer une image.
+    """
     def __init__(self):
         self.name = ''
         self.data = np.array([])
@@ -77,11 +103,21 @@ class IMAGE():
         self.DS_j = 0
         self.discoidal_shift = 90
     
-    def load(self, file):
-        self.name = file
-        self.data = np.copy(plt.imread(file))
-        # self.data = np.copy((plt.imread(file)*255).astype(np.uint8))
-        #self.data = (self.data * 255).astype(np.uint8)
+    def load(self, path):
+        """
+        Charge une image depuis un fichier.
+        
+        L'image est lue, convertie en RGB si nécessaire, puis stockée dans différents
+        attributs pour un accès facilité aux canaux et dimensions.
+
+        Args:
+            path (str): Chemin absolu de l'image.
+        
+        Returns:
+            None
+        """
+        self.name = path
+        self.data = np.copy(plt.imread(path))
         if self.data.ndim == 2:    #image grayscale
             self.data = np.stack((self.data,)*3, axis=-1)   # convert to RGB
         self.data_copy = np.copy(self.data)
@@ -92,20 +128,29 @@ class IMAGE():
         self.c3 = self.data[:, :, 2]
         
     def highlight(self, node, color, rayon=5):
+        """
+        Place un point de couleur sur l'image.
+
+        Args:
+            node : instance de la classe POINT() 
+            color : Tuple[int, int, int] ou list[int, int, int] : couleur RGB du point
+            rayon : int : taille en pixels du rayon du point 
+        
+        Returns:
+            None
+        """
         y, x = np.meshgrid(np.arange(self.nb_col), np.arange(self.nb_lignes))
-        for i in range(3):
-            dot_ci = (np.sqrt(np.abs(node.i - x)**2 + np.abs(node.j-y)**2) <= rayon) * 1
-            idx_ci_i, idx_ci_j = np.where(dot_ci == 1)
-            # Color in blue point that has been identified
-            for i, j in zip(idx_ci_i, idx_ci_j):
-                self.data[i, j][0] = color[0]
-                self.data[i, j][1] = color[1]
-                self.data[i, j][2] = color[2]
-                # "discard" these pixels
-                self.data_copy[i, j][0] = 0
-                self.data_copy[i, j][1] = 0
-                self.data_copy[i, j][2] = 0
-        return 0
+        dot_ci = (np.sqrt(np.abs(node.i - x)**2 + np.abs(node.j-y)**2) <= rayon) * 1
+        idx_ci_i, idx_ci_j = np.where(dot_ci == 1)
+        # Color the point that has been identified
+        for i, j in zip(idx_ci_i, idx_ci_j):
+            self.data[i, j][0] = color[0]
+            self.data[i, j][1] = color[1]
+            self.data[i, j][2] = color[2]
+            # "discard" these pixels
+            self.data_copy[i, j][0] = 0
+            self.data_copy[i, j][1] = 0
+            self.data_copy[i, j][2] = 0
     
     def draw_ci_lines(self, clr):
         # draw lines between cubital index points

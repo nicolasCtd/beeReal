@@ -1,0 +1,17 @@
+2026-02-11 23:52:08,983 - INFO - Image 1 : c:\Users\nicol\Documents\ABEILLES\beeReal\in\\1_in.jpg
+2026-02-11 23:52:10,262 - INFO - Edition de l'image : 1_in.jpg
+2026-02-11 23:52:10,263 - INFO - Copie du fichier : c:\Users\nicol\Documents\ABEILLES\beeReal\in\\1_in.jpg >> c:\Users\nicol\Documents\ABEILLES\beeReal\tmp\\1_in___11_02_2026___23_52_10.jpg
+2026-02-11 23:52:10,336 - INFO - Edition de l'image 1
+2026-02-11 23:52:10,336 - INFO - ----------------------
+2026-02-11 23:52:29,377 - INFO - Point Ci n°1 : (i,j)=(285, 1401)
+2026-02-11 23:52:29,377 - INFO - Point Ci n°2 : (i,j)=(310, 1488)
+2026-02-11 23:52:29,377 - INFO - Point Ci n°3 : (i,j)=(295, 1536)
+2026-02-11 23:52:29,377 - INFO - ----------------------
+2026-02-11 23:52:29,378 - INFO - Point Ds n°1 : (i,j)=(168, 1115)
+2026-02-11 23:52:29,378 - INFO - Point Ds n°2 : (i,j)=(167, 1363)
+2026-02-11 23:52:29,378 - INFO - Point Ds n°3 : (i,j)=(82, 1753)
+2026-02-11 23:52:29,378 - INFO - Point Ds n°4 : (i,j)=(448, 1425)
+2026-02-11 23:52:29,414 - INFO - Indice cubital Abeille #1) : 1.8000043934747136
+2026-02-11 23:52:29,415 - INFO - Shift discoidal Abeille #1) : 4.76716236°
+2026-02-11 23:52:29,430 - INFO - Image sauvegardée : c:\Users\nicol\Documents\ABEILLES\beeReal\out\\1_out.jpg
+2026-02-11 23:52:29,457 - INFO - Les infos ont été ajoutées sur l'image.
