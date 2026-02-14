@@ -153,16 +153,17 @@ class IMAGE():
             self.data_copy[i, j][2] = 0
     
     def draw_ci_lines(self, clr):
-        # draw lines between cubital index points
+        """draw lines between cubital index points"""
         DROITE(self.ci_points[0], self.ci_points[1]).draw(self, 2, 2, color=clr)
         DROITE(self.ci_points[1], self.ci_points[2]).draw(self, 2, 2, color=clr)
-        return 0
     
     def draw_ds_line_02(self, clr):
+        """draw a line between the two extremities of the radial cell"""
         DROITE(self.ds_points[0], self.ds_points[2]).draw(self, 2, 2, color=clr)
-        return 0
     
     def draw_ds_line_02_perpendicular(self, clr):
+        """draw a line perpendicular to the radial cell (draw_ds_line_02) and that 
+        passes through the central DS point"""
         point1 = POINT()
         point2 = POINT()
         x, y = DROITE(self.ds_points[0], self.ds_points[2]).xy
@@ -189,8 +190,6 @@ class IMAGE():
             txt = "draw_ds_line_02_perpendicular(): la recherche + précise d'un autre pixel "
             txt += "appartenant à la droite perpendiculaire à la première n'a pas marché"
             logging.info(txt)
-            # print(txt, file=self.log)
-            print(txt)
             Py, Px = Pyy, Pxx
 
         point1.i = Py
@@ -211,10 +210,10 @@ class IMAGE():
         DROITE(point1, point2).draw(self, 2, 5, color=clr)
         self.point1 = point1
         self.point2 = point2
-        return 0
         
     
 class POINT():
+    """Représente un point avec des coordonnées et une couleur"""
     def __init__(self):
         self.i = 0
         self.j = 0
@@ -225,6 +224,9 @@ class POINT():
         print(f"j : {self.j}")
 
 class DROITE(IMAGE):
+    """Représente une droite. La classe est initialisée avec 2 instances de la classe POINT(),
+    ce qui permet de calculer le coefficient directeur de la droite, les coordonnées de l'ensemble 
+    des points de la droite, et de dessiner la droite sur une image avec la méthode DROITE.draw()"""
     def __init__(self, P1, P2):
         self.coefficients(P1, P2)
         self.coords_xy(P1, P2)
@@ -268,7 +270,6 @@ class DROITE(IMAGE):
                     image.data[self.y[i]+g, self.x[i]+h][1] = color[1]
                     image.data[self.y[i]+g, self.x[i]+h][2] = color[2]
 
-
     def distance(self, P1, P2):
         distance = np.sqrt(np.abs(P2.i - P1.i) ** 2 + np.abs(P2.j - P1.j) ** 2)
         self.distance = distance
@@ -283,4 +284,3 @@ class DROITE(IMAGE):
     def vect(self, P1, P2):
         self.nX = P2.j - P1.j
         self.nY = P2.i - P1.i
-        return 0
