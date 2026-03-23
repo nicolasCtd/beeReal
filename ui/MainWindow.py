@@ -4,6 +4,7 @@ from ui import MainWindow_ui as ui
 from ui import AnalysisSettingForm as ASF
 from PyQt5.QtCore import pyqtSlot
 from IO import IO
+from ui.ImageViewer import ImageViewer 
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -12,6 +13,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.initialize()
         self.analysisPath = None
+        self.viewer = None
         
     def initialize(self):        
         #self.setWindowIcon(QIcon(":/images/deco1.jpg"))        
@@ -32,6 +34,26 @@ class MainWindow(QMainWindow):
         self.ui.actionSave.triggered.connect(self.saveAnalysis)
         self.ui.actionSaveAs.triggered.connect(self.saveAnalysisAs)
         self.ui.actionNew.triggered.connect(self.newAnalysis)
+        self.analysisForm.startAnalysisRequested.connect(self.slotStartAnalysis)
+
+    def showNextImageToTreat(self):
+        if not self.measuresToTreat:
+            print("Analysis finished")
+            return
+        
+        measure = self.measuresToTreat.pop(0)
+
+        if (self.viewer):
+            self.viewer.loadNewImage(str(measure.image)) 
+        else:
+            self.viewer = ImageViewer(str(measure.image), self, True)
+            # Setting up connection to go next image if requested
+            self.viewer.goNext.connect(self.showNextImageToTreat)
+            
+        print("Analysing",str(measure.image))
+        self.viewer.show()
+
+        return
 
 ########## SLOTS GOES HERE
 
@@ -92,3 +114,18 @@ class MainWindow(QMainWindow):
             self.saveAnalysisAs()
 
         return
+    
+    @pyqtSlot()
+    def slotStartAnalysis(self):
+        print("starting analysis")
+
+        analysis = self.analysisForm.getAnalysis()
+        self.measuresToTreat = [m for m in analysis.measures if not m.treated]
+
+        self.showNextImageToTreat()
+
+        return
+    
+
+
+

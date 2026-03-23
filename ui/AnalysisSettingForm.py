@@ -1,10 +1,15 @@
 from PyQt5.QtWidgets import QWidget, QListWidgetItem
 from ui import AnalysisSettingForm_ui as ui
 from dataStruct import dataStructure as DS
-from PyQt5.QtCore import pyqtSlot
+from PyQt5.QtCore import pyqtSlot, pyqtSignal
 from models.beeItemModel import BeeItemModel 
 
 class AnalysisSettingForm(QWidget):
+
+    ### Define custom signals
+    startAnalysisRequested = pyqtSignal()
+    stopAnalysisRequested = pyqtSignal()
+
     def __init__(self, parent=None):
         super().__init__(parent)
         self.ui = ui.Ui_AnalysisSettingForm()
@@ -52,7 +57,8 @@ class AnalysisSettingForm(QWidget):
         self.ui.authorLineEdit.editingFinished.connect(self.slotAuthorLineEditEditingFinished)
         self.ui.discoidalCheckBox.toggled.connect(self.slotDiscoidalCheckBoxToggled)
         self.ui.commentsTextEdit.textChanged.connect(self.slotCommentsTextEditTextChanged)
-        self.ui.stopAnalysisPushButton.released.connect(self.slotStopAnalysisReleased)
+        self.ui.stopAnalysisPushButton.released.connect(self.stopAnalysisRequested.emit)
+        self.ui.startAnalysisPushButton.released.connect(self.startAnalysisRequested.emit)
 
     #### SLOTS GOES HERE
     @pyqtSlot()
@@ -85,8 +91,4 @@ class AnalysisSettingForm(QWidget):
     def slotMeasureAdded(self, measure : DS.Measure):
         # Append a measure to the analyse
         self.analysis.appendMeasure(measure)
-        return
-    
-    @pyqtSlot()
-    def slotStopAnalysisReleased(self):
         return
