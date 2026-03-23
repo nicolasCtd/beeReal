@@ -4,7 +4,7 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt, QRectF
 
 class ImageViewer(QWidget):
-    def __init__(self, image_path: str, parent=None, showAnalysisPannel: bool = True):
+    def __init__(self, image_path: str, parent=None, showAnalysisPannel: bool = False):
         super().__init__(parent)
         self.setWindowFlag(Qt.Window)
         self.ui = ui.Ui_ImageViewer()
