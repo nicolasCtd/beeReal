@@ -23,10 +23,10 @@ class ImageViewer(QWidget):
         self.image_item = None
         # remember the initial chosen width by the system
         self.initialWidth = self.width() 
-        self.loadNewImage(image_path)
+        self.loadNewImage(image_path)      
         
         # UI State
-        self.ui.analysisFrame.setHidden(not showAnalysisPannel)
+        self.ui.analysisFrame.setHidden(not self.showAnalysisPannel)
 
         # Connections
         self.ui.NextImagePushButton.released.connect(self.goNext.emit)
@@ -34,11 +34,11 @@ class ImageViewer(QWidget):
 
     def loadNewImage(self, image_path: str):
         # Load Image
-        self.pixmap = QPixmap(image_path)
-        if not self.pixmap.isNull():
-
+        imageSize = self.ui.graphicsView.loadImage(image_path) 
+        
+        if not imageSize.isNull():
             target_width = self.initialWidth 
-            ratio = self.pixmap.height() / self.pixmap.width()
+            ratio = imageSize.height() / imageSize.width()
             target_height = int(target_width * ratio)
 
             if self.showAnalysisPannel:
@@ -46,15 +46,7 @@ class ImageViewer(QWidget):
 
             self.resize(target_width, target_height)
 
-            if (self.image_item):
-                self.scene.removeItem(self.image_item)
-
-            self.image_item = self.scene.addPixmap(self.pixmap)
-            self.scene.setSceneRect(QRectF(self.pixmap.rect()))
-            
-            # Initial fit (use a small delay or call after show() for best results)
-            self.ui.graphicsView.fitInView(self.image_item, Qt.KeepAspectRatio)
-        return 
+        return
 
     def showEvent(self, event):
         if (self.image_item):

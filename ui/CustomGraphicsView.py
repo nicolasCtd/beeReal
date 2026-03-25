@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QGraphicsView, QGraphicsItem, QGraphicsTextItem, QGraphicsPixmapItem
-from PyQt5.QtCore import Qt, QPointF
+from PyQt5.QtCore import Qt, QRectF
 from PyQt5.QtGui import QPixmap
 
 # Some local constants constants
@@ -23,12 +23,47 @@ class CustomGraphicsView(QGraphicsView):
         self.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
         self.zoomLevel = 0
+        self._panning = False
+        self._last_mouse_pos = None
+
+        self.image_item=None
+
+
+    def loadImage(self, image_path: str):
+        # Load Image
+        self.pixmap = QPixmap(image_path)
+        if not self.pixmap.isNull():
+            if (self.image_item):
+                self.scene().removeItem(self.image_item)
+
+            self.image_item = self.scene().addPixmap(self.pixmap)
+            self.scene().setSceneRect(QRectF(self.pixmap.rect()))
+            
+            # Initial fit (use a small delay or call after show() for best results)                        
+            self.fitImage()
+        return self.pixmap.size()
+
+
+    def fitImage(self):
+        print("fitting image")
+        if (self.image_item):
+            self.fitInView(self.image_item, Qt.KeepAspectRatio)
+        return
 
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:
-            self._panning = True
-            self._last_mouse_pos = event.pos()
-            event.accept()
+            # What is the item under the cursor
+            item = self.itemAt(event.pos())
+
+            if item:
+                if item is self.image_item:
+                    # This is a panning
+                    self._panning = True
+                    self._last_mouse_pos = event.pos()
+                    event.accept()
+                else:
+                    super().mousePressEvent(event)
+                    self._panning = False
         else:
             super().mousePressEvent(event)
 
@@ -88,7 +123,12 @@ class CustomGraphicsView(QGraphicsView):
             item = QGraphicsPixmapItem(plusImage)
             item.setOffset(-targetItemMidSize, -targetItemMidSize)
             item.setPos(posImage.x(),posImage.y()) 
+
+
             item.setFlag(QGraphicsItem.ItemIgnoresTransformations)
+            item.setFlag(QGraphicsItem.ItemIsMovable) # Allow moving
+            #item.setFlag(QGraphicsItem.ItemIsSelectable) # Allow selection
+
             self.scene().addItem(item)
         
         return super().mouseReleaseEvent(event)
