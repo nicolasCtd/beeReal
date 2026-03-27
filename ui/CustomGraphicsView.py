@@ -132,3 +132,15 @@ class CustomGraphicsView(QGraphicsView):
             self.scene().addItem(item)
         
         return super().mouseReleaseEvent(event)
+    
+
+    def showEvent(self, event):
+        if (self.image_item):
+            # This ensures the fitInView works once the geometry is calculated
+            self.fitImage()
+            super().showEvent(event)
+
+    def resizeEvent(self, event):
+        if (self.image_item):
+            super().resizeEvent(event)
+            self.fitImage()

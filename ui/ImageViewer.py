@@ -47,14 +47,3 @@ class ImageViewer(QWidget):
             self.resize(target_width, target_height)
 
         return
-
-    def showEvent(self, event):
-        if (self.image_item):
-            # This ensures the fitInView works once the geometry is calculated
-            self.ui.graphicsView.fitInView(self.image_item, Qt.KeepAspectRatio)
-            super().showEvent(event)
-
-    def resizeEvent(self, event):
-        if (self.image_item):
-            super().resizeEvent(event)
-            self.ui.graphicsView.fitInView(self.image_item, Qt.KeepAspectRatio)
