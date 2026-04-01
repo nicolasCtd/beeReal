@@ -1,7 +1,6 @@
 from ui import ImageViewer_ui as ui
 from PyQt5.QtWidgets import QWidget, QGraphicsScene
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtCore import Qt, QRectF, pyqtSignal
+from PyQt5.QtCore import Qt, pyqtSignal
 
 class ImageViewer(QWidget):
 
@@ -18,6 +17,7 @@ class ImageViewer(QWidget):
         # Setup Scene
         self.scene = QGraphicsScene(self)
         self.ui.graphicsView.setScene(self.scene)
+        self.ui.graphicsView.sigPointAdded.connect(lambda point: print(point))
         
         # Load Image
         self.image_item = None

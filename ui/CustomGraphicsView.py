@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import QGraphicsView, QGraphicsItem, QGraphicsTextItem, QGraphicsPixmapItem
-from PyQt5.QtCore import Qt, QRectF
+from PyQt5.QtWidgets import QGraphicsView, QGraphicsItem, QGraphicsPixmapItem
+from PyQt5.QtCore import Qt, QRectF, pyqtSignal, QPointF
 from PyQt5.QtGui import QPixmap
 
 # Some local constants constants
@@ -10,7 +10,13 @@ targetItemMidSize = 32 #pixels
 addPointModifier = Qt.ControlModifier
 
 
+
+
+
 class CustomGraphicsView(QGraphicsView):
+
+    sigPointAdded = pyqtSignal(QPointF)
+
     def __init__(self, parent=None) :
         super().__init__(parent)
 
@@ -130,6 +136,7 @@ class CustomGraphicsView(QGraphicsView):
             #item.setFlag(QGraphicsItem.ItemIsSelectable) # Allow selection
 
             self.scene().addItem(item)
+            self.sigPointAdded.emit(posImage)
         
         return super().mouseReleaseEvent(event)
     
