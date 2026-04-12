@@ -17,7 +17,6 @@ class ImageViewer(QWidget):
         # Setup Scene
         self.scene = QGraphicsScene(self)
         self.ui.graphicsView.setScene(self.scene)
-        self.ui.graphicsView.sigPointAdded.connect(lambda point: print(point))
         
         # Load Image
         self.image_item = None

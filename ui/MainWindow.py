@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QMainWindow, QFileDialog
 from PyQt5.QtGui import QIcon
 from ui import MainWindow_ui as ui
 from ui import AnalysisSettingForm as ASF
-from PyQt5.QtCore import pyqtSlot
+from PyQt5.QtCore import pyqtSlot, QPointF
 from IO import IO
 from ui.ImageViewer import ImageViewer 
 
@@ -49,6 +49,7 @@ class MainWindow(QMainWindow):
             self.viewer = ImageViewer(str(measure.image), self, True)
             # Setting up connection to go next image if requested
             self.viewer.goNext.connect(self.showNextImageToTreat)
+            self.viewer.ui.graphicsView.sigPointAdded.connect(self.slotPointAddedOnImage)
             
         print("Analysing",str(measure.image))
         self.viewer.show()
@@ -125,6 +126,13 @@ class MainWindow(QMainWindow):
         self.showNextImageToTreat()
 
         return
+    
+        
+    @pyqtSlot(QPointF)
+    def slotPointAddedOnImage(self, point : QPointF):
+        currentMeasure = self.measuresToTreat[0]        
+        #currentMeasure.cubitalPointsPixels["P1"]= [int(point.x()), int(point.y())]
+        return 
     
 
 
