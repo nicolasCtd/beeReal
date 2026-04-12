@@ -11,6 +11,7 @@ import xml.etree.ElementTree as ET
 from dataStruct import dataStructure as DS
 from pathlib import Path
 from PyQt5.QtGui import QImageReader
+import ast
         
 AnalysisXmlTag = "Analysis"
 MeasureXmlTag = "measure"
@@ -101,7 +102,11 @@ class AnalysisFile:
                                                         
                         setattr(measure, measureNode.tag, imageTreated )
                     else:
-                        setattr(measure, measureNode.tag, measureNode.text )
+                        print(measureNode.tag, measureNode.text)
+                        try:
+                            setattr(analysis, measureNode.tag, ast.literal_eval(measureNode.text.strip()) )
+                        except:
+                            setattr(analysis, measureNode.tag, measureNode.text )
 
                 analysis.measures.append(measure)
             else:
@@ -109,7 +114,8 @@ class AnalysisFile:
                     useDisco = True if child.text=="True" else False
                     setattr(analysis, child.tag, useDisco )
                 else:
-                    setattr(analysis, child.tag, child.text )
+                    print(child.text)
+                    setattr(analysis, child.tag, child.text )                    
 
         # Check image existence
         checkImagesExistence(analysis, True)
