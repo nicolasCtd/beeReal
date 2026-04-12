@@ -10,6 +10,7 @@ if __name__ == '__main__':
 import xml.etree.ElementTree as ET
 from dataStruct import dataStructure as DS
 from pathlib import Path
+from PyQt5.QtGui import QImageReader
         
 AnalysisXmlTag = "Analysis"
 MeasureXmlTag = "measure"
@@ -24,7 +25,16 @@ def checkImagesExistence(analysis : DS.Analysis, rejectIfNonExitent = False):
     validMesures = []
     for measure in analysis.measures:
         if measure.image.exists():
-            validMesures.append(measure)
+            # Check if this is an image
+            reader = QImageReader(str(measure.image))
+            if reader.canRead():
+                # Read the image size at the same time                
+                size = reader.size()
+                measure.imageSizePixels = [size.width(), size.height()]
+                validMesures.append(measure)                
+            else:
+                print("File", measure.image, "is not an image")    
+                        
         else:
             print("Image file", measure.image, "does not exists")
 
@@ -67,9 +77,6 @@ class AnalysisFile:
         return
 
     def loadAnalysis(self):
-        # TODO: check existence of the file
-        # TODO: Check if the parsing turns well
-        # TODO: Check if image are on disk. Reject if not ?
 
         if (not self.filePath.exists()):
             print("Analysis file does no exists")
