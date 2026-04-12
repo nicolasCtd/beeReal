@@ -50,8 +50,7 @@ class CustomGraphicsView(QGraphicsView):
         return self.pixmap.size()
 
 
-    def fitImage(self):
-        print("fitting image")
+    def fitImage(self):        
         if (self.image_item):
             self.fitInView(self.image_item, Qt.KeepAspectRatio)
         return

@@ -14,6 +14,7 @@ class MainWindow(QMainWindow):
         self.initialize()
         self.analysisPath = None
         self.viewer = None
+        self.currentMeasureUnderTreatment = None
         
     def initialize(self):        
         #self.setWindowIcon(QIcon(":/images/deco1.jpg"))        
@@ -41,17 +42,17 @@ class MainWindow(QMainWindow):
             print("Analysis finished")
             return
         
-        measure = self.measuresToTreat.pop(0)
+        self.currentMeasureUnderTreatment = self.measuresToTreat.pop(0)
 
         if (self.viewer):
-            self.viewer.loadNewImage(str(measure.image)) 
+            self.viewer.loadNewImage(str(self.currentMeasureUnderTreatment.image)) 
         else:
-            self.viewer = ImageViewer(str(measure.image), self, True)
+            self.viewer = ImageViewer(str(self.currentMeasureUnderTreatment.image), self, True)
             # Setting up connection to go next image if requested
             self.viewer.goNext.connect(self.showNextImageToTreat)
             self.viewer.ui.graphicsView.sigPointAdded.connect(self.slotPointAddedOnImage)
             
-        print("Analysing",str(measure.image))
+        print("Analysing ",str(self.currentMeasureUnderTreatment.image))
         self.viewer.show()
 
         return
@@ -129,9 +130,8 @@ class MainWindow(QMainWindow):
     
         
     @pyqtSlot(QPointF)
-    def slotPointAddedOnImage(self, point : QPointF):
-        currentMeasure = self.measuresToTreat[0]        
-        #currentMeasure.cubitalPointsPixels["P1"]= [int(point.x()), int(point.y())]
+    def slotPointAddedOnImage(self, point : QPointF):         
+        self.currentMeasureUnderTreatment.cubitalPointsPixels["P1"]= [int(point.x()), int(point.y())] 
         return 
     
 
