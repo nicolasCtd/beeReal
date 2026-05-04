@@ -160,7 +160,7 @@ def set_paths():
         globals.future = os.sep.join([os.path.dirname(__file__), 'media', 'future.mp3'])
 
 def launch_log(path, name):
-    """Création et configuration du fichier de log."""
+    """Configure logging to write to the specified log file."""
     log_file = path + os.sep + name
 
     for handler in logging.root.handlers[:]:
@@ -477,7 +477,7 @@ class ALL_TABS(QWidget):
         self.btn_tab0_save_analysis = QPushButton(f"Save\nanalysis\n{self.analyse_name}")
         self.btn_tab0_launch_analysis = QPushButton(f"Launch\nanalysis\n{self.analyse_name}")
         label0 = QLabel("Name of the analysis: ")
-        self.label00 = QLabel(self.analyse_name)
+        self.lbl_tab0_analyse_name = QLabel(self.analyse_name)
         label1 = QLabel("<u>Histogram of Cubital Index<u>")
         label2 = QLabel("<u>Cubital Index / Discoidal Shift<u>")
         # self.edit_analyse_name = QLineEdit()
@@ -490,7 +490,7 @@ class ALL_TABS(QWidget):
         self.btn_tab0_extra_plot.setStyleSheet("margin-bottom: 50px;")
 
         self.btn_tab0_edit_name_analysis = QPushButton("Edit")
-        self.btn_tab0_edit_name_analysis.clicked.connect(self.edit_name)
+        self.btn_tab0_edit_name_analysis.clicked.connect(self.edit_analysis_name)
 
         my_font = QFont("Chalkduster", 20)
         my_font2 = QFont("Chalkduster", 15)
@@ -552,13 +552,14 @@ class ALL_TABS(QWidget):
         scaled_pixmap = pixmap.scaled(L3, H3)
         deco3.setPixmap(scaled_pixmap)
 
-        layout_main_1.addWidget(label0, 0+1, 0, 1, 3)
-        layout_main_1.addWidget(self.label00, 0+1, 4, 1, 3)
-        layout_main_1.addWidget(self.btn_tab0_edit_name_analysis, 0+1, 8, 1, 3)
+        layout_main_1.addWidget(label0, 1, 0, 1, 3)
+        layout_main_1.addWidget(self.lbl_tab0_analyse_name, 1, 4, 1, 3)
+        layout_main_1.addWidget(self.btn_tab0_edit_name_analysis, 1, 8, 1, 3)
         layout_main_1.addWidget(self.son, 0, 0, 1, 3)
         layout_main_1.addWidget(self.btn_tab0_load_analysis, 1, 0, 2, 2)
         layout_main_1.addWidget(self.btn_tab0_save_analysis, 1, 4, 2, 2)
-        layout_main_1.addWidget(self.btn_tab0_edit_name_analysis, 1, 8, 2, 2)
+        #layout_main_1.addWidget(self.btn_tab0_edit_name_analysis, 1, 7, 2, 2)
+        layout_main_1.addWidget(self.btn_tab0_launch_analysis, 1, 8, 2, 2)
         
         layout_main_1.addWidget(deco1, 0, 10, 3, 3)
         layout_main_1.addWidget(deco2, 0, 13, 3, 3)
@@ -574,7 +575,7 @@ class ALL_TABS(QWidget):
 
         self.btn_tab0_load_analysis.clicked.connect(self.load_project)
         self.btn_tab0_save_analysis.clicked.connect(self.save_project)
-        self.btn_tab0_edit_name_analysis.clicked.connect(self.launch_analysis)
+        self.btn_tab0_launch_analysis.clicked.connect(self.launch_analysis)
         self.btn_tab0_extra_plot.clicked.connect(self.add_histogram)
 
         self.grids = list()
@@ -786,12 +787,12 @@ class ALL_TABS(QWidget):
         self.son.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         self.son.resize(50, 50)
 
-    def edit_name(self):
-        """"""
+    def edit_analysis_name(self):
+        """Ask the user for a new analysis name, update UI elements, and rename the log file."""
         text, okPressed = QInputDialog.getText(self, " ", "Entrer le nom de l'analyse :", QLineEdit.Normal, "")
         if okPressed and text != '':
-            self.label00.setText(text)
-            self.btn_tab0_edit_name_analysis.setText(f"Save\nanalysis\n{text}")
+            self.lbl_tab0_analyse_name.setText(text)
+            self.btn_tab0_save_analysis.setText(f"Save\nanalysis\n{text}")
             self.btn_tab0_launch_analysis.setText(f"Launch\nanalysis\n{text}")
             logging.shutdown()
             shutil.move(self.logs + f"logs_{self.analyse_name}.log", self.logs + f"logs_{text}.log")
@@ -829,7 +830,7 @@ class ALL_TABS(QWidget):
             logging.info(f"Load project '{project_file}'")
 
             self.analyse_name = get_file_name(project_file)
-            self.label00.setText(self.analyse_name)
+            self.lbl_tab0_analyse_name.setText(self.analyse_name)
             self.btn_tab0_save_analysis.setText(f"Save\nanalysis\n{self.analyse_name}")
             self.btn_tab0_launch_analysis.setText(f"Launch\nanalysis\n{self.analyse_name}")
             
@@ -911,7 +912,7 @@ class ALL_TABS(QWidget):
             # self.setFixedSize(self.tab0.layout.sizeHint())()
             self.resize(self.tab0.sizeHint().width(), self.tab0.sizeHint().height())
             self.switch_extra_plot = True
-            self.btn_extra_plot.setEnabled(self.switch_extra_plot)
+            self.btn_tab0_extra_plot.setEnabled(self.switch_extra_plot)
     
     def add_histogram(self):
         """Ajoute un histogramme sur le graphe de gauche afin de comparer l'histogramme obtenu avec ce logiciel

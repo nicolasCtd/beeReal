@@ -341,16 +341,23 @@ class EDIT(QMainWindow):
 
     def getPos_ci(self, event):
         """
-        - Récupère les coordonnées (x,y) du clic de l'utilisateur pour placer un point CI.
-        - Dessine un point bleu où l'utilisateur a cliqué.
-        - L'utilisateur place un maximum de 3 points pour le calcul de l'indice cubital.
+        Positionnement des points CI.
+
+        1) Récupère les coordonnées (x,y) du clic de l'utilisateur.
+
+        2) Dessine un point bleu où l'utilisateur a cliqué.
+
+        NB : L'utilisateur place un maximum de 3 points.
+
+        Args:
+            event (QMouseEvent): Clic de l'utilisateur dans la fenêtre.
         """
         self.count_ci_points += 1
         if  self.count_ci_points <= 3:
             x, y = self.get_pos_in_widget(event)
             file = self.last_name[self.ZOOM]
             if self.ZOOM:
-                xmin, xmax, ymin, ymax = get_zoom_center(file)
+                xmin, xmax, ymin, ymax = get_zoom_boundaries(file)
                 new_name = insertnow(self.name + "_zoom_" + f"xmin{xmin}xmax{xmax}ymin{ymin}ymax{ymax}end" + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + '.jpg')
             else:
                 new_name = insertnow(self.name + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + '.jpg')
@@ -402,16 +409,23 @@ class EDIT(QMainWindow):
 
     def getPos_ds(self, event):
         """
-        - Récupère les coordonnées (x,y) du clic de l'utilisateur pour placer un point DS.
-        - Dessine un point jaune où l'utilisateur a cliqué.
-        - L'utilisateur place un maximum de 4 points pour le calcul de l'angle discoidal.
+        Positionnement des points DS.
+
+        1)	Récupère les coordonnées (x,y) du clic de l'utilisateur.
+
+        2)	Dessine un point jaune où l'utilisateur a cliqué.
+
+        NB : L'utilisateur place un maximum de 4 points.
+        
+        Args:
+            event (QMouseEvent): Clic de l'utilisateur dans la fenêtre.
         """
         self.count_ds_points += 1
         if  self.count_ds_points <= 4:
             x, y = self.get_pos_in_widget(event)
             file = self.last_name[self.ZOOM]
             if self.ZOOM:
-                xmin, xmax, ymin, ymax = get_zoom_center(file)
+                xmin, xmax, ymin, ymax = get_zoom_boundaries(file)
                 new_name = insertnow(self.name + "_zoom_" + f"xmin{xmin}xmax{xmax}ymin{ymin}ymax{ymax}end" + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + '.jpg')
             else:
                 new_name = insertnow(self.name + f"_CI_{self.count_ci_points}" + f"_DS_{self.count_ds_points}" + '.jpg')
@@ -558,6 +572,15 @@ class EDIT(QMainWindow):
         self.last_name[1] = last_file_w_zoom
 
     def get_pos_in_widget(self, event):
+        """
+        Retourne la position du x, y du clic gauhe de la souris.
+
+        Args:
+            event (QMouseEvent): Clic de l'utilisateur dans la fenêtre.
+        
+        Returns:
+            tuple[int, int]: Coordonnées x, y de l'endroit du clic.
+        """
         pos = event.pos()
 
         pixmapRect = self.label.pixmap().rect()

@@ -24,12 +24,27 @@ HEIGHT = 870
 WIDTH = 670
 
 class HISTOGRAM():
-    def __init__(self, indices, id_bees, path, visu="RUTTNER", save_abacus=1):
-        self.path=path
+    def __init__(
+        self,
+        indices: list[float],
+        id_bees: list[str] | list[int],
+        path: str,
+        visu: str = "RUTTNER",
+        save_abacus: bool = True,
+    ):
+        """Initialize a HISTOGRAM object from input indices and bee identifiers.
+        Args:
+            indices (list[float]): Input cubital index values.
+            id_bees (list[str] | list[int]): Identifiers for each sample.
+            path (str): Output directory.
+            visu (str, optional): Visualization mode. Defaults to "RUTTNER".
+            save_abacus (bool, optional): Save abacus on init. Defaults to True.
+        """
+        self.path = path
         self.visu = visu
-        self.id_bees=id_bees
+        self.id_bees = id_bees
         self.indices = indices
-        self.classes = self.get_classes(indices)
+        self.classes = self.get_classes(self.indices)
         self.limits = {'carnica':[2.3, 3.2],
                        'ligustica':[2, 2.8],
                        'caucasica': [1.7, 2.3],
@@ -40,7 +55,6 @@ class HISTOGRAM():
                        'mellifera':0}
         if save_abacus:
             self.save_abacus()
-
     
     def save_abacus(self):
         classes, indices = self.compute_abacus()
@@ -75,18 +89,28 @@ class HISTOGRAM():
 
         return CLASSES, INDICES
 
-    def get_classes(self, indices):
+    def get_classes(self, indices: list[float]) -> list[int]:
+        """Return the class value associated with each cubital index.
+        
+        Args:
+            indices (list[float]): List of cubital index values.
+
+        Returns:
+            list[int]: List of class values.        
+        """
         CLASSES, INDICES = self.compute_abacus()
         CL = CLASSES[:-1]
         CI_min = INDICES[:-1]
         CI_max = INDICES[1:]
 
-        classes = list()
+        classes = []
         for indice in indices:
             for i in range(len(CL)):
                 if (indice >= CI_min[i]) and (indice < CI_max[i]):
                     classes.append(CL[i])
                     break
+            else:
+                raise ValueError(f"No class found for index {indice}")
         return classes
 
     def MCLC(self):
@@ -375,6 +399,21 @@ class HISTOGRAM():
         return ds_image
 
 def analyse(indices, shifts, id_bees, visu="RUTTNER", path_out=""):
+    """Create a histogram object, generate histogram and scatter plot images.
+
+    Args:
+        indices (list): List of CI measures.
+        shifts (list): List of shift measures.
+        id_bees (list): List of bee IDs
+        visu (str, optional): Visualization mode. Defaults to "RUTTNER".
+        path_out (str, optional): Output path for generated files. Defaults to "".
+
+    Returns:
+        tuple: A tuple containing:
+            - list_of_ci_images (list[str]): List of filenames for the four generated images, each highlighting one zone: mellifera, ligustica, carnica, and caucasica.
+            - ds_image (str): Name of the scatter plot image.
+            - histogram: HISTOGRAM object used for the analysis.
+    """
 
     H = HISTOGRAM(indices=indices, id_bees=id_bees, visu=visu, path=path_out)
 
