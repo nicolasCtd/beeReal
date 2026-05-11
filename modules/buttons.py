@@ -45,7 +45,7 @@ def turnToGrayImages(TABs, num):
 
     # change color of the text (black -> grey)
     TXT = TABs.grids[num_grid].itemAtPosition(np.mod(num-1, 5), 7).widget()
-    TXT.setStyleSheet("color: grey; font-size: 22px")
+    TXT.setStyleSheet("color: grey; font-size: 15px")
     TXT.setText(TXT.text())
 
     return 0
@@ -95,7 +95,7 @@ def turnToRGBImages(TABs, num):
 
     # change color of the text (grey -> black)
     TXT = TABs.grids[num_grid].itemAtPosition(np.mod(num-1, 5), 7).widget()
-    TXT.setStyleSheet("color: black; font-size: 22px")
+    TXT.setStyleSheet("color: black; font-size: 16px")
     TXT.setText(TXT.text())
 
     return 0

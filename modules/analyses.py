@@ -93,10 +93,10 @@ class HISTOGRAM():
         """Return the class value associated with each cubital index.
         
         Args:
-            indices (list[float]): List of cubital index values.
+            indices: List of cubital index values.
 
         Returns:
-            list[int]: List of class values.        
+            List of class values.        
         """
         CLASSES, INDICES = self.compute_abacus()
         CL = CLASSES[:-1]
@@ -110,7 +110,12 @@ class HISTOGRAM():
                     classes.append(CL[i])
                     break
             else:
-                raise ValueError(f"No class found for index {indice}")
+                if indice <= INDICES[0]:
+                    classes.append(INDICES[0])
+                    logging.warning(f"Attention : indice={indice} inférieur à l'indice minimum de l'abaque ({INDICES[0]})")
+                else:
+                    classes.append(INDICES[-1])
+                    logging.warning(f"Attention : indice={indice} inférieur à l'indice minimum de l'abaque ({INDICES[-1]})")
         return classes
 
     def MCLC(self):
