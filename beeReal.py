@@ -835,17 +835,24 @@ class ALL_TABS(QWidget):
             self.btn_tab0_launch_analysis.setText(f"Launch\nanalysis\n{self.analyse_name}")
             
             shutil.unpack_archive(filename=project_file, extract_dir=self.tmp)
-            copytree(src=self.tmp + os.sep + "in", dst=self.in_)
-            copytree(src=self.tmp + os.sep + "out", dst=self.out)
+            copytree(src=os.sep.join([self.tmp, "in"]), dst=self.in_)
+            copytree(src=os.sep.join([self.tmp, "out"]), dst=self.out)
 
-            shutil.copyfile(src=f"{self.tmp}{os.sep}logs{os.sep}logs_{self.analyse_name}.log", dst=f"{self.path}{os.sep}logs{os.sep}logs_{self.analyse_name}.log")
+            for log_file in os.listdir(os.sep.join([self.tmp, "logs"])):
+                src = os.path.join(self.tmp, "logs", log_file)
+                dst = os.path.join(self.logs, log_file)
+                try:
+                    shutil.copyfile(src, dst)
+                except Exception as exc:
+                    print(f"Can't copy file: {src} -> {dst}")
+                    print(exc)
+
             globals.log_mode = 'a'
-
-            print(f"chargement des résultats {self.out}results.txt")
+            launch_log(self.logs, f"logs_{self.analyse_name}" + ".log")
+ 
             self.RES = load_results(self.out + "results.txt")
-            print("results already computed:")
-            print(self.RES)
 
+            logging.info(f"Load project '{project_file}'")
             logging.info("Affichage dans l'IHM des valeurs Ci et Ds")
             H = HISTOGRAM(indices=[], path="", id_bees=[], save_abacus=0)
             for num_abeille in self.RES.keys():
