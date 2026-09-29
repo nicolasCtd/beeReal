@@ -34,10 +34,12 @@ import logging
 from datetime import date
 from modules import globals
 from modules import buttons
+from core.common import text_result_IHM
 
 from PyQt5.QtCore import QUrl
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent, QAudioOutput
 import csv
+from modules.ci_and_ds_tools import POINT
 
 # Définir une fonction pour attraper toutes les exceptions non gérées
 def log_exception(exc_type, exc_value, exc_traceback):
@@ -305,9 +307,15 @@ class MAIN_WINDOW(QMainWindow):
             event.ignore()
 
 
+class Points:
+    def __init__(self):
+        self.ci_points = [POINT(), POINT(), POINT()]
+        self.ds_points = [POINT(), POINT(), POINT(), POINT()]
+        self.hi_points = [POINT()]
+
+ 
 class ALL_TABS(QWidget): 
     def __init__(self, parent): 
-        # super(QWidget, self).__init__(parent)
         super().__init__(parent)
 
         self.out = globals.out
@@ -327,6 +335,16 @@ class ALL_TABS(QWidget):
         self.mute()
 
         self.RES = {}
+        self.list_of_points = {}
+        self.list_of_images = {}
+        self.list_of_images_zoom = {}
+        # self.PTS = {}
+
+        for num_abeille in range(1, 101):
+            self.list_of_points[num_abeille] = []
+            self.list_of_images[num_abeille] = []
+            self.list_of_images_zoom[num_abeille] = []
+
         self.analyse_name = str(date.today())
 
         self.switch_extra_plot = False
@@ -418,14 +436,17 @@ class ALL_TABS(QWidget):
 
         my_font = QFont("Chalkduster", 16)
 
+        text00 = QLabel("<u>General</u>")
         text0 = QLabel("<u>Parameters for Histogram</u>")
         text1 = QLabel("<u>Parameters for Scatter plot</u>")
 
+        text00.setFont(my_font)
         text0.setFont(my_font)
         text1.setFont(my_font)
 
-        SL.addWidget(text0, 0, 0, 1, 2, alignment=Qt.AlignTop)
-        SL.addWidget(text1, 4, 0, 1, 2, alignment=Qt.AlignTop)
+        SL.addWidget(text00, 0, 0, 1, 2, alignment=Qt.AlignTop)
+        SL.addWidget(text0, 4, 0, 1, 2, alignment=Qt.AlignTop)
+        SL.addWidget(text1, 8, 0, 1, 2, alignment=Qt.AlignTop)
 
         sl = QVBoxLayout()
 
@@ -435,26 +456,22 @@ class ALL_TABS(QWidget):
         self.BTN_params_apply.setFixedWidth(80)
         self.BTN_params_reset.setFixedWidth(80)
 
-        SL.addWidget(self.BTN_params_apply, 6, 0, 1, 2)
-        SL.addWidget(self.BTN_params_reset, 7, 0, 1, 2)
+        SL.addWidget(self.BTN_params_apply, 11, 0, 1, 2)
+        SL.addWidget(self.BTN_params_reset, 12, 0, 1, 2)
 
         self.BTN_params_apply.setText("Apply")
         self.BTN_params_reset.setText("Reset")
 
         self.visualisation = QComboBox()
-        self.visualisation.addItems(['RUTTNER', 'DREHER'])
+        self.visualisation.addItems(['RUTTNER (100/60)', 'DREHER (100/50)'])
         self.visualisation.setCurrentText('RUTTNER')
 
         self.y_max = QComboBox()
         self.y_max.addItems(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'])
         self.y_max.setCurrentText('6')
 
-        SL.addWidget(self.visualisation, 1, 2, 1, 2)
-
-        SL.addWidget( QLabel("Visualisation"), 1, 1, 1, 2)
-
-        self.BTN_params_apply.setEnabled(True)
-        self.BTN_params_reset.setEnabled(False)
+        SL.addWidget(self.visualisation, 5, 2, 1, 2)
+        SL.addWidget( QLabel("CI step"), 5, 1, 1, 2)
 
         self.BTN_params_apply.clicked.connect(self.params_apply_button)
         self.BTN_params_reset.clicked.connect(self.params_reset_button)
@@ -464,8 +481,15 @@ class ALL_TABS(QWidget):
 
         label_max_y_scatter = QLabel("Max for Y-axis (°)")
 
-        SL.addWidget(label_max_y_scatter, 5, 1, 1, 2)
-        SL.addWidget(self.y_max, 5, 2, 1, 2)
+        SL.addWidget(label_max_y_scatter, 9, 1, 1, 2)
+        SL.addWidget(self.y_max, 9, 2, 1, 2)
+
+        self.analysis = QComboBox()
+        self.analysis.addItems(['Cubital Index', 'Cubital Index + Discoidal Shift', 'Cubital Index + Discoidal Shift + Hantel Index'])
+        self.analysis.setCurrentText(globals.analysis)
+
+        SL.addWidget(self.analysis, 1, 2, 1, 2)
+        SL.addWidget( QLabel("Measurements"), 1, 1, 1, 2)
 
         self.tab21.setLayout(SL)
 
@@ -614,7 +638,8 @@ class ALL_TABS(QWidget):
                 self.grids[-1].addWidget(label_right, i, 4+1, 1, 1)
 
                 label_results = self.label_results[num_image-1]
-                label_results.setText(f"<u>Abeille #{num_image}</u><br /> Ci :<br />Ds :<br />Classe :")
+                txt = text_result_IHM(num_image)
+                label_results.setText(txt)
                 label_results.setContentsMargins(30, 0, 0, 0)
                 self.grids[-1].addWidget(label_results, i, 6+1, 1, 1)
 
@@ -748,21 +773,33 @@ class ALL_TABS(QWidget):
 
     def params_apply_button(self):
         """"""
-        print("apply button")
-        self.BTN_params_apply.setEnabled(False)
-        self.BTN_params_reset.setEnabled(True)
         globals.classif = self.visualisation.currentText()
         globals.y_max_scatter_plot = self.y_max.currentText()
+        globals.analysis = self.analysis.currentText()
+
+        for label, num_abeille in zip(self.label_results, range(1, len(self.label_results)+1)):
+            if num_abeille in self.RES.keys():
+                results = self.RES[num_abeille]
+                print(results)
+                ci = format_ci(results[0])
+                ci_class = results[1]
+                ds = format_ds(results[2])
+                hi = format_hi(results[3])
+            else:
+                ci, ci_class, ds, hi = None, None, None, None
+            txt = text_result_IHM(num_abeille=num_abeille, ci=ci, ci_class=ci_class, ds=ds, hi=hi)
+            label.setText(txt)
+
     
     def params_reset_button(self):
         """"""
         print("reset button")
-        self.BTN_params_apply.setEnabled(True)
-        self.BTN_params_reset.setEnabled(False)
         globals.classif = "RUTTNER"
         globals.y_max_scatter_plot = 6
+        globals.analysis = "CI"
         self.y_max.setCurrentText(str(globals.y_max_scatter_plot))
         self.visualisation.setCurrentText(str(globals.classif))
+        self.analysis.setCurrentText(str(globals.analysis))
 
     def play(self, file):
         """"""
@@ -855,15 +892,25 @@ class ALL_TABS(QWidget):
             logging.info(f"Load project '{project_file}'")
             logging.info("Affichage dans l'IHM des valeurs Ci et Ds")
             H = HISTOGRAM(indices=[], path="", id_bees=[], save_abacus=0)
+
+            level = globals.analysis_level[globals.analysis]
             for num_abeille in self.RES.keys():
-                print(num_abeille)
+                results = self.RES[num_abeille]
+                ds, hi = None, None
                 logging.info(f"Abeille n°{num_abeille}")
-                ci, ds = get_ci_ds(float(self.RES[num_abeille][0]), float(self.RES[num_abeille][1]))
-                logging.info(f"Ci : {ci}, Ds : {ds}°")
-                print(ci, ds)
+                ci = format_ci(results[0])
                 cla = H.get_classes([float(ci)])
-                self.label_results[num_abeille-1].setText(
-                    f"<u>Abeille #{num_abeille}</u> <br /> Ci : {ci} <br /> Ds : {ds}° <br /> Classe : {cla}")
+                if level == 2:
+                    ds = format_ds(results[1]) if len(results) > 1 else None
+                if level == 3:
+                    ds = format_ds(results[1]) if len(results) > 1 else None
+                    hi = format_hi(results[2]) if len(results) > 2 else None
+                    print("ououou", hi)
+                logging.info(f"Ci : {ci}, Ds : {ds}°, Hi : {hi}")
+                txt = text_result_IHM(ci, cla, ds=ds, hi=hi)
+                # self.label_results[num_abeille-1].setText(
+                #     f"<u>Abeille #{num_abeille}</u> <br /> Ci : {ci} <br /> Ds : {ds}° <br /> Classe : {cla}")
+                self.label_results[num_abeille-1].setText(txt)
                 globals.edited[num_abeille] = 1
                 globals.loaded[num_abeille] = 1
             for file in os.listdir(self.in_):

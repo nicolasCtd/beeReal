@@ -1,8 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import logging
+from datetime import datetime
 
-def get_zoom_center(file):
+def get_zoom_boundaries(file):
     """
     Extrait les bornes spatiales xmin, xmax, ymin, ymax à partir du nom du fichier.
     
@@ -82,6 +83,18 @@ def compute_discoidal_shift(point1, point2, ds_points):
     delta = ds_points[3].j - U.get_x(ds_points[3].i)
     return np.sign(delta) *  np.arccos(dot/(U.distance * V.distance)) * 180/np.pi
 
+def compute_hantel_index(hg, hd, bg, bd):
+    """
+    point hg : haut + gauche
+    point hd : haut + droite
+    point bg : bas + gauche
+    point bd : bas + droite
+    """
+    distance_segment_haut = DROITE(hg, hd).distance
+    distance_segment_bas = DROITE(bg, bd).distance
+
+    return distance_segment_bas / distance_segment_haut
+
 class IMAGE():
     """Classe permettant de charger et editer une image."""
     def __init__(self):
@@ -98,6 +111,7 @@ class IMAGE():
         self.nb_col = 0
         self.ci_points = list()
         self.ds_points = list()
+        self.hi_points = list()
     
     def load(self, path):
         """
@@ -117,24 +131,48 @@ class IMAGE():
             self.data = np.stack((self.data,)*3, axis=-1)   # convert to RGB
         self.nb_lignes = self.data.shape[0]
         self.nb_col = self.data.shape[1]
-        
+
+    def load2(self, data):
+        self.name = ""
+        self.data = data 
+        if self.data.ndim == 2:    #image grayscale
+            self.data = np.stack((self.data,)*3, axis=-1)   # convert to RGB
+        self.nb_lignes = self.data.shape[0]
+        self.nb_col = self.data.shape[1]
+    
+    # def highlight(self, node, color, rayon=5):
+    #     """
+    #     Place un point de couleur sur l'image.
+
+    #     Args:
+    #         node (POINT): Point dans l'image.
+    #         color (tuple[int, int, int]): Couleur RGB du point.
+    #         rayon (int): Taille en pixels du rayon du point.
+    #     """
+    #     y, x = np.meshgrid(np.arange(self.nb_col), np.arange(self.nb_lignes))
+    #     dot_ci = (np.sqrt(np.abs(node.i - x)**2 + np.abs(node.j-y)**2) <= rayon) * 1
+    #     idx_ci_i, idx_ci_j = np.where(dot_ci == 1)
+    #     # Color the point that has been identified
+    #     for i, j in zip(idx_ci_i, idx_ci_j):
+    #         self.data[i, j][0] = color[0]
+    #         self.data[i, j][1] = color[1]
+    #         self.data[i, j][2] = color[2]
+
     def highlight(self, node, color, rayon=5):
         """
         Place un point de couleur sur l'image.
-
-        Args:
-            node (POINT): Point dans l'image.
-            color (tuple[int, int, int]): Couleur RGB du point.
-            rayon (int): Taille en pixels du rayon du point.
         """
-        y, x = np.meshgrid(np.arange(self.nb_col), np.arange(self.nb_lignes))
-        dot_ci = (np.sqrt(np.abs(node.i - x)**2 + np.abs(node.j-y)**2) <= rayon) * 1
-        idx_ci_i, idx_ci_j = np.where(dot_ci == 1)
-        # Color the point that has been identified
-        for i, j in zip(idx_ci_i, idx_ci_j):
-            self.data[i, j][0] = color[0]
-            self.data[i, j][1] = color[1]
-            self.data[i, j][2] = color[2]
+
+        i_min = max(0, node.i - rayon)
+        i_max = min(self.nb_lignes, node.i + rayon + 1)
+
+        j_min = max(0, node.j - rayon)
+        j_max = min(self.nb_col, node.j + rayon + 1)
+
+        for i in range(i_min, i_max):
+            for j in range(j_min, j_max):
+                if (i - node.i)**2 + (j - node.j)**2 <= rayon**2:
+                    self.data[i, j] = color
     
     def draw_ci_lines(self, clr):
         """
@@ -143,8 +181,15 @@ class IMAGE():
         Args:
             clr (tuple[int, int, int]): Couleur des segments.
         """
+        print(self.ci_points[0], self.ci_points[1] )
         DROITE(self.ci_points[0], self.ci_points[1]).draw(self, 2, 2, color=clr)
         DROITE(self.ci_points[1], self.ci_points[2]).draw(self, 2, 2, color=clr)
+
+    def draw_hi_lines(self, clr):
+        """"""
+        DROITE(self.hi_points[0], self.ds_points[1]).draw(self, 2, 2, color=clr)
+        DROITE(self.ci_points[0], self.ci_points[2]).draw(self, 2, 2, color=clr)
+
     
     def draw_ds_line_02(self, clr):
         """
@@ -207,6 +252,18 @@ class IMAGE():
         y = y[y>0]
         distance = np.sqrt((x - point_ds_line_02_perp_1.j) **2 + (y - point_ds_line_02_perp_1.i) ** 2)
         delta = np.abs(distance - distance_ref)
+
+        print("DEBUG -- DEBUG")
+        print("point1:", point_ds_line_02_perp_1.i, point_ds_line_02_perp_1.j)
+        print("ds point 1:", self.ds_points[1].i, self.ds_points[1].j)
+        print("distance_ref:", distance_ref)
+        print("x size:", x.size)
+        print("y size:", y.size)
+        print("distance:", distance)
+        print("delta:", delta)
+        print("NaN delta:", np.isnan(delta).any())
+
+
         idx = int(np.where(delta == np.min(delta))[0][0])
         point_ds_line_02_perp_2.i = int(y[idx])
         point_ds_line_02_perp_2.j = int(x[idx])
@@ -217,21 +274,28 @@ class IMAGE():
     
 class POINT():
     """Représente un point avec des coordonnées et une couleur"""
-    def __init__(self):
+    def __init__(self, i=0, j=0, color=(0, 0, 255), label=""):
         """
         Attributes:
             i (int): Numéro de ligne du pixel au centre du point (coordonnée y).
             j (int): Numéro de colonne du pixel au centre du point (coordonnée x).
             color (tuple[int, int, int]): Couleur du point.
         """
-        self.i = 0
-        self.j = 0
-        self.color = (0, 0, 255)
-    
-    def __str__(self) -> str:
-        print(f"i : {self.i}")
-        print(f"j : {self.j}")
+        self.i = i
+        self.j = j
+        self.color = color
+        self.label = label
 
+    def __str__(self) -> str:
+        return f"i : {self.i}\nj : {self.j}"
+
+    def shifted(self, di, dj):
+        return POINT(
+            i=self.i + di,
+            j=self.j + dj,
+            color=self.color,
+            label=self.label,
+        )
 
 class DROITE():
     """

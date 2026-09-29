@@ -17,15 +17,28 @@ def copytree(src, dst):
 def clean(value):
     return str(value).replace("[", "").replace("]", "")
 
-def get_ci_ds(ci_value, ds_value):
-    ci = int(ci_value * 100)/100
-    ds_ = clean(ds_value)
+# def get_ci_ds(ci_value, ds_value):
+#     ci = int(ci_value * 100)/100
+#     ds_ = clean(ds_value)
     
-    tt = "+"
-    if float(ds_) < 0:
-        tt = "-"
+#     tt = "+"
+#     if float(ds_) < 0:
+#         tt = "-"
 
-    return str(ci), tt + str(np.abs(int(float(ds_)*100)/100))
+#     return str(ci), tt + str(np.abs(int(float(ds_)*100)/100))
+
+def format_ci(value):
+    if value is None:
+        return None
+    return f"{float(value):.2f}"
+
+format_hi = format_ci
+
+def format_ds(value):
+    if value is None:
+        return None
+    value = float(clean(value))
+    return f"{value:+.2f}"
 
 def load_results(file):
     res = {}
@@ -33,26 +46,26 @@ def load_results(file):
         a = f.readlines()
     for i in range(len(a)-1):
         line = a[i+1].replace("\n", "").split(" ")
-        res[int(line[0])] = (line[1], line[2], line[3])
+        res[int(line[0])] = (line[1], line[2], line[3], line[4])
     return res
 
 def save_results_txt(path, res):
     liste_abeilles = [int(key) for key in res.keys()]
     with open(path + "results.txt", "w") as f:
-        line = f"num indice_cubital angle_discoidal enabled\n"
+        line = f"num indice_cubital classe angle_discoidal indice_hantel enabled\n"
         f.write(line)
         for num in sorted(liste_abeilles):
-            line = f"{num} {clean(res[num][0])} {res[num][1]} {globals.enabled[num]}\n"
+            line = f"{num} {clean(res[num][0])} {res[num][1]} {res[num][2]} {res[num][3]} {globals.enabled[num]}\n"
             f.write(line)
     f.close()
     return 0
 
-def write_line(file, num, ci_value, ds_value):
-    line = f"{num} {ci_value} {ds_value}\n"
-    with open(file, "a") as f:
-        f.write(line)
-    f.close()
-    return 0
+# def write_line(file, num, ci_value, ds_value):
+#     line = f"{num} {ci_value} {ds_value}\n"
+#     with open(file, "a") as f:
+#         f.write(line)
+#     f.close()
+#     return 0
 
 def insertnow(file):       
     now = datetime.now()
