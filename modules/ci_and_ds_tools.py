@@ -179,7 +179,7 @@ class IMAGE():
         Trace deux segments (par défaut en bleu) qui relient les 3 points CI.
         
         Args:
-            clr (tuple[int, int, int]): Couleur des segments.
+            clr (tuple[int, int, int]): Couleur des segments.MAJOR 
         """
         print(self.ci_points[0], self.ci_points[1] )
         DROITE(self.ci_points[0], self.ci_points[1]).draw(self, 2, 2, color=clr)
@@ -232,39 +232,38 @@ class IMAGE():
                 u = (self.ds_points[2].j - self.ds_points[0].j, self.ds_points[2].i - self.ds_points[0].i)
                 v = (Px_test - self.ds_points[1].j, Py_test - self.ds_points[1].i)
                 dot_product[Py_test, Px_test] = u[0] * v[0] + u[1] * v[1]
+
         Py, Px = np.where(np.abs(dot_product) == np.min(np.abs(dot_product)))
 
-        if len(Py)>1:
+        if len(Py) > 1:
             txt = "draw_ds_line_02_perpendicular(): la recherche + précise d'un autre pixel "
             txt += "appartenant à la droite perpendiculaire à la première n'a pas marché"
             logging.info(txt)
             Py, Px = Pyy, Pxx
+        else:
+            Py, Px = int(Py[0]), int(Px[0])
 
         point_ds_line_02_perp_1.i = Py
         point_ds_line_02_perp_1.j = Px
         point_ds_line_02_perp_1.color = self.ds_points[0].color
         # Now find another point far from the second DS point but in the same alignment
         distance_ref = 0.8 * DROITE(self.ds_points[0], self.ds_points[2]).distance
-        small_line = DROITE(point_ds_line_02_perp_1, self.ds_points[1])
-        x = np.arange(self.nb_col)
-        y = small_line.get_y(x)
-        x = x[y>0]
-        y = y[y>0]
+
+        if point_ds_line_02_perp_1.j == self.ds_points[1].j:
+            # Vertical line
+            y = np.arange(self.nb_lignes)
+            x = np.full(y.shape, point_ds_line_02_perp_1.j)
+        else:
+            small_line = DROITE(point_ds_line_02_perp_1, self.ds_points[1])
+            x = np.arange(self.nb_col)
+            y = small_line.get_y(x)
+            x = x[y > 0]
+            y = y[y > 0]
+
         distance = np.sqrt((x - point_ds_line_02_perp_1.j) **2 + (y - point_ds_line_02_perp_1.i) ** 2)
         delta = np.abs(distance - distance_ref)
 
-        print("DEBUG -- DEBUG")
-        print("point1:", point_ds_line_02_perp_1.i, point_ds_line_02_perp_1.j)
-        print("ds point 1:", self.ds_points[1].i, self.ds_points[1].j)
-        print("distance_ref:", distance_ref)
-        print("x size:", x.size)
-        print("y size:", y.size)
-        print("distance:", distance)
-        print("delta:", delta)
-        print("NaN delta:", np.isnan(delta).any())
-
-
-        idx = int(np.where(delta == np.min(delta))[0][0])
+        idx = int(np.nanargmin(delta))
         point_ds_line_02_perp_2.i = int(y[idx])
         point_ds_line_02_perp_2.j = int(x[idx])
         DROITE(point_ds_line_02_perp_1, point_ds_line_02_perp_2).draw(self, 2, 5, color=clr)

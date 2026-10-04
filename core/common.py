@@ -319,6 +319,9 @@ class EDIT(QMainWindow):
             logging.info(f"Point Ds n°3 : (i,j)=({image.ds_points[2].i}, {image.ds_points[2].j})")
             logging.info(f"Point Ds n°4 : (i,j)=({image.ds_points[3].i}, {image.ds_points[3].j})")
 
+        if globals.analysis_level[globals.analysis] == 2:
+            logging.info(f"Point Hi : (i,j)=({image.hi_points[0].i}, {image.hi_points[0].j})")
+
         image.draw_ci_lines(self.color_ci)
         self.ci_value = compute_cubital_index(image.ci_points)
         logging.info(f"Indice cubital Abeille #{self.NUM}) : {self.ci_value}")
@@ -354,17 +357,18 @@ class EDIT(QMainWindow):
         H = HISTOGRAM(indices=[], path="", id_bees=[], save_abacus=0) # seulement utilisé pour utiliser la fonction get_classes()
         ci_class = H.get_classes([self.ci_value])[0]
 
-        self.RES[int(self.NUM)] = (clean(self.ci_value), ci_class, None, None)
+        #   CI  CLASS   DS  HI
+        self.RES[int(self.NUM)] = (ci, ci_class, None, None)
 
         ds = None
         if globals.analysis_level[globals.analysis] > 1:
             ds = format_ds(self.ds_value)
-            self.RES[int(self.NUM)] = (clean(self.ci_value), ci_class, clean(self.ds_value), None)
+            self.RES[int(self.NUM)] = (ci, ci_class, ds, None)
 
         hi = None
         if globals.analysis_level[globals.analysis] > 2:
             hi = format_hi(self.hi_value)
-            self.RES[int(self.NUM)] = (clean(self.ci_value), ci_class, clean(self.ds_value), clean(self.hi_value))
+            self.RES[int(self.NUM)] = (ci, ci_class, ds, hi)
         
         self.LAB_RES[self.NUM-1].setContentsMargins(30, 0, 0, 0)
 
@@ -385,8 +389,6 @@ class EDIT(QMainWindow):
         draw = ImageDraw.Draw(img)
         # Define text attributes
         num = self.NUM
-        # ci = int(self.ci_value*100)/100
-        # ds = int(self.ds_value*100)/100
 
         ci = format_ci(self.ci_value)
 
@@ -431,130 +433,6 @@ class EDIT(QMainWindow):
         # Set the cursor to a cross cursor
         # self.setCursor(Qt.CrossCursor)
         self.label.mousePressEvent = self.getPos_hi
-
-    # def set_points(self):
-    #     """"""
-
-    #     self.list_of_images = [self.original_image]
-    #     self.list_of_images_zoom = []
-
-    #     data_source = self.original_image.data.copy()
-       
-    #     if self.count_zoom > 0:
-    #         new_image_zoom = IMAGE()
-    #         new_image_zoom.load2(data_source[self.y_min:self.y_max, self.x_min:self.x_max, :])
-    #         self.list_of_images_zoom.append(copy.deepcopy(new_image_zoom))
-    #         for point in self.list_of_points:
-    #             point_zoom = point.shifted(di=-self.y_min, dj=-self.x_min)
-    #             new_image_zoom.highlight(point_zoom, self.colors[point.label])
-    #             self.list_of_images_zoom.append(copy.deepcopy(new_image_zoom))
-
-    #     new_image = IMAGE()
-    #     new_image.load2(data_source)
-    #     for point in self.list_of_points:
-    #         new_image.highlight(point, self.colors[point.label])
-    #         self.list_of_images.append(copy.deepcopy(new_image))
-
-    #     if self.count_zoom > 0:
-    #         data = np.ascontiguousarray(self.list_of_images_zoom[-1].data, dtype=np.uint8)
-    #     else:
-    #         data = np.ascontiguousarray(self.list_of_images[-1].data, dtype=np.uint8)
-
-    #     h, w, channels = data.shape
-
-    #     qimage = QImage(
-    #         data.tobytes(),
-    #         w,
-    #         h,
-    #         3 * w,
-    #         QImage.Format_RGB888,
-    #     )
-
-    #     self.refresh_buttons()
-
-    #     return QPixmap.fromImage(qimage.copy())
-
-    # def set_points(self):
-    #     """"""
-
-    #     data_source = self.original_image.data.copy()
-
-
-    #     if self.count_zoom > 0:
-    #         data_source = data_source[
-    #             self.y_min:self.y_max,
-    #             self.x_min:self.x_max,
-    #             :
-    #         ]
-
-    #     # if self.count_zoom > 0:
-    #     #     new_image_zoom = IMAGE()
-    #     #     new_image_zoom.load2(data_source[self.y_min:self.y_max, self.x_min:self.x_max, :])
-    #     #     self.list_of_images_zoom.append(copy.deepcopy(new_image_zoom))
-    #     #     for point in self.list_of_points:
-    #     #         point_zoom = point.shifted(di=-self.y_min, dj=-self.x_min)
-    #     #         new_image_zoom.highlight(point_zoom, self.colors[point.label])
-    #     #         self.list_of_images_zoom.append(copy.deepcopy(new_image_zoom))
-
-    #     # new_image = IMAGE()
-    #     # new_image.load2(data_source)
-
-    #     image = IMAGE()
-    #     image.load2(data_source)
-
-    #     for point in self.list_of_points:
-    #         if self.count_zoom > 0:
-    #             point_display = point.shifted(
-    #                 di=-self.y_min,
-    #                 dj=-self.x_min,
-    #             )
-    #         else:
-    #             point_display = point
-
-    #     image.highlight(
-    #         point_display,
-    #         self.colors[point.label],
-    #     )
-
-    #     # for point in self.list_of_points:
-    #     #     new_image.highlight(point, self.colors[point.label])
-    #     #     self.list_of_images.append(copy.deepcopy(new_image))
-
-    #     # if self.count_zoom > 0:
-    #     #     data = np.ascontiguousarray(self.list_of_images_zoom[-1].data, dtype=np.uint8)
-    #     # else:
-    #     #     data = np.ascontiguousarray(self.list_of_images[-1].data, dtype=np.uint8)
-
-    #     data = np.ascontiguousarray(image.data, dtype=np.uint8)
-
-    #     h, w, _ = data.shape
-
-    #     qimage = QImage(
-    #         data.tobytes(),
-    #         w,
-    #         h,
-    #         3 * w,
-    #         QImage.Format_RGB888,
-    #     )
-
-    #     self.refresh_buttons()
-
-    #     return QPixmap.fromImage(qimage.copy())
-
-
-    #     # h, w, channels = data.shape
-
-    #     # qimage = QImage(
-    #     #     data.tobytes(),
-    #     #     w,
-    #     #     h,
-    #     #     3 * w,
-    #     #     QImage.Format_RGB888,
-    #     # )
-
-    #     # self.refresh_buttons()
-
-    #     # return QPixmap.fromImage(qimage.copy())
 
 
     def set_points(self):

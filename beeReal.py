@@ -463,7 +463,7 @@ class ALL_TABS(QWidget):
         self.BTN_params_reset.setText("Reset")
 
         self.visualisation = QComboBox()
-        self.visualisation.addItems(['RUTTNER (100/60)', 'DREHER (100/50)'])
+        self.visualisation.addItems(['RUTTNER', 'DREHER'])
         self.visualisation.setCurrentText('RUTTNER')
 
         self.y_max = QComboBox()
@@ -502,15 +502,21 @@ class ALL_TABS(QWidget):
         self.btn_tab0_launch_analysis = QPushButton(f"Launch\nanalysis\n{self.analyse_name}")
         label0 = QLabel("Name of the analysis: ")
         self.lbl_tab0_analyse_name = QLabel(self.analyse_name)
-        label1 = QLabel("<u>Histogram of Cubital Index<u>")
-        label2 = QLabel("<u>Cubital Index / Discoidal Shift<u>")
+        self.label1 = QLabel("<u>Histogram of Cubital Index<u>")
+        self.label2 = QLabel("<u>Discoidal Shift / Cubital Index<u>")
         # self.edit_analyse_name = QLineEdit()
 
         self.btn_tab0_extra_plot = QPushButton(f"Add Deepwings data")
         self.btn_tab0_extra_plot.setEnabled(self.switch_extra_plot)
 
-        label1.setStyleSheet("margin-bottom: 50px;")
-        label2.setStyleSheet("margin-bottom: 50px;")
+        self.btn_tab0_next_image_left = QPushButton(f"next")
+        self.btn_tab0_next_image_right = QPushButton(f"next")
+
+        self.btn_tab0_next_image_left.clicked.connect(self.next_image_left)
+        self.btn_tab0_next_image_right.clicked.connect(self.next_image_right)
+
+        self.label1.setStyleSheet("margin-bottom: 50px;")
+        self.label2.setStyleSheet("margin-bottom: 50px;")
         self.btn_tab0_extra_plot.setStyleSheet("margin-bottom: 50px;")
 
         self.btn_tab0_edit_name_analysis = QPushButton("Edit")
@@ -521,8 +527,8 @@ class ALL_TABS(QWidget):
         my_font3 = QFont("Chalkduster", 13)
         my_font4 = QFont("Chalkduster", 11)
 
-        label1.setFont(my_font)
-        label2.setFont(my_font)
+        self.label1.setFont(my_font)
+        self.label2.setFont(my_font)
         label0.setFont(my_font2)
         self.btn_tab0_load_analysis.setFont(my_font3)
         self.btn_tab0_edit_name_analysis.setFont(my_font3)
@@ -592,10 +598,13 @@ class ALL_TABS(QWidget):
         layout_main_2.addWidget(image_empty1, 1, 0, 8, 8)
         layout_main_2.addWidget(image_empty2, 1, 10, 8, 8)
 
-        layout_main_2.addWidget(label1, 1, 2, 1, 5)
-        layout_main_2.addWidget(label2, 1, 12, 1, 5)
+        layout_main_2.addWidget(self.label1, 1, 2, 1, 5)
+        layout_main_2.addWidget(self.label2, 1, 12, 1, 5)
 
-        layout_main_2.addWidget(self.btn_tab0_extra_plot, 1, 0, 1, 1)
+        # layout_main_2.addWidget(self.btn_tab0_extra_plot, 1, 0, 1, 1)
+
+        layout_main_2.addWidget(self.btn_tab0_next_image_left, 14, 6, 1, 1)
+        layout_main_2.addWidget(self.btn_tab0_next_image_right, 14, 16, 1, 1)
 
         self.btn_tab0_load_analysis.clicked.connect(self.load_project)
         self.btn_tab0_save_analysis.clicked.connect(self.save_project)
@@ -771,6 +780,32 @@ class ALL_TABS(QWidget):
 
         self.tabs.setCurrentIndex(0)
 
+    def next_image_left(self):
+        self.indice_image_left = (self.indice_image_left + 1) % len(self.IMAGES_left)
+        pixmap = QPixmap(self.IMAGES_left[self.indice_image_left])
+        self.label_analyses[0].setPixmap(pixmap)
+        if "histo" in self.IMAGES_left[self.indice_image_left]:
+            self.label1.setText("<u>Histogram of Cubital Index</u>")
+        elif "_ds_ci" in self.IMAGES_left[self.indice_image_left]:
+            self.label1.setText("<u>Discoidal Shift / Cubital Index</u>")
+        elif "_hi_ci" in self.IMAGES_left[self.indice_image_left]:
+            self.label1.setText("<u>Hantel Index / Cubital Index</u>")
+        else:
+            pass
+
+    def next_image_right(self):
+        self.indice_image_right = (self.indice_image_right + 1) % len(self.IMAGES_right)
+        pixmap = QPixmap(self.IMAGES_right[self.indice_image_right])
+        self.label_analyses[1].setPixmap(pixmap)
+        if "histo" in self.IMAGES_left[self.indice_image_left]:
+            self.label1.setText("<u>Histogram of Cubital Index</u>")
+        elif "_ds_ci" in self.IMAGES_left[self.indice_image_left]:
+            self.label1.setText("<u>Discoidal Shift / Cubital Index</u>")
+        elif "_hi_ci" in self.IMAGES_left[self.indice_image_left]:
+            self.label1.setText("<u>Hantel Index / Cubital Index</u>")
+        else:
+            pass
+
     def params_apply_button(self):
         """"""
         globals.classif = self.visualisation.currentText()
@@ -826,7 +861,7 @@ class ALL_TABS(QWidget):
 
     def edit_analysis_name(self):
         """Ask the user for a new analysis name, update UI elements, and rename the log file."""
-        text, okPressed = QInputDialog.getText(self, " ", "Entrer le nom de l'analyse :", QLineEdit.Normal, "")
+        text, okPressed = QInputDialog.getText(self, " ", "Entrer le nom de l'analyse :", QLineEdit.Normal, self.analyse_name)
         if okPressed and text != '':
             self.lbl_tab0_analyse_name.setText(text)
             self.btn_tab0_save_analysis.setText(f"Save\nanalysis\n{text}")
@@ -947,26 +982,110 @@ class ALL_TABS(QWidget):
             logging.info(msg)
         else:
             logging.info("calcul de l'histogramme de l'indice cubital")
-            self.indices = []
-            self.shifts = []
-            self.id_bees = []
-            for abeille in self.RES.keys():
-                if globals.enabled[abeille]:
-                    self.indices.append(float(self.RES[abeille][0]))
-                    self.shifts.append(float(self.RES[abeille][1]))
-                    self.id_bees.append(abeille)
-            ci_images, ds_image, HISTO = analyse(self.indices, self.shifts, self.id_bees, path_out=self.out, visu=globals.classif)
-            for image in ci_images:
+
+            missing_bees_2 = []    # abeilles pour lesquelles la valeur de shift est manquante
+            missing_bees_3 = []    # abeilles pour lesquelles la valeur de l'indice de Hantel est manquante
+
+            message_missing_bees_2 = "Warning!\n\nDiscoidal shifts are missing for bees "
+            message_missing_bees_3 = "Warning!\n\nHantel index are missing for bees "
+
+
+            level = globals.analysis_level[globals.analysis]
+
+            bees_1 = list()
+            bees_2 = list()
+            bees_3 = list()
+            cubitals_1 = list()
+            cubitals_2 = list()
+            cubitals_3 = list()
+            shifts_2 = list()
+            hantels_3 = list()
+
+            for bee in self.RES.keys():
+                if globals.enabled[bee]:
+                    bees_1.append(bee)
+                    ic = float(self.RES[bee][0])
+                    cubitals_1.append(ic)
+
+            if  level >= 2:
+
+                for bee in self.RES.keys():
+                    ic =  self.RES[bee][0]
+                    ds =  self.RES[bee][2]
+
+                    if globals.enabled[bee] and ds is not None:
+                        bees_2.append(bee)
+                        cubitals_2.append(float(ic))
+                        shifts_2.append(float(ds))
+                    else:
+                        missing_bees_2.append(bee)
+
+            if  level == 3:
+
+                for bee in self.RES.keys():
+                    ic =  self.RES[bee][0]
+                    hi =  self.RES[bee][3]
+
+                    if globals.enabled[bee] and hi is not None:
+                        bees_3.append(bee)
+                        cubitals_3.append(float(ic))
+                        hantels_3.append(float(hi))
+                    else:
+                        missing_bees_3.append(bee)
+
+            if len(missing_bees_2) > 0:
+                self.dialog = MESSAGE()
+                self.dialog.message(msg=f"{message_missing_bees_2}{missing_bees_2}")
+
+            if len(missing_bees_3) > 0:
+                self.dialog = MESSAGE()
+                self.dialog.message(msg=f"{message_missing_bees_3}{missing_bees_3}")
+            
+            H = HISTOGRAM(indices=cubitals_1, id_bees=bees_1, visu=globals.classif, path=self.out)
+            ci_images = H.plot_histogram(show=False, save=True)
+
+            ds_image = None
+            if level >= 2:
+                H = HISTOGRAM(indices=cubitals_2, id_bees=bees_2, visu=globals.classif, path=self.out)
+                ds_image = H.scatter_plot(path=self.out, id_bees=bees_2, indices=cubitals_2, shifts=shifts_2, name_fig='_ds_ci')
+
+            hi_image = None
+            if level == 3:
+                print("scatter plot hi")
+                hi_image = scatter_plot_hi_ci(path=self.out, indices=cubitals_3, hi=hantels_3, id_bees=bees_3, name_fig='_hi_ci')
+
+
+            # ci_images, ds_image, HISTO = analyse(self.indices, self.shifts, self.id_bees, path_out=self.out, visu=globals.classif)
+            self.IMAGES_left = list()
+            self.indice_image_left = 0
+            for count, image in enumerate(ci_images):
                 if "mellifera" in image:
-                    ci_image = image 
-            pixmap = QPixmap(ci_image)
+                    self.indice_image_left = count
+
+            self.IMAGES_left += ci_images
+
+            self.IMAGES_right = []
+            if ds_image is not None:
+                self.IMAGES_left.append(ds_image)
+                self.IMAGES_right.append(ds_image)
+
+            if hi_image is not None:
+                self.IMAGES_left.append(hi_image)
+                self.IMAGES_right.append(hi_image)
+            
+            self.IMAGES_right += ci_images
+
+            self.indice_image_right = 0
+
+            pixmap = QPixmap(self.IMAGES_left[self.indice_image_left])
             self.label_analyses[0].setPixmap(pixmap)
-            pixmap = QPixmap(ds_image)
+
+            pixmap = QPixmap(self.IMAGES_right[self.indice_image_right])
             self.label_analyses[1].setPixmap(pixmap)
             # self.setFixedSize(self.tab0.layout.sizeHint())()
             self.resize(self.tab0.sizeHint().width(), self.tab0.sizeHint().height())
-            self.switch_extra_plot = True
-            self.btn_tab0_extra_plot.setEnabled(self.switch_extra_plot)
+            # self.switch_extra_plot = True
+            # self.btn_tab0_extra_plot.setEnabled(self.switch_extra_plot)
     
     def add_histogram(self):
         """Ajoute un histogramme sur le graphe de gauche afin de comparer l'histogramme obtenu avec ce logiciel

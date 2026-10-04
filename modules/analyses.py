@@ -78,7 +78,8 @@ class HISTOGRAM():
             delta = 100 / 50
         elif self.visu == "RUTTNER":
             delta = 100 / 60
-
+        print(delta)
+        print(type(delta))
         CLASSES = list()
         INDICES = list()
         for i in range(-5, 20):
@@ -328,7 +329,7 @@ class HISTOGRAM():
 
         xmax = 3
     
-        abeilles_noires = (indices < 2.05) &  (indices > 1) & (shifts < 0.1)
+        abeilles_noires = (indices < 2.05) & (indices > 1) & (shifts < 0.1)
         autres_abeilles = ~(abeilles_noires)
 
         ratio = int(len(indices[abeilles_noires])/indices.size*100)
@@ -342,42 +343,24 @@ class HISTOGRAM():
         if add_plot:
             plt.plot(x_add, y_add, "^", color="red", markersize=3)
 
-            # # Transformer en matrices Nx2
-            # A = np.column_stack((indices, x_add))
-            # B = np.column_stack((shifts, y_add))
-
-            # mtx1, mtx2, disparity = procrustes(A, B)
-            # print("Disparité Procrustes (0 = identique) :", disparity)
-            # print(id_bees)
-            # print("--")
-            # print(id_bees_add)
-            # print("X")
-            # print(indices)
-            # print("x4")
-            # print(x_add)
-            # print("Y")
-            # print(shifts)
-            # print("Y'")
-            # print(y_add)
-
         # add bee number on the graph
         for i in range(len(id_bees)):
-            if autres_abeilles.squeeze()[i] or abeilles_noires.squeeze()[i]:
+            if autres_abeilles[i] or abeilles_noires[i]:
             # plt.text(indices[autres_abeilles][i], shifts[autres_abeilles][i], id_bees[autres_abeilles.squeeze()][i])
-                plt.text(indices.squeeze()[i], shifts.squeeze()[i], id_bees[i], fontsize=8)
+                plt.text(indices[i], shifts[i], id_bees[i], fontsize=8)
 
         for i in range(len(x_add)):
             plt.text(x_add[i], y_add[i], id_bees_add[i], fontsize=7, color='red')
 
         ax = plt.gca()
         # ax.fill_between([1, 2], [-np.max(np.abs(shifts)), -np.max(np.abs(shifts))], color='grey', alpha=0.5)
-        ax.fill_between([1, 2], [-globals.y_max_scatter_plot, -globals.y_max_scatter_plot], color='grey', alpha=0.5)
+        ax.fill_between([1, 2], [-float(globals.y_max_scatter_plot), -float(globals.y_max_scatter_plot)], color='grey', alpha=0.5)
         ax.tick_params(axis='x', labelsize=8)
         ax.tick_params(axis='y', labelsize=8)
 
         #plt.ylim([-np.max(np.abs(shifts)), +np.max(np.abs(shifts))])
         #plt.ylim([-2.5*np.std(shifts), +2.5*np.std(shifts)])
-        plt.ylim([-globals.y_max_scatter_plot, +globals.y_max_scatter_plot])
+        plt.ylim([-float(globals.y_max_scatter_plot), +float(globals.y_max_scatter_plot)])
         plt.xlim([1, xmax])
 
         # mean = np.mean(indices)
@@ -424,7 +407,9 @@ def analyse(indices, shifts, id_bees, visu="RUTTNER", path_out=""):
 
     list_of_ci_images = H.plot_histogram(show=False, save=True)
 
-    ds_image = H.scatter_plot(path=path_out, id_bees=id_bees, indices=[indices], shifts=[shifts])
+    ds_image = None
+    if globals.analysis_level[globals.analysis] > 1:
+        ds_image = H.scatter_plot(path=path_out, id_bees=id_bees, indices=[indices], shifts=[shifts])
 
     return list_of_ci_images, ds_image, H
 
@@ -439,6 +424,69 @@ def analyse2(indices, shifts, id_bees, indices_add, shifts_add, id_bees_add, LEG
                               id_bees=id_bees, id_bees_add=id_bees_add, path=path_out, name_fig="add_plot")
 
     return list_of_ci_images, ds_image, H
+
+
+
+
+def scatter_plot_hi_ci(path="", indices=list(), hi=list(), id_bees=list(), name_fig="", title=""):
+    
+    fig, ax = plt.subplots(figsize=(HEIGHT/dpi, WIDTH/dpi), dpi=dpi)
+
+    indices = np.array(indices)
+    hi = np.array(hi)
+
+    abeilles_noires = (indices < 2.05) & (indices > 1) & (hi > 0.6) & (hi < 0.92)
+    autres_abeilles = ~(abeilles_noires)
+
+    ratio = int(len(indices[abeilles_noires])/indices.size*100)
+
+    plt.plot(indices[abeilles_noires], hi[abeilles_noires], "*", 
+            color="black", markersize=8, 
+            label=f"mellifera mellifera: {len(indices[abeilles_noires])}/{indices.size} ({ratio}%)")
+    
+    plt.plot(indices[autres_abeilles], hi[autres_abeilles], "*", color="blue", markersize=8)
+
+    print("-----------------------++++")
+    print(indices[autres_abeilles], hi[autres_abeilles])
+
+    # add bee number on the graph
+    for i in range(len(id_bees)):
+        if autres_abeilles[i] or abeilles_noires[i]:
+        # plt.text(indices[autres_abeilles][i], shifts[autres_abeilles][i], id_bees[autres_abeilles.squeeze()][i])
+            plt.text(indices[i], hi[i], id_bees[i], fontsize=8)
+
+    ax = plt.gca()
+    ax.fill_between([1, 2], 0.6, 0.92, color='grey', alpha=0.5)
+    # ax.fill_between([1, 2], [-float(globals.y_max_scatter_plot), -float(globals.y_max_scatter_plot)], color='grey', alpha=0.5)
+    ax.tick_params(axis='x', labelsize=8)
+    ax.tick_params(axis='y', labelsize=8)
+
+    #plt.ylim([-np.max(np.abs(shifts)), +np.max(np.abs(shifts))])
+    #plt.ylim([-2.5*np.std(shifts), +2.5*np.std(shifts)])
+    plt.ylim([0.5, 2])
+    plt.xlim([1, 3])
+
+    # mean = np.mean(indices)
+    # std = np.std(indices)
+    plt.xlim([1, 3])
+    plt.axhline(0.92, color="darkgrey", linewidth=5, zorder=0)
+    plt.axvline(2, color="darkgrey", linewidth=5, zorder=0)
+    plt.grid()
+    # plt.ylabel("Transgression discoïdale (°)", fontweight='bold', fontsize=14)
+    plt.ylabel("Hantel index (-)", fontsize=10, fontweight='light')
+    # plt.xlabel("Indice cubital (-)", fontweight='bold', fontsize=14)
+    plt.xlabel("Cubital index (-)", fontsize=10, fontweight='light')
+    #plt.tight_layout()
+    # plt.title(title)
+    plt.legend()
+    if name_fig != "":
+        name_fig = "_" + name_fig
+    hi_ci_image = f"{path}{os.sep}scatter_plot_hi_ci{name_fig}.png"
+
+    plt.savefig(hi_ci_image, dpi=dpi)
+    # plt.show()
+    plt.close()
+    return hi_ci_image
 
 
 if __name__ == '__main__':
