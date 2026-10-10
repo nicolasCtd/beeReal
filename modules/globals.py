@@ -8,7 +8,8 @@ media = ''
 future = ''
 
 classif = "RUTTNER"
-y_max_scatter_plot = 6
+y_max_scatter_plot_discoidal = 6
+y_max_scatter_plot_hantel = 1.5
 
 analysis_level = {"Cubital Index":1, "Cubital Index + Discoidal Shift":2, "Cubital Index + Discoidal Shift + Hantel Index":3}
 analysis = "Cubital Index"

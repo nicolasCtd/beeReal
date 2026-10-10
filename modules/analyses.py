@@ -4,6 +4,7 @@ import numpy as np
 import os
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 import warnings
 from datetime import datetime
 import yaml
@@ -264,6 +265,8 @@ class HISTOGRAM():
             yy1 = np.zeros(cmax - cmin + 1)
             yy2 = float(plt.gca().get_yticks()[-1])
 
+            ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+
             plt.fill_between(xx, yy1, yy2, color=colors[m], alpha=alpha, zorder=2)
             # plt.text(cmin + (cmax - cmin)/3, max(positions)-1.5, espece + f"\n     {self.mclc[espece]}%", fontsize=12, style='italic', zorder=10)
             plt.text(cmin + (cmax - cmin)/3, 3/4*max(positions), espece, fontsize=12, style='italic', zorder=10)
@@ -354,13 +357,13 @@ class HISTOGRAM():
 
         ax = plt.gca()
         # ax.fill_between([1, 2], [-np.max(np.abs(shifts)), -np.max(np.abs(shifts))], color='grey', alpha=0.5)
-        ax.fill_between([1, 2], [-float(globals.y_max_scatter_plot), -float(globals.y_max_scatter_plot)], color='grey', alpha=0.5)
+        ax.fill_between([1, 2], [-float(globals.y_max_scatter_plot_discoidal), -float(globals.y_max_scatter_plot_discoidal)], color='grey', alpha=0.5)
         ax.tick_params(axis='x', labelsize=8)
         ax.tick_params(axis='y', labelsize=8)
 
         #plt.ylim([-np.max(np.abs(shifts)), +np.max(np.abs(shifts))])
         #plt.ylim([-2.5*np.std(shifts), +2.5*np.std(shifts)])
-        plt.ylim([-float(globals.y_max_scatter_plot), +float(globals.y_max_scatter_plot)])
+        plt.ylim([-float(globals.y_max_scatter_plot_discoidal), +float(globals.y_max_scatter_plot_discoidal)])
         plt.xlim([1, xmax])
 
         # mean = np.mean(indices)
@@ -463,7 +466,7 @@ def scatter_plot_hi_ci(path="", indices=list(), hi=list(), id_bees=list(), name_
 
     #plt.ylim([-np.max(np.abs(shifts)), +np.max(np.abs(shifts))])
     #plt.ylim([-2.5*np.std(shifts), +2.5*np.std(shifts)])
-    plt.ylim([0.5, 2])
+    plt.ylim([0.6, float(globals.y_max_scatter_plot_hantel)])
     plt.xlim([1, 3])
 
     # mean = np.mean(indices)

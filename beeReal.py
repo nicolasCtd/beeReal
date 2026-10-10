@@ -437,8 +437,8 @@ class ALL_TABS(QWidget):
         my_font = QFont("Chalkduster", 16)
 
         text00 = QLabel("<u>General</u>")
-        text0 = QLabel("<u>Parameters for Histogram</u>")
-        text1 = QLabel("<u>Parameters for Scatter plot</u>")
+        text0 = QLabel("<u>Histogram plot</u>")
+        text1 = QLabel("<u>Scatter plots</u>")
 
         text00.setFont(my_font)
         text0.setFont(my_font)
@@ -456,33 +456,42 @@ class ALL_TABS(QWidget):
         self.BTN_params_apply.setFixedWidth(80)
         self.BTN_params_reset.setFixedWidth(80)
 
-        SL.addWidget(self.BTN_params_apply, 11, 0, 1, 2)
-        SL.addWidget(self.BTN_params_reset, 12, 0, 1, 2)
+        SL.addWidget(self.BTN_params_apply, 12, 0, 1, 2)
+        SL.addWidget(self.BTN_params_reset, 13, 0, 1, 2)
 
         self.BTN_params_apply.setText("Apply")
         self.BTN_params_reset.setText("Reset")
 
         self.visualisation = QComboBox()
         self.visualisation.addItems(['RUTTNER', 'DREHER'])
-        self.visualisation.setCurrentText('RUTTNER')
+        self.visualisation.setCurrentText(globals.classif)
 
-        self.y_max = QComboBox()
-        self.y_max.addItems(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'])
-        self.y_max.setCurrentText('6')
+        self.y_max_discoidal = QComboBox()
+        self.y_max_discoidal.addItems(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'])
+        self.y_max_discoidal.setCurrentText(str(globals.y_max_scatter_plot_discoidal))
+
+        self.y_max_hantel = QComboBox()
+        self.y_max_hantel.addItems(['1', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '2'])
+        self.y_max_hantel.setCurrentText('1.5')
 
         SL.addWidget(self.visualisation, 5, 2, 1, 2)
-        SL.addWidget( QLabel("CI step"), 5, 1, 1, 2)
+        SL.addWidget( QLabel("Classification"), 5, 1, 1, 2)
 
         self.BTN_params_apply.clicked.connect(self.params_apply_button)
         self.BTN_params_reset.clicked.connect(self.params_reset_button)
 
         self.classif = globals.classif
-        self.y_max_scatter_plot = globals.y_max_scatter_plot
+        self.y_max_scatter_plot_discoidal = globals.y_max_scatter_plot_discoidal
+        self.y_max_scatter_plot_hantel = globals.y_max_scatter_plot_hantel
 
-        label_max_y_scatter = QLabel("Max for Y-axis (°)")
+        label_max_y_scatter_discoidal = QLabel("Max for discoidal shift (°)")
+        label_max_y_scatter_hantel = QLabel("Max for hantel index (-)")
 
-        SL.addWidget(label_max_y_scatter, 9, 1, 1, 2)
-        SL.addWidget(self.y_max, 9, 2, 1, 2)
+        SL.addWidget(label_max_y_scatter_discoidal, 9, 1, 1, 2)
+        SL.addWidget(label_max_y_scatter_hantel, 10, 1, 1, 2)
+        
+        SL.addWidget(self.y_max_discoidal, 9, 2, 1, 2)
+        SL.addWidget(self.y_max_hantel, 10, 2, 1, 2)
 
         self.analysis = QComboBox()
         self.analysis.addItems(['Cubital Index', 'Cubital Index + Discoidal Shift', 'Cubital Index + Discoidal Shift + Hantel Index'])
@@ -502,8 +511,13 @@ class ALL_TABS(QWidget):
         self.btn_tab0_launch_analysis = QPushButton(f"Launch\nanalysis\n{self.analyse_name}")
         label0 = QLabel("Name of the analysis: ")
         self.lbl_tab0_analyse_name = QLabel(self.analyse_name)
-        self.label1 = QLabel("<u>Histogram of Cubital Index<u>")
-        self.label2 = QLabel("<u>Discoidal Shift / Cubital Index<u>")
+
+        if globals.analysis_level[globals.analysis] == 1:
+            self.label1 = QLabel("<u>Histogram of Cubital Index<u>")
+            self.label2 = QLabel("<u>Histogram of Cubital Index<u>")
+        elif globals.analysis_level[globals.analysis] > 1:
+            self.label1 = QLabel("<u>Histogram of Cubital Index<u>")
+            self.label2 = QLabel("<u>Discoidal Shift / Cubital Index<u>")
         # self.edit_analyse_name = QLineEdit()
 
         self.btn_tab0_extra_plot = QPushButton(f"Add Deepwings data")
@@ -781,36 +795,41 @@ class ALL_TABS(QWidget):
         self.tabs.setCurrentIndex(0)
 
     def next_image_left(self):
-        self.indice_image_left = (self.indice_image_left + 1) % len(self.IMAGES_left)
-        pixmap = QPixmap(self.IMAGES_left[self.indice_image_left])
+        self.indice_image_left = (self.indice_image_left + 1) % len(self.IMAGES)
+        pixmap = QPixmap(self.IMAGES[self.indice_image_left])
         self.label_analyses[0].setPixmap(pixmap)
-        if "histo" in self.IMAGES_left[self.indice_image_left]:
+        if "histo" in self.IMAGES[self.indice_image_left]:
             self.label1.setText("<u>Histogram of Cubital Index</u>")
-        elif "_ds_ci" in self.IMAGES_left[self.indice_image_left]:
+        elif "_ds_ci" in self.IMAGES[self.indice_image_left]:
             self.label1.setText("<u>Discoidal Shift / Cubital Index</u>")
-        elif "_hi_ci" in self.IMAGES_left[self.indice_image_left]:
+        elif "_hi_ci" in self.IMAGES[self.indice_image_left]:
             self.label1.setText("<u>Hantel Index / Cubital Index</u>")
         else:
             pass
 
     def next_image_right(self):
-        self.indice_image_right = (self.indice_image_right + 1) % len(self.IMAGES_right)
-        pixmap = QPixmap(self.IMAGES_right[self.indice_image_right])
+        self.indice_image_right = (self.indice_image_right + 1) % len(self.IMAGES)
+        pixmap = QPixmap(self.IMAGES[self.indice_image_right])
         self.label_analyses[1].setPixmap(pixmap)
-        if "histo" in self.IMAGES_left[self.indice_image_left]:
-            self.label1.setText("<u>Histogram of Cubital Index</u>")
-        elif "_ds_ci" in self.IMAGES_left[self.indice_image_left]:
-            self.label1.setText("<u>Discoidal Shift / Cubital Index</u>")
-        elif "_hi_ci" in self.IMAGES_left[self.indice_image_left]:
-            self.label1.setText("<u>Hantel Index / Cubital Index</u>")
+        if "histo" in self.IMAGES[self.indice_image_right]:
+            self.label2.setText("<u>Histogram of Cubital Index</u>")
+        elif "_ds_ci" in self.IMAGES[self.indice_image_right]:
+            self.label2.setText("<u>Discoidal Shift / Cubital Index</u>")
+        elif "_hi_ci" in self.IMAGES[self.indice_image_right]:
+            self.label2.setText("<u>Hantel Index / Cubital Index</u>")
         else:
             pass
 
     def params_apply_button(self):
         """"""
         globals.classif = self.visualisation.currentText()
-        globals.y_max_scatter_plot = self.y_max.currentText()
+        globals.y_max_scatter_plot_discoidal = self.y_max_discoidal.currentText()
+        globals.y_max_scatter_plot_hantel = self.y_max_hantel.currentText()
         globals.analysis = self.analysis.currentText()
+
+        level = globals.analysis_level[globals.analysis]
+        if level > 1:
+            self.label2.setText("<u>Discoidal Shift / Cubital Index</u>")
 
         for label, num_abeille in zip(self.label_results, range(1, len(self.label_results)+1)):
             if num_abeille in self.RES.keys():
@@ -936,11 +955,10 @@ class ALL_TABS(QWidget):
                 ci = format_ci(results[0])
                 cla = H.get_classes([float(ci)])
                 if level == 2:
-                    ds = format_ds(results[1]) if len(results) > 1 else None
+                    ds = format_ds(results[2]) if len(results) > 1 else None
                 if level == 3:
-                    ds = format_ds(results[1]) if len(results) > 1 else None
-                    hi = format_hi(results[2]) if len(results) > 2 else None
-                    print("ououou", hi)
+                    ds = format_ds(results[2]) if len(results) > 1 else None
+                    hi = format_hi(results[3]) if len(results) > 1 else None
                 logging.info(f"Ci : {ci}, Ds : {ds}°, Hi : {hi}")
                 txt = text_result_IHM(ci, cla, ds=ds, hi=hi)
                 # self.label_results[num_abeille-1].setText(
@@ -964,7 +982,7 @@ class ALL_TABS(QWidget):
                     pixmap_out = QPixmap(ff_out)
                     pixmap_out = pixmap_out.scaled(self.width, self.height, Qt.KeepAspectRatio, Qt.FastTransformation)
                     self.label_right[num_abeille-1].setPixmap(pixmap_out)
-                    globals.enabled[num_abeille] = int(self.RES[num_abeille][2])
+                    globals.enabled[num_abeille] = int(self.RES[num_abeille][4])
             for num_abeille in self.RES.keys():
                 if not globals.enabled[num_abeille]:
                     buttons.turnToGrayImages(TABs=self, num=num_abeille)
@@ -977,7 +995,7 @@ class ALL_TABS(QWidget):
         logging.info(f"Lancement de l'analyse : calcul de l'histogramme des indices + scatter plots DS vs CI")
         if len(self.RES) < 1:
             self.dialog = MESSAGE()
-            msg = f"Error: at least 1 measure is expected (advised: >30)"
+            msg = f"Erreur : au moins 1 mesure est attendue (conseillé : au mois 30 mesures)"
             self.dialog.message(msg)
             logging.info(msg)
         else:
@@ -1001,11 +1019,15 @@ class ALL_TABS(QWidget):
             shifts_2 = list()
             hantels_3 = list()
 
+            disabled = list()
+
             for bee in self.RES.keys():
                 if globals.enabled[bee]:
                     bees_1.append(bee)
                     ic = float(self.RES[bee][0])
                     cubitals_1.append(ic)
+                else:
+                    disabled.append(bee)
 
             if  level >= 2:
 
@@ -1032,14 +1054,6 @@ class ALL_TABS(QWidget):
                         hantels_3.append(float(hi))
                     else:
                         missing_bees_3.append(bee)
-
-            if len(missing_bees_2) > 0:
-                self.dialog = MESSAGE()
-                self.dialog.message(msg=f"{message_missing_bees_2}{missing_bees_2}")
-
-            if len(missing_bees_3) > 0:
-                self.dialog = MESSAGE()
-                self.dialog.message(msg=f"{message_missing_bees_3}{missing_bees_3}")
             
             H = HISTOGRAM(indices=cubitals_1, id_bees=bees_1, visu=globals.classif, path=self.out)
             ci_images = H.plot_histogram(show=False, save=True)
@@ -1056,36 +1070,152 @@ class ALL_TABS(QWidget):
 
 
             # ci_images, ds_image, HISTO = analyse(self.indices, self.shifts, self.id_bees, path_out=self.out, visu=globals.classif)
-            self.IMAGES_left = list()
+            self.IMAGES = ci_images
             self.indice_image_left = 0
-            for count, image in enumerate(ci_images):
-                if "mellifera" in image:
-                    self.indice_image_left = count
-
-            self.IMAGES_left += ci_images
-
-            self.IMAGES_right = []
-            if ds_image is not None:
-                self.IMAGES_left.append(ds_image)
-                self.IMAGES_right.append(ds_image)
-
-            if hi_image is not None:
-                self.IMAGES_left.append(hi_image)
-                self.IMAGES_right.append(hi_image)
-            
-            self.IMAGES_right += ci_images
-
             self.indice_image_right = 0
 
-            pixmap = QPixmap(self.IMAGES_left[self.indice_image_left])
+            if ds_image is not None:
+                self.IMAGES += [ds_image]
+
+            if hi_image is not None:
+                self.IMAGES += [hi_image]
+
+            for count, image in enumerate(self.IMAGES):
+                if "mellifera" in image:
+                    self.indice_image_left = count
+                if "ds_ci" in image:
+                    self.indice_image_right = count
+
+            pixmap = QPixmap(self.IMAGES[self.indice_image_left])
             self.label_analyses[0].setPixmap(pixmap)
 
-            pixmap = QPixmap(self.IMAGES_right[self.indice_image_right])
+            pixmap = QPixmap(self.IMAGES[self.indice_image_right])
             self.label_analyses[1].setPixmap(pixmap)
+
             # self.setFixedSize(self.tab0.layout.sizeHint())()
             self.resize(self.tab0.sizeHint().width(), self.tab0.sizeHint().height())
             # self.switch_extra_plot = True
             # self.btn_tab0_extra_plot.setEnabled(self.switch_extra_plot)
+
+
+            saut = "\n"
+
+            trans = "***************************************************************" + saut
+
+            level = globals.analysis_level[globals.analysis]
+            ligne = f"Niveau d'analyse : {level} ({globals.analysis})"
+
+            ligne += saut
+            ligne += saut
+
+            ligne += f"Nombre d'abeilles : {len(self.RES.keys())}"
+
+            ligne += saut
+            ligne += saut
+
+            ligne += trans 
+            ligne += trans 
+
+            ligne += saut
+
+            ligne += f"Images désactivées : {len(disabled)}"
+
+            ligne += saut
+            ligne += saut
+
+            if len(disabled) > 0:
+                ligne += f"{str(disabled)}"
+
+                ligne += saut
+                ligne += saut
+
+            ligne += trans 
+            ligne += trans 
+
+            ligne += saut 
+
+            ligne += "Mesures CI : " f"{len(cubitals_1)}"
+
+            ligne += saut
+            ligne += saut
+
+            ligne += f"{str(np.sort(list(self.RES.keys())))}"
+
+            ligne += saut
+            ligne += saut
+
+            ligne += f"Mesures manquantes : {len(disabled)}"
+
+            if len(disabled) > 0:
+                ligne += saut
+                ligne += saut
+                ligne += f"{disabled}"
+
+            if level == 2:
+
+                ligne += saut
+                ligne += saut
+
+                ligne += trans 
+                ligne += trans 
+
+                ligne += saut
+
+                ligne += f"Mesures DS : {len(bees_2)}"
+
+                ligne += saut 
+                ligne += saut
+
+                ligne += f"{str(np.sort(bees_2))}"
+
+                ligne += saut 
+                ligne += saut
+
+                ligne += f"Mesures manquantes : {len(missing_bees_2)}"
+
+                if len(missing_bees_2) > 0:
+                    ligne += saut 
+                    ligne += saut
+
+                    ligne += f"{str(np.sort(missing_bees_2))}"
+
+            elif level == 3:
+
+                ligne += saut
+                ligne += saut
+
+                ligne += trans 
+                ligne += trans 
+
+                ligne += saut
+
+                ligne += f"Mesures HI : {len(bees_3)}"
+
+                ligne += saut 
+                ligne += saut
+
+                ligne += f"{str(np.sort(bees_3))}"
+
+                ligne += saut 
+                ligne += saut
+
+                ligne += f"Mesures manquantes : {len(missing_bees_3)}"
+
+                if len(missing_bees_3) > 0:
+                    ligne += saut 
+                    ligne += saut
+
+                    ligne += f"{str(np.sort(missing_bees_3).tolist())}"
+
+
+            self.dialog = MESSAGE()
+            self.dialog.message(ligne)
+
+            self.layout.invalidate()
+            self.layout.activate()
+            self.updateGeometry()
+            self.update()
+
     
     def add_histogram(self):
         """Ajoute un histogramme sur le graphe de gauche afin de comparer l'histogramme obtenu avec ce logiciel

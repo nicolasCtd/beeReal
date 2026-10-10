@@ -46,7 +46,7 @@ def load_results(file):
         a = f.readlines()
     for i in range(len(a)-1):
         line = a[i+1].replace("\n", "").split(" ")
-        res[int(line[0])] = (line[1], line[2], line[3], line[4])
+        res[int(line[0])] = (line[1], line[2], line[3], line[4], line[5])
     return res
 
 def save_results_txt(path, res):
